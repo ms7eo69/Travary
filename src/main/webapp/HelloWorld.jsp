@@ -9,7 +9,9 @@
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	String dateString = String.format("<kbd>%s</kbd>", dateFormat.format(new Date()));
 %>
-    
+<script>
+	var kia = "그래도 사랑해";
+</script>
 <!DOCTYPE html>
 <html lang='ko'>
 <head>
