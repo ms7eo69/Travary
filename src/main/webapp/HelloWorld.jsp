@@ -36,7 +36,7 @@
 			<h1>JSP 및 Servlet 테스트(문성현)</h1>
 		</div><!--jumbotron-->
 		<fieldset class='form-group border p-3'>
-			<legend class='w-auto px-3'>JSP 테스트입니다</legend>
+			<legend class='w-auto px-3'>JSP 테스트입니다람쥐</legend>
 			<h3> 오늘은 <%= dateString %> 입니다..</h3>
 		</fieldset>
 		<fieldset class="form-group border p-3">
