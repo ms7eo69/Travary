@@ -37,7 +37,7 @@
 		</div><!--jumbotron-->
 		<fieldset class='form-group border p-3'>
 			<legend class='w-auto px-3'>JSP 테스트</legend>
-			<h3> 오늘은 <%= dateString %> 입니다</h3>
+			<h3> 오늘은 <%= dateString %> 입니다..</h3>
 		</fieldset>
 		<fieldset class="form-group border p-3">
 	    	<legend class="w-auto px-3">Servlet테스트</legend>
