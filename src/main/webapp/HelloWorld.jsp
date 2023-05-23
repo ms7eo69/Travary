@@ -9,7 +9,6 @@
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	String dateString = String.format("<kbd>%s</kbd>", dateFormat.format(new Date()));
 %>
-<!-- 최강기아 -->
     
 <!DOCTYPE html>
 <html lang='ko'>
