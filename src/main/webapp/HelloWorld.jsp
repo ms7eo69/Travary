@@ -11,6 +11,7 @@
 %>
 <script>
 	var kia = "그래도 사랑해";
+	var tigers = "제발 좀 이겨봐";
 </script>
 <!DOCTYPE html>
 <html lang='ko'>
