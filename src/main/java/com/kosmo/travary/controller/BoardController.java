@@ -1,4 +1,4 @@
-package com.kosmo.travary.board.service.web;
+package com.kosmo.travary.controller;
 
 import java.util.Map;
 
@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.project.MoonSeongHyun2.board.service.BoardDTO;
-import com.project.MoonSeongHyun2.board.service.BoardService;
-import com.project.MoonSeongHyun2.board.service.ListPagingData;
+import com.kosmo.travary.service.BoardDTO;
+import com.kosmo.travary.service.BoardService;
+import com.kosmo.travary.service.ListPagingData;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
-@Controller
+//@Controller
 @RequestMapping("board")
 @SessionAttributes({"id"})
 public class BoardController {

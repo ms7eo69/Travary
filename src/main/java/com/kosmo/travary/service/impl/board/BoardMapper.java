@@ -1,11 +1,11 @@
-package com.kosmo.travary.board.service.impl;
+package com.kosmo.travary.service.impl.board;
 
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.project.MoonSeongHyun2.board.service.BoardDTO;
+import com.kosmo.travary.service.BoardDTO;
 
 @Mapper
 public interface BoardMapper {

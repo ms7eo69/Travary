@@ -1,15 +1,11 @@
-package com.kosmo.travary.board.service;
+package com.kosmo.travary.service;
 
 import java.sql.Date;
 
 import org.apache.ibatis.type.Alias;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Data
 @Builder

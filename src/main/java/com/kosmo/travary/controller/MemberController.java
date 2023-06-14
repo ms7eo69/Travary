@@ -1,4 +1,4 @@
-package com.kosmo.travary.board.service.web;
+package com.kosmo.travary.controller;
 
 import java.util.Map;
 
@@ -12,29 +12,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.project.MoonSeongHyun2.board.service.impl.BoardServiceImpl;
+import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
 @Controller
-//스프링 시큐리티 적용시 로그인,로그아웃 주석하고 @Serivce 주입
 @SessionAttributes({"id"})
-@RequestMapping("onememo/auth")
-public class AuthController {
+@RequestMapping("member")
+public class MemberController {
 
-	//서비스 주입
-	@Autowired
-	private BoardServiceImpl memoService;
-	
-	//로그인 폼으로 이동(스프링 시큐리티 대비해 @RequestMapping)
-	@RequestMapping("Login.do")
+	@GetMapping("Login.do")
 	public String login() {
-		return "_09onememo/member/Login";
+		
+		return "member/Login";
 	}
 	
+	@Autowired
+	MemberServiceImpl memberService;
 	@PostMapping("LoginProcess.do")
 	public String process(@RequestParam Map map,Model model) {
 		
 		//서비스 호출
-		boolean isMember= memoService.isLogin(map);
+		boolean isMember= memberService.isLogin(map);
 		//데이터 저장
 		if(isMember) {
 			model.addAttribute("id",map.get("id"));

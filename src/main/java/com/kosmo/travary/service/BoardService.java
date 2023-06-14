@@ -1,4 +1,4 @@
-package com.kosmo.travary.board.service;
+package com.kosmo.travary.service;
 
 import java.util.Map;
 
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 public interface BoardService<T> {
 
 	//로그인 용
-	boolean isLogin(Map map);aa
+	boolean isLogin(Map map);
 	//목록용
 	ListPagingData<T> selectList(Map map,HttpServletRequest req,int nowPage);
 	//상세보기용

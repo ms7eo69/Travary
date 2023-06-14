@@ -1,4 +1,4 @@
-package com.kosmo.travary.board.service.impl;
+package com.kosmo.travary.service.impl.member;
 
 import java.util.List;
 import java.util.Map;
@@ -6,22 +6,22 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.MoonSeongHyun2.board.service.BoardDTO;
-import com.project.MoonSeongHyun2.board.service.BoardService;
-import com.project.MoonSeongHyun2.board.service.ListPagingData;
+import com.kosmo.travary.service.BoardDTO;
+import com.kosmo.travary.service.BoardService;
+import com.kosmo.travary.service.ListPagingData;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 /*
  * ID 미 지정시 ID값은 소문자로 시작하는 클래스명
  * value속성으로 지정도 가능하다
  */
-@Service("boardService")
-public class BoardServiceImpl implements BoardService<BoardDTO> {
+@Service("memberService")
+public class MemberServiceImpl implements BoardService<BoardDTO> {
 
 	//매퍼 인터페이스 주입
 	@Autowired
-	private BoardMapper mapper;
+	private MemberMapper mapper;
 	
 	@Override
 	public boolean isLogin(Map map) {
