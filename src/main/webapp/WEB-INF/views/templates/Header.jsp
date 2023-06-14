@@ -49,6 +49,7 @@
 						href="<c:url value= "/member/Logout.do"/>">로그아웃</a></li>
 				</c:if>
 				<li class="nav-item"><a class="nav-link" href="/plan/Json.jsp">JSON</a></li>
+				<li class="nav-item"><a class="nav-link" href="/plan/AddrToGeo.jsp">Geocode</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/PlanTemplate.jsp">플랜</a>
 				</li>
 				<li class="nav-item dropdown"><a
