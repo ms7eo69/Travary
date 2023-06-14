@@ -36,19 +36,19 @@
 			<ul class="navbar-nav">
 				<c:if test="${ empty sessionScope.id }" var="isLogin">
 					<li class="nav-item">
-					  <a class="nav-link active" href="<c:url value= "/onememo/auth/Login.do"/>">로그인</a>
+					  <a class="nav-link active" href="<c:url value= "/member/Login.do"/>">로그인</a>
 					</li>
 				</c:if>
 				<c:if test="${!isLogin }">
 					<li class="nav-item">
-					  <a class="nav-link active" href="<c:url value= "/onememo/auth/Logout.do"/>">로그아웃</a>
+					  <a class="nav-link active" href="<c:url value= "/member/Logout.do"/>">로그아웃</a>
 					</li>
 				</c:if>
 				<li class="nav-item">
 				  <a class="nav-link" href="#">마이페이지</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link" href="<c:url value= "/onememo/bbs/List.do"/>">게시판</a>
+				  <a class="nav-link" href="<c:url value= "/board/List.do"/>">게시판</a>
 				</li>
 			</ul>
 		</div>

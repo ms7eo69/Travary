@@ -4,33 +4,6 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
 	namespace="com.kosmo.travary.service.impl.member.MemberMapper">
-	<resultMap type="oneMemoDto" id="memoDtoResult" >
-		<!-- 
-			property : 자바빈 ( OneMemoDTO)의 속성명
-			column   : 테이블의 컬럼(조회(SELECT)결과의 컬럼명들 의미)
-		 -->
-		 <result property="no" column="no"/>
-		 <result property="title" column="title"/>
-		 <result property="content" column="content"/>
-		 <result property="postDate" column="postDate"/>
-		 <result property="id" column="id"/>
-		 <result property="name" column="name"/>
-		 <!-- 조인 쿼리시 .반드시 commentCounts로 별칭해야함 -->
-		 <result property="commentCounts" column="commentCounts"/>
-		 <!--
-			1:N관계 매핑용 (collection 요소 사용)
-			column: 조인조건의 컬럼명 (ON onememo.no = linecomments.no)
-			select: select태그의 id 속성값(쿼리문은 조인문)
-			javaType : OneMemoDTO의 자식레코드(LineCommentDTO)를 담을 컬렉션 타입
-			ofType : 자식의 DTO타입
-			property: 댓글 목록을 담을 OneMemoDTO속성명
-				
-			아래 collection요소 사용시
-			현재 매퍼파일에서 메모글 하나 가져올때 반드시 resultMap="memoDtoResult"을 사용하지
-		 -->
-		 
-		 <!-- 조인 쿼리시 자식 테이블에 해당하는   -->
-	</resultMap>
 	<select id="findByIdAndPwd" parameterType="map" resultType="boolean">
 		SELECT COUNT(*) FROM member WHERE id = #{id} AND pwd=#{pwd}
 	</select>

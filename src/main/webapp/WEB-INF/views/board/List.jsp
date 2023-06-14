@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="/WEB-INF/views/templates/Top.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
 <div class='container' style="margin-top: 50px">
 	<div class='jumbotron bg-info'>
 		<h1>Spring Framework<small>전체 목록 페이지</small></h1>

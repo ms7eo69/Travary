@@ -40,7 +40,7 @@ public class MemberController {
 			model.addAttribute("NotMember","아이디와 비번 불일치");
 		}
 		//뷰정보 반환
-		return "_09onememo/member/Login";
+		return "member/Login";
 	}
 	
 	//로그아웃 처리
@@ -48,6 +48,6 @@ public class MemberController {
 	public String logout(SessionStatus status) {
 		status.setComplete();
 		//뷰정보 반환
-		return "_09onememo/member/Login";
+		return "member/Login";
 	}
 }
