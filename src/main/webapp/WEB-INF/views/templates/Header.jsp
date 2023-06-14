@@ -49,7 +49,7 @@
 						href="<c:url value= "/member/Logout.do"/>">로그아웃</a></li>
 				</c:if>
 				<li class="nav-item"><a class="nav-link" href="/plan/Json.jsp">JSON</a></li>
-				<li class="nav-item"><a class="nav-link" href="/plan/AddrToGeo.jsp">Geocode</a></li>
+				<li class="nav-item"><a class="nav-link" href="/plan/Geo.do">Geocode</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/PlanTemplate.jsp">플랜</a>
 				</li>
 				<li class="nav-item dropdown"><a
@@ -58,7 +58,7 @@
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="/plan/PlanTrackExam.jsp">Track</a>
 						<a class="dropdown-item" href="/plan/PlanPanToBound.jsp">PanToBound</a>
-						<a class="dropdown-item" href="/plan/PlanTrackExam.jsp">경로연습</a>
+						<a class="dropdown-item" href="/plan/PlanTemplate2.jsp">예제</a>
 						<a class="dropdown-item" href="/plan/PlanTrackExam.jsp">경로연습</a>
 					</div></li>
 				<li class="nav-item"><a class="nav-link"

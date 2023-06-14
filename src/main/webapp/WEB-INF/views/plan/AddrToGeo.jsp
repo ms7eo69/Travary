@@ -16,14 +16,12 @@
         		<button type="submit" class="btn btn-info">주소 변환</button>
         	</div>
         </form>
+        <h3>데이터 : ${data }<small><span class="text-dagner">${error }</span></small></h3>
     </div><!--container-->
 <script>	
-	$('.btn').click(function(){
+	$('.btn').click(function(e){
 		var address = $('#addr').val();
-		console.log(address);
-		var encodedAddress = encodeURIComponent(address);
-		var url = 'https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query='+encodedAddress;
-		console.log(url);
+		var url = 'https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query='+address;
 		$('#url').val(url);
 	})
 </script>
