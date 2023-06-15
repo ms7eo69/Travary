@@ -129,7 +129,7 @@
         <div
           class="bg-cover"
           style="
-            background-image: url('');
+            background-image: url('resources/images/landing/landing4.jpg');
             position: absolute;
             top: 0;
             bottom: 0;
@@ -238,7 +238,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
             <img
-              src="image/best-theme/busan.jpg"
+              src="resources/images/best-theme/busan.jpg"
               class="card-img-top rounded"
               alt="..."
             />
@@ -256,7 +256,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
             <img
-              src="image/best-theme/seoul.jpg"
+              src="resources/images/best-theme/seoul.jpg"
               class="card-img-top rounded"
               alt="..."
             />
@@ -274,7 +274,7 @@
         <div class="col-md-3">
             <div class="card mb-3 border-0 shadow ">
               <img
-                src="image/best-theme/suwon.jpg"
+                src="resources/images/best-theme/suwon.jpg"
                 class="card-img-top rounded"
                 alt="..."
               />
@@ -292,7 +292,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
             <img
-              src="image/best-theme/jeju3.jpg"
+              src="resources/images/best-theme/jeju3.jpg"
               class="card-img-top rounded"
               alt="..."
             />
@@ -316,7 +316,7 @@
       <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
             <img
-            src="image/best-theme/midnightseoul.jpg"
+            src="resources/images/best-theme/midnightseoul.jpg"
             class="card-img-top rounded"
             alt="..."
             />
@@ -334,7 +334,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
             <img
-            src="image/best-theme/yangyang.jpg"
+            src="resources/images/best-theme/yangyang.jpg"
             class="card-img-top rounded"
             alt="..."
             
@@ -353,7 +353,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
               <img
-              src="image/best-theme/yeosu.jpg"
+              src="resources/images/best-theme/yeosu.jpg"
               class="card-img-top rounded"
               alt="..."
               />
@@ -371,7 +371,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
             <img
-            src="image/best-theme/terarosa.jpg"
+            src="resources/images/best-theme/terarosa.jpg"
             class="card-img-top rounded"
             alt="..."
             />
@@ -395,7 +395,7 @@
         <div class="col-md-4">
           <div class="card mb-3">
             <img
-              src="image/best-theme/busan.jpg"
+              src="resources/images/best-theme/busan.jpg"
               class="card-img-top rounded"
               alt="..."
             />
@@ -404,7 +404,7 @@
               <p class="card-text"></p>
                 <div class="">
                     <div class="d-flex">
-                    <img src="image/profile/yunakim.jpg" class="ml-0 mr-2  w-25 mb-3" alt="...">
+                    <img src="resources/images/profile/yunakim.jpg" class="ml-0 mr-2  w-25 mb-3" alt="...">
                     <div class="d-flex flex-column">
                         <p class="mt-0 mb-0">배고파팡</p>
                         <p>south korea</p>
@@ -417,7 +417,7 @@
         <div class="col-md-4">
             <div class="card mb-3">
               <img
-                src="image/best-theme/suwon.jpg"
+                src="resources/images/best-theme/suwon.jpg"
                 class="card-img-top rounded"
                 alt="..."
               />
@@ -435,7 +435,7 @@
         <div class="col-md-4">
           <div class="card mb-3">
             <img
-              src="image/best-theme/jeju3.jpg"
+              src="resources/images/best-theme/jeju3.jpg"
               class="card-img-top rounded"
               alt="..."
             />
