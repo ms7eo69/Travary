@@ -15,7 +15,8 @@
         	<div class="form-group">
         		<button type="submit" class="btn btn-info">주소 변환</button>
         	</div>
-        </form>
+        </form> 
+        <h3>위도 경도 : ${data.addresses}</h3>
         <h3>데이터 : ${data }<small><span class="text-dagner">${error }</span></small></h3>
     </div><!--container-->
 <script>	
@@ -24,5 +25,13 @@
 		var url = 'https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query='+address;
 		$('#url').val(url);
 	})
+	/* $.ajax({
+			dataType:'json',
+			method:'post'
+		}).done((data)=>{
+			console.log('서버로부터 받은 데이터:',data);
+		}).fail((error)=>{
+			console.log(error);
+		}); */
 </script>
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>

@@ -43,9 +43,9 @@ public class PlanController {
             headers.add("X-NCP-APIGW-API-KEY-ID", "ohzsg7u4i3");
             headers.add("X-NCP-APIGW-API-KEY", "KS4Y6EwbXgwCr4EOIZKp5gDcxLihq2lAphJucVbX");
             // API 호출 및 데이터 가져오기
-            ResponseEntity<String> response = restTemplate.exchange(map.get("url"), HttpMethod.GET, new HttpEntity<>(headers), String.class);
+            ResponseEntity<Map> response = restTemplate.exchange(map.get("url"), HttpMethod.GET, new HttpEntity<>(headers), Map.class);
             if (response.getStatusCode() == HttpStatus.OK) {
-                String data = response.getBody();    
+                Map data = response.getBody();    
                 System.out.println(data);
                 // 데이터를 모델에 저장
                 model.addAttribute("data", data);
