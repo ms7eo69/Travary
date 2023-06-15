@@ -22,6 +22,7 @@
 		var address = $('#addr').val();
 		console.log(address);
 		var encodedAddress = encodeURIComponent(address);
+		console.log(encodedAddress)
 		var url = 'https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query='+encodedAddress;
 		console.log(url);
 		$('#url').val(url);
