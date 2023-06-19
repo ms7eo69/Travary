@@ -40,12 +40,12 @@ public class MemberController {
 	public String process(@RequestParam Map map,Model model) {
 		
 		//데이터 저장
-		if(isMember) {
+		/*if(isMember) {
 			model.addAttribute("id",map.get("id"));
-		}
-		else {
-			model.addAttribute("NotMember","아이디와 비번 불일치");
-		}
+		}*/
+		/*
+		 * else { model.addAttribute("NotMember","아이디와 비번 불일치"); }
+		 */
 		//뷰정보 반환
 		return "member/Login";
 	}
