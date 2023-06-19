@@ -16,8 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kosmo.travary.service.BoardDTO;
-import com.kosmo.travary.service.BoardService;
+import com.kosmo.travary.service.DaoService;
 import com.kosmo.travary.service.ListPagingData;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,41 +26,22 @@ import javax.servlet.http.HttpServletRequest;
  * value속성으로 지정도 가능하다
  */
 @Service("memberService")
-public class MemberServiceImpl implements BoardService<BoardDTO> {
+public class MemberServiceImpl implements DaoService {
 
 	//매퍼 인터페이스 주입
 	@Autowired
 	private MemberMapper mapper;
 	
-	@Override
-	public boolean isLogin(Map map) {
-		return mapper.findByIdAndPwd(map);
-	}
-	
-	/*
-	 *  첫번째 인자 Map : 
-	 *  	검색 안하면 빈 맵, 검색시에는 검색어와 검색 컬럼명이 저장
-	 *  두번째 인자 req :
-	 *  	컨텍스트 패스를 얻기 위함(페이징시 절대경로 지정)
-	 *  세번째 인자 nowPage :
-	 *  	현재 페이지 번호
-	 */
-	@Override
-	public ListPagingData<BoardDTO> selectList(Map map, HttpServletRequest req, int nowPage) {
-		
-		//글 전체 목록 얻기
-		List records =  mapper.findAll(map);
-		
-		ListPagingData<BoardDTO> listPagingData = ListPagingData.builder()
-																											.records(records)
-																											.build();
-		return listPagingData;
-	}
 
-	@Override
-	public BoardDTO selectOne(Map map) {
-		return null;
-	}
+	/*
+	 * @Override public ListPagingData<BoardDTO> selectList(Map map,
+	 * HttpServletRequest req, int nowPage) {
+	 * 
+	 * //글 전체 목록 얻기 List records = mapper.findAll(map);
+	 * 
+	 * ListPagingData<BoardDTO> listPagingData = ListPagingData.builder()
+	 * .records(records) .build(); return listPagingData; }
+	 */
 
 	@Override
 	public int insert(Map map) {
@@ -69,15 +49,23 @@ public class MemberServiceImpl implements BoardService<BoardDTO> {
 	}
 
 	@Override
-	public int update(BoardDTO record) {
+	public List<Map> selectList(Map map) {
+		return null;
+	}
+
+	@Override
+	public int update(Map map) {
 		return 0;
 	}
 
 	@Override
-	public int delete(BoardDTO record) {
+	public int delete(Map map) {
 		return 0;
 	}
-	
-	
+
+	@Override
+	public Map selectOne(Map map) {
+		return null;
+	}
 
 }

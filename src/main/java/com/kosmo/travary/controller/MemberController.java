@@ -18,7 +18,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
 @Controller
-@SessionAttributes({"id"})
 @RequestMapping("member")
 public class MemberController {
 
@@ -40,8 +39,6 @@ public class MemberController {
 	@PostMapping("LoginProcess.do")
 	public String process(@RequestParam Map map,Model model) {
 		
-		//서비스 호출
-		boolean isMember= memberService.isLogin(map);
 		//데이터 저장
 		if(isMember) {
 			model.addAttribute("id",map.get("id"));
