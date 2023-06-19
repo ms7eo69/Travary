@@ -1,7 +1,13 @@
 package com.kosmo.travary.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +22,8 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
+
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @SessionAttributes({"id"})
@@ -64,13 +72,37 @@ public class MemberController {
 	//카카오 로그인
 	// 1번 카카오톡에 사용자 코드 받기(jsp의 a태그 href에 경로 있음)
 	@RequestMapping(value = "/kakaoLogin", method = RequestMethod.GET)
-	public ModelAndView kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Throwable {
-
+	public ModelAndView kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Exception {
 		// 1번
 		System.out.println("code:" + code);
 		
-		return null;	
-		// return에 페이지를 해도 되고, 여기서는 코드가 넘어오는지만 확인할거기 때문에 따로 return 값을 두지는 않았음
+		// 2번
+		String access_Token = memberService.getAccessToken(code);
+		System.out.println("###access_Token#### : " + access_Token);
+		// 위의 access_Token 받는 걸 확인한 후에 밑에 진행
+		
+		// 3번
+		HashMap<String, Object> userInfo = memberService.getUserInfo(access_Token);
+		System.out.println("###nickname#### : " + userInfo.get("nickname"));
+		System.out.println("###email#### : " + userInfo.get("email"));
+	    
+	    ModelAndView modelAndView = new ModelAndView("member/MyPage"); // 뷰 이름 설정
+	    
+	    return modelAndView;
+	}
+	
+	@Controller
+	@RequiredArgsConstructor
+	public class LoginController {
 
+	    @GetMapping("/naver-login")
+	    public void naverLogin(HttpServletRequest request, HttpServletResponse response) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException {
+	        String url = memberService.getNaverAuthorizeUrl("authorize");
+	        try {
+	            response.sendRedirect(url);
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
 	}
 }

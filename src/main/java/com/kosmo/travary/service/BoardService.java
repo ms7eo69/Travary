@@ -22,5 +22,7 @@ public interface BoardService<T> {
 	int insert(Map map);
 	int update(T record);
 	int delete(T record);
+	String getAccessToken(String authorize_code) throws Throwable;
+	
 	
 }

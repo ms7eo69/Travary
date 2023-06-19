@@ -25,4 +25,6 @@ public interface MemberMapper {
 		int updateByNo(BoardDTO record);
 		//전체 래코드 수 조회
 		int count(Map map);
+		//카카오 로그인
+		String getAccessToken(String authorize_code) throws Throwable;
 }

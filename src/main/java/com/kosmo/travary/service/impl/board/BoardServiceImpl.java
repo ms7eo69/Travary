@@ -69,6 +69,12 @@ public class BoardServiceImpl implements BoardService<BoardDTO> {
 		return 0;
 	}
 
+	@Override
+	public String getAccessToken(String authorize_code) throws Throwable {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }
