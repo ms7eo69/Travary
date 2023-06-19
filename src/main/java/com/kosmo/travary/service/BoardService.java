@@ -1,5 +1,6 @@
 package com.kosmo.travary.service;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,4 +22,5 @@ public interface BoardService<T> {
 	int insert(Map map);
 	int update(T record);
 	int delete(T record);
+	
 }

@@ -1,5 +1,6 @@
 package com.kosmo.travary.service.impl.board;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -67,5 +68,7 @@ public class BoardServiceImpl implements BoardService<BoardDTO> {
 	public int delete(BoardDTO record) {
 		return 0;
 	}
+
+
 
 }

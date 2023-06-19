@@ -1,11 +1,21 @@
 package com.kosmo.travary.service.impl.member;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kosmo.travary.service.BoardDTO;
 import com.kosmo.travary.service.BoardService;
 import com.kosmo.travary.service.ListPagingData;
@@ -67,5 +77,7 @@ public class MemberServiceImpl implements BoardService<BoardDTO> {
 	public int delete(BoardDTO record) {
 		return 0;
 	}
+	
+	
 
 }
