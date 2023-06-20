@@ -5,8 +5,6 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.kosmo.travary.service.BoardDTO;
-
 @Mapper
 public interface BoardMapper {
 
@@ -17,11 +15,11 @@ public interface BoardMapper {
 		//입력
 		int save(Map map);
 		//레코드 하나
-		BoardDTO findByNo(Map map);
+		Map findByNo(Map map);
 		//번호로 조회하여 레코드 하나 삭제
-		int deleteByNo(BoardDTO record);
+		int deleteByNo(Map map);
 		//번호로 조회하여 레코드 하나 수정
-		int updateByNo(BoardDTO record);
+		int updateByNo(Map map);
 		//전체 래코드 수 조회
 		int count(Map map);
 }

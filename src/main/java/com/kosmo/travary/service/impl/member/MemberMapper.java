@@ -6,25 +6,18 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.kosmo.travary.service.BoardDTO;
-
 @Mapper
 public interface MemberMapper {
 
-	//회원 여부 판단용
 		boolean findByIdAndPwd(Map map);
-		//전체 조회
 		List findAll(Map map);
-		//입력
 		int save(Map map);
-		//레코드 하나
-		BoardDTO findByNo(Map map);
-		//번호로 조회하여 레코드 하나 삭제
-		int deleteByNo(BoardDTO record);
-		//번호로 조회하여 레코드 하나 수정
-		int updateByNo(BoardDTO record);
-		//전체 래코드 수 조회
+		int saveKey(Map map);
+		Map findByNo(Map map);
+		int deleteByNo(Map map);
+		int updateByNo(Map map);
 		int count(Map map);
 		//카카오 로그인
 		String getAccessToken(String authorize_code) throws Throwable;
+		Map findById(Map map);
 }

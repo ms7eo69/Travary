@@ -28,7 +28,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@SessionAttributes({"id"})
 @RequestMapping("member")
 @Slf4j
 public class MemberController {
@@ -45,15 +44,13 @@ public class MemberController {
 	@PostMapping("LoginProcess.do")
 	public String process(@RequestParam Map map,Model model) {
 		
-		//서비스 호출
-		boolean isMember= memberService.isLogin(map);
 		//데이터 저장
-		if(isMember) {
+		/*if(isMember) {
 			model.addAttribute("id",map.get("id"));
-		}
-		else {
-			model.addAttribute("NotMember","아이디와 비번 불일치");
-		}
+		}*/
+		/*
+		 * else { model.addAttribute("NotMember","아이디와 비번 불일치"); }
+		 */
 		//뷰정보 반환
 		return "member/Login";
 	}
