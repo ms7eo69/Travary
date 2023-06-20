@@ -36,6 +36,12 @@
 						position: polylinePath[polylinePath.length-1], //마크 표시할 위치 배열의 마지막 위치
 						map: map
 					});
+					map.panToBounds( 
+							new naver.maps.LatLngBounds(
+				                new naver.maps.LatLng(polylinePath[0]),
+				                new naver.maps.LatLng(polylinePath[polylinePath.length-1])
+			                )
+			       )
 				}).fail((error)=>{
 					console.log(error);
 				}); 
