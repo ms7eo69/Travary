@@ -85,9 +85,7 @@ a {
 				name="id" class="form-control mx-2" /> <label>비밀번호</label> <input
 				type="password" name="pwd" class="form-control mx-2" /> <input
 				type="submit" class="btn btn-danger mx-2" value="로그인" />
-			<<a href="naver-login">
-	            <button>네이버 로그인</button>
-	        </a>
+			<div id="naver_id_login"></div>
 			<a class="kakao"
 				href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code">
 				<!-- REST_API키 및 REDIRECT_URI는 본인걸로 수정하세요 -->
@@ -105,5 +103,16 @@ a {
 	</div>
 </c:if>
 </div>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    var naver_id_login = new naver_id_login("GsYVpg82aBYC9e00ww1B", "http://localhost:7070/member/MyPage.do");
+    var state = naver_id_login.getUniqState();
+    naver_id_login.setButton("white", 2,40);
+    naver_id_login.setDomain("MD3o8KGeb3");
+    naver_id_login.setState(state);
+    naver_id_login.setPopup();
+    naver_id_login.init_naver_id_login();
+</script>
 <!--container-->
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>

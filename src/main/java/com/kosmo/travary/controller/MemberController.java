@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,22 +25,18 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @SessionAttributes({"id"})
 @RequestMapping("member")
+@Slf4j
 public class MemberController {
 
 	@GetMapping("Login.do")
 	public String login() {
 		
 		return "member/Login";
-	}
-	
-	@GetMapping("MyPage.do")
-	public String MyPage() {
-		
-		return "member/MyPage";
 	}
 	
 	
@@ -90,19 +87,18 @@ public class MemberController {
 	    
 	    return modelAndView;
 	}
-	
-	@Controller
-	@RequiredArgsConstructor
-	public class LoginController {
-
-	    @GetMapping("/naver-login")
-	    public void naverLogin(HttpServletRequest request, HttpServletResponse response) throws MalformedURLException, UnsupportedEncodingException, URISyntaxException {
-	        String url = memberService.getNaverAuthorizeUrl("authorize");
-	        try {
-	            response.sendRedirect(url);
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	    }
+	//네이버 로그인
+	@RequestMapping(value="/", method= RequestMethod.GET)
+    public String index() {
+        log.info("home controller");
+        return "member/Login";
+    }
+	//네이버 로그인
+	@RequestMapping(value = "MyPage.do", method = RequestMethod.GET)
+	public String loginPOSTNaver(HttpSession session) {
+	    log.info("callback controller");
+	    return "member/MyPage";
 	}
+	
+	
 }
