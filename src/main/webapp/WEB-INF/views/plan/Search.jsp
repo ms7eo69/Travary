@@ -20,11 +20,6 @@
         <h3>데이터 : ${data }<small><span class="text-dagner">${error }</span></small></h3>
     </div><!--container-->
 <script>	
-	$('.btn').click(function(e){
-		var address = $('#addr').val();
-		var url = "https://naveropenapi.apigw.ntruss.com/datalab/v1/search";
-		$('#url').val(url);
-	})
 	/* $.ajax({
 			dataType:'json',
 			method:'post'

@@ -50,6 +50,7 @@
 				</c:if>
 				<li class="nav-item"><a class="nav-link" href="/member/MyPage.do">마이페이지</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/Json.jsp">JSON</a></li>
+				<li class="nav-item"><a class="nav-link" href="/plan/Direction.do">길찾기</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/Geo.do">Geocode</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/Search.do">SearchTrend</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/PlanTemplate.jsp">플랜</a>
