@@ -14,11 +14,11 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="main-menu">
+    <nav class="main-menu position-fixed">
         <div class="menuDiv">
             <div id="nav-header">
                 <div class="logo">
-                    <a href="#">Travary</a>
+                    <a href="#"><img src="../img/logo.png" class="nav-logo"></a>
                 </div>         
                 <div class="settings"></div>       
             </div>
@@ -89,26 +89,42 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav>   
 </body>
 </html>
 <div class="modal fade" id="loginModal">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="width: 350px;margin: auto;">
-            <div class="modal-body" id="login-box">
-                <button type="button" class="close justify-content-end" data-dismiss="modal">&times;</button>
-                <form class="" action="" method="POST">                    
-                    <h3 class="text-center p-5 font-italic">Travary</h3>
-                    <div>
-                        <input type="text" name="id" class="form-control" placeholder="이메일 혹은 전화번호"/> 
-                    </div>
-                    <div>
-                        <input type="password" class="form-control my-2" name="password" placeholder="비밀번호"/> 
-                    </div>
-                    <input type="checkbox" class="ml-1">로그인 정보 저장하기                    
-                    <input type="submit" class="form-control btn btn-primary" value="로그인" />
-                    <a href="" class="d-flex justify-content-center ml-4">비밀번호를 잊으셨나요?</a>
-                </form>                           			
+        <div class="modal-content">            
+            <div class="modal-body1">
+                <img src="../img/logo.png" class="modal-logo">
+                <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" class="inlilneToBlock">
+                <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
+                <button class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
+                <div class="horizonAndOrWrap">
+                    <hr class="leftHr">
+                    <div class="or">또는</div>
+                    <hr class="rightHr">
+                </div>
+                <a href="" class="noneunderline">
+                    <button class="inlineToBlock kakaoLogin">
+                        <img src="../img/kakaoicon.png" class="kakaoIcon">                        
+                    </button>
+                </a>
+                <a href="" class="noneunderline">
+                    <button class="inlineToBlock googleLogin">
+                        <img src="../img/googleicon.png" class="googleIcon">                        
+                    </button>
+                </a>
+                <a href="" class="noneunderline">
+                    <button class="inlineToBlock naverLogin">
+                        <img src="../img/navericon.png" class="naverIcon">                        
+                    </button>
+                </a>
+            </div>
+            <div class="modal-body2">
+                <p>계정이 없으신가요?
+                    <a href="#" class="noneunderline">가입하기</a>
+                </p>
             </div>
         </div>
     </div>
