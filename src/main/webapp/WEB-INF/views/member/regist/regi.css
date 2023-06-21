@@ -84,24 +84,24 @@ body {
   border-radius: 60px;
 }
 
-.login {
+.regi {
   width: 400px;
   padding: 30px;
   padding-top: 100px;
 }
 
-.login__field {
+.regi__field {
   padding: 10px 0px;  
   position: relative; 
 }
 
-.login__icon {
+.regi__icon {
   position: absolute;
   top: 30px;
   color: #7875B5;
 }
 
-.login__input {
+.regi__input {
   border: none;
   border-bottom: 2px solid #D1D1D4;
   background: none;
@@ -111,17 +111,25 @@ body {
   width: 90%;
   transition: .2s;
 }
-.login_radio{
-    
+.regi_error:active
+.regi_error:focus,
+.regi_error{
+  width: 60%;
+  color: red;
+  border: none;
+  outline: none;
 }
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.regi_error:hover{
+  cursor:default
+}
+.regi__input:active,
+.regi__input:focus,
+.regi__input:hover {
   outline: none;
   border-bottom-color: #6A679E;
 }
 
-.login__submit {
+.regi__submit {
   background: #fff;
   font-size: 14px;
   margin-top: 30px;
@@ -139,9 +147,9 @@ body {
   transition: .2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
+.regi__submit:active,
+.regi__submit:focus,
+.regi__submit:hover {
   border-color: #6A679E;
   outline: none;
 }
@@ -152,7 +160,7 @@ body {
   color: #7875B5;
 }
 
-.social-login { 
+.social-regi { 
   position: absolute;
   height: 140px;
   width: 160px;
@@ -168,13 +176,13 @@ body {
   justify-content: center;
 }
 
-.social-login__icon {
+.social-regi__icon {
   padding: 20px 10px;
   color: #fff;
   text-decoration: none;  
   text-shadow: 0px 0px 8px #7875B5;
 }
 
-.social-login__icon:hover {
+.social-regi__icon:hover {
   transform: scale(1.5);  
 }
