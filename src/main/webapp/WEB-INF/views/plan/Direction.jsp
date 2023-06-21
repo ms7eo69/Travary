@@ -37,7 +37,7 @@
 	var polyline = new naver.maps.Polyline({
 		path: polylinePath,      //선 위치 변수배열
 		strokeColor: '#FF0000', //선 색 빨강 #빨강,초록,파랑
-		strokeOpacity: 0.8, //선 투명도 0 ~ 1
+		strokeOpacity: 0.5, //선 투명도 0 ~ 1
 		strokeWeight: 8,   //선 두께
 		strokeStyle: 'solid',
 		strokeLineCap : 'round',
