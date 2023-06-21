@@ -7,7 +7,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< Updated upstream
 import com.kosmo.travary.service.DaoService;
+=======
+>>>>>>> Stashed changes
 import com.kosmo.travary.service.ListPagingData;
 
 import javax.servlet.http.HttpServletRequest;
