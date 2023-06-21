@@ -84,18 +84,18 @@ public class MemberController {
 	    
 	    return modelAndView;
 	}
-//	//네이버 로그인
-//	@RequestMapping(value="/", method= RequestMethod.GET)
-//    public String index() {
-//        log.info("home controller");
-//        return "member/Login";
-//    }
-//	//네이버 로그인
-//	@RequestMapping(value = "MyPage.do", method = RequestMethod.GET)
-//	public String loginPOSTNaver(HttpSession session) {
-//	    log.info("callback controller");
-//	    return "member/MyPage";
-//	}
+	//네이버 로그인
+	@RequestMapping(value="/", method= RequestMethod.GET)
+    public String index() {
+        log.info("home controller");
+        return "member/Login";
+    }
+	//네이버 로그인
+	@RequestMapping(value = "MyPage.do", method = RequestMethod.GET)
+	public String loginPOSTNaver(HttpSession session) {
+	    log.info("callback controller");
+	    return "member/MyPage";
+	}
 	
 	
 }
