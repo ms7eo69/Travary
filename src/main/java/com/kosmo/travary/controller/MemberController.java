@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("member")
+@RequestMapping("/kosmo/member")
 public class MemberController {
 
 	@Autowired
@@ -37,12 +37,12 @@ public class MemberController {
 		idName = cookieInfo.getIdName();
 	}
 
-	@GetMapping("Login.msp")
+	@GetMapping("/Login.do")
 	public String login() {
 		return "member/Login";
 	}
 	
-	@PostMapping("Login.msp")
+	@PostMapping("/LoginProcess.do")
 	public String loginProcess(@RequestParam Map map,
 														Model model,
 														HttpServletRequest req,
@@ -68,18 +68,18 @@ public class MemberController {
 		return "member/Login";
 	}
 	
-	@GetMapping("Register.msp")
+	@GetMapping("Register.do")
 	public String register() {
 		return "member/Register";
 	}
 	
-	@PostMapping("Register.msp")
+	@PostMapping("Register.do")
 	public String registerProcess(@RequestParam Map map,@RequestParam String[] inter) {
 
 		String inters = Arrays.toString(inter);
 		map.put("inter", inters.substring(1,inters.length()-1));
 		int affected = memberService.insert(map);
-		return affected==1?"forward:/kosmo/member/Login.msp":"member/Register";
+		return affected==1?"forward:/kosmo/member/Login.do":"member/Register";
 	}
 	@ExceptionHandler({Exception.class})
 	public String error(Model model,Exception e) {
@@ -88,7 +88,7 @@ public class MemberController {
 		return "Index";
 	}
 	
-	@GetMapping("Logout.msp")
+	@GetMapping("Logout.do")
 	public String logout(HttpServletRequest request,
 											HttpServletResponse response) {
 		Cookies.removeCookie(idName, request,  response);
