@@ -37,7 +37,7 @@ public class MemberController {
 		idName = cookieInfo.getIdName();
 	}
 
-	@GetMapping("/Login.do")
+	@RequestMapping("/Login.do")
 	public String login() {
 		return "member/Login";
 	}
