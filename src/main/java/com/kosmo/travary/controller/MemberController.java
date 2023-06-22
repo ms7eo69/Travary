@@ -42,7 +42,7 @@ public class MemberController {
 		return "member/Login";
 	}
 	
-	@PostMapping("Login.msp")
+	@PostMapping("LoginProcess.do")
 	public String loginProcess(@RequestParam Map map,
 														Model model,
 														HttpServletRequest req,
@@ -55,6 +55,8 @@ public class MemberController {
 			//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
 			int expireMinute = 30;
 			String token = JWTokens.createToken(keyName, map, expireMinute);
+			System.out.println(token);
+			System.out.println(map);
 			//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
 			memberService.insertKey(map);
 			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
