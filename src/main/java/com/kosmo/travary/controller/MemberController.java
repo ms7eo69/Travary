@@ -71,11 +71,11 @@ public class MemberController {
 		
 		// 3번
 		HashMap<String, Object> userInfo = memberService.getUserInfo(access_Token);
-		System.out.println("###nickname#### : " + userInfo.get("nickname"));
-		System.out.println("###email#### : " + userInfo.get("email"));
-		System.out.println("###age#### : " + userInfo.get("age"));
-		System.out.println("###gender#### : " + userInfo.get("gender"));
-		System.out.println("###birthday#### : " + userInfo.get("birthday"));
+		System.out.println((userInfo.get("nickname")));
+		System.out.println(userInfo.get("email"));
+		System.out.println(userInfo.get("age"));
+		System.out.println(userInfo.get("gender"));
+		System.out.println(userInfo.get("birthday"));
 		//System.out.println("###id#### : " + userInfo.get("id"));
 	    
 	    ModelAndView modelAndView = new ModelAndView("member/MyPage"); // 뷰 이름 설정
@@ -98,15 +98,22 @@ public class MemberController {
 	    String nickname = request.getParameter("nickname");
 	    String ageRange = request.getParameter("ageRange");
 	    String uniqueId = request.getParameter("uniqueId");
-	    System.out.println(email);
-	    System.out.println(nickname);
-	    System.out.println(ageRange);
-	    System.out.println(uniqueId);
+	    String gender = request.getParameter("gender");
+	    String birthday = request.getParameter("birthday");
+	    
 	    if(email != null) {
+	    	System.out.println(email);
+		    System.out.println(nickname);
+		    System.out.println(ageRange);
+		    System.out.println(uniqueId);
+		    System.out.println(gender);
+		    System.out.println(birthday);
 		    model.addAttribute("email", email);
 		    model.addAttribute("nickname", nickname);
 		    model.addAttribute("ageRange", ageRange);
 		    model.addAttribute("uniqueId", uniqueId);
+		    model.addAttribute("ageRange", gender);
+		    model.addAttribute("uniqueId", birthday);
 		    //null이 아니라면 map.put으로 요소 저장하고 그 map을 insert 혹은 select 시키자
 	    }
 	    return "member/MyPage";

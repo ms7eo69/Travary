@@ -12,31 +12,27 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-    var naver_id_login = new naver_id_login("GsYVpg82aBYC9e00ww1B", "http://localhost:7070/member/MyPage.do");
-    // 접근 토큰 값 출력
-    alert(naver_id_login.oauthParams.access_token);
-    // 네이버 사용자 프로필 조회
-    naver_id_login.get_naver_userprofile("naverSignInCallback()");
+var naver_id_login = new naver_id_login("GsYVpg82aBYC9e00ww1B", "http://localhost:7070/callback");
+naver_id_login.get_naver_userprofile("naverSignInCallback()");
 
-    // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-    function naverSignInCallback() {
-        console.log(naver_id_login.getProfileData('email'));
-        console.log(naver_id_login.getProfileData('nickname'));
-        console.log(naver_id_login.getProfileData('age'));
-        console.log(naver_id_login.getProfileData('id'));
-        console.log(naver_id_login.getProfileData('birthday'));
-        console.log(naver_id_login.getProfileData('gender'));
-    }
- 	// AJAX 요청 보내기
+function naverSignInCallback() {
+    var email = naver_id_login.getProfileData('email');
+    console.log(email);
+    var nickname = naver_id_login.getProfileData('nickname');
+    var ageRange = naver_id_login.getProfileData('age');
+    var uniqueId = naver_id_login.getProfileData('id');
+    var gender = naver_id_login.getProfileData('gender');
+    var birthday = naver_id_login.getProfileData('birthday');
+
     $.ajax({
         url: '/member/MyPage.do',
         data: {
-            email: naver_id_login.getProfileData('email'),
-            nickname: naver_id_login.getProfileData('nickname'),
-            ageRange: naver_id_login.getProfileData('age'),
-            uniqueId: naver_id_login.getProfileData('id'),
-            gender: naver_id_login.getProfileData('gender'),
-            birthday: naver_id_login.getProfileData('birthday')
+            email: email,
+            nickname: nickname,
+            ageRange: ageRange,
+            uniqueId: uniqueId,
+            gender: gender,
+            birthday: birthday
         },
         success: function(response) {
             console.log(response);
@@ -47,5 +43,7 @@
             // 에러 처리를 수행할 수 있습니다.
         }
     });
+}
+
 
 </script>
