@@ -37,7 +37,7 @@ public class MemberController {
 		idName = cookieInfo.getIdName();
 	}
 
-	@GetMapping("Login.do")
+	@RequestMapping("/Login.do")
 	public String login() {
 		return "member/Login";
 	}
@@ -55,13 +55,14 @@ public class MemberController {
 			//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
 			int expireMinute = 30;
 			String token = JWTokens.createToken(keyName, map, expireMinute);
-			String id = map.get("id").toString();
+			System.out.println(token);
+			System.out.println(map);
 			//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
 			memberService.insertKey(map);
 			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
-			Cookies.createCookie(idName, id, resp, req, expireMinute);
-			req.setAttribute("validate",id);
-			return "member/MyPage";
+			Cookies.createCookie(idName, map.get("id").toString(), resp, req, expireMinute);
+			req.setAttribute("validate"," ");
+			return "Index";
 		}
 		else {
 			model.addAttribute("NotMember","아이디와 비번 불일치");
@@ -69,18 +70,18 @@ public class MemberController {
 		return "member/Login";
 	}
 	
-	@GetMapping("Register.msp")
+	@GetMapping("Register.do")
 	public String register() {
 		return "member/Register";
 	}
 	
-	@PostMapping("Register.msp")
+	@PostMapping("Register.do")
 	public String registerProcess(@RequestParam Map map,@RequestParam String[] inter) {
 
 		String inters = Arrays.toString(inter);
 		map.put("inter", inters.substring(1,inters.length()-1));
 		int affected = memberService.insert(map);
-		return affected==1?"forward:/kosmo/member/Login.msp":"member/Register";
+		return affected==1?"forward:/kosmo/member/Login.do":"member/Register";
 	}
 	@ExceptionHandler({Exception.class})
 	public String error(Model model,Exception e) {
@@ -89,7 +90,7 @@ public class MemberController {
 		return "Index";
 	}
 	
-	@GetMapping("Logout.msp")
+	@GetMapping("Logout.do")
 	public String logout(HttpServletRequest request,
 											HttpServletResponse response) {
 		Cookies.removeCookie(idName, request,  response);

@@ -44,7 +44,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor{
 			map = memberService.selectOne(map);
 			if(!JWTokens.verifyToken(token,map.get("KEY").toString())) {
 				request.removeAttribute("validate");
-				request.getRequestDispatcher("/kosmo/member/Login.msp").forward(request, response);
+				request.getRequestDispatcher("/kosmo/member/Login.do").forward(request, response);
 				return false;
 			}
 			request.setAttribute("validate",id);

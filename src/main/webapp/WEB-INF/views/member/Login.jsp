@@ -18,7 +18,7 @@
 	<c:if test="${ empty sessionScope.id }" var="isLogin">
 		<form class="form-inline"
 			action="/kosmo/member/LoginProcess.do"
-			method="post">
+			method="post">				
 			<label>아이디</label> <input type="text" name="id"
 				class="form-control mx-2" /> <label>비밀번호</label> <input
 				type="password" name="pwd" class="form-control mx-2" /> <input
