@@ -8,10 +8,10 @@ public class IndexController {
 
 	@GetMapping("/")
 	public String contextRoot() {
-		return "forward:/kosmo/Index.msp";
+		return "Index";
 	}
 	
-	@GetMapping("/kosmo/Index.msp")
+	@GetMapping("/kosmo/Index.do")
 	public String index() {
 		return "Index";
 	}
