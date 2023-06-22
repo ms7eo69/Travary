@@ -47,7 +47,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor{
 				request.getRequestDispatcher("/kosmo/member/Login.msp").forward(request, response);
 				return false;
 			}
-			request.setAttribute("validate"," ");
+			request.setAttribute("validate",id);
 		}
 		return true;
 	}

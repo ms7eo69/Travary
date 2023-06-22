@@ -17,9 +17,8 @@
 	<!--  로그인 전 -->
 	<c:if test="${ empty sessionScope.id }" var="isLogin">
 		<form class="form-inline"
-			action="<c:url value="/member/LoginProcess.do"/>"
-			method="post">				
-			<input type="hidden" name="${_csrf.parameterName}"	value="${_csrf.token}" />
+			action="/kosmo/member/LoginProcess.do"
+			method="post">
 			<label>아이디</label> <input type="text" name="id"
 				class="form-control mx-2" /> <label>비밀번호</label> <input
 				type="password" name="pwd" class="form-control mx-2" /> <input

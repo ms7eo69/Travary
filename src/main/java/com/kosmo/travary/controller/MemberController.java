@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("member")
+@RequestMapping("/kosmo/member")
 public class MemberController {
 
 	@Autowired
@@ -37,12 +37,12 @@ public class MemberController {
 		idName = cookieInfo.getIdName();
 	}
 
-	@GetMapping("Login.msp")
+	@GetMapping("Login.do")
 	public String login() {
 		return "member/Login";
 	}
 	
-	@PostMapping("Login.msp")
+	@PostMapping("/LoginProcess.do")
 	public String loginProcess(@RequestParam Map map,
 														Model model,
 														HttpServletRequest req,
@@ -55,12 +55,13 @@ public class MemberController {
 			//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
 			int expireMinute = 30;
 			String token = JWTokens.createToken(keyName, map, expireMinute);
+			String id = map.get("id").toString();
 			//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
 			memberService.insertKey(map);
 			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
-			Cookies.createCookie(idName, map.get("id").toString(), resp, req, expireMinute);
-			req.setAttribute("validate"," ");
-			return "Index";
+			Cookies.createCookie(idName, id, resp, req, expireMinute);
+			req.setAttribute("validate",id);
+			return "member/MyPage";
 		}
 		else {
 			model.addAttribute("NotMember","아이디와 비번 불일치");
