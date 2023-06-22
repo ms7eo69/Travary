@@ -198,4 +198,10 @@ th.descending:after {
   font-size: 90%;
 }
 
+/* ----------------------------------------------- */
 
+.thema{
+  -webkit-box-shadow: 0 0 3px 3px #ebebeb;
+  box-shadow: 0 0 3px 3px #ebebeb;
+  float: left;
+}
