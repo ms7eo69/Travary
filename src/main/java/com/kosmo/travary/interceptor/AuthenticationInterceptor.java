@@ -43,6 +43,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor{
 			map.put("id", id);
 			map = memberService.selectOne(map);
 			if(!JWTokens.verifyToken(token,map.get("KEY").toString())) {
+				//토큰이 유효하지 않을때
 				request.removeAttribute("validate");
 				request.getRequestDispatcher("/kosmo/member/Login.do").forward(request, response);
 				return false;
