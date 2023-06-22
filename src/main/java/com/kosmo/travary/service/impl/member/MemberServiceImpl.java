@@ -175,9 +175,17 @@ public class MemberServiceImpl implements DaoService {
 
 				String nickname = properties.get("nickname").toString();
 				String email = kakao_account.get("email").toString();
-
+				String age_range = kakao_account.get("age_range").toString();
+				String birthday = kakao_account.get("birthday").toString();
+				String gender = kakao_account.get("gender").toString();
+				//String id = properties.get("unique_id").toString();
+				
 				userInfo.put("nickname", nickname);
 				userInfo.put("email", email);
+				userInfo.put("age", age_range);
+				userInfo.put("birthday", birthday);
+				userInfo.put("gender", gender);
+				//userInfo.put("id", id);
 
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -32,12 +32,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MemberController {
 
-	@GetMapping("Login.do")
-	public String login() {
-		
-		return "member/Login";
-	}
-	
 	
 	@Autowired
 	MemberServiceImpl memberService;
@@ -79,23 +73,45 @@ public class MemberController {
 		HashMap<String, Object> userInfo = memberService.getUserInfo(access_Token);
 		System.out.println("###nickname#### : " + userInfo.get("nickname"));
 		System.out.println("###email#### : " + userInfo.get("email"));
+		System.out.println("###age#### : " + userInfo.get("age"));
+		System.out.println("###gender#### : " + userInfo.get("gender"));
+		System.out.println("###birthday#### : " + userInfo.get("birthday"));
+		//System.out.println("###id#### : " + userInfo.get("id"));
 	    
 	    ModelAndView modelAndView = new ModelAndView("member/MyPage"); // 뷰 이름 설정
 	    
 	    return modelAndView;
 	}
+
 	//네이버 로그인
-	@RequestMapping(value="/", method= RequestMethod.GET)
-    public String index() {
-        log.info("home controller");
-        return "member/Login";
-    }
-	//네이버 로그인
+	@GetMapping("Login.do")
+	public ModelAndView login() {
+	    ModelAndView modelAndView = new ModelAndView("member/Login");
+	    modelAndView.addObject("naverClientId", "GsYVpg82aBYC9e00ww1B");
+	    return modelAndView;
+	}
+	// 네이버 로그인
 	@RequestMapping(value = "MyPage.do", method = RequestMethod.GET)
-	public String loginPOSTNaver(HttpSession session) {
+	public String loginPOSTNaver(HttpServletRequest request, Model model) {
 	    log.info("callback controller");
+	    String email = request.getParameter("email");
+	    String nickname = request.getParameter("nickname");
+	    String ageRange = request.getParameter("ageRange");
+	    String uniqueId = request.getParameter("uniqueId");
+	    System.out.println(email);
+	    System.out.println(nickname);
+	    System.out.println(ageRange);
+	    System.out.println(uniqueId);
+	    if(email != null) {
+		    model.addAttribute("email", email);
+		    model.addAttribute("nickname", nickname);
+		    model.addAttribute("ageRange", ageRange);
+		    model.addAttribute("uniqueId", uniqueId);
+		    //null이 아니라면 map.put으로 요소 저장하고 그 map을 insert 혹은 select 시키자
+	    }
 	    return "member/MyPage";
 	}
+
 	
 	
 }

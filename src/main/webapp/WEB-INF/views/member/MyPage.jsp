@@ -27,5 +27,25 @@
         console.log(naver_id_login.getProfileData('birthday'));
         console.log(naver_id_login.getProfileData('gender'));
     }
+ 	// AJAX 요청 보내기
+    $.ajax({
+        url: '/member/MyPage.do',
+        data: {
+            email: naver_id_login.getProfileData('email'),
+            nickname: naver_id_login.getProfileData('nickname'),
+            ageRange: naver_id_login.getProfileData('age'),
+            uniqueId: naver_id_login.getProfileData('id'),
+            gender: naver_id_login.getProfileData('gender'),
+            birthday: naver_id_login.getProfileData('birthday')
+        },
+        success: function(response) {
+            console.log(response);
+            // 여기서 서버로부터 받은 응답을 처리할 수 있습니다.
+        },
+        error: function(xhr, status, error) {
+            console.log(error);
+            // 에러 처리를 수행할 수 있습니다.
+        }
+    });
 
 </script>

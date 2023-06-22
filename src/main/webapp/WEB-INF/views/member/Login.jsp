@@ -111,7 +111,6 @@ a {
     naver_id_login.setButton("white", 2,40);
     naver_id_login.setDomain("MD3o8KGeb3");
     naver_id_login.setState(state);
-    naver_id_login.setPopup();
     naver_id_login.init_naver_id_login();
 </script>
 <!--container-->
