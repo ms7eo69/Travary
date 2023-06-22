@@ -76,7 +76,7 @@ public class MemberController {
 		System.out.println(userInfo.get("age"));
 		System.out.println(userInfo.get("gender"));
 		System.out.println(userInfo.get("birthday"));
-		//System.out.println("###id#### : " + userInfo.get("id"));
+		System.out.println("###id#### : " + userInfo.get("id"));
 	    
 	    ModelAndView modelAndView = new ModelAndView("member/MyPage"); // 뷰 이름 설정
 	    
