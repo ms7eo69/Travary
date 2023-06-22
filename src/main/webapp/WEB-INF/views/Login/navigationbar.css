@@ -109,6 +109,7 @@ nav ul,nav li {
     box-sizing: border-box;
     border: 1px solid #eaeaea;
     border-radius: 2px;
+    font-size: 14px;
 }
 
 .modal-body1 input::placeholder {
