@@ -22,7 +22,8 @@ import com.kosmo.travary.service.ListPagingData;
 import lombok.RequiredArgsConstructor;
 
 import javax.servlet.http.HttpServletRequest;
-
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 /*
  * ID 미 지정시 ID값은 소문자로 시작하는 클래스명
  * value속성으로 지정도 가능하다
@@ -196,4 +197,54 @@ public class MemberServiceImpl implements DaoService {
 		}
 		return userInfo;
 	}
+	//구글 로그인
+	public String getGoogleAccessToken (String authorize_code) {
+        String access_Token = "";
+        String id_Token = "";
+        String reqURL = "http://localhost:7070";
+ 
+        try {
+            URL url = new URL(reqURL);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setDoOutput(true);
+ 
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+            StringBuilder sb = new StringBuilder();
+            sb.append("grant_type=authorization_code");
+            sb.append("&client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com"); //수정 할것
+            sb.append("&redirect_uri=http://localhost:7070/member/MyPage.do"); //수정 할것
+            sb.append("&client_secret=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"); //수정 할것
+            sb.append("&code=" + authorize_code);
+            bw.write(sb.toString());
+            bw.flush();
+            int responseCode = conn.getResponseCode();
+            System.out.println("responseCode : " + responseCode);
+ 
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line = "";
+            String result = "";
+ 
+            while ((line = br.readLine()) != null) {
+                result += line;
+            }
+            System.out.println("response body : " + result);
+ 
+            JsonParser parser = new JsonParser();
+            JsonElement element = parser.parse(result);
+ 
+            access_Token = element.getAsJsonObject().get("access_token").getAsString();
+            id_Token = element.getAsJsonObject().get("id_token").getAsString();
+            System.out.println("access_token : " + access_Token);
+            System.out.println(id_Token);
+ 
+            br.close();
+ 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+ 
+        return access_Token;
+    }
+	
 }

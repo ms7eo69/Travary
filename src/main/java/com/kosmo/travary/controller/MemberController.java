@@ -73,7 +73,7 @@ public class MemberController {
 		HashMap<String, Object> userInfo = memberService.getUserInfo(access_Token);
 		System.out.println((userInfo.get("nickname")));
 		System.out.println(userInfo.get("email"));
-		System.out.println(userInfo.get("age"));
+		System.out.println((userInfo.get("age")));
 		System.out.println(userInfo.get("gender"));
 		System.out.println(userInfo.get("birthday"));
 		System.out.println("###id#### : " + userInfo.get("id"));

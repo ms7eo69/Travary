@@ -92,6 +92,9 @@ a {
 				<div class="kakao_i"></div>
 				<div class="kakao_txt">카카오톡으로 간편로그인</div>
 			</a>
+			<a href="https://accounts.google.com/o/oauth2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&redirect_uri=http://localhost:7070/member/MyPage.do&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile">
+				<img src="${pageContext.request.contextPath}/images/G_Logo.png" style="width: 50px; height: 50px;"/>
+			</a>
 </div>
 </form>
 </c:if>

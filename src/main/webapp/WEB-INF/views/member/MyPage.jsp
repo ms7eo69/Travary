@@ -36,14 +36,67 @@ function naverSignInCallback() {
         },
         success: function(response) {
             console.log(response);
-            // 여기서 서버로부터 받은 응답을 처리할 수 있습니다.
         },
         error: function(xhr, status, error) {
             console.log(error);
-            // 에러 처리를 수행할 수 있습니다.
         }
     });
 }
+
+
+
+</script>
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open("POST", "https://www.googleapis.com/oauth2/v4/token");
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+var googleCode = new URL(window.location.href).searchParams.get("code");
+
+if (googleCode != null) {
+  var data = "code=" + googleCode +
+    "&client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com" +
+    "&client_secret=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" +
+    "&redirect_uri=http://localhost:7070/member/MyPage.do" +
+    "&grant_type=authorization_code";
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        var accessToken = response.access_token;
+        console.log("Access Token:", accessToken);
+
+        // 사용자 정보 요청
+        var userInfoXhr = new XMLHttpRequest();
+        userInfoXhr.open("GET", "https://www.googleapis.com/oauth2/v1/userinfo?access_token=" + accessToken);
+
+        userInfoXhr.onreadystatechange = function() {
+          if (userInfoXhr.readyState === XMLHttpRequest.DONE) {
+            if (userInfoXhr.status === 200) {
+              var userInfo = JSON.parse(userInfoXhr.responseText);
+              console.log("User Info:");
+              console.log("Name:", userInfo.name);
+              console.log("Email:", userInfo.email);
+              console.log("Profile Picture:", userInfo.picture);
+              // 추가적인 사용자 정보를 출력하거나 활용할 수 있습니다.
+            } else {
+              console.log("Error:", userInfoXhr.status);
+            }
+          }
+        };
+
+        userInfoXhr.send();
+      } else {
+        console.log("Error:", xhr.status);
+      }
+    }
+  };
+
+  xhr.send(data);
+}
+
+
+
 
 
 </script>
