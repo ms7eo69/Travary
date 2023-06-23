@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PlanService {
 
-	public Map searchTrend(){
+	public Map searchTrend(Map map){
 		
 		Map data = null;
 		try {	

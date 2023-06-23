@@ -15,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -48,9 +50,9 @@ public class PlanController {
 	
 	@PostMapping("/GetSearchTrend.do")
 	@ResponseBody
-	public Map searchTrend(@RequestParam Map map) {		
-          map = service.searchTrend();
-		return map;
+	public Map searchTrend(@RequestBody Map<String, Object> request, @RequestHeader HttpHeaders headers) {			
+		String url ="https://naveropenapi.apigw.ntruss.com/datalab/v1/search";
+		return new RestTemplate().exchange(url, HttpMethod.POST, new HttpEntity<>(request, headers), Map.class).getBody();
 	}
 	
 	@GetMapping("/GetRoute.do")
