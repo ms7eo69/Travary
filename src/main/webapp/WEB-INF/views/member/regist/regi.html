@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="regi.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script>
-        $(function(){
-
-        });
-    </script>
 </head>
 <body>
     <div class="container">
@@ -47,9 +42,9 @@
                 <label for="M">남자</label>
                 <input type="radio" id="W" class="regi_radio" name="gender" value="W">
                 <label for="W">여자</label> -->
-                  <input type="radio" name="gender" id="radio-1">
+                  <input type="radio" name="gender" id="M">
                   <label for="radio-1">남자</label>
-                  <input type="radio" name="gender" id="radio-2">
+                  <input type="radio" name="gender" id="W">
                   <label for="radio-2">여자</label>
               </div>
               <button class="button regi__submit">
@@ -91,9 +86,8 @@
 
   var formattedDate = year + '-' + month + '-' + day;
   $('input:eq(6)').prop('placeholder', '생일 ex) '+formattedDate);
+
   
-
-
   $('input:eq(3)').on('focusout',function(){
     if(!($('input:eq(2)').val()===$('input:eq(3)').val())){
       $('.regi_error').val('비밀번호가 일치하지 않습니다.');
