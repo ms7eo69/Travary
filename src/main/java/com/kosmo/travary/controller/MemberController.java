@@ -93,7 +93,7 @@ public class MemberController {
 	// 네이버 로그인
 	@RequestMapping(value = "MyPage.do", method = RequestMethod.GET)
 	public String loginPOSTNaver(HttpServletRequest request, Model model) {
-	    log.info("callback controller");
+	    //log.info("callback controller");
 	    String email = request.getParameter("email");
 	    String nickname = request.getParameter("nickname");
 	    String ageRange = request.getParameter("ageRange");
