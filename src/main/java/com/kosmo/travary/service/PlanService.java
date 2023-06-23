@@ -34,7 +34,7 @@ public class PlanService {
             //요청 바디 설정
             JSONObject requestBody = new JSONObject();
             requestBody.put("startDate", "2022-01-01");
-            requestBody.put("endDate", "2023-06-10");
+            requestBody.put("endDate", "2022-12-31");
             requestBody.put("timeUnit", "month");
             
             JSONArray keywordGroups = new JSONArray();
@@ -51,7 +51,8 @@ public class PlanService {
             // API 호출 및 데이터 가져오기
             ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Map.class);
             if (response.getStatusCode() == HttpStatus.OK) {
-                data = response.getBody();    
+                data = response.getBody();  
+                System.out.println(data);
             } else {
                 // API 호출이 실패한 경우 에러 메시지를 모델에 저장
                 String errorMessage = "API 호출이 실패하였습니다. 응답 코드: " + response.getStatusCodeValue();      

@@ -38,7 +38,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <p>검색어2: <input type="text" id="search2" /></p>
   <p>검색어3: <input type="text" id="search3" /></p>
   <p>검색어4: <input type="text" id="search4" /></p>
-  <p>검색어5: <input type="text" id="search5" /></p>
   <button class="btn btn-primary" id="btn">결괴 얻기</button>
 </div>
 <!--container-->
@@ -75,8 +74,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
             keywords: [$('#search4').val()]
           },
           {
-            groupName: $('#search5').val(),
-            keywords: [$('#search5').val()]
+            groupName: "에버랜드",
+            keywords: ["에버랜드"]
           },
         ],
         device: "pc",

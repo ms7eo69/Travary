@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kosmo.travary.service.impl.touristspot.PopularityMapper">
+	<insert id="updateByNo" parameterType="map">
+		INSERT INTO tourist_spot_popularity VALUES(#{no},#{1m},#{2m},#{3m},#{4m},#{5m},#{6m},#{7m},#{8m},#{9m},#{10m},#{11m},#{12m})
+	</insert>
+	<select id="findFourByNo" resultType="String" parameterType="map" >
+	<!-- SELECT NAME FROM tourist_spot WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
+	SELECT NAME FROM tourist_spot WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3)
+	</select>
+	<select id="find" resultType="int" >
+		SELECT * FROM LASTNUM
+	</select>
+	<update id="updateLastNum" parameterType="map">
+		UPDATE lastnum SET no=#{no} WHERE no=#{no}
+	</update>
+</mapper>
