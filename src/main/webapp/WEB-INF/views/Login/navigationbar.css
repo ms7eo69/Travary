@@ -191,7 +191,8 @@ nav ul,nav li {
 }
 
 .kakaoIcon {
-    width: 30px;    
+    width: 30px;
+    border-radius: 50px;
 }
 
 .googleIcon {
