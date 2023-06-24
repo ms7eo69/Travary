@@ -11,7 +11,6 @@
         		 <label for="addr">도로명 주소</label>
         		<input type="text" class="form-control" id="addr" placeholder="주소를 입력하세요" name="addr"/>
         	</div>
-        	<input type="hidden" name="url" id="url">
         	<div class="form-group">
         		<button type="submit" class="btn btn-info">주소 변환</button>
         	</div>
@@ -21,17 +20,13 @@
     </div><!--container-->
 <script>	
 	$('.btn').click(function(e){
-		var address = $('#addr').val();
-		var url = 'https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query='+address;
-		$('#url').val(url);
-	})
-	/* $.ajax({
-			dataType:'json',
-			method:'post'
+		$.ajax({
+			dataType:'json'
 		}).done((data)=>{
 			console.log('서버로부터 받은 데이터:',data);
 		}).fail((error)=>{
 			console.log(error);
-		}); */
+		});
+	})
 </script>
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>

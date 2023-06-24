@@ -152,4 +152,14 @@ public class PlanService {
 //		}
 		return null;
 	}
+
+	public Map geolocation(String addr) {
+		String url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query="+addr;
+		RestTemplate restTemplate = new RestTemplate();
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("X-NCP-APIGW-API-KEY-ID", "ohzsg7u4i3");
+		headers.add("X-NCP-APIGW-API-KEY", "KS4Y6EwbXgwCr4EOIZKp5gDcxLihq2lAphJucVbX");
+		ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), Map.class);
+		return response.getBody();	
+	}
 }

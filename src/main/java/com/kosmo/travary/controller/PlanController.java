@@ -57,6 +57,11 @@ public class PlanController {
 	public Map searchTrend() {			
 		return service.searchTrend();
 	}
+	@PostMapping("/GetgeoLocation.do")
+	@ResponseBody
+	public Map geolocation(@RequestParam String addr) {			
+		return service. geolocation(addr);
+	}
 	
 	@GetMapping("/GetRoute.do")
 	@ResponseBody
