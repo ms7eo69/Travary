@@ -14,6 +14,7 @@ public interface PopularityMapper {
 		List<String> findFourByNo(Map map);
 		int save(Map map);
 		int saveKey(Map map);
+		int saveByNo(Map map);
 		Map findByNo(Map map);
 		int find();
 		int updateLastNum(Map map);

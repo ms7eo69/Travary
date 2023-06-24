@@ -35,7 +35,7 @@ public class TourServiceImpl implements DaoService{
 	}
 	@Override
 	public int insert(Map map) {
-		return mapper.updateByNo(map);
+		return mapper.saveByNo(map);
 	}
 
 	@Override

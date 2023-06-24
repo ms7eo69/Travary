@@ -4,8 +4,56 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
 	namespace="com.kosmo.travary.service.impl.touristspot.PopularityMapper">
-	<insert id="updateByNo" parameterType="map">
-		INSERT INTO tourist_spot_popularity VALUES(#{no},#{1m},#{2m},#{3m},#{4m},#{5m},#{6m},#{7m},#{8m},#{9m},#{10m},#{11m},#{12m})
+	<insert id="saveByNo" parameterType="map" >
+		INSERT INTO tourist_spot_popularity VALUES( #{no} ,
+		<choose>
+			<when test="JAN != null"> #{JAN} </when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="FEB != null">#{FEB}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="MAR != null">#{MAR}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="APR != null">#{APR}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="MAY != null">#{MAY}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="JUN != null">#{JUN}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="JUL != null">#{JUL}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="AUG != null">#{AUG}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="SEP != null">#{SEP}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="OCT != null">#{OCT}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="NOV != null">#{NOV}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="DEC != null">#{DEC}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>)
 	</insert>
 	<select id="findFourByNo" resultType="String" parameterType="map" >
 	<!-- SELECT NAME FROM tourist_spot WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
@@ -15,6 +63,6 @@
 		SELECT * FROM LASTNUM
 	</select>
 	<update id="updateLastNum" parameterType="map">
-		UPDATE lastnum SET no=#{no} WHERE no=#{no}
+		UPDATE lastnum SET no=#{no} WHERE no > 0
 	</update>
 </mapper>
