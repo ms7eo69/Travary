@@ -45,7 +45,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 754; m++) {
+			for (int m = 0; m < 1000; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
