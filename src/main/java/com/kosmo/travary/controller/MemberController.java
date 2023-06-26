@@ -62,7 +62,7 @@ public class MemberController {
 			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
 			Cookies.createCookie(idName, map.get("id").toString(), resp, req, expireMinute);
 			req.setAttribute("validate"," ");
-			return "Index";
+			return "member/MyPage";
 		}
 		else {
 			model.addAttribute("NotMember","아이디와 비번 불일치");
