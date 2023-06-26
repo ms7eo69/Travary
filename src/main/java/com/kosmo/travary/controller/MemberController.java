@@ -43,11 +43,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/LoginProcess.do")
-	public String loginProcess(@RequestParam Map map,
-														Model model,
-														HttpServletRequest req,
-														HttpServletResponse resp) {
-		
+	public String loginProcess(@RequestParam Map map, Model model, HttpServletRequest req, HttpServletResponse resp) {
 		boolean isMember= memberService.isMember(map);
 		if(isMember) {
 			//토큰 방식으로 인증처리 구현
@@ -65,7 +61,7 @@ public class MemberController {
 			return "member/MyPage";
 		}
 		else {
-			model.addAttribute("NotMember","아이디와 비번 불일치");
+			model.addAttribute("NotMember", "아이디와 비번 불일치");
 		}
 		return "member/Login";
 	}
@@ -76,7 +72,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("Register.do")
-	public String registerProcess(@RequestParam Map map,@RequestParam String[] inter) {
+	public String registerProcess(@RequestParam Map map, @RequestParam String[] inter) {
 
 		String inters = Arrays.toString(inter);
 		map.put("inter", inters.substring(1,inters.length()-1));
@@ -84,7 +80,7 @@ public class MemberController {
 		return affected==1?"forward:/kosmo/member/Login.do":"member/Register";
 	}
 	@ExceptionHandler({Exception.class})
-	public String error(Model model,Exception e) {
+	public String error(Model model, Exception e) {
 		e.printStackTrace();
 		model.addAttribute("error", e.getMessage());
 		return "Index";

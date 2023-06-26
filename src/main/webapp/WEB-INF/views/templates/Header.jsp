@@ -38,6 +38,9 @@
 					<li class="nav-item">
 					  <a class="nav-link active" href="<c:url value= "/member/Login.do"/>">로그인</a>
 					</li>
+					<li class="nav-item">
+					  <a class="nav-link active" href="<c:url value= "/member/Register.do"/>">회원가입</a>
+					</li>
 				</c:if>
 				<c:if test="${!isLogin }">
 					<li class="nav-item">
