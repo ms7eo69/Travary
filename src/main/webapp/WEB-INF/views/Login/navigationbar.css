@@ -13,19 +13,18 @@
 }
 
 .settings2 {
-    height: 290px;
+    height: 295px;
 }
 
 
 .outerDiv {
     width: 300px;
-    height: 937.72px;
+    height: 100%;
     border-right: 1px solid hwb(0 79% 18%);
 }
 
 .innerDiv {
-    width: 280px;
-    height: 920px;
+    width: 280px;    
     margin: auto;    
 }
 
