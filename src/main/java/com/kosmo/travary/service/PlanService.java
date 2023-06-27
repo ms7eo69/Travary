@@ -9,6 +9,7 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -26,6 +27,11 @@ public class PlanService {
 
 	@Autowired
 	TourServiceImpl tour;
+	@Value("${naver-api-key-id}")
+	private String naverKeyId;
+	@Value("${naver-api-key}")
+	private String naverKey;
+	
 
 	public Map searchTrend() {
 
@@ -33,8 +39,8 @@ public class PlanService {
 		String url = "https://naveropenapi.apigw.ntruss.com/datalab/v1/search";
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("X-NCP-APIGW-API-KEY-ID", "ohzsg7u4i3");
-		headers.add("X-NCP-APIGW-API-KEY", "KS4Y6EwbXgwCr4EOIZKp5gDcxLihq2lAphJucVbX");
+		headers.add("X-NCP-APIGW-API-KEY-ID", naverKeyId);
+		headers.add("X-NCP-APIGW-API-KEY", naverKey);
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		JSONObject requestBody = new JSONObject();
 		requestBody.put("startDate", "2022-01-01");
@@ -45,7 +51,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 754; m++) {
+			for (int m = 0; m < 1000; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;

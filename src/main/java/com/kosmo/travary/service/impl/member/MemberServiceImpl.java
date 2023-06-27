@@ -175,6 +175,7 @@ public class MemberServiceImpl implements DaoService {
 				// System.out.println(kakao_account.get("email"));
 
 				String nickname = properties.get("nickname").toString();
+				String image = properties.get("profile_image").toString();
 				String email = kakao_account.get("email").toString();
 				String age_range = kakao_account.get("age_range").toString();
 				String birthday = kakao_account.get("birthday").toString();
@@ -182,6 +183,7 @@ public class MemberServiceImpl implements DaoService {
 				String id = jsonMap.get("id").toString();
 				
 				userInfo.put("nickname", nickname);
+				userInfo.put("image", image);
 				userInfo.put("email", email);
 				userInfo.put("age", age_range);
 				userInfo.put("birthday", birthday);

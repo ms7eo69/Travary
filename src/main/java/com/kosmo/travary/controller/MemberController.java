@@ -72,6 +72,7 @@ public class MemberController {
 		// 3번
 		HashMap<String, Object> userInfo = memberService.getUserInfo(access_Token);
 		System.out.println((userInfo.get("nickname")));
+		System.out.println((userInfo.get("image")));
 		System.out.println(userInfo.get("email"));
 		System.out.println((userInfo.get("age")));
 		System.out.println(userInfo.get("gender"));
@@ -82,7 +83,7 @@ public class MemberController {
 	    
 	    return modelAndView;
 	}
-
+	//로그아웃 시 아이디를 받아 뒤에 naver, google, kakao로 시작 시 if문에서 switch 걸어서 분기 시켜 로그아웃 진행시키자
 	//네이버 로그인
 	@GetMapping("Login.do")
 	public ModelAndView login() {
@@ -95,12 +96,12 @@ public class MemberController {
 	public String loginPOSTNaver(HttpServletRequest request, Model model) {
 	    //log.info("callback controller");
 	    String email = request.getParameter("email");
+	    String image = request.getParameter("image");
 	    String nickname = request.getParameter("nickname");
 	    String ageRange = request.getParameter("ageRange");
 	    String uniqueId = request.getParameter("uniqueId");
 	    String gender = request.getParameter("gender");
 	    String birthday = request.getParameter("birthday");
-	    
 	    if(email != null) {
 	    	System.out.println(email);
 		    System.out.println(nickname);
@@ -108,12 +109,31 @@ public class MemberController {
 		    System.out.println(uniqueId);
 		    System.out.println(gender);
 		    System.out.println(birthday);
+		    System.out.println(image);
+		    
 		    model.addAttribute("email", email);
 		    model.addAttribute("nickname", nickname);
 		    model.addAttribute("ageRange", ageRange);
 		    model.addAttribute("uniqueId", uniqueId);
 		    model.addAttribute("ageRange", gender);
 		    model.addAttribute("uniqueId", birthday);
+		    //null이 아니라면 map.put으로 요소 저장하고 그 map을 insert 혹은 select 시키자
+	    }
+	    return "member/MyPage";
+	}
+	@RequestMapping(value = "GoogleMyPage.do", method = RequestMethod.POST)
+	public String loginPOSTGoogle(HttpServletRequest request, Model model) {
+		String email = request.getParameter("email");
+	    String nickname = request.getParameter("nickname");
+	    String picture = request.getParameter("picture");
+	    if(email != null) {
+	    	System.out.println(email);
+		    System.out.println(nickname);
+		    System.out.println(picture);
+		    
+		    model.addAttribute("email", email);
+		    model.addAttribute("nickname", nickname);
+		    model.addAttribute("picture", picture);
 		    //null이 아니라면 map.put으로 요소 저장하고 그 map을 insert 혹은 select 시키자
 	    }
 	    return "member/MyPage";

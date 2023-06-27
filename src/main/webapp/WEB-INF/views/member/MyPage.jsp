@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
-    <div
+<div
 	class="container d-flex flex-column justify-content-center align-items-center">
-        <div class="jumbotron" style="">
-			<h1>환영합니다</h1>
-			<div id="naver_id_login"></div>
-        </div><!--jumbotron-->
-    </div><!--container-->
+	<div class="jumbotron">
+		<h1>환영합니다</h1>
+		<div id="naver_id_login"></div>
+	</div>
+</div>
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 var naver_id_login = new naver_id_login("GsYVpg82aBYC9e00ww1B", "http://localhost:7070/callback");
 naver_id_login.get_naver_userprofile("naverSignInCallback()");
@@ -23,6 +26,7 @@ function naverSignInCallback() {
     var uniqueId = naver_id_login.getProfileData('id');
     var gender = naver_id_login.getProfileData('gender');
     var birthday = naver_id_login.getProfileData('birthday');
+    var image = naver_id_login.getProfileData('profile_image');
 
     $.ajax({
         url: '/member/MyPage.do',
@@ -32,7 +36,8 @@ function naverSignInCallback() {
             ageRange: ageRange,
             uniqueId: uniqueId,
             gender: gender,
-            birthday: birthday
+            birthday: birthday,
+            image: image
         },
         success: function(response) {
             console.log(response);
@@ -42,9 +47,6 @@ function naverSignInCallback() {
         }
     });
 }
-
-
-
 </script>
 <script>
 var xhr = new XMLHttpRequest();
@@ -78,6 +80,25 @@ if (googleCode != null) {
               console.log("Name:", userInfo.name);
               console.log("Email:", userInfo.email);
               console.log("Profile Picture:", userInfo.picture);
+              var nickname = userInfo.name;
+              var email = userInfo.email;
+              var picture = userInfo.picture;
+              $.ajax({
+            	    url: '/member/GoogleMyPage.do',
+            	    method: 'POST',
+            	    data: {
+            	        email: email,
+            	        nickname: nickname,
+            	        picture: picture
+            	    },
+            	    success: function(response) {
+            	        console.log(response);
+            	    },
+            	    error: function(xhr, status, error) {
+            	        console.log(error);
+            	    }
+            	});
+
               // 추가적인 사용자 정보를 출력하거나 활용할 수 있습니다.
             } else {
               console.log("Error:", userInfoXhr.status);
@@ -94,9 +115,4 @@ if (googleCode != null) {
 
   xhr.send(data);
 }
-
-
-
-
-
 </script>
