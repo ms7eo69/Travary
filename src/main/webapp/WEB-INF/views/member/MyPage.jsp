@@ -7,3 +7,4 @@
         </div><!--jumbotron-->
     </div><!--container-->
 <%@ include file="/WEB-INF/views/templates/Footer.jsp" %>
+

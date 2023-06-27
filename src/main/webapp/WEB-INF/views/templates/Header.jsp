@@ -36,10 +36,10 @@
 			<ul class="navbar-nav">
 				<c:if test="${ empty sessionScope.id }" var="isLogin">
 					<li class="nav-item">
-					  <a class="nav-link active" href="<c:url value= "/member/Login.do"/>">로그인</a>
+					  <a class="nav-link active" href="<c:url value= "/kosmo/member/Login.do"/>">로그인</a>
 					</li>
 					<li class="nav-item">
-					  <a class="nav-link active" href="<c:url value= "/member/Register.do"/>">회원가입</a>
+					  <a class="nav-link active" href="<c:url value= "/kosmo/member/Register.do"/>">회원가입</a>
 					</li>
 				</c:if>
 				<c:if test="${!isLogin }">
