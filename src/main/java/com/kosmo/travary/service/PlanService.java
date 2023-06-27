@@ -27,20 +27,33 @@ public class PlanService {
 
 	@Autowired
 	TourServiceImpl tour;
+<<<<<<< Updated upstream
 	@Value("${naver-api-key-id}")
 	private String naverKeyId;
 	@Value("${naver-api-key}")
 	private String naverKey;
 	
 
+=======
+	@Value("${NAVER-API-KEY-ID}")
+	private String naverApiKeyId;
+	@Value("${NAVER-API-KEY}")
+	private String naverApiKey;
+	
+>>>>>>> Stashed changes
 	public Map searchTrend() {
 
 		// 고정설정
 		String url = "https://naveropenapi.apigw.ntruss.com/datalab/v1/search";
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
+<<<<<<< Updated upstream
 		headers.add("X-NCP-APIGW-API-KEY-ID", naverKeyId);
 		headers.add("X-NCP-APIGW-API-KEY", naverKey);
+=======
+		headers.add("X-NCP-APIGW-API-KEY-ID", naverApiKeyId);
+		headers.add("X-NCP-APIGW-API-KEY", naverApiKey);
+>>>>>>> Stashed changes
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		JSONObject requestBody = new JSONObject();
 		requestBody.put("startDate", "2022-01-01");
@@ -51,7 +64,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 1000; m++) {
+			for (int m = 0; m < 994; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
@@ -70,9 +83,10 @@ public class PlanService {
 				// 모든 추가된 키워드그룹들 요청바디에 추가
 				requestBody.put("keywordGroups", keywordGroups);
 				// 요청 바디와 헤더를 포함한 HttpEntity 객체 생성
-				HttpEntity<String> requestEntity = new HttpEntity<>(requestBody.toString(), headers);
-				ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, Map.class);
+				System.out.println(requestBody);
+				ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity(requestBody.toString(), headers), Map.class);
 				dataMap = response.getBody();
+				System.out.println(dataMap);
 				for (int i = 0; i < 4; i++) {
 					sqlmap = new HashMap<>();
 					ArrayList list = (ArrayList) ((LinkedHashMap) ((ArrayList) dataMap.get("results")).get(i)).get("data");
