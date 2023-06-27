@@ -1,6 +1,7 @@
 package com.kosmo.travary.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,10 +73,14 @@ public class MemberController {
 	}
 	
 	@PostMapping("Register.do")
-	public String registerProcess(@RequestParam Map map, @RequestParam String[] inter) {
-
-		String inters = Arrays.toString(inter);
-		map.put("inter", inters.substring(1,inters.length()-1));
+	public String registerProcess(@RequestParam String id, @RequestParam String pwd, @RequestParam String nickname, @RequestParam String gender, @RequestParam String birth, @RequestParam String phone) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", id);
+		map.put("pwd", pwd);
+		map.put("nickname", nickname);
+		map.put("gender", gender);
+		map.put("birth", birth);
+		map.put("phone", phone);
 		int affected = memberService.insert(map);
 		return affected==1?"forward:/kosmo/member/Login.do":"member/Register";
 	}

@@ -16,13 +16,7 @@ public class MemberServiceImpl implements DaoService {
 	
 	@Override
 	public int insert(Map map) {
-		int affected = 0;
-		try {
-			affected = mapper.save(map);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return affected;
+		return mapper.save(map);
 	}
 	
 	public int insertKey(Map map) {
