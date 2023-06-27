@@ -6,7 +6,7 @@
 	<select id="findByIdAndPwd" parameterType="Map" resultType="boolean">
 		SELECT COUNT(*) FROM member WHERE id = #{id} AND pwd=#{pwd}
 	</select>
-	<update id="saveKey" parameterType="map" >UPDATE member SET key=#{${keyName}} WHERE id = #{id}</update>
+	<update id="saveKey" parameterType="map">UPDATE member SET key=#{${keyName}} WHERE id = #{id}</update>
 	
 	<insert id="save" parameterType="Map">
 		INSERT INTO member VALUES(#{id}, #{pwd}, #{nickname}, #{gender}, #{birth}, #{phone}, SYSDATE, DEFAULT)
