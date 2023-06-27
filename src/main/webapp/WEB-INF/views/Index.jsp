@@ -49,6 +49,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="navigationbar.css">
     <!-- Optional JavaScript -->
     <style>
       @media (min-width: 768px) {
@@ -71,16 +72,98 @@
           min-height:160px;
           object-fit: cover;
       }
-      .w-25{
-        object-fit: cover;
-        border-radius: 100%;
-      }
-     
+     .profileImageSm{
+    	border-radius: 100%;
+   		max-width: 3vw;
+   		object-fit: cover;
+	}
+     .snsCard {
+   		 width: 100%;
+  		height: 30vh;
+    	object-fit: cover;
+		}
     </style>
     <title>Travary</title>
   </head>
   <body>
-  
+  <nav class="main-menu position-fixed">
+        <div class="outerDiv">
+            <div class="innerDiv">
+                <div id="nav-header">
+                    <div class="logo">
+                        <a href="#"><img src="../img/logo.png" class="nav-logo"></a>
+                    </div>         
+                    <div class="settings"></div>       
+                </div>
+                <div id="nav-body">
+                    <div class="menu-style">
+                        <ul>                                
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-house-chimney-window"></i>
+                                    <span class="nav-text">홈</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-magnifying-glass"></i>
+                                    <span class="nav-text">검색</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-regular fa-compass"></i>
+                                    <span class="nav-text">탐색 탭</span>                        
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-solid fa-circle-play"></i>
+                                    <span class="nav-text">릴스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-paper-plane"></i>
+                                    <span class="nav-text">메시지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-regular fa-heart"></i>
+                                    <span class="nav-text">알림</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-regular fa-square-plus"></i>
+                                    <span class="nav-text">만들기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">프로필</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="settings2"></div>
+                <div id="nav-footer">
+                    <div class="dropup">
+                        <a href="" class="dropdown-toggle dropdown-toggle-no-caret" data-toggle="dropdown">
+                            <i class="fa fa-solid fa-bars" ></i>더 보기
+                        </a> 
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#">로그인</a>
+                            <a class="dropdown-item" href="../member/regist/regi.html">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid" style="height: 100vh">
       <nav
         class="bg-light navbar navbar-expand-xl navbar-dark navbar-togglable "
@@ -390,50 +473,9 @@
       </div>
     </div>
     <div class="container-fluid container py-3 mt-4">
-    <!----------------------------------------------------------------여행 후기 섹션------------------------------------------------------------------>
-      <h2 class="h3">Travary와 함께한 경험을 공유해보세요</h2>
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card mb-3">
-            <img
-              src="resources/images/best-theme/busan.jpg"
-              class="card-img-top rounded"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title mb-0">#busan</h5>
-              <p class="card-text"></p>
-                <div class="">
-                    <div class="d-flex">
-                    <img src="resources/images/profile/yunakim.jpg" class="ml-0 mr-2  w-25 mb-3" alt="...">
-                    <div class="d-flex flex-column">
-                        <p class="mt-0 mb-0">배고파팡</p>
-                        <p>south korea</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-              <img
-                src="resources/images/best-theme/suwon.jpg"
-                class="card-img-top rounded"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title mb-0">수원</h5>
-                <p class="card-text text-info">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        <div class="col-md-4">
+    <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
+      <h2 class="h3 mb-4">Travary와 함께한 경험을 공유해보세요</h2>
+      <div class="row d-flex justify-content-center mt-5">
           <div class="card mb-3">
             <img
               src="resources/images/best-theme/jeju3.jpg"
@@ -451,17 +493,163 @@
             </div>
           </div>
         </div>
-      </div>
+        <div class="row d-flex justify-content-center">
+          <div class="card mb-3">
+            <img
+              src="resources/images/best-theme/jeju3.jpg"
+              class="card-img-top rounded"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title mb-0">제주</h5>
+              <p class="card-text text-info">
+                &#9733; &#9733; &#9733; &#9733; &#9733;
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img
+              src="resources/images/sns.body/card_body1.jpg"
+              class="card-img-top rounded snsCard"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+              <p class="card-text"></p>
+                <div class="">
+                    <div class="d-flex">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+                        <div class="mt-0 mb-0">배고파팡</div>
+                    </div>
+                </div>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img
+              src="resources/images/sns.body/card_body1.jpg"
+              class="card-img-top rounded snsCard"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+              <p class="card-text"></p>
+                <div class="">
+                    <div class="d-flex">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+                        <div class="mt-0 mb-0">배고파팡</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-md-6">
+          <div class="card mb-3">
+            <img
+              src="resources/images/sns.body/card_body1.jpg"
+              class="card-img-top rounded snsCard"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+              <p class="card-text"></p>
+                <div class="">
+                    <div class="d-flex">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+                        <div class="mt-0 mb-0">배고파팡</div>
+                    </div>
+                </div>
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3">
+            <img
+              src="resources/images/sns.body/card_body1.jpg"
+              class="card-img-top rounded snsCard"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+              <p class="card-text"></p>
+                <div class="">
+                    <div class="d-flex">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+                        <div class="mt-0 mb-0">배고파팡</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
     </div>
-  
-    <div class="container-fluid container bg-success display-1">
-      3rd section
-    </div>
-    <div class="container-fluid container bg-warning display-1">
-      4th section
-    </div>
-    <div class="container-fluid container bg-danger display-1">5th section</div>
-    <div class="container-fluid container bg-info display-1">6th section</div>
+    <div class="row">
+	  	<div class="col-md-4">
+	          <div class="card mb-3">
+	            <img
+	              src="resources/images/sns.body/card_body1.jpg"
+	              class="card-img-top rounded snsCard"
+	              alt="..."
+	            />
+	            <div class="card-body">
+	              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+	              <p class="card-text"></p>
+	                <div class="">
+	                    <div class="d-flex">
+	                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+	                        <div class="mt-0 mb-0">배고파팡</div>
+	                    </div>
+	                </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-md-4">
+	          <div class="card mb-3">
+	            <img
+	              src="resources/images/sns.body/card_body1.jpg"
+	              class="card-img-top rounded snsCard"
+	              alt="..."
+	            />
+	            <div class="card-body">
+	              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+	              <p class="card-text"></p>
+	                <div class="">
+	                    <div class="d-flex">
+	                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+	                        <div class="mt-0 mb-0">배고파팡</div>
+	                    </div>
+	                </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-md-4">
+	          <div class="card mb-3">
+	            <img
+	              src="resources/images/sns.body/card_body1.jpg"
+	              class="card-img-top rounded snsCard"
+	              alt="..."
+	            />
+	            <div class="card-body">
+	              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
+	              <p class="card-text"></p>
+	                <div class="">
+	                    <div class="d-flex">
+	                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
+	                        <div class="mt-0 mb-0">배고파팡</div>
+	                    </div>
+	                </div>
+	            </div>
+	          </div>
+	        </div>
+        </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
