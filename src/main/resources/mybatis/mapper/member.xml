@@ -9,6 +9,6 @@
 	<update id="saveKey" parameterType="map">UPDATE member SET key=#{${keyName}} WHERE id = #{id}</update>
 	
 	<insert id="save" parameterType="Map">
-		INSERT INTO member VALUES(#{id}, #{pwd}, #{nickname}, #{gender}, #{birth}, #{phone}, SYSDATE, DEFAULT)
+		INSERT INTO member(id, pwd, nickname, gender, age_group, phone, regdate) VALUES(#{id}, #{pwd}, #{nickname}, #{gender}, #{age_group}, #{phone}, SYSDATE)
 	</insert>
 </mapper>

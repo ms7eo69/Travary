@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="/WEB-INF/views/templates/Header.jsp" %>
     <div class="container" style="margin-top:50px">
         <div class="jumbotron bg-dark">
@@ -35,8 +36,8 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label><kbd class="lead">생년월일</kbd></label> 
-					<input type="text" class="form-control" name="birth" placeholder="생년월일 입력하세요">
+					<label><kbd class="lead">연령대</kbd></label> 
+					<input type="text" class="form-control" name="age_group" placeholder="연령대를 입력하세요">
 				</div>
 				<div class="form-group">
 					<label><kbd class="lead">전화번호</kbd></label> 

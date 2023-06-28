@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -76,17 +77,20 @@ public class MemberController {
 	}
 	
 	@PostMapping("Register.do")
-	public String registerProcess(@RequestParam String id, @RequestParam String pwd, @RequestParam String nickname, @RequestParam String gender, @RequestParam String birth, @RequestParam String phone) {
+	public String registerProcess(
+									@RequestParam String id, @RequestParam String pwd, @RequestParam String nickname, 
+									@RequestParam String gender, @RequestParam String age_group, @RequestParam String phone) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
 		map.put("pwd", pwd);
 		map.put("nickname", nickname);
 		map.put("gender", gender);
-		map.put("birth", birth);
+		map.put("age_group", age_group);
 		map.put("phone", phone);
 		int affected = memberService.insert(map);
 		return affected==1?"forward:/kosmo/member/Login.do":"member/Register";
 	}
+	
 	@ExceptionHandler({Exception.class})
 	public String error(Model model, Exception e) {
 		e.printStackTrace();
