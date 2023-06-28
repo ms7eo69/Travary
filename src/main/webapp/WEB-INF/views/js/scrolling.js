@@ -30,8 +30,3 @@ function loadData(){
           console.log(index);
         }
       });
-
-      $(window).scroll(function() {
-        if ( 400>$(document).height()) {
-        content.css('')
-      }
