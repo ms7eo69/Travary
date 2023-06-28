@@ -45,11 +45,8 @@
       src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
       type="text/javascript"
     ></script>
-    <link
-      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="${path}/resources/css/navigationbar.css"/>
     <!-- Optional JavaScript -->
     <style>
       @media (min-width: 768px) {
@@ -83,53 +80,93 @@
     	object-fit: cover;
 		}
     </style>
+    
     <title>Travary</title>
   </head>
   <body>  
+  
     <div class="container-fluid" style="height: 100vh">
-      <nav
-        class="bg-light navbar navbar-expand-xl navbar-dark navbar-togglable "
-      >
-        <div class="container">
-          <!-- Brand -->
-          <a class="navbar-brand" href="index.html"> Travary </a>
-
-          <!-- Toggler -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Collapse -->
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <!-- Links -->
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active mx-4">
-                <a class="nav-link" href="#">Make a plan</a>
-              </li>
-              <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Community</a>
-              </li>
-              <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Sign up</a>
-              </li>
-              <li class="nav-item mx-4">
-                <a class="nav-link" href="#">Login</a>
-              </li>
-            </ul>
-          </div>
-          <!-- / .navbar-collapse -->
+     <nav class="main-menu position-fixed">
+        <div class="outerDiv">
+            <div class="innerDiv">
+                <div id="nav-header">
+                    <div class="logo">
+                        <a href="#"><img src="resources/images/logo/logo.png" class="nav-logo"></a>
+                    </div>         
+                    <div class="settings"></div>       
+                </div>
+                <div id="nav-body">
+                    <div class="menu-style">
+                        <ul>                                
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-house-chimney-window"></i>
+                                    <span class="nav-text">홈</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-magnifying-glass"></i>
+                                    <span class="nav-text">검색</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-regular fa-compass"></i>
+                                    <span class="nav-text">탐색</span>                        
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-solid fa-circle-play"></i>
+                                    <span class="nav-text">릴스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-paper-plane"></i>
+                                    <span class="nav-text">메시지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-regular fa-heart"></i>
+                                    <span class="nav-text">알림</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-regular fa-square-plus"></i>
+                                    <span class="nav-text">만들기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">프로필</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="settings2"></div>
+                <div id="nav-footer">
+                    <div class="dropup">
+                        <a href="" class="dropdown-toggle dropdown-toggle-no-caret" data-toggle="dropdown">
+                            <i class="fa fa-solid fa-bars" ></i>더 보기
+                        </a> 
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#">로그인</a>
+                            <a class="dropdown-item" href="../member/regist/regi.html">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- / .container -->
-      </nav>
-
+    </nav>  
+      
+      
+	
       <section class="section section-top section-full">
         <!-- Cover -->
         <div
@@ -608,3 +645,37 @@
     </script>
   </body>
 </html>
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="modal-body1">
+                <img src="resources/images/logo/logo.png" class="modal-logo">
+                <input type="text" placeholder="아이디" class="inlilneToBlock">
+                <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
+                <button class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
+                <div class="horizonAndOrWrap">
+                    <hr class="leftHr">
+                    <div class="or">또는</div>
+                    <hr class="rightHr">
+                </div>
+            </div>
+            <div class="modal-body2 mb-2">
+                <a href="" class="noneunderline">                    
+                    <img src="resources/images/login/kakaoicon.png" class="kakaoIcon">                    
+                </a>
+                <a href="" class="noneunderline">                    
+                    <img src="resources/images/login/googleicon.png" class="googleIcon">
+                </a>
+                <a href="" class="noneunderline">                    
+                    <img src="resources/images/login/navericon.png" class="naverIcon">
+                </a>
+            </div>
+            <div class="modal-body3">
+                <p>계정이 없으신가요?
+                    <a href="../member/regist/regi.html" class="noneunderline">가입하기</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
