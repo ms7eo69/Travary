@@ -5,9 +5,11 @@ nav {
     border-right: 1px solid hwb(0 79% 18%);
     z-index:9999;
     background-color : white;
+    left:0;
+    
 }
 
-.lo go {
+.logo {
     padding: 20px;
     margin-left: 42px;
 }
@@ -55,7 +57,7 @@ nav {
     text-decoration: none;
 }
 
-nav ul,nav li {
+nav ul, nav li {
     outline:0;
     margin-left: 30px;
     padding:0;
@@ -79,6 +81,7 @@ nav ul,nav li {
     width:100px;
     font-family: 'Titillium Web', sans-serif;
     font-size: 22px;
+    
 }
 
 .dropdown-toggle::after {
@@ -100,6 +103,7 @@ nav ul,nav li {
     display: flex;
     align-items: flex-end;
 }
+
 
 /*로그인 모달 CSS*/
 .close {

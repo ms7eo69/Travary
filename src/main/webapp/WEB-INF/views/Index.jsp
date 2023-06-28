@@ -1,92 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <jsp:forward page="/member/Login.do"></jsp:forward> --%>
 <!DOCTYPE html>
 <html lang='ko'>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!--Font-->
+    <!--Font & Icon-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />  
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
+	 <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
+	 
+    <!-- Bootstrap-->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <!--date picker-->
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
-      type="text/javascript"
-    ></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
+    <!--page css-->
     <link rel="stylesheet" href="${path}/resources/css/navigationbar.css"/>
+    <link rel="stylesheet" href="${path}/resources/css/main.css"/>
     <!-- Optional JavaScript -->
-    <style>
-      @media (min-width: 768px) {
-        section {
-          padding-top: 13.3125rem;
-        }
-
-        section {
-          padding-bottom: 7.5rem;
-        }
-      }
-
-      .br0,
-      .gj-datepicker-bootstrap [role="right-icon"] button,
-      .form-control {
-        border-radius: 0 !important;
-      }
-      .card-img-top {
-          max-height:500px;
-          min-height:160px;
-          object-fit: cover;
-      }
-     .profileImageSm{
-    	border-radius: 100%;
-   		max-width: 3vw;
-   		object-fit: cover;
-	}
-     .snsCard {
-   		 width: 100%;
-  		height: 30vh;
-    	object-fit: cover;
-		}
-    </style>
     
     <title>Travary</title>
   </head>
   <body>  
   
     <div class="container-fluid" style="height: 100vh">
-     <nav class="main-menu position-fixed">
+     <nav class="main-menu position-fixed ">
         <div class="outerDiv">
             <div class="innerDiv">
                 <div id="nav-header">
@@ -171,8 +120,7 @@
         <!-- Cover -->
         <div
           class="bg-cover"
-          style="
-            background-image: url('resources/images/landing/landing4.jpg');
+          style="background-image: url('resources/images/landing/landing4.jpg');
             position: absolute;
             top: 0;
             bottom: 0;
@@ -207,20 +155,18 @@
       <!--------------------------------------------------------------검색창--------------------------------------------------------------->
       <div class="container">
         <div class="row">
-          <div class="col-sm-5 ">
+          <div class="col-md-7 ">
             <div class="card ">
               <div class="card-body">
-                <h1 class="h3 mb-3">
+                <h1 class="h3 mb-4">
                   Travary와 함께 </br>특별한 여행을 만들어보세요
                 </h1>
                 <form>
                   <div class="form-group">
-                    <div class="row px-3">
-                      <label class="mb-0" for="locationInput mb-0 mt-5"
-                        >목적지</label
-                      >
+                    <div class="row px-3 ">
+                      <label class="mb-0" for="locationInput mb-0 mt-5">목적지</label>
                       <input
-                        type="email"
+                        type="text"
                         class="form-control w-100 br0"
                         id="locationInput"
                         aria-describedby="locationInputHelp"
@@ -233,7 +179,7 @@
                       >
                     </div>
                   </div>
-                  <div class="row px-3">
+                  <div class="row px-3 ">
                     <div class="col-sm-6 px-0">
                       여행 가는날 <input class="br0" id="startDate" />
                     </div>
@@ -244,13 +190,8 @@
                   <div class="row px-3">
                     <div class="col-sm px-0 br0">
                       <div class="form-group">
-                        <label class="mb-0 mt-3" for="exampleFormControlSelect1"
-                          >몇 명이서 함께하나요?</label
-                        >
-                        <select
-                          class="form-control"
-                          id="exampleFormControlSelect1"
-                        >
+                        <label class="mb-0 mt-3" for="exampleFormControlSelect1">몇 명이서 함께하나요?</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
                           <option selected>함께할 인원을 선택해주세요</option>
                           <option>1</option>
                           <option>2</option>
@@ -266,7 +207,7 @@
                       </div>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-danger btn-block">AI 여행 계획 생성</a>
+                  <a href="#" class="btn btn-danger btn-block btn-lg">AI 여행 계획 생성</a>
                 </form>
               </div>
             </div>
@@ -550,66 +491,89 @@
           </div>
         </div>
     </div>
-    <div class="row">
-	  	<div class="col-md-4">
-	          <div class="card mb-3">
-	            <img
-	              src="resources/images/sns.body/card_body1.jpg"
-	              class="card-img-top rounded snsCard"
-	              alt="..."
-	            />
-	            <div class="card-body">
-	              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-	              <p class="card-text"></p>
-	                <div class="">
-	                    <div class="d-flex">
-	                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-	                        <div class="mt-0 mb-0">배고파팡</div>
-	                    </div>
-	                </div>
+    <div class="row"><!-------------------------- row start----------------------------------- -->
+		<div class="col-md-4 ">
+	    	<div class="card shadow mb-3">
+	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	            <div class="card-body pb-1">
+	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
+	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+                    <div class="d-flex align-items-center">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+                        <div class="userId">Yunakim</div>
+                    </div>
 	            </div>
-	          </div>
 	        </div>
-	        <div class="col-md-4">
-	          <div class="card mb-3">
-	            <img
-	              src="resources/images/sns.body/card_body1.jpg"
-	              class="card-img-top rounded snsCard"
-	              alt="..."
-	            />
-	            <div class="card-body">
-	              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-	              <p class="card-text"></p>
-	                <div class="">
-	                    <div class="d-flex">
-	                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-	                        <div class="mt-0 mb-0">배고파팡</div>
-	                    </div>
-	                </div>
+	    </div>
+	    <div class="col-md-4">
+	    	<div class="card shadow mb-3">
+	        	<img src="resources/images/sns.body/sgp.jpg" class="card-img-top rounded snsCard"/>
+	            <div class="card-body pb-1">
+	            	<h5 class="card-title mb-2 posting-title">인생사진 남기러 서귀포 가자!<h5>
+	            	<p class="card-text posting-content">#올레길 5코스에 해당하는 산책로를 따라 걷다보면 자연이 만들어낸 한반도 모양의 포토스팟 발견! 여기서 팁하나 드리자면 사진 찍으실 때 밝기 조절을 해서 한반도 안에 서귀포 바다와 하늘이 만나는 수평선이 보이게 찍으면 인생샷 완.성.</p>
+                    <div class="d-flex align-items-center">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+                        <div class="userId">Damee</div>
+                    </div>
 	            </div>
-	          </div>
 	        </div>
-	        <div class="col-md-4">
-	          <div class="card mb-3">
-	            <img
-	              src="resources/images/sns.body/card_body1.jpg"
-	              class="card-img-top rounded snsCard"
-	              alt="..."
-	            />
-	            <div class="card-body">
-	              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-	              <p class="card-text"></p>
-	                <div class="">
-	                    <div class="d-flex">
-	                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-	                        <div class="mt-0 mb-0">배고파팡</div>
-	                    </div>
-	                </div>
+	    </div>
+	    <div class="col-md-4">
+	    	<div class="card shadow mb-3">
+	        	<img src="resources/images/sns.body/busan.png" class="card-img-top rounded snsCard"/>
+	            <div class="card-body pb-1">
+	            	<h5 class="card-title mb-2 posting-title">축제가 넘쳐나는 곳, 광안리 해수욕장<h5>
+	            	<p class="card-text posting-content">부산의 1등 핫플을 고르라면?! 한 치의 망설임 없이 광안리라고 외치겠습니다. 365일 축제로 넘쳐나는 그 곳! 분기별로 색다른 행사들로 가득차고, 매주 토요일은 드론쇼 공연이 펼쳐진답니다! 계절별과 날씨별로 드론쇼 일정이 상이할 수 있으니, 방문전 검색은 필수!</p>
+                    <div class="d-flex align-items-center">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+                        <div class="userId">Jinsoo</div>
+                    </div>
 	            </div>
-	          </div>
 	        </div>
-        </div>
-
+	    </div>
+    </div><!-------------------------- row end----------------------------------- -->
+        <div class="row"><!-------------------------- row start----------------------------------- -->
+		<div class="col-md-4">
+	    	<div class="card shadow mb-3">
+	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	            <div class="card-body pb-1">
+	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
+	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+                    <div class="d-flex align-items-center">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+                        <div class="userId">Yunakim</div>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-md-4">
+	    	<div class="card shadow mb-3">
+	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	            <div class="card-body pb-1">
+	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
+	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+                    <div class="d-flex align-items-center">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+                        <div class="userId">Yunakim</div>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-md-4">
+	    	<div class="card shadow mb-3">
+	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	            <div class="card-body pb-1">
+	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
+	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+                    <div class="d-flex align-items-center">
+                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+                        <div class="userId">Yunakim</div>
+                    </div>
+	            </div>
+	        </div>
+	    </div>
+    </div><!-------------------------- row end----------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"

@@ -1,0 +1,53 @@
+  @media (min-width: 768px) {
+        section {
+          padding-top: 13.3125rem;
+        }
+
+        section {
+          padding-bottom: 7.5rem;
+        }
+      }
+
+      .br0,
+      .gj-datepicker-bootstrap [role="right-icon"] button,
+      .form-control {
+        border-radius: 0 !important;
+      }
+      .card-img-top {
+          max-height:500px;
+          min-height:160px;
+          object-fit: cover;
+      }
+     .profileImageSm{
+    	border-radius: 100%;
+   		width: 30px;
+   		object-fit: cover;
+	}
+	.userId{
+		font-weight:noraml; 
+		font-size: 15px;
+	}
+     .snsCard {
+   		 width: 100%;
+  		height: 30vh;
+    	object-fit: cover;
+		}
+		
+	.card-title{
+		display: -webkit-box;
+	 	-webkit-line-clamp: 1;
+	 	-webkit-box-orient: vertical;  
+	  	overflow: hidden;
+	}
+	.card-text{
+		display: -webkit-box;
+	 	-webkit-line-clamp: 2;
+	 	-webkit-box-orient: vertical;  
+	  	overflow: hidden;
+	}
+	.posting-title{
+		font-weight:bold; 
+	}
+	.posting-content{
+		font-size: 15px;
+	}

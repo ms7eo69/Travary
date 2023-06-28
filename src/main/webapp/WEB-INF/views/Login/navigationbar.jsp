@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
-   	<link rel="stylesheet" href="${path}/resources/css/navigationbar.css"/>
+   	
     <title>Document</title>
 </head>
 <body>
@@ -97,37 +97,4 @@
     </nav>   
 </body>
 </html>
-<div class="modal fade" id="loginModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <div class="modal-body1">
-                <img src="resources/images/logo/logo.png" class="modal-logo">
-                <input type="text" placeholder="아이디" class="inlilneToBlock">
-                <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
-                <button class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
-                <div class="horizonAndOrWrap">
-                    <hr class="leftHr">
-                    <div class="or">또는</div>
-                    <hr class="rightHr">
-                </div>
-            </div>
-            <div class="modal-body2 mb-2">
-                <a href="" class="noneunderline">                    
-                    <img src="resources/images/login/kakaoicon.png" class="kakaoIcon">                    
-                </a>
-                <a href="" class="noneunderline">                    
-                    <img src="resources/images/login/googleicon.png" class="googleIcon">
-                </a>
-                <a href="" class="noneunderline">                    
-                    <img src="resources/images/login/navericon.png" class="naverIcon">
-                </a>
-            </div>
-            <div class="modal-body3">
-                <p>계정이 없으신가요?
-                    <a href="../member/regist/regi.html" class="noneunderline">가입하기</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+
