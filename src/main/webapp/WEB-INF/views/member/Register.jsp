@@ -27,11 +27,11 @@
 				<label><kbd class="lead">성별</kbd></label>
 				<div class="d-flex">
 					<div class="custom-control custom-radio mr-2">
-						<input type="radio" class="custom-control-input" name="gender" value="man" id="male"> 
+						<input type="radio" class="custom-control-input" name="gender" value="남자" id="male"> 
 						<label for="male" class="custom-control-label">남자</label>
 					</div>
 					<div class="custom-control custom-radio">
-						<input type="radio" class="custom-control-input" name="gender" value="woman" id="female"> 
+						<input type="radio" class="custom-control-input" name="gender" value="여자" id="female"> 
 						<label for="female"	class="custom-control-label">여자</label>
 					</div>
 				</div>
@@ -40,19 +40,19 @@
 					<!--  -->
 					<select name="age_group">
 						<option value="">연령대를 선택하세요</option>
-						<option value="10대">10대</option>
-						<option value="20대">20대</option>
-						<option value="30대">30대</option>
-						<option value="40대">40대</option>
-						<option value="50대">50대</option>
-						<option value="60대">60대</option>
-						<option value="70대">70대</option>
+						<option value="10대">10 ~ 19</option>
+						<option value="20대">20 ~ 29</option>
+						<option value="30대">30 ~ 39</option>
+						<option value="40대">40 ~ 49</option>
+						<option value="50대">50 ~ 59</option>
+						<option value="60대">60 ~ 69</option>
+						<option value="70대">70 ~ 79</option>
 					</select> 
 					<!--  
 					<input type="text" class="form-control" name="age_group" placeholder="연령대를 입력하세요">
 					-->
 				</div>
-				<div class="form-group">
+				<div class="form-group" style="width:50%">
 				    <label><kbd class="lead">전화번호</kbd></label> 
 				    <div class="form-row">
 				      <div class="col"><input type="text" class="form-control" name="phone"></div>
