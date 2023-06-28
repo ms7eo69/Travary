@@ -25,4 +25,6 @@ public interface PopularityMapper {
 		String getAccessToken(String authorize_code) throws Throwable;
 		Map findById(Map map);
 		List<Map> selectTop5ByRegion(String region);
+		List<String> selectSregion();
+		Map selectAcmd(String region);
 }

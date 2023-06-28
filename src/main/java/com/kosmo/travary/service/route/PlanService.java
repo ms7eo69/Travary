@@ -51,7 +51,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 1; m++) {
+			for (int m = 0; m < 38; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
@@ -98,7 +98,6 @@ public class PlanService {
 					}
 					sqlmap.put("no",lastNum++);
 					tour.insert(sqlmap);
-					break;
 				}
 			}
 		}
@@ -111,27 +110,35 @@ public class PlanService {
 
 	public Map direction(String region) {
 			// URL 설정
-			String url = "https://naveropenapi.apigw.ntruss.com/map-direction/v1/driving";
-			Map map = getWaypoints(region);
+			String url = "https://naveropenapi.apigw.ntruss.com/map-direction-15/v1/driving";
+			Map map = getCoords(region);
 			String start = "?start="+map.get("start");
 			String waypoints = "&waypoints="+map.get("waypoints");
-			String goal = "&goal="+map.get("goal");
+			String goal = "&goal="+map.get("start");
 			url = url+start+goal+waypoints;
 		return new RestTemplate().exchange(url, HttpMethod.GET,new HttpEntity<>(setNaverHeaders()),Map.class).getBody();
 	}
 
-	private Map getWaypoints(String region) {
+	private Map getCoords(String region) {
+		
+		//모든 결과를 담을 맵 생성
 		Map resultMap = new HashMap<>();
+		
+		//경유지 설정 (관광지)
 		List<Map> list = tour.selectTop5ByRegion(region);
 		String waypoints= "";
 		int count =1;
 		for (Map map : list) {
 			String coord = map.get("LNT").toString()+","+map.get("LAT").toString();
-			if(count<list.size()-2) {
+			if(count<list.size()) {
 				coord +="|";
 				waypoints +=coord;
 			}
-			else if(count == list.size()-2) {
+			else {
+				waypoints +=coord;
+			}
+			count++;
+			/*else if(count == list.size()-2) {
 				waypoints +=coord;
 			}
 			else if (count==list.size()-1) {
@@ -139,23 +146,18 @@ public class PlanService {
 			}
 			else {
 				resultMap.put("goal",coord);
-			}
-			count++;
+			}*/
 		}
+		System.out.println(waypoints);
 		resultMap.put("waypoints",waypoints);
+		
+		//시작 출발지 설정 (숙소 혹은 집)
+		Map acmd =  tour.selectAcmd(region);
+		String coord = acmd.get("LNT").toString()+","+acmd.get("LAT").toString();
+		resultMap.put("start",coord);
+		
 		return resultMap;
 	}
-
-	private String putWaypoints(int count) {
-
-		List<String> waypoints = null;
-//		for (int i = 0; i < count ; i++) {
-//			//카운트만큼 관광지 읽어와서 관광지 위도와 경도를 waypoints에 add
-//			waypoints.add(null);
-//		}
-		return null;
-	}
-
 	public Map geolocation(String addr) {
 		String url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode?query="+addr;
 		return new RestTemplate().exchange(url, HttpMethod.GET, new HttpEntity<>(setNaverHeaders()), Map.class).getBody();	

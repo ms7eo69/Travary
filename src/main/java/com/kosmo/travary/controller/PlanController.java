@@ -15,6 +15,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -73,7 +74,10 @@ public class PlanController {
 	}
 	
 	@GetMapping("/Direction.do")
-	public String direction() {
+	public String direction(Model model) {
+		List<String> list = tour.selectSregion();
+		System.out.println(list);
+		model.addAttribute("sregionList", list);
 		return "plan/Direction";
 	}
 	

@@ -12,16 +12,22 @@
         		<input type="text" class="form-control" id="addr" placeholder="주소를 입력하세요" name="addr"/>
         	</div>
         	<div class="form-group">
-        		<button type="submit" class="btn btn-info">주소 변환</button>
+        		<!-- <button type="submit" class="btn btn-info">주소 변환</button> -->
         	</div>
         </form> 
+		<button class="btn btn-info">주소 변환</button>
         <h3>위도 경도 : ${data.addresses}</h3>
         <h3>데이터 : ${data }<small><span class="text-dagner">${error }</span></small></h3>
     </div><!--container-->
 <script>	
 	$('.btn').click(function(e){
+		var addr=$('#addr').val()
+		console.log(addr);
 		$.ajax({
-			dataType:'json'
+			url:'/plan/GetgeoLocation.do',
+			method:'post',
+			dataType:'json',
+			data:'addr='+addr
 		}).done((data)=>{
 			console.log('서버로부터 받은 데이터:',data);
 		}).fail((error)=>{

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <script>
@@ -33,15 +34,34 @@
 						map: map           //오버레이할 지도
 					});
 					// 배열 마지막 위치를 마크로 표시함
-					var marker = new naver.maps.Marker({
-						position: polylinePath[polylinePath.length-1], //마크 표시할 위치 배열의 마지막 위치
-						map: map
-					});
+					var markerPositions =[];
+					data.route.traoptimal[0].summary.waypoints.forEach(function(item,index){
+						markerPositions.push({y:item.location[1],x:item.location[0]})
+					 })
+					 var startPosition = data.route.traoptimal[0].summary.start;
+					 var goalPosition = data.route.traoptimal[0].summary.goal;
+					 markerPositions.push({y:startPosition.location[1],x:startPosition.location[0]});
+					 markerPositions.push({y:goalPosition.location[1],x:goalPosition.location[0]})
+					 markerPositions.forEach(function (item) {
+						var marker = new naver.maps.Marker({
+							position: item, //마크 표시할 위치 배열의 마지막 위치
+							map: map
+						});
+					 })
+					 console.log(markerPositions);
 					map.panToBounds( 
 							new naver.maps.LatLngBounds(
-				                new naver.maps.LatLng(polylinePath[0]),
-				                new naver.maps.LatLng(polylinePath[polylinePath.length-1])
-			                )
+								/* markerPositions.forEach(function (item) {
+									console.log(item);
+									new naver.maps.LatLng(item)
+								}) */
+								new naver.maps.LatLng(markerPositions[0]),
+								new naver.maps.LatLng(markerPositions[1]),
+								new naver.maps.LatLng(markerPositions[2]),
+								new naver.maps.LatLng(markerPositions[3]),
+								new naver.maps.LatLng(markerPositions[4]),
+								new naver.maps.LatLng(markerPositions[5])
+							)
 			       )
 				}).fail((error)=>{
 					console.log(error);
@@ -55,12 +75,9 @@
 			<div class="input-group-prepend">
 			  	<select class="form-control" id="sel">
 					<option>지역을 선택하세요</option>
-					<option>경기</option>
-					<option>서울</option>
-					<option>강원</option>
-					<option>경남</option>
-					<option>인천</option>
-					<option>제주</option>
+					<c:forEach items="${sregionList }" var="sregion">
+						<option>${sregion}</option>
+					</c:forEach>
 				</select>
 			</div>
 			<!-- <input type="text" class="form-control" placeholder="Search"> -->
