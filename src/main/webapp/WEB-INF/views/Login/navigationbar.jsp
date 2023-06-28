@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<c:set var="path" value="${pageContext.request.contextPath}"/>      
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
-    <link rel="stylesheet" href="navigationbar.css">
+   	<link rel="stylesheet" href="${path}/resources/css/navigationbar.css"/>
     <title>Document</title>
 </head>
 <body>
@@ -19,7 +22,7 @@
             <div class="innerDiv">
                 <div id="nav-header">
                     <div class="logo">
-                        <a href="#"><img src="../img/logo.png" class="nav-logo"></a>
+                        <a href="#"><img src="resources/images/logo/logo.png" class="nav-logo"></a>
                     </div>         
                     <div class="settings"></div>       
                 </div>
@@ -41,7 +44,7 @@
                             <li>
                                 <a href="#">
                                     <i class="fa fa-sharp fa-regular fa-compass"></i>
-                                    <span class="nav-text">탐색 탭</span>                        
+                                    <span class="nav-text">탐색</span>                        
                                 </a>
                             </li>
                             <li>
@@ -99,7 +102,7 @@
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <div class="modal-body1">
-                <img src="../img/logo.png" class="modal-logo">
+                <img src="resources/images/logo/logo.png" class="modal-logo">
                 <input type="text" placeholder="아이디" class="inlilneToBlock">
                 <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
                 <button class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
@@ -111,13 +114,13 @@
             </div>
             <div class="modal-body2 mb-2">
                 <a href="" class="noneunderline">                    
-                    <img src="../img/kakaoicon.png" class="kakaoIcon">                    
+                    <img src="resources/images/login/kakaoicon.png" class="kakaoIcon">                    
                 </a>
                 <a href="" class="noneunderline">                    
-                    <img src="../img/googleicon.png" class="googleIcon">
+                    <img src="resources/images/login/googleicon.png" class="googleIcon">
                 </a>
                 <a href="" class="noneunderline">                    
-                    <img src="../img/navericon.png" class="naverIcon">
+                    <img src="resources/images/login/navericon.png" class="naverIcon">
                 </a>
             </div>
             <div class="modal-body3">
