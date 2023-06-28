@@ -5,8 +5,7 @@ body {
     overflow-x: hidden;
     margin: 0 auto;
     min-width: 320px;
-    max-width: 1920px;
-    font: 13px;
+    max-width: 1920px;    
     color: #666;
     -webkit-text-size-adjust: none;        
 }
