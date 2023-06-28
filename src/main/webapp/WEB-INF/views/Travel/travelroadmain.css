@@ -1,0 +1,280 @@
+body {
+    display: block;
+    height: 100%;
+    background: #fff;
+    overflow-x: hidden;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 1920px;
+    font: 13px;
+    color: #666;
+    -webkit-text-size-adjust: none;        
+}
+
+div {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.roadmain {    
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    list-style: none;
+}
+
+.roadout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1;  
+    transform: translate3d(0,0,0);
+    position: relative;
+    box-sizing: content-box;    
+}
+
+.roadin {        
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;    
+}
+
+/*top*/
+.pagetop {    
+    height: 695px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+
+.pagetop::after {
+    content: '';
+}
+
+.roadtop.pagetop .outdeco {
+    position: absolute;    
+    left: 50%;
+    top: 0;
+    margin-left: -600px;
+    z-index: 100;    
+}
+
+.roadtop .outdeco {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.roadtop.pagetop .indeco {
+    padding: 285px 0 0;
+    color: #fff;
+    text-align: center;
+}
+
+.roadtop.pagetop .outdeco2 {
+    position: relative;
+    height: 695px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.roadtop.pagetop .outdeco2::after {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;        
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .4);
+}
+
+/*bottom*/
+ul {
+    display: block;
+    padding: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;    
+    list-style: none;
+}
+
+li {
+    display: list-item;    
+    margin: 0;
+    padding: 0;    
+    list-style: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+}
+
+strong {
+    margin: 0;
+    padding: 0;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.pagebottom {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 0 80px;
+}
+
+/*fav-tab*/
+.fav-tab {
+    height: 75px;
+    background: #f0f2f7;
+}
+
+.fav-tab ul {
+    height: 74px;
+    background: #fff;
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+    border-radius: 50px;    
+}
+
+.fav-tab ul li {
+    float: left;
+    width: 50%;
+}
+
+.fav-tab ul li.fav-on a {
+    font-weight: 700 !important;
+    color: #fff;
+    background: #567ff2;
+    box-shadow: 6px 9px 16px 0px rgba(96, 107, 243, 0.35);
+    border-radius: 50px;    
+}
+
+.fav-tab ul li a {
+    display: block;
+    font-size: 25px;
+    letter-spacing: -1.5px;
+    line-height: 74px;
+    color: #767676;
+    position: relative;
+}
+
+.fav-tab ul li:first-child.fav-on a::before {
+    background-position: 0 -46px;
+}
+
+.fav-tab ul li a::before {
+    content: '';
+    display: inline-block;
+    margin: 0 11px 0 20px;
+    vertical-align: -13px;
+    width: 46px;
+    height: 46px;
+
+}
+
+.fav-tab ul li a strong {
+    font-weight: 400;
+}
+
+.fav-tab ul li.fav-on a::after {
+    background-position: 0 -13px;
+}
+
+.fav-tab ul li a::after {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 13px;
+    position: absolute;
+    right: 31px;
+    top: 31px;    
+}
+
+.fav-tab ul li:last-child.fav-on a::before {
+    background-position: 0 -92px;
+}
+
+/*travarea*/
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;        
+}
+
+h3 {
+    display: block;
+    margin: 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+em {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+}
+
+button {
+    font-size: 1em;
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #666;
+    -webkit-text-size-adjust: none;
+}
+
+.blind {
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    text-indent: -9999px;
+}
+
+.travarea .area-menu {
+    margin: 0 auto;
+    position: relative;
+    padding: 43px 0 0;
+}
+
+.travarea .area-menu .area-wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.travarea h3 {
+    padding: 0 0 30px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -1.7px;
+}
+
+.travarea h3 em {
+    font-weight: 700;
+    color: #567ff2;
+}
+
+.travarea .area-wrap button {
+    display: none;
+}
