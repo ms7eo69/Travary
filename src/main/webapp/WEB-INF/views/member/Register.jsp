@@ -36,14 +36,28 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label><kbd class="lead">연령대</kbd></label> 
+					<label><kbd class="lead">연령대</kbd></label><br>
+					<!--  -->
+					<select name="age_group">
+						<option value="">연령대를 선택하세요</option>
+						<option value="10대">10대</option>
+						<option value="20대">20대</option>
+						<option value="30대">30대</option>
+						<option value="40대">40대</option>
+						<option value="50대">50대</option>
+						<option value="60대">60대</option>
+						<option value="70대">70대</option>
+					</select> 
+					<!--  
 					<input type="text" class="form-control" name="age_group" placeholder="연령대를 입력하세요">
+					-->
 				</div>
 				<div class="form-group">
-					<label><kbd class="lead">전화번호</kbd></label> 
-					<input type="text" class="form-control" name="phone" placeholder="전화번호를 입력하세요">
+				    <label><kbd class="lead">전화번호</kbd></label> 
+				    <div class="form-row">
+				      <div class="col"><input type="text" class="form-control" name="phone"></div>
+				    </div>
 				</div>
-			</div>
 			<button type="submit" class="btn btn-primary">확인</button>
 		</form>            
     </div><!--container-->
