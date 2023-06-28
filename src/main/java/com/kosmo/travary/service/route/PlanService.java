@@ -51,7 +51,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 994; m++) {
+			for (int m = 0; m < 1; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
@@ -98,6 +98,7 @@ public class PlanService {
 					}
 					sqlmap.put("no",lastNum++);
 					tour.insert(sqlmap);
+					break;
 				}
 			}
 		}
