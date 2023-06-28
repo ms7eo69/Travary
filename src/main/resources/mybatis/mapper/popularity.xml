@@ -4,6 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
 	namespace="com.kosmo.travary.service.impl.touristspot.PopularityMapper">
+	<select id="selectTop5ByRegion" resultType="map" parameterType="map">
+		SELECT * FROM 
+		(SELECT name,region,lat,lnt
+		FROM tourist_spot s JOIN 
+		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
+		as total,no FROM tourist_spot_popularity GROUP BY NO) p
+		ON s.no=p.no WHERE region=#{region} ORDER BY total desc)
+		WHERE rownum &lt;=5
+	</select>
 	<insert id="saveByNo" parameterType="map" >
 		INSERT INTO tourist_spot_popularity VALUES( #{no} ,
 		<choose>

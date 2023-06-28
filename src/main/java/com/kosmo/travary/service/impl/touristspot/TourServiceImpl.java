@@ -52,5 +52,8 @@ public class TourServiceImpl implements DaoService{
 	public String getAccessToken(String authorize_code) throws Exception {
 		return null;
 	}
+	public List<Map> selectTop5ByRegion(String region) {
+		return mapper.selectTop5ByRegion(region);
+	}
 
 }

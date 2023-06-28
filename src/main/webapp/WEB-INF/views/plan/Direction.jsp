@@ -8,12 +8,13 @@
 			zoom: 10,
 			center: new naver.maps.LatLng(37.3614483, 127.1114883)
 		});
-		
 		$(':button').click(function(){
+			var region = $('#sel').val()
+			console.log(region);
 			 $.ajax({
 				 	url: "/plan/GetRoute.do",
 					dataType:'json',
-					method:'GET'
+					data:'region='+region
 				}).done((data)=>{
 					console.log('서버로부터 받은 데이터:',data);
 					 var polylinePath = []; 
@@ -48,11 +49,26 @@
 		})
 	})
 </script>
-<div class="container" style="margin-top:50px">
-    <div style="position:absolute;z-index:2; justify-content:center">
-    	<h1>여행 경로세우기</h1>            
-   		<button type="submit" class="btn btn-info">경로 얻기</button>
+<div class="container  d-flex justify-content-between" style="margin-top:50px">
+    <div class="d-flex align-items-center ml-5">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+			  	<select class="form-control" id="sel">
+					<option>지역을 선택하세요</option>
+					<option>경기</option>
+					<option>서울</option>
+					<option>강원</option>
+					<option>경남</option>
+					<option>인천</option>
+					<option>제주</option>
+				</select>
+			</div>
+			<!-- <input type="text" class="form-control" placeholder="Search"> -->
+			<div class="input-group-append">
+			  <button class="btn btn-success" type="submit">Go</button>
+			</div>
+		</div>
     </div>
-	<div id="map" style="width:100%;height:1000px;"></div>
+	<div class="" id="map" style="width:700px;height:700px;" ></div>
 </div><!--container-->
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>

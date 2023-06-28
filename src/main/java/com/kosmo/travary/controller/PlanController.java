@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.kosmo.travary.service.PlanService;
 import com.kosmo.travary.service.impl.touristspot.TourServiceImpl;
+import com.kosmo.travary.service.route.PlanService;
 
 @Controller
 @RequestMapping("/plan")
@@ -58,6 +58,7 @@ public class PlanController {
 	public Map searchTrend() {			
 		return service.searchTrend();
 	}
+	
 	@PostMapping("/GetgeoLocation.do")
 	@ResponseBody
 	public Map geolocation(@RequestParam String addr) {			
@@ -67,7 +68,7 @@ public class PlanController {
 	@GetMapping("/GetRoute.do")
 	@ResponseBody
 	public Map getRoute(@RequestParam Map map) {		
-          map = service.direction();
+          map = service.direction(map.get("region").toString());
 		return map;
 	}
 	

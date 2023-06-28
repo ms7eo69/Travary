@@ -24,4 +24,5 @@ public interface PopularityMapper {
 		//카카오 로그인
 		String getAccessToken(String authorize_code) throws Throwable;
 		Map findById(Map map);
+		List<Map> selectTop5ByRegion(String region);
 }
