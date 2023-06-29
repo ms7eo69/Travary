@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
-	 <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
+	<script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
 	 
     <!-- Bootstrap-->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -26,8 +26,8 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
     <!--page css-->
-    <link rel="stylesheet" href="${path}/resources/css/navigationbar.css"/>
-    <link rel="stylesheet" href="${path}/resources/css/main.css"/>
+    <link rel="stylesheet" href="/resources/css/navigationbar.css"/>
+    <link rel="stylesheet" href="/resources/css/main.css"/>
     <!-- Optional JavaScript -->
     <script src="js/scrolling.js" defer></script>
     <title>Travary</title>
@@ -39,7 +39,7 @@
   </style>
   </head>
   <body>  
-  
+  <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
     <div class="container-fluid" style="height: 100vh">
      <nav class="main-menu position-fixed ">
         <div class="outerDiv">
@@ -119,7 +119,7 @@
             </div>
         </div>
     </nav>  
-      
+     <!---------------------------------------------네비게이션바 끝------------------------------------------- -->  
       
 	
       <section class="section section-top section-full">
@@ -171,18 +171,8 @@
                   <div class="form-group">
                     <div class="row px-3 ">
                       <label class="mb-0" for="locationInput mb-0 mt-5">목적지</label>
-                      <input
-                        type="text"
-                        class="form-control w-100 br0"
-                        id="locationInput"
-                        aria-describedby="locationInputHelp"
-                        placeholder="Anywhere"
-                      />
-                      <small
-                        id="locationInputHelp"
-                        class="form-text text-muted sr-only"
-                        >떠나고 싶은 여행지를 검색해주세요!</small
-                      >
+                      <input type="text" class="form-control w-100 br0" id="locationInput" aria-describedby="locationInputHelp" placeholder="Anywhere"/>
+                      <small id="locationInputHelp" class="form-text text-muted sr-only">떠나고 싶은 여행지를 검색해주세요!</small>
                     </div>
                   </div>
                   <div class="row px-3 ">
@@ -227,16 +217,10 @@
       <div class="row mt-4">
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
-            <img
-              src="resources/images/best-theme/busan.jpg"
-              class="card-img-top rounded"
-              alt="..."
-            />
+            <img src="resources/images/best-theme/busan.jpg" class="card-img-top rounded" alt="..."/>
             <div class="card-body">
               <h5 class="card-title mb-0">부산</h5>
-              <p class="card-text text-info">
-                &#9733; &#9733; &#9733; &#9733; &#9733;
-              </p>
+              <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;</p>
               <p class="card-text">
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p>
@@ -245,16 +229,10 @@
         </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
-            <img
-              src="resources/images/best-theme/seoul.jpg"
-              class="card-img-top rounded"
-              alt="..."
-            />
+            <img src="resources/images/best-theme/seoul.jpg" class="card-img-top rounded" alt="..."/>
             <div class="card-body">
               <h5 class="card-title mb-0">서울</h5>
-              <p class="card-text text-info">
-                &#9733; &#9733; &#9733; &#9733; &#9733;
-              </p>
+              <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;</p>
               <p class="card-text">
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p>
@@ -263,16 +241,10 @@
         </div>
         <div class="col-md-3">
             <div class="card mb-3 border-0 shadow ">
-              <img
-                src="resources/images/best-theme/suwon.jpg"
-                class="card-img-top rounded"
-                alt="..."
-              />
+              <img src="resources/images/best-theme/suwon.jpg" class="card-img-top rounded" alt="..."/>
               <div class="card-body">
                 <h5 class="card-title mb-0">수원</h5>
-                <p class="card-text text-info">
-                  &#9733; &#9733; &#9733; &#9733; &#9733;
-                </p>
+                <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
@@ -281,16 +253,10 @@
           </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
-            <img
-              src="resources/images/best-theme/jeju3.jpg"
-              class="card-img-top rounded"
-              alt="..."
-            />
+            <img src="resources/images/best-theme/jeju3.jpg" class="card-img-top rounded" alt="..."/>
             <div class="card-body">
               <h5 class="card-title mb-0">제주</h5>
-              <p class="card-text text-info">
-                &#9733; &#9733; &#9733; &#9733; &#9733;
-              </p>
+              <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
               <p class="card-text">
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p>
@@ -305,48 +271,28 @@
     <div class="row mt-4">
       <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
-            <img
-            src="resources/images/best-theme/midnightseoul.jpg"
-            class="card-img-top rounded"
-            alt="..."
-            />
+            <img src="/images/best-theme/midnightseoul.jpg" class="card-img-top rounded" alt="..."/>
             <div class="card-body">
               <h5 class="card-title mb-0">미드나잇 IN 한강</h5>
-              <p class="card-text text-info">
-                &#9733; &#9733; &#9733; &#9733; &#9733;
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
+              <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
-            <img
-            src="resources/images/best-theme/yangyang.jpg"
-            class="card-img-top rounded"
-            alt="..."
-            
-            />
+            <img src="resources/images/best-theme/yangyang.jpg" class="card-img-top rounded" alt="..."/>
             <div class="card-body">
               <h5 class="card-title mb-0">서핑 IN 양양</h5>
-              <p class="card-text text-info">
-                &#9733; &#9733; &#9733; &#9733; &#9733;
+              <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;
               </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
-              <img
-              src="resources/images/best-theme/yeosu.jpg"
-              class="card-img-top rounded"
-              alt="..."
-              />
+              <img src="resources/images/best-theme/yeosu.jpg" class="card-img-top rounded" alt="..."/>
               <div class="card-body">
                 <h5 class="card-title mb-0">여수 밤바다</h5>
                 <p class="card-text text-info">
