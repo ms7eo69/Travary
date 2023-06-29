@@ -48,6 +48,4 @@ public class TourServiceImpl implements DaoService{
 		return 0;
 	}
 
-
-
 }

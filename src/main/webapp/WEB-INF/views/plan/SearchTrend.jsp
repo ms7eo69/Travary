@@ -38,13 +38,28 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <p>검색어2: <input type="text" id="search2" /></p>
   <p>검색어3: <input type="text" id="search3" /></p>
   <p>검색어4: <input type="text" id="search4" /></p>
-  <button class="btn btn-primary" id="btn">결괴 얻기</button>
+  <button class="btn btn-primary" id="btn">결과 1000개얻기</button>
+  <!-- <button class="btn btn-primary" id="btn2">결과 1000개얻기</button> -->
 </div>
 <!--container-->
 <script>
   $("#btn").click(function () {
     $.ajax({
       url: '<c:url value="/plan/GetSearchTrend.do"/>',
+      dataType: "json",
+      method: "post"
+    })
+      .done((data) => {
+        console.log("서버로부터 받은 데이터:", data);
+      })
+      .fail((error) => {
+        console.log(error);
+      });
+  });
+
+  $("#btn2").click(function () {
+    $.ajax({
+      url: '<c:url value="/plan/SearchTrend.do"/>',
       dataType: "json",
       method: "post",
       headers: {
