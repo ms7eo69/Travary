@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="${path}/resources/css/navigationbar.css"/>
     <link rel="stylesheet" href="${path}/resources/css/main.css"/>
     <!-- Optional JavaScript -->
-    
+    <script src="js/scrolling.js" defer></script>
     <title>Travary</title>
   </head>
   <body>  
@@ -376,7 +376,7 @@
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
       <h2 class="h3 mb-4">Travary와 함께한 경험을 공유해보세요</h2>
       <div class="row d-flex justify-content-center mt-5">
-          <div class="card mb-3">
+          <div class="card shadow mb-3">
             <img
               src="resources/images/best-theme/jeju3.jpg"
               class="card-img-top rounded"
@@ -394,7 +394,7 @@
           </div>
         </div>
         <div class="row d-flex justify-content-center">
-          <div class="card mb-3">
+          <div class="card shadow mb-3">
             <img
               src="resources/images/best-theme/jeju3.jpg"
               class="card-img-top rounded"
@@ -411,86 +411,64 @@
             </div>
           </div>
         </div>
-      <div class="row mt-4">
-        <div class="col-md-6">
-          <div class="card mb-3">
-            <img
-              src="resources/images/sns.body/card_body1.jpg"
-              class="card-img-top rounded snsCard"
-              alt="..."
-            />
+   <div class="row mt-4"><!-- 2개 배치 시작-->
+     	<div class="col-md-6">
+          <div class="card shadow mb-3">
+            <img src="resources/images/sns.body/sungsan.png" class="card-img-top rounded snsCard"/>
             <div class="card-body">
-              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-              <p class="card-text"></p>
-                <div class="">
-                    <div class="d-flex">
-                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-                        <div class="mt-0 mb-0">배고파팡</div>
-                    </div>
-                </div>
-               
+              <h5 class="card-title mb-2 posting-title">나만 알고 싶은 제주 여행 코스 BEST<h5>
+	          <p class="card-text posting-content">1. 성산일출봉 성산일출봉은 항상 하나의 작품처럼 멀리서 보기만 했는데 이번엔 정상까지 마음 먹고 다녀왔어요 ! 일출 시간대가 아니라 별 거 있겠나 싶은 마음이 컸는데 감탄이 절로 나오는 절경을 보고 왔답니다 🥹 왜 세계자연유산으로 등록되었는지 알겠는,, !! 짧지만 경사가 있는 코스이기 때문에 (대부분이 계단) 그만큼 풍경이 너무너무 아름다워요 !!!!!!</p>
+	          <div class="d-flex align-items-center">
+	          	<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+	            <div class="userId">Yujin</div>
+	          </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="card mb-3">
-            <img
-              src="resources/images/sns.body/card_body1.jpg"
-              class="card-img-top rounded snsCard"
-              alt="..."
-            />
+          <div class="card shadow mb-3">
+            <img src="resources/images/sns.body/suwon1.png" class="card-img-top rounded snsCard"/>
             <div class="card-body">
-              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-              <p class="card-text"></p>
-                <div class="">
-                    <div class="d-flex">
-                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-                        <div class="mt-0 mb-0">배고파팡</div>
-                    </div>
-                </div>
+              <h5 class="card-title mb-2 posting-title">수원 당일치기 카페 풀코스!<h5>
+	          <p class="card-text posting-content">수원 여행을 하면서 수원화성 바로 근처에 있어서 우리 문화재를 배경으로 사진을 촬영할 수 있다는 점이 너무 좋았어요. sns에서 핫한 만큼, 왜 핫한지 알 수 있겠더라구요 </p>
+	          <div class="d-flex align-items-center">
+	          	<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+	            <div class="userId">수요미</div>
+	          </div>
             </div>
           </div>
         </div>
-         <div class="col-md-6">
-          <div class="card mb-3">
-            <img
-              src="resources/images/sns.body/card_body1.jpg"
-              class="card-img-top rounded snsCard"
-              alt="..."
-            />
+    </div ><!------------------------------- 2개 배치 끝-------------------->
+    <div class="row mt-4"><!----------------------- 2개 배치 시작-------------->
+     	<div class="col-md-6">
+          <div class="card shadow mb-3">
+            <img src="resources/images/sns.body/seoulsup.png" class="card-img-top rounded snsCard"/>
             <div class="card-body">
-              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-              <p class="card-text"></p>
-                <div class="">
-                    <div class="d-flex">
-                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-                        <div class="mt-0 mb-0">배고파팡</div>
-                    </div>
-                </div>
-               
+              <h5 class="card-title mb-2 posting-title">계절마다 다른 느낌의 도심 속 숲, 서울숲🌳<h5>
+	          <p class="card-text posting-content">#도시여행 여기는 서울숲이에요! 사계절 내내 피어있는 꽃이 다르고 개인 스냅, 웨딩 스냅을 찍는 분들도 계셨어요💍 주변에 음식점과 디저트 카페가 많았어요 저는 '백돈'이라는 곳에 다녀왔는데 진짜 맛있더라구요ㅠ🥺 언제 다녀와도 좋은 곳이에요🌳🔥</p>
+	          <div class="d-flex align-items-center">
+	          	<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+	            <div class="userId">ZenZen</div>
+	          </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="card mb-3">
-            <img
-              src="resources/images/sns.body/card_body1.jpg"
-              class="card-img-top rounded snsCard"
-              alt="..."
-            />
+          <div class="card shadow mb-3">
+            <img src="resources/images/sns.body/paju.png" class="card-img-top rounded snsCard"/>
             <div class="card-body">
-              <h5 class="card-title mb-0">영도 가볼만한 곳 여행 코스</h5>
-              <p class="card-text"></p>
-                <div class="">
-                    <div class="d-flex">
-                   		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 mb-3" alt="...">
-                        <div class="mt-0 mb-0">배고파팡</div>
-                    </div>
-                </div>
+              <h5 class="card-title mb-2 posting-title">파주 당일치기 여행 추천 코스<h5>
+	          <p class="card-text posting-content">1. 마장호수 220m의 엄청나게 긴 출렁다리가 있는 마장호수! 거대한 규모와 황홀한 풍경에 많은 사람들이 찾는 곳인데요, 호수 둘레길 산책로도 잘 되어 있기 때문에 모든 계절에 가볍게 가기 좋은 여행지입니다. 2. 벽초지수목원</p>
+	          <div class="d-flex align-items-center">
+	          	<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+	            <div class="userId">Jason</div>
+	          </div>
             </div>
           </div>
         </div>
-    </div>
+    </div><!------------------ 2개 배치 끝--------------------------->
+    
+  <div class="row scroll_add"><!-------------------------- 무한 스크롤 적용버전----------------------------------- -->  
     <div class="row"><!-------------------------- row start----------------------------------- -->
 		<div class="col-md-4 ">
 	    	<div class="card shadow mb-3">
@@ -573,6 +551,7 @@
 	        </div>
 	    </div>
     </div><!-------------------------- row end----------------------------------- -->
+  </div><!-- 무한스크롤 적용부분 -->
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
@@ -606,6 +585,39 @@
           return $("#startDate").val();
         },
       });
+      
+      function loadData(){
+          $.ajax({
+            url:'<c:url value=" 경로 넣어주세요! "',
+            // method:'post',
+            dataType:'json',
+            // data:{'page':page}
+          }).done(function(data){
+            
+          })
+        }
+        var page=1;
+        var index=0;
+        var content = $('.scroll_add').clone();
+        $(window).scroll(function() {
+          // console.log($(window).scrollTop(),$(document).height() - $(window).height());
+          if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
+            console.log('간닷!');
+
+            // loadData()//ajax 함수 호출!
+            
+            // var src = '../images/'+(index++)+'.jpg';
+           	// for(var i=0;i<content.find('img').length;i++)
+            // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
+            // content.find('img:eq(1)').prop('src','../images/2.jpg');
+            // content.find('img:eq(2)').prop('src','../images/3.jpg');
+            // content.find('img:eq(3)').prop('src','../images/4.jpg');
+            $(".scroll_add").append(content.html());
+            page++;
+            index++;
+            console.log(index);
+          }
+        });
     </script>
   </body>
 </html>
