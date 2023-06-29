@@ -1,4 +1,4 @@
-package com.kosmo.travary.service;
+package com.kosmo.travary.model;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

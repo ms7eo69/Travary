@@ -13,7 +13,7 @@
 		ON s.no=p.no WHERE sregion=#{region} ORDER BY total desc)
 		WHERE rownum =1
 	</select>
-	<select id="selectTop5ByRegion" resultType="map" parameterType="map">
+	<select id="selectTop5ByRegion" resultType="map" parameterType="String">
 		SELECT * FROM 
 		(SELECT name,sregion,lat,lnt
 		FROM tourist_spot s JOIN 

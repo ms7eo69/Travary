@@ -1,29 +1,15 @@
 package com.kosmo.travary.service.impl.member;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kosmo.travary.service.DaoService;
-import com.kosmo.travary.service.ListPagingData;
 
 import lombok.RequiredArgsConstructor;
 
-import javax.servlet.http.HttpServletRequest;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 /*
  * ID 미 지정시 ID값은 소문자로 시작하는 클래스명
  * value속성으로 지정도 가능하다

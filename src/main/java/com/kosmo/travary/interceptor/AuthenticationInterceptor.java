@@ -3,19 +3,14 @@ package com.kosmo.travary.interceptor;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.kosmo.travary.service.CookieInfo;
-import com.kosmo.travary.service.Cookies;
-import com.kosmo.travary.service.JWTokens;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import com.kosmo.travary.model.CookieInfo;
+import com.kosmo.travary.model.Cookies;
+import com.kosmo.travary.model.JWTokens;
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -45,7 +40,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor{
 			if(!JWTokens.verifyToken(token,map.get("KEY").toString())) {
 				//토큰이 유효하지 않을때
 				request.removeAttribute("validate");
-				request.getRequestDispatcher("/kosmo/member/Login.do").forward(request, response);
+				request.getRequestDispatcher("/member/Login.do").forward(request, response);
 				return false;
 			}
 			request.setAttribute("validate",id);

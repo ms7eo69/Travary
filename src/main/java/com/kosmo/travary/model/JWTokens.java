@@ -1,4 +1,4 @@
-package com.kosmo.travary.service;
+package com.kosmo.travary.model;
 
 import java.util.Date;
 import java.util.HashMap;

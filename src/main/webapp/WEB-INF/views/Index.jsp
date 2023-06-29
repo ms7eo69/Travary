@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
-	 <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
+	<script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
 	 
     <!-- Bootstrap-->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -594,7 +594,7 @@
       
       function loadData(){
           $.ajax({
-            url:'<c:url value=" 경로 넣어주세요! "',
+            url:'<c:url value=" 경로 넣어주세요! "/>',
             // method:'post',
             dataType:'json',
             // data:{'page':page}

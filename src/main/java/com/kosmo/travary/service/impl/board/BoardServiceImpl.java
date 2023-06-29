@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosmo.travary.service.DaoService;
-import com.kosmo.travary.service.ListPagingData;
 
 import javax.servlet.http.HttpServletRequest;
 

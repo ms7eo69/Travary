@@ -1,4 +1,4 @@
-package com.kosmo.travary.service;
+package com.kosmo.travary.model;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -18,11 +18,9 @@ public class CookieInfo {
 	public String getTokenName() {
 		return tokenName;
 	}
-
 	public String getKeyName() {
 		return keyName;
-	}
-	
+	}	
 	public String getIdName() {
 		return idName;
 	}

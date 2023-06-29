@@ -23,4 +23,5 @@ public interface PopularityMapper {
 		int count(Map map);
 		List<String> selectSregion();
 		Map selectAcmd(String region);
+		List<Map> selectTop5ByRegion(String region);
 }

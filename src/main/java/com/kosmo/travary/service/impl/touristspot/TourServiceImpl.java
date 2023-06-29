@@ -53,4 +53,7 @@ public class TourServiceImpl implements DaoService{
 	public Map selectAcmd(String region) {
 		return mapper.selectAcmd(region);
 	}
+	public List<Map> selectTop5ByRegion(String region) {
+		return mapper.selectTop5ByRegion(region);
+	}
 }
