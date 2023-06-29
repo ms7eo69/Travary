@@ -36,6 +36,15 @@ public class MemberController {
 	@Autowired
 	MemberServiceImpl memberService;
 
+	
+	// 로그인 처리
+	@GetMapping("Login.do")
+	public String login(SessionStatus status) {
+		status.setComplete();
+		// 뷰정보 반환
+		return "member/Login";
+	}
+		
 	@PostMapping("LoginProcess.do")
 	public String process(@RequestParam Map<String, Object> map, Model model) {
 		// 데이터 저장
@@ -56,12 +65,5 @@ public class MemberController {
 		return "member/Login";
 	}
 	
-	// 로그아웃 시 아이디를 받아 뒤에 naver, google, kakao로 시작 시 if문에서 switch 걸어서 분기 시켜 로그아웃 진행시키자
-	// 네이버 로그인
-	@GetMapping("Login.do")
-	public ModelAndView login() {
-	    ModelAndView modelAndView = new ModelAndView("member/Login");
-	    modelAndView.addObject("naverClientId", "GsYVpg82aBYC9e00ww1B");
-	    return modelAndView;
-	}
+
 }
