@@ -48,9 +48,6 @@ public class TourServiceImpl implements DaoService{
 		return 0;
 	}
 
-	@Override
-	public String getAccessToken(String authorize_code) throws Exception {
-		return null;
-	}
+
 
 }

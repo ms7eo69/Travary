@@ -10,5 +10,4 @@ public interface DaoService {
 	int insert(Map map);
 	int update(Map map);
 	int delete(Map map);
-	String getAccessToken(String authorize_code) throws Exception;
 }

@@ -2,66 +2,39 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
-<style>
-.wrap {
-	width: 490px;
-	padding: 40px 20px 20px 20px;
-	background-color: #f5f6f7;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border-radius: 30px;
-	box-sizing: border-box;
-}
 
-.title {
-	margin: 0 auto;
-	width: 240px;
-	height: 44px;
-	text-align: center;
-	font-size: 25px;
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	background-size: 240px auto;
-	margin-bottom: 20px;
-}
+<script>
+	//카카오
+	function handleKakaoLogin() {
+		const Rest_api_key = "ce24a312ecf7ce42435f8de5f549dd5b"; // REST API KEY
+		const redirect_uri = "http://localhost:7070/member/kakaoLogin"; // Redirect URI
+		const kakaoURL = "https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code";
+		window.location.href = kakaoURL;
+	}
+	//네이버
+	function handleNaverLogin() {
+		const Rest_api_key = "GsYVpg82aBYC9e00ww1B"; // REST API KEY
+		const redirect_uri = "http://localhost:7070/member/NaverMyPage.do"; // Redirect URI
+		const naverAuthUrl = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id='
+				+ Rest_api_key
+				+ '&redirect_uri='
+				+ encodeURIComponent(redirect_uri);
+		window.location.href = naverAuthUrl;
+	}
 
-.kakao {
-	margin-top: 15px;
-	height: 60px;
-	border: solid 1px #FEE500;
-	background: #FEE500;
-	color: #3c1d1e;
-	font-size: 18px;
-	box-sizing: border-box;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 450px;
-	display: flex;
-}
-
-.kakao_i {
-	width: 40px;
-	height: 100%;
-	background-size: 90%;
-	background-position: 50%;
-	margin: 0 20px;
-}
-
-.kakao_txt {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 16px;
-	padding-right: 60px;
-}
-
-a {
-	text-decoration: none;
-}
-</style>
+	//구글
+	function handleGoogleLogin() {
+		const client_id = "971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com"; // Client ID
+		const redirect_uri = "http://localhost:7070/member/GoogleMyPage.do"; // Redirect URI
+		const googleURL = "https://accounts.google.com/o/oauth2/v2/auth?client_id="
+				+ client_id
+				+ "&response_type=code&scope=openid%20email%20profile&redirect_uri="
+				+ encodeURIComponent(redirect_uri)
+				+ "&access_type=offline"
+				+ "&prompt=consent"; // 추가된 부분
+		window.location.href = googleURL;
+	}
+</script>
 <div class='container' style="margin-top: 50px">
 	<div class='jumbotron bg-info'>
 		<h1>
@@ -84,17 +57,13 @@ a {
 				value="${_csrf.token}" /> <label>아이디</label> <input type="text"
 				name="id" class="form-control mx-2" /> <label>비밀번호</label> <input
 				type="password" name="pwd" class="form-control mx-2" /> <input
-				type="submit" class="btn btn-danger mx-2" value="로그인" />
-			<div id="naver_id_login"></div>
-			<a class="kakao"
-				href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code">
-				<!-- REST_API키 및 REDIRECT_URI는 본인걸로 수정하세요 -->
-				<div class="kakao_i"></div>
-				<div class="kakao_txt">카카오톡으로 간편로그인</div>
-			</a>
-			<a href="https://accounts.google.com/o/oauth2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&redirect_uri=http://localhost:7070/member/MyPage.do&response_type=code&scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile">
-				<img src="${pageContext.request.contextPath}/images/G_Logo.png" style="width: 50px; height: 50px;"/>
-			</a>
+				type="submit" class="btn btn-danger mx-2" value="로그인" /> <img
+				onclick="handleKakaoLogin()" src="images/kakao_login.png"
+				style="width: 190px; cursor: pointer" /> <img
+				onclick="handleNaverLogin()" src="images/naver_login.png"
+				style="width: 190px; cursor: pointer" /> <img
+				onclick="handleGoogleLogin()" src="images/google_login.png"
+				style="width: 190px; cursor: pointer" />
 </div>
 </form>
 </c:if>
@@ -106,15 +75,11 @@ a {
 	</div>
 </c:if>
 </div>
-<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript">
-    var naver_id_login = new naver_id_login("GsYVpg82aBYC9e00ww1B", "http://localhost:7070/member/MyPage.do");
-    var state = naver_id_login.getUniqState();
-    naver_id_login.setButton("white", 2,40);
-    naver_id_login.setDomain("MD3o8KGeb3");
-    naver_id_login.setState(state);
-    naver_id_login.init_naver_id_login();
-</script>
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 <!--container-->
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>

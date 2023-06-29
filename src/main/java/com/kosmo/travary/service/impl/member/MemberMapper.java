@@ -17,7 +17,7 @@ public interface MemberMapper {
 		int deleteByNo(Map map);
 		int updateByNo(Map map);
 		int count(Map map);
-		//카카오 로그인
-		String getAccessToken(String authorize_code) throws Throwable;
-		Map findById(Map map);
+		int GoogleLoginsave(Map map);
+		boolean ApiMemberConfirm(Map apiLoginMap);
+		
 }
