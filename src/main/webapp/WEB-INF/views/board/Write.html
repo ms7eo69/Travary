@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+
+        });
+    </script>
+</head>
+<body>
+    <form class="container">
+        <h2>내 여행 이야기 공유하기</h2>
+        <div class="box">
+            <p>사진 업로드<br/><small>당신의 여행사진을 업로드할 수 있어요.</small></p>
+            <div class="imageContainer" style="display: flex; flex-wrap: wrap;">
+                <div class="addImage" >
+                    <i class="fa-solid fa-camera fa-2xl"></i>
+                </div>
+                <input name="image-tg" type="file" accept="image/*" class="image-upload" multiple>
+            </div>
+        </div>
+        <div class="box">
+            <p>제목</p>
+            <input type="text" id="title" name="title" placeholder="제목입력">
+        </div>
+        <div class="box">
+            <p>당신의 여행을 들려줘요!</p>
+            <div style="border: 1px solid rgba(206, 210, 218);">
+                <textarea class="form-control" rows="10" name="story" placeholder="나의 여행 이야기를 공유해요!"></textarea>
+            </div>
+        </div>
+        <div class="box">
+            <p>태그</p>
+            <input type="text" id="tag" name="tag" placeholder="당신의 글에 태그를 추가해보세요!">
+        </div>
+        <button type="submit" class="sub_btn">확인</button>
+    </form>
+</body>
+<script>
+
+    function imageUpload(){
+        $.ajax({
+            url: 'your_controller_url', // 컨트롤러 URL을 지정하세요
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false
+        }).done(function(){
+            console.log('업로드 성공')
+        })
+    }
+
+    $('.addImage').click(function(){
+        $('input[type=file]').trigger('click');
+    });
+
+    $('input[type=file]').change(function(){
+        console.log('change이벤트 : ',$(this).val());
+        imageUpload();
+        // $('.addImage').clone().html
+    });
+    // var $image = $('.addImage').clone();
+    // $image.find('i').remove();
+    // var index=1;
+    // $('.addImage').click(function(){
+    //     var lastImg = $('.addImage:last')
+    //     if(index>=10) index=1;
+    //     if($('.addImage').length<20){
+    //         console.log('추가');
+    //         var image = $image.clone();
+    //         image.append('<img class="thum" src="../images/'+(index++)+'.jpg">');
+    //         image.insertAfter('.addImage:last');
+    //     }
+    // });
+
+    $('addImage:first').css('border-style','dashed');
+
+    $('#image-tg')
+</script>
+<style>
+    textarea{
+        width: 80%;
+        height: 200px;
+        font-size: 13px;
+        padding: 5px;
+        border: 0;
+        /* border-bottom: 0.5px solid rgba(206, 210, 218, 0.596); */
+        resize: none;
+        outline: none;
+        line-height: 1.15;
+    }
+    .image-upload {
+        display: none;
+    }
+    #title, #tag{
+        line-height: 1.15;
+        overflow: visible;
+        font-size: inherit;
+        outline: none;
+        border: 0;
+        width: 100%;
+        height: 20px;
+        padding: 8px 0px;
+        border-bottom: 0.5px solid rgb(206, 210, 218);
+    }
+    .container{
+        margin: 40px;
+    }
+    .container .box:not(:nth-child(1)){
+        margin-top: 40px
+    }
+    .addImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* opacity: 0.5; */
+        border: 1px gray solid; 
+        width:150px;
+        height:150px
+    }
+    .thum{
+        width: 100%;
+        height: 100%;
+    }
+    p{   
+        font-size: 20px;
+    }
+    .sub_btn{
+        margin-top: 20px;
+        width: 200px;
+        height: 60px;
+        font-size: 25px;
+        font-weight: 500;
+        color: white;
+        background-color: rgb(38,129,255);
+        text-align: center;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        line-height: 60px;
+    }
+</style>
+</html>
