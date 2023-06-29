@@ -14,17 +14,23 @@
     <title>travelroadmain.html</title>
 </head>
 <body>
-    <div class="roadmain">
+    <div class="roadmain tabs_content" id="tabNarea">
         <div class="roadout">
-            <div class="roadin" style="min-height: 700px;">
-                <div class="roadtop pagetop">
+            <div class="roadin tplace tabNarea_li" style="min-height: 700px;">
+                <div class="roadtop pagetop t1" id="topgnb">
                     <div class="outdeco">
                         <div class="indeco" id="innerDiv">
-                            <strong></strong>
+                            <strong>Travary</strong>
                             <p></p>
                         </div>                        
                     </div>
-                    <div class="outdeco2" style="background-image: url('../img/1.jpg');"></div>
+                    <div class="outdeco2" style="background-image: url('../../../../resources/static/images/Login/1.jpg');"></div>
+                    <a href="javascprit:imgSaving(2)" class="imglink">
+                        이 사진이 마음에 드시나요?
+                        <span>
+                            월페이퍼 바로가기
+                        </span>
+                    </a>
                 </div>
                 <div class="pagebottom">
                     <div class="fav-tab">
@@ -52,7 +58,19 @@
                                 <h3>
                                     <em></em>
                                 </h3>
-                                <button type="button" onclick="AreaOnOff()"></button>
+                                <button type="button" onclick="AreaOnOff()">지역변경</button>
+                                <div class="area-sort">
+                                    <button type="button" id="sort_button">인기순</button>
+                                    <div class="area-layer">
+                                        <button type="button" class="area-on" onclick="changesort(this,'popular');">인기순</button>
+                                        <button type="button" onclick="changesort(this,'distance');">거리순</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="local-wrap">
+                                <div class="roadmain rminit rmhoriz">
+
+                                </div>
                             </div>
                         </div>
                     </div>
