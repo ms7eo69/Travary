@@ -19,5 +19,6 @@ public interface MemberMapper {
 		int count(Map map);
 		int GoogleLoginsave(Map map);
 		boolean ApiMemberConfirm(Map apiLoginMap);
+		String findKeyByIdentifier(String string);
 		
 }

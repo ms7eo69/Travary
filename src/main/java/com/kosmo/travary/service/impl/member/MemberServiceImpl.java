@@ -67,6 +67,14 @@ public class MemberServiceImpl implements DaoService {
 		
 		return mapper.ApiMemberConfirm(apiLoginMap);
 	}
+
+	public String selectKey(String string) {
+		return mapper.findKeyByIdentifier(string);
+	}
+
+	public int insertKey(Map map) {
+		return mapper.saveKey(map);
+	}
 	
 
 }

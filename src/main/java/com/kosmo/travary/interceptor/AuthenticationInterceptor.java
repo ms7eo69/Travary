@@ -40,7 +40,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor{
 			if(!JWTokens.verifyToken(token,map.get("KEY").toString())) {
 				//토큰이 유효하지 않을때
 				request.removeAttribute("validate");
-				request.getRequestDispatcher("/member/Login.do").forward(request, response);
+				request.getRequestDispatcher("/").forward(request, response);
 				return false;
 			}
 			request.setAttribute("validate",id);

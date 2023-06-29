@@ -6,7 +6,7 @@
         <div class="jumbotron bg-dark">
             <h1>회원가입</h1>            
         </div><!--jumbotron-->
-        <form action="Register.do" method="post">
+        <form action='<c:url value="/member/Register"/>' method="post">
 			<div class="form-group">
 				<label><kbd class="lead">아이디</kbd></label> 
 				<input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요">
