@@ -12,7 +12,7 @@ public class IndexController {
 		return "forward:/kosmo/Index";
 	}
 	
-	@GetMapping("/kosmo/Index")
+	@RequestMapping("/kosmo/Index")
 	public String index() {
 		return "Index";
 	}
