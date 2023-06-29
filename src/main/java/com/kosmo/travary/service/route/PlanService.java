@@ -129,6 +129,7 @@ public class PlanService {
 		
 		//경유지 설정 (관광지)
 		List<Map> list = tour.selectTop5ByRegion(region);
+		System.out.println(list);
 		String waypoints= "";
 		int count =1;
 		for (Map map : list) {

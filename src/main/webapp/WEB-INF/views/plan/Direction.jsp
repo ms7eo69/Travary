@@ -48,19 +48,33 @@
 							map: map
 						});
 					 })
-					 console.log(markerPositions);
+					 var xs = [];
+					 var ys = [];
+					 markerPositions.forEach(function (item) {
+						xs.push(item.x)
+						ys.push(item.y)
+					 })
+					 var minx = Math.min(...xs);
+					 var miny = Math.min(...ys)
+					 var maxx = Math.max(...xs);
+					 var maxy = Math.max(...ys)
+					 console.log(markerPositions[0]);
+					 var minposition = {y: miny,x:minx}
+					 var maxposition = {y:maxy,x:maxx}
 					map.panToBounds( 
 							new naver.maps.LatLngBounds(
 								/* markerPositions.forEach(function (item) {
 									console.log(item);
 									new naver.maps.LatLng(item)
 								}) */
-								new naver.maps.LatLng(markerPositions[0]),
+								/* new naver.maps.LatLng(markerPositions[0]),
 								new naver.maps.LatLng(markerPositions[1]),
 								new naver.maps.LatLng(markerPositions[2]),
 								new naver.maps.LatLng(markerPositions[3]),
 								new naver.maps.LatLng(markerPositions[4]),
-								new naver.maps.LatLng(markerPositions[5])
+								new naver.maps.LatLng(markerPositions[5]) */
+								new naver.maps.LatLng(minposition),
+								new naver.maps.LatLng(maxposition)
 							)
 			       )
 				}).fail((error)=>{

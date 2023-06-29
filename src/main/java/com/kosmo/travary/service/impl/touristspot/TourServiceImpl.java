@@ -54,8 +54,7 @@ public class TourServiceImpl implements DaoService{
 		return mapper.selectAcmd(region);
 	}
 	public List<Map> selectTop5ByRegion(String region) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectTop5ByRegion(region);
 	}
 
 }
