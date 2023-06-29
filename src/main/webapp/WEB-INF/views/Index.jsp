@@ -31,6 +31,12 @@
     <!-- Optional JavaScript -->
     
     <title>Travary</title>
+  <style>
+    .nav-text{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+      font-weight: 900 !important;
+    }
+  </style>
   </head>
   <body>  
   
@@ -46,7 +52,7 @@
                 </div>
                 <div id="nav-body">
                     <div class="menu-style">
-                        <ul>                                
+                        <ul class="navfont">                                
                             <li>
                                 <a href="#">
                                     <i class="fa fa-sharp fa-solid fa-house-chimney-window"></i>
