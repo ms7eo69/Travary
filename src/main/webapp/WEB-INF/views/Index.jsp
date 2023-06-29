@@ -33,8 +33,8 @@
     <title>Travary</title>
   <style>
     .nav-text{
-      font-family: sans-serif !important;
-      font-weight: 600 !important;
+      font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+      font-weight: 500 !important;
     }
   </style>
   </head>
