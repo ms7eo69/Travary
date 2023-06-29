@@ -47,7 +47,7 @@
 					<option value="40대">40 ~ 49</option>
 					<option value="50대">50 ~ 59</option>
 					<option value="60대">60 ~ 69</option>
-					<option value="70대">70 ~ 79</option>
+					<option value="70대 이상">70 ~ </option>
 				</select> 
 				<!--  
 				<input type="text" class="form-control" name="age_group" placeholder="연령대를 입력하세요">

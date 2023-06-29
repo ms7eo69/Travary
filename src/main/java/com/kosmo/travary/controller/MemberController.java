@@ -19,6 +19,7 @@ import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotBlank;
 
 @Controller
 @RequestMapping("/kosmo/member")
@@ -76,7 +77,8 @@ public class MemberController {
 									@RequestParam String id, @RequestParam String pwd, @RequestParam String nickname, 
 									@RequestParam String gender, @RequestParam String age_group, 
 									@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3) {
-		String phone = phone1 + "-" + phone2 + "-" + phone3;
+		String phone = phone1 + "-" + phone2 + "-" + phone3; //회원가입할때 전화번호 입력시 DB에 ,로 입력되는거 수정용
+		
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
 		map.put("pwd", pwd);
