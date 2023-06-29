@@ -21,4 +21,6 @@ public interface PopularityMapper {
 		int deleteByNo(Map map);
 		int updateByNo(Map map);
 		int count(Map map);
+		List<String> selectSregion();
+		Map selectAcmd(String region);
 }

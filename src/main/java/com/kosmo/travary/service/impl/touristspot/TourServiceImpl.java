@@ -47,5 +47,11 @@ public class TourServiceImpl implements DaoService{
 	public int delete(Map map) {
 		return 0;
 	}
+	public List<String> selectSregion() {
+		return mapper.selectSregion();
+	}
+	public Map selectAcmd(String region) {
+		return mapper.selectAcmd(region);
+	}
 
 }
