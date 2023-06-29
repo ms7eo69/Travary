@@ -1,4 +1,4 @@
-package com.kosmo.travary.service.impl.member;
+package com.kosmo.travary.service.impl.apilogin;
 
 import java.util.HashMap;
 import java.util.Map;
