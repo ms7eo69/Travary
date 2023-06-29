@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .board_wrap {
+            width: 1500px;
+            margin: 100px auto;
+        }
+
+        .board_title {
+            margin-bottom: 30px;
+        }
+
+        .board_title strong {
+            font-size: 3rem;
+        }
+
+        .board_title p {
+            margin-top: 5px;
+            font-size: 1.4rem;
+        }
+
+        .bt_wrap {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0;
+        }
+
+        .bt_wrap a {
+            display: inline-block;
+            min-width: 80px;
+            margin-left: 10px;
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 2px;
+            font-size: 1.4rem;
+        }
+
+        .bt_wrap a:first-child {
+            margin-left: 0;
+        }
+
+        .bt_wrap a.on {
+            background: #000;
+            color: #fff;
+        }
+
+        .board_write {
+            border-top: 2px solid #000;
+        }
+
+        .board_write .title,
+        .board_write .info {
+            padding: 15px;
+        }
+
+        .board_write .info {
+            border-top: 1px dashed #ddd;
+            border-bottom: 1px solid #000;
+            font-size: 0;
+        }
+
+        .board_write .title table,
+        .board_write .info table {
+            width: 100%;
+        }
+
+        .board_write .title th,
+        .board_write .info th,
+        .board_write .title td,
+        .board_write .info td {
+            padding: 10px;
+            font-size: 1.4rem;
+            text-align: left;
+        }
+
+        .board_write .title input[type="text"],
+        .board_write .info input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+
+        .board_write .cont {
+            border-bottom: 1px solid #000;
+            padding: 15px;
+        }
+
+        .board_write .cont textarea {
+            display: block;
+            width: 100%;
+            height: 300px;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 0;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>Q&A</strong>
+            <p></p>
+        </div>
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <table>
+                        <tr>
+                            <th>제목</th>
+                            <td><input type="text" placeholder="제목 입력"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="cont">
+                    <textarea placeholder="내용 입력"></textarea>
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="view.html" class="on">등록</a>
+                <a href="list.html">취소</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
