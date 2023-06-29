@@ -21,7 +21,11 @@
                     <div class="outdeco">
                         <div class="indeco" id="innerDiv">
                             <strong>Travary</strong>
-                            <p></p>
+                            <p>
+                                국내를 대표하는 관광 여행지<br/>
+                                아직 가보지 못한 혹은 다시 가고 싶었던 곳의 정보를 제공해주는 플랫폼<br/>
+                                Travary와 함께 인기 여행지와 맛집을 알아가 보세요
+                            </p>
                         </div>                        
                     </div>
                     <div class="outdeco2" style="background-image: url('../../../../resources/static/images/Login/1.jpg');"></div>
@@ -58,7 +62,7 @@
                                 <h3>
                                     <em></em>
                                 </h3>
-                                <button type="button" onclick="AreaOnOff()">지역변경</button>
+                                <button type="button" onclick="AreaOnOff();">지역변경</button>
                                 <div class="area-sort">
                                     <button type="button" id="sort_button">인기순</button>
                                     <div class="area-layer">
@@ -69,7 +73,136 @@
                             </div>
                             <div class="local-wrap">
                                 <div class="roadmain rminit rmhoriz">
-
+                                    <ul class="roadout" style="transition-duration: 0ms; transform: translate3d(0,0,0);">
+                                        <li class="roadin roadin_act" id="karea1" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="seoul on" onclick="areaClick(1)" title="선택됨">
+                                                <em>
+                                                    <span>서울</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin roadin_next" id="karea2" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="incheon" onclick="areaClick(2)" title="선택됨">
+                                                <em>
+                                                    <span>인천</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea3" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="daejeon" onclick="areaClick(3)" title="선택됨">
+                                                <em>
+                                                    <span>대전</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea4" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="daegu" onclick="areaClick(4)" title="선택됨">
+                                                <em>
+                                                    <span>대구</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea5" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="gwangju" onclick="areaClick(5)" title="선택됨">
+                                                <em>
+                                                    <span>광주</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea6" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="busan" onclick="areaClick(6)" title="선택됨">
+                                                <em>
+                                                    <span>부산</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea7" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="ulsan" onclick="areaClick(7)" title="선택됨">
+                                                <em>
+                                                    <span>울산</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea8" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="sejong" onclick="areaClick(8)" title="선택됨">
+                                                <em>
+                                                    <span>세종</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea9" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="gyeonggi" onclick="areaClick(9)" title="선택됨">
+                                                <em>
+                                                    <span>경기</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea10" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="gangwon" onclick="areaClick(10)" title="선택됨">
+                                                <em>
+                                                    <span>강원</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea11" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="chungbuk" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>충북</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea12" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="chungnam" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>충남</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea13" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="kyeongbuk" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>경북</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea14" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="kyeongnam" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>경남</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea15" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="jeonbuk" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>전북</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea16" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="jeonnam" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>전남</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                        <li class="roadin" id="karea17" style="margin-right: 15px;">
+                                            <a href="javascript:;" class="jeju" onclick="areaClick(index)" title="선택됨">
+                                                <em>
+                                                    <span>제주</span>
+                                                </em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="btn-wrap">
+                                        <div class="rbtnprev rbtndis" tabindex="-1" role="button" aria-label="Previous Area" aria-disabled="true">
+                                            이전
+                                        </div>
+                                        <div class="rbtnnext" tabindex="0" role="button" aria-label="Next Area" aria-disabled="false">
+                                            다음
+                                        </div>
+                                    </div>
+                                    <span class="road-ntf" area-live="assertive" aria-atomic="true"></span>
                                 </div>
                             </div>
                         </div>

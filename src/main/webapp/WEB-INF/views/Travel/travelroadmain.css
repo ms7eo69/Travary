@@ -16,6 +16,30 @@ a:-webkit-any-link {
     text-decoration: underline;    
 }
 
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
 a, abbr, acronym, address, applet, article, aside,
 audio, b, blockquote, big, body, center, canvas, caption, cite, code, command,
 datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption,
@@ -190,7 +214,7 @@ a:link, a:visited, a:hover, a:focus, a:active {
     display: inline-block;
     width: 24px;
     height: 24px;
-    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_wallpaper_link1.png);
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_wallpaper_link1.png) no-repeat;
 }
 
 .roadtop.pagetop .imglink span {
@@ -200,45 +224,28 @@ a:link, a:visited, a:hover, a:focus, a:active {
     letter-spacing: 0;
 }
 
+.roadtop.pagetop .imglink span:after {
+    content: '';
+    display: inline-block;
+    width: 17px;
+    height: 12px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_wallpaper_link2.png) no-repeat;
+    margin-left: 8px;
+}
+
+.roadtop.pagetop:after {
+    content: '';
+}
+
 /*bottom*/
-ul {
-    display: block;
-    padding: 0;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;    
-    list-style: none;
-}
-
-li {
-    display: list-item;    
-    margin: 0;
-    padding: 0;    
-    list-style: none;
-}
-
-a {
-    margin: 0;
-    padding: 0;
-}
-
-strong {
-    margin: 0;
-    padding: 0;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-a:-webkit-any-link {
-    cursor: pointer;
+.pagebottom {
+    width: 980px;
+    margin: 0 auto;
+    padding: 130px 20px 27px 20px;
 }
 
 .pagebottom {
     width: auto;
-    margin: 0 auto;
     padding: 0 0 80px;
 }
 
@@ -246,6 +253,10 @@ a:-webkit-any-link {
 .fav-tab {
     height: 75px;
     background: #f0f2f7;
+}
+
+dl, ul, ol, menu, li {
+    list-style: none;
 }
 
 .fav-tab ul {
@@ -263,14 +274,6 @@ a:-webkit-any-link {
     width: 50%;
 }
 
-.fav-tab ul li.fav-on a {
-    font-weight: 700 !important;
-    color: #fff;
-    background: #567ff2;
-    box-shadow: 6px 9px 16px 0px rgba(96, 107, 243, 0.35);
-    border-radius: 50px;    
-}
-
 .fav-tab ul li a {
     display: block;
     font-size: 25px;
@@ -280,29 +283,33 @@ a:-webkit-any-link {
     position: relative;
 }
 
-.fav-tab ul li:first-child.fav-on a::before {
-    background-position: 0 -46px;
+.fav-tab ul li.fav-on a {
+    font-weight: 700 !important;
+    color: #fff;
+    background: #567ff2;
+    box-shadow: 6px 9px 16px 0px rgba(96, 107, 243, 0.35);
+    border-radius: 50px;    
 }
 
-.fav-tab ul li a::before {
+.fav-tab ul li a:before {
     content: '';
     display: inline-block;
     margin: 0 11px 0 20px;
     vertical-align: -13px;
     width: 46px;
     height: 46px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_popularity_tab.png) no-repeat;
+}
 
+.fav-tab ul li:first-child.fav-on a:before {
+    background-position: 0 -46px;
 }
 
 .fav-tab ul li a strong {
     font-weight: 400;
 }
 
-.fav-tab ul li.fav-on a::after {
-    background-position: 0 -13px;
-}
-
-.fav-tab ul li a::after {
+.fav-tab ul li a:after {
     content: '';
     display: inline-block;
     width: 22px;
@@ -312,53 +319,27 @@ a:-webkit-any-link {
     top: 31px;
 }
 
+.fav-tab ul li.fav-on a:after {
+    background-position: 0 -13px;
+}
+
 .fav-tab ul li:last-child.fav-on a::before {
     background-position: 0 -92px;
 }
 
 /*travarea*/
-h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 1em;        
-}
-
-h3 {
-    display: block;
-    margin: 0;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
-em {
-    margin: 0;
-    padding: 0;
-    font-style: normal;
-}
-
-button {
-    margin: 0;
-    padding: 0;
+h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
-    border: 0 none;
-    background-color: transparent;
-    cursor: pointer;
-    color: #666;
-    appearance: auto;
-    text-rendering: auto;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0;
-    text-shadow: none;
-    text-align: center;
-    box-sizing: border-box;
-    -webkit-text-size-adjust: none;
+    font-family: NotoSansKR,NotoSansJP,"돋움",Dotum,AppleGothic,Sans-serif;
 }
 
-.blind {
+.travarea .area-menu {
+    margin: 0 auto;
+    position: relative;
+    padding: 43px 0 0;
+}
+
+caption, .blind, .hidden, .ir {
     overflow: hidden;
     position: absolute;
     top: auto;
@@ -368,13 +349,13 @@ button {
     text-indent: -9999px;
 }
 
+/*area-wrap*/
 .travarea .area-menu {
     margin: 0 auto;
     position: relative;
     padding: 43px 0 0;
 }
 
-/*area-wrap*/
 .travarea .area-menu .area-wrap {
     width: 1200px;
     margin: 0 auto;
@@ -388,9 +369,19 @@ button {
     letter-spacing: -1.7px;
 }
 
+address, caption, cite, code, dfn, em, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
 .travarea h3 em {
     font-weight: 700;
     color: #567ff2;
+}
+
+input, button, textarea, select {
+    font-size: 1em;
+    font-family: NotoSansKR,NotoSansJP,"돋움",Dotum,AppleGothic,Sans-serif;
 }
 
 .travarea .area-wrap button {
@@ -405,3 +396,112 @@ button {
     overflow: hidden;
 }
 
+.travarea .area-menu ul li {
+    width: 120px;
+}
+
+.travarea .area-menu a {
+    display: block;
+    text-align: center;
+}
+
+.travarea .area-menu a em {
+    display: block;
+    font-size: 18px;
+    color: #777;
+    position: relative;
+}
+
+.travarea .area-menu a:hover em,
+.travarea .area-menu a.on em {
+    font-weight: 700;
+    color: #557ef1;
+}
+
+.travarea .area-menu a em:before {
+    content: '';
+    display: block;
+    height: 120px;
+    margin: 0 0 9px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_area.gif) no-repeat;
+}
+
+.travarea .area-menu a span {
+    display: inline-block;
+}
+
+.travarea .area-menu a.on em:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(86, 127, 242, .8) url(https://korean.visitkorea.or.kr/resources/images/curation/icon_area_check.png) 50% 49px no-repeat;
+    border-radius: 100%;
+}
+
+.travarea .area-menu a.incheon em:before {
+    background-position: 0 -120px;
+}
+
+.travarea .area-menu a.daejeon em:before {
+    background-position: 0 -240px;
+}
+
+.travarea .area-menu a.daegu em:before {
+    background-position: 0 -360px;
+}
+
+.travarea .area-menu a.gwanju em:before {
+    background-position: 0 -480px;
+}
+
+.travarea .area-menu a.busan em:before {
+    background-position: 0 -600px;
+}
+
+.travarea .area-menu a.ulsan em:before {
+    background-position: 0 -720px;
+}
+
+.travarea .area-menu a.sejong em:before {
+    background-position: 0 -840px;
+}
+
+.travarea .area-menu a.gyeonggi em:before {
+    background-position: 0 -960px;
+}
+
+.travarea .area-menu a.gangwon em:before {
+    background-position: 0 -1080px;
+}
+
+.travarea .area-menu a.chungbuk em:before {
+    background-position: 0 -1200px;
+}
+
+.travarea .area-menu a.chungnam em:before {
+    background-position: 0 -1320px;
+}
+
+.travarea .area-menu a.kyeongbuk em:before {
+    background-position: 0 -1440px;
+}
+
+.travarea .area-menu a.kyeongnam em:before {
+    background-position: 0 -1560px;
+}
+
+.travarea .area-menu a.jeonbuk em:before {
+    background-position: 0 -1680px;
+}
+
+.travarea .area-menu a.jeonnam em:before {
+    background-position: 0 -1800px;
+}
+
+.travarea .area-menu a.jeju em:before {
+    background-position: 0 -1920px;
+}
