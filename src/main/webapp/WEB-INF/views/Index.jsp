@@ -110,7 +110,7 @@
                 <div id="nav-footer">
                     <div class="dropup">
                         <a href="" class="dropdown-toggle dropdown-toggle-no-caret" data-toggle="dropdown">
-                            <i class="fa fa-solid fa-bars" ></i>더 보기
+                            <i class="fa fa-solid fa-bars" ></i>더 보기${validate }
                         </a> 
                         <div class="dropdown-menu">
                             <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" 
@@ -637,8 +637,8 @@
             <div class="modal-body1">
                 <img src="/images/logo/logo.png" class="modal-logo">
                 <form action='<c:url value="/member/LoginProcess"/>' method="post">
-                  <input type="text" placeholder="아이디" class="inlilneToBlock">
-                  <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
+                  <input type="text" placeholder="아이디" class="inlilneToBlock" name="id">
+                  <input type="password" placeholder="비밀번호" class="inlilneToBlock" name="pwd">                    
                   <button type="submit" class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
                 </form>
                 <div class="horizonAndOrWrap">

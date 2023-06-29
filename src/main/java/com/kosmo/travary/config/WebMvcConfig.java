@@ -17,11 +17,11 @@ public class WebMvcConfig implements WebMvcConfigurer{
 	@Autowired
 	private MemberServiceImpl memberService;
 
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		  registry.addInterceptor(new AuthenticationInterceptor(cookieInfo,memberService))
-		  .addPathPatterns("/travary/**")
-		  .excludePathPatterns("/travary/member/**")
-		  .excludePathPatterns("/travary/before/**");
-	}
+//	@Override
+//	public void addInterceptors(InterceptorRegistry registry) {
+//		  registry.addInterceptor(new AuthenticationInterceptor(cookieInfo,memberService))
+//		  .addPathPatterns("/travary/**")
+//		  .excludePathPatterns("/travary/member/**")
+//		  .excludePathPatterns("/travary/before/**");
+//	}
 }

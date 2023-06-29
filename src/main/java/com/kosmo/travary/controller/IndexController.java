@@ -9,10 +9,10 @@ public class IndexController {
 
 	@RequestMapping("/")
 	public String contextRoot() {
-		return "Index";
+		return "forward:/kosmo/Index";
 	}
 	
-	@GetMapping("/kosmo/Index.do")
+	@GetMapping("/kosmo/Index")
 	public String index() {
 		return "Index";
 	}

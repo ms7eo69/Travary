@@ -51,23 +51,20 @@ public class MemberController {
 
 	@PostMapping("/LoginProcess")
 	public String loginProcess(@RequestParam Map map, Model model, HttpServletRequest req, HttpServletResponse resp) {
-		
-//		boolean isMember= memberService.isMember(map);
-		if(true) {
+		String id = map.get("id").toString();
+	boolean isMember= memberService.isMember(map);
+		if(isMember) {
 			//토큰 방식으로 인증처리 구현
 			map.put("keyName", keyName);
 			//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
 			int expireMinute = 30;
 			String token = JWTokens.createToken(keyName, map, expireMinute);
 			//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
-			memberService.insertKey(map);
-			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
+			int affected = memberService.insertKey(map);
+			Cookies.createCookie(id, token, resp, req, expireMinute);
 			Cookies.createCookie(idName, map.get("identifier").toString(), resp, req, expireMinute);
-			//페일로드에서 id를 추출
-			String key = memberService.selectKey(map.get("identifier").toString());
-			String id = JWTokens.getTokenPayloads(token, key).get("sub").toString();
 			req.setAttribute("validate",id);
-			return "member/MyPage";
+			return "Index";
 		}
 		else {
 			model.addAttribute("NotMember", "아이디와 비번 불일치");
