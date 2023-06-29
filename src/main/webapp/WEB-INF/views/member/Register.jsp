@@ -35,29 +35,32 @@
 						<label for="female"	class="custom-control-label">여자</label>
 					</div>
 				</div>
-				<div class="form-group">
-					<label><kbd class="lead">연령대</kbd></label><br>
-					<!--  -->
-					<select name="age_group">
-						<option value="">연령대를 선택하세요</option>
-						<option value="10대">10 ~ 19</option>
-						<option value="20대">20 ~ 29</option>
-						<option value="30대">30 ~ 39</option>
-						<option value="40대">40 ~ 49</option>
-						<option value="50대">50 ~ 59</option>
-						<option value="60대">60 ~ 69</option>
-						<option value="70대">70 ~ 79</option>
-					</select> 
-					<!--  
-					<input type="text" class="form-control" name="age_group" placeholder="연령대를 입력하세요">
-					-->
-				</div>
-				<div class="form-group" style="width:50%">
-				    <label><kbd class="lead">전화번호</kbd></label> 
-				    <div class="form-row">
-				      <div class="col"><input type="text" class="form-control" name="phone"></div>
-				    </div>
-				</div>
+			</div>
+			<div class="form-group">
+				<label><kbd class="lead">연령대</kbd></label><br>
+				<!--  -->
+				<select name="age_group">
+					<option value="">연령대를 선택하세요</option>
+					<option value="10대">10 ~ 19</option>
+					<option value="20대">20 ~ 29</option>
+					<option value="30대">30 ~ 39</option>
+					<option value="40대">40 ~ 49</option>
+					<option value="50대">50 ~ 59</option>
+					<option value="60대">60 ~ 69</option>
+					<option value="70대">70 ~ 79</option>
+				</select> 
+				<!--  
+				<input type="text" class="form-control" name="age_group" placeholder="연령대를 입력하세요">
+				-->
+			</div>
+			<div class="form-group" style="width:50%">
+			    <label><kbd class="lead">전화번호</kbd></label> 
+			    <div class="form-row">
+			      <div class="col"><input type="text" class="form-control" name="phone1"></div>-
+			      <div class="col"><input type="text" class="form-control" name="phone2"></div>-
+			      <div class="col"><input type="text" class="form-control" name="phone3"></div>
+			    </div>
+			</div>
 			<button type="submit" class="btn btn-primary">확인</button>
 		</form>            
     </div><!--container-->

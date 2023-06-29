@@ -1,14 +1,11 @@
 package com.kosmo.travary.controller;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +19,6 @@ import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 
 @Controller
 @RequestMapping("/kosmo/member")
@@ -79,7 +74,9 @@ public class MemberController {
 	@PostMapping("Register.do")
 	public String registerProcess(
 									@RequestParam String id, @RequestParam String pwd, @RequestParam String nickname, 
-									@RequestParam String gender, @RequestParam String age_group, @RequestParam String phone) {
+									@RequestParam String gender, @RequestParam String age_group, 
+									@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3) {
+		String phone = phone1 + "-" + phone2 + "-" + phone3;
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", id);
 		map.put("pwd", pwd);
