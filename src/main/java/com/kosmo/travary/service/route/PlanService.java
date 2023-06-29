@@ -51,7 +51,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 38; m++) {
+			for (int m = 0; m < 1; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
@@ -74,7 +74,7 @@ public class PlanService {
 				ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity(requestBody.toString(), headers), Map.class);
 				dataMap = response.getBody();
 				System.out.println(dataMap);
-				for (int i = 0; i < 4; i++) {
+				for (int i = 0; i < 1; i++) {
 					sqlmap = new HashMap<>();
 					ArrayList list = (ArrayList) ((LinkedHashMap) ((ArrayList) dataMap.get("results")).get(i)).get("data");
 					for (int k = 0; k < list.size(); k++) {
@@ -97,7 +97,10 @@ public class PlanService {
 					sqlmap.put(month, data.get("ratio"));
 					}
 					sqlmap.put("no",lastNum++);
+					sqlmap.put("no",1);
+					System.out.println(sqlmap);
 					tour.insert(sqlmap);
+					break;
 				}
 			}
 		}
