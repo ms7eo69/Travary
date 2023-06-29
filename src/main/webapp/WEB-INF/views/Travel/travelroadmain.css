@@ -317,13 +317,14 @@ dl, ul, ol, menu, li {
     position: absolute;
     right: 31px;
     top: 31px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_popularity_tab1.png) no-repeat;
 }
 
 .fav-tab ul li.fav-on a:after {
     background-position: 0 -13px;
 }
 
-.fav-tab ul li:last-child.fav-on a::before {
+.fav-tab ul li:last-child a:before {
     background-position: 0 -92px;
 }
 
