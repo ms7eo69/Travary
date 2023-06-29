@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="regi.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen">
+          <div class="screen__content">
+            <form class="regi">
+              <div>
+                <input class="regi_error" type="text" readonly>
+              </div>
+              <div class="regi__field">
+                <input type="text" class="regi__input" placeholder="영문과 숫자를 8글자 이상 조합한 아이디">
+              </div>
+              <div class="regi__field">
+                <input type="password" class="regi__input" placeholder="비밀번호">
+              </div>
+              <div class="regi__field">
+                <input type="password" class="regi__input" placeholder="비밀번호 확인">
+              </div>
+              <div class="regi__field">
+                <input type="text" class="regi__input" placeholder="닉네임">
+              </div>
+              <div class="regi__field">
+                <input type="text" class="regi__input" placeholder="전화번호 (숫자만)">
+              </div>
+              <div class="regi__field">
+                <input type="text" class="regi__input" maxlength="8" placeholder="생일">
+              </div>
+              <div class="regi__field">
+                <!-- <input type="radio" id="M" class="regi_radio" name="gender" value="M">
+                <label for="M">남자</label>
+                <input type="radio" id="W" class="regi_radio" name="gender" value="W">
+                <label for="W">여자</label> -->
+                  <input type="radio" name="gender" id="M">
+                  <label for="radio-1">남자</label>
+                  <input type="radio" name="gender" id="W">
+                  <label for="radio-2">여자</label>
+              </div>
+              <button class="button regi__submit">
+                <span class="button__text">회원가입</span>
+                <i class="button__icon fas fa-chevron-right"></i>
+              </button>       
+            </form>
+            <div class="social-regi">
+              <a href="../../Login/navigationbar.html"><h5>아이디가 있나요?</h3></a>
+              <div class="social-icons">
+                
+                <a href="#" class="social-regi__icon fab fa-instagram"></a>
+                <a href="#" class="social-regi__icon fab fa-facebook"></a>
+                <a href="#" class="social-regi__icon fab fa-twitter"></a>
+              </div>
+            </div>
+          </div>
+          <div class="screen__background">
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>    
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+          </div>    
+        </div>
+      </div>
+</body>
+<script>
+  $('input').each(function(){
+    $(this).on('focusout',function(){
+      $(this).val($(this).val().trim());//나중에 특수문자나 띄어쓰기 못넣게 바꾸기
+    })
+  });
+  
+
+  var today = new Date();
+  var year = today.getFullYear();
+  var month = ('0' + (today.getMonth() + 1)).slice(-2);
+  var day = ('0' + today.getDate()).slice(-2);
+
+  var formattedDate = year + '-' + month + '-' + day;
+  $('input:eq(6)').prop('placeholder', '생일 ex) '+formattedDate);
+
+  
+  $('input:eq(3)').on('focusout',function(){
+    if(!($('input:eq(2)').val()===$('input:eq(3)').val())){
+      $('.regi_error').val('비밀번호가 일치하지 않습니다.');
+    }
+  });
+  
+
+  $('input:eq(5)').on('focusout',function(){
+    var reg = /^\d{10,11}$/;
+    var input=$(this).val();
+    var inputLength=$(this).val().length;
+    if(reg.test($(this).val())){
+      if(inputLength==11)
+        var phone = input.replace(/^(\d{3})(\d{4})(\d{4})$/,'$1-$2-$3');
+      if(inputLength==10)
+        var phone = input.replace(/^(\d{3})(\d{3})(\d{4})$/,'$1-$2-$3');
+      $('input:eq(5)').val(phone);
+    }
+  });
+
+  $('button').click(function(e){
+    if($('input:eq(1)').val().trim()==='') {
+      $('input:eq(1)').focus();
+      $('.regi_error').val('아이디를 입력해주세요');
+      return false;
+    }else if($('input:eq(2)').val().trim()===''){
+      $('input:eq(2)').focus();
+      $('.regi_error').val('비밀번호를 입력해주세요');
+      return false;
+    }else if(!($('input:eq(3)').val().trim()==$('input:eq(2)').val().trim())){
+      $('input:eq(3)').val('');
+      $('input:eq(3)').focus();
+      $('.regi_error').val('비밀번호가 일치하지 않습니다.');
+      return false;
+    }else if($('input:eq(4)').val().trim()===''){
+      $('input:eq(4)').focus();
+      $('.regi_error').val('닉네임을 입력해주세요');
+      return false;
+    }
+    else if(!/^\d{3}-\d{3,4}-\d{4}$/.test($('input:eq(5)').val())){
+      $('input:eq(5)').focus();
+      $('.regi_error').val('전화번호를 입력해주세요');
+      return false;
+    }
+    else if($('input:eq(6)').val().trim()===''){
+      $('input:eq(6)').focus();
+      $('.regi_error').val('생일을 입력해주세요');
+      return false;
+    }else if($('input:eq(6)').val().trim().length!=8){
+      $('input:eq(6)').focus();
+      $('.regi_error').val('생일은 8글자로 입력해주세요');
+      return false;
+    }else if(!($('input:eq(7)').prop('checked') || $('input:eq(8)').prop('checked'))){
+      $('input:eq(7)').focus();
+      $('.regi_error').val('성별을 선택하세요!');
+      return false;
+    }
+    
+
+  })
+
+  
+</script>
+</html>

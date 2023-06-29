@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script>     
+    <link rel="stylesheet" href="travelroadmain.css">
+    <title>travelroadmain.html</title>
+</head>
+<body>
+    <div class="roadmain tabs_content" id="tabNarea">
+        <div class="roadout">
+            <div class="roadin tplace tabNarea_li" style="min-height: 700px;">
+                <div class="roadtop pagetop t1" id="topgnb">
+                    <div class="outdeco">
+                        <div class="indeco" id="innerDiv">
+                            <strong>Travary</strong>
+                            <p></p>
+                        </div>                        
+                    </div>
+                    <div class="outdeco2" style="background-image: url('../../../../resources/static/images/Login/1.jpg');"></div>
+                    <a href="javascprit:imgSaving(2)" class="imglink">
+                        이 사진이 마음에 드시나요?
+                        <span>
+                            월페이퍼 바로가기
+                        </span>
+                    </a>
+                </div>
+                <div class="pagebottom">
+                    <div class="fav-tab">
+                        <div class="fav-empty">
+                            <ul>
+                                <li class="fav-on">
+                                    <a href="">
+                                        Travary
+                                        <strong>인기여행지</strong>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        Travary
+                                        <strong>인기 맛집</strong>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="travarea">
+                        <h2 class="blind"></h2>
+                        <div class="area-menu">
+                            <div class="area-wrap">
+                                <h3>
+                                    <em></em>
+                                </h3>
+                                <button type="button" onclick="AreaOnOff()">지역변경</button>
+                                <div class="area-sort">
+                                    <button type="button" id="sort_button">인기순</button>
+                                    <div class="area-layer">
+                                        <button type="button" class="area-on" onclick="changesort(this,'popular');">인기순</button>
+                                        <button type="button" onclick="changesort(this,'distance');">거리순</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="local-wrap">
+                                <div class="roadmain rminit rmhoriz">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
