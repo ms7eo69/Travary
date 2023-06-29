@@ -19,8 +19,8 @@ function loadData(){
           // loadData()//ajax 함수 호출!
           
           // var src = '../images/'+(index++)+'.jpg';
-          for(var i=0;i<content.find('img').length;i++)
-            content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
+         	// for(var i=0;i<content.find('img').length;i++)
+          // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
           // content.find('img:eq(1)').prop('src','../images/2.jpg');
           // content.find('img:eq(2)').prop('src','../images/3.jpg');
           // content.find('img:eq(3)').prop('src','../images/4.jpg');

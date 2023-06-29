@@ -51,3 +51,7 @@
 	.posting-content{
 		font-size: 15px;
 	}
+	
+	.card-body img:hover{
+  transform: scale(1.2);
+}
