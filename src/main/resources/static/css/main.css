@@ -7,6 +7,17 @@
           padding-bottom: 7.5rem;
         }
       }
+	.bg-cover{
+		background-image: url('/images/landing/landing4.jpg');
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: cover;
+	}
 
       .br0,
       .gj-datepicker-bootstrap [role="right-icon"] button,
@@ -27,6 +38,13 @@
 		font-weight:noraml; 
 		font-size: 15px;
 	}
+	
+	.snsCard1 {
+   		width: 100%;
+  		height: 50vh;
+    	object-fit: cover;
+	}
+		
      .snsCard {
    		 width: 100%;
   		height: 30vh;
@@ -52,6 +70,15 @@
 		font-size: 15px;
 	}
 	
-	.card-body img:hover{
-  transform: scale(1.2);
+	.card-img-wrap {
+	  overflow: hidden;
+	  position: relative;
+	}
+	.card:hover .card-img-top {
+    transform: scale(1.15);
+    -o-transform:scale(1.1); 
+    -moz-transform:scale(1.1);
+     -webkit-transform:scale(1.1);
+
+    
 }
