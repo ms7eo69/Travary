@@ -535,39 +535,39 @@
         <div class="row"><!-------------------------- row start----------------------------------- -->
 		<div class="col-md-4">
 	    	<div class="card shadow mb-3">
-	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	        	<img src="resources/images/sns.body/incheon.jpg" class="card-img-top rounded snsCard"/>
 	            <div class="card-body pb-1">
-	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
-	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+	            	<h5 class="card-title mb-2 posting-title">뷰가 너무 예쁜 인천 영종도 선녀바위 해수욕장 ⛱️<h5>
+	            	<p class="card-text posting-content">개인적으로 너무나 좋아하는 영종도 선녀바위 해수욕장이에요! 선녀바위와 기암들이 매우 멋있어서 외국인들도 많이 찾는 곳이에요. 탁 트인 바다뷰라 마치 동해안에 온 것처럼 느껴지는 곳이에요~ 뷰와 노을이 너무 예뻐서 가만히 앉아만 있어도 힐링 되는 곳입니다!</p>
                     <div class="d-flex align-items-center">
                    		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
-                        <div class="userId">Yunakim</div>
+                        <div class="userId">stacy</div>
                     </div>
 	            </div>
 	        </div>
 	    </div>
 	    <div class="col-md-4">
 	    	<div class="card shadow mb-3">
-	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	        	<img src="resources/images/sns.body/ganghwa.jpg" class="card-img-top rounded snsCard"/>
 	            <div class="card-body pb-1">
-	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
-	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+	            	<h5 class="card-title mb-2 posting-title">나홀로 떠나본 인천 강화도 여행🤍<h5>
+	            	<p class="card-text posting-content">#인천여행 드리우니 한옥 카페, 마니온 돈까스, 책방 시점, 금풍양조장(막걸리), 무해한어른(소품샵), 소니아소니아(수제 소품샵) 까지 알차게 즐기고 왔어요 ✌️✌️ 이번 여행 테마는 나를 위한 여행!</p>
                     <div class="d-flex align-items-center">
                    		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
-                        <div class="userId">Yunakim</div>
+                        <div class="userId">Daisy</div>
                     </div>
 	            </div>
 	        </div>
 	    </div>
 	    <div class="col-md-4">
 	    	<div class="card shadow mb-3">
-	        	<img src="resources/images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
+	        	<img src="resources/images/sns.body/songdo.png" class="card-img-top rounded snsCard"/>
 	            <div class="card-body pb-1">
-	            	<h5 class="card-title mb-2 posting-title">영도 가볼만한 곳 여행 코스<h5>
-	            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+	            	<h5 class="card-title mb-2 posting-title">외국 아니구요.. 한국 맞습니다.. 이국적인 매력이 돋보이는 ’송도 센트럴파크‘<h5>
+	            	<p class="card-text posting-content">한국에서 외국 감성을 느끼고 싶으신 분들 모두 송도 센트럴파크로 달려가세요! 아무 생각 없이 산책하기에도 너무 좋고, 사진 찍기에도 너무 좋은 곳입니다 (⸝⸝･ᴗ･⸝⸝)੭˒</p>
                     <div class="d-flex align-items-center">
                    		<img src="resources/images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
-                        <div class="userId">Yunakim</div>
+                        <div class="userId">핑구</div>
                     </div>
 	            </div>
 	        </div>
