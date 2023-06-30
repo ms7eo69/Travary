@@ -60,7 +60,8 @@
                         <div class="area-menu">
                             <div class="area-wrap">
                                 <h3>
-                                    <em></em>
+                                    <em>서울</em>
+                                    인기 여행지
                                 </h3>
                                 <button type="button" onclick="AreaOnOff();">지역변경</button>
                                 <div class="area-sort">
@@ -198,16 +199,30 @@
                                         <div class="rbtnprev rbtndis" tabindex="-1" role="button" aria-label="Previous Area" aria-disabled="true">
                                             이전
                                         </div>
-                                        <div class="rbtnnext" tabindex="0" role="button" aria-label="Next Area" aria-disabled="false">
+                                        <div class="rbtnnext rbtndis" tabindex="0" role="button" aria-label="Next Area" aria-disabled="false">
                                             다음
-                                        </div>
-                                    </div>
+                                        </div>                                        
+                                    </div>                                    
                                     <span class="road-ntf" area-live="assertive" aria-atomic="true"></span>
                                 </div>                                
                             </div>
                         </div>
                         <div class="area-list">
                             <h4 class="blind">Travary</h4>
+                            <div class="sorting">
+                                <button type="button" class="on" onclick="changesort(this,'popular');">
+                                    <span>
+                                        인기순
+                                    </span>
+                                </button>
+                                <button type="button" class onclick="changesort(this,'distance');">
+                                    <span>
+                                        거리순
+                                    </span>
+                                </button>
+                            </div>
+                            <ul></ul>
+                            <div></div>
                         </div>                        
                     </div>
                     <div></div>                    

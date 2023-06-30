@@ -59,6 +59,13 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    border: 0 none;
+    background: transparent;
+    cursor: pointer;
+    outline: 0 none;
+}
+
 body, input, textarea, button, select, table {
     font: 13px/1.4 NotoSansKR,NotoSansJP,"돋움",Dotum,AppleGothic,Sans-serif;
     color: #666;
@@ -468,41 +475,151 @@ input, button, textarea, select {
 }
 
 .travarea .area-menu a.sejong em:before {
-    background-position: 0 -840px;
+    background-position: 0 -1920px;
 }
 
 .travarea .area-menu a.gyeonggi em:before {
-    background-position: 0 -960px;
+    background-position: 0 -840px;
 }
 
 .travarea .area-menu a.gangwon em:before {
-    background-position: 0 -1080px;
+    background-position: 0 -960px;
 }
 
 .travarea .area-menu a.chungbuk em:before {
-    background-position: 0 -1200px;
+    background-position: 0 -1080px;
 }
 
 .travarea .area-menu a.chungnam em:before {
-    background-position: 0 -1320px;
+    background-position: 0 -1200px;
 }
 
 .travarea .area-menu a.kyeongbuk em:before {
-    background-position: 0 -1440px;
+    background-position: 0 -1320px;
 }
 
 .travarea .area-menu a.kyeongnam em:before {
-    background-position: 0 -1560px;
+    background-position: 0 -1440px;
 }
 
 .travarea .area-menu a.jeonbuk em:before {
-    background-position: 0 -1680px;
+    background-position: 0 -1560px;
 }
 
 .travarea .area-menu a.jeonnam em:before {
-    background-position: 0 -1800px;
+    background-position: 0 -1680px;
 }
 
 .travarea .area-menu a.jeju em:before {
-    background-position: 0 -1920px;
+    background-position: 0 -1800px;
+}
+
+.travarea .btn-wrap {
+    width: 1200px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -600px;
+}
+
+.rbtnnext, .rbtnprev {
+    position: absolute;
+    top: 50%;
+    width: 27px;
+    height: 44px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: 27px 44px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.rbtnprev, .rbtnrtl .rbtnnext {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+    left: 10px;
+    right: auto;
+}
+
+.travarea .rbtnnext, .travarea .rbtnprev {
+    width: 36px;
+    height: 36px;
+    text-indent: -9999px;
+    top: 44px;
+    margin-top: 0;
+}
+
+.travarea .rbtnprev {
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/btn_slide_prev04.png) no-repeat;
+    left: auto;
+    right: 38px;
+}
+
+.travarea .rbtnnext {
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/btn_slide_next04.png) no-repeat;
+    right: 0;
+}
+
+.travarea .rbtndis {
+    background-position: 0 -36px;
+    opacity: 1;
+}
+
+.roadmain .road-ntf {
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: -1000;
+}
+
+.travarea .area-list {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 10px;    
+}
+
+.travarea .area-list .sorting {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 16px;
+    color: #767676;
+}
+
+.travarea .area-list .sorting .on {
+    font-weight: 700;
+    color: #000;
+}
+
+button span {
+    font-family: NotoSansKR,NotoSansJP,"돋움",Dotum,AppleGothic,Sans-serif;
+}
+
+.travarea .area-list .sorting .on {
+    display: inline-block;
+}
+
+.travarea .area-list .sorting .on:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+}
+
+.travarea .area-list .sorting button +
+button:before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 1px;
+    vertical-align: -2px;
+    background: #bfbfbf;
+    margin: 0 15px;
 }
