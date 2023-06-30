@@ -40,6 +40,11 @@ em {
     font-style: italic;
 }
 
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
 a, abbr, acronym, address, applet, article, aside,
 audio, b, blockquote, big, body, center, canvas, caption, cite, code, command,
 datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption,
@@ -622,4 +627,149 @@ button:before {
     vertical-align: -2px;
     background: #bfbfbf;
     margin: 0 15px;
+}
+
+.travarea .area-list ul {
+    margin: -10px 0 0 -30px;
+}
+
+.travarea .area-list ul li {
+    float: left;
+    width: 277px;
+    margin: 60px 0 0 30px;
+    position: relative;
+}
+
+.travarea .area-list .img {
+    display: block;
+    height: 195px;
+    border-radius: 10px;
+    text-indent: -9999px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.travarea .area-list strong {
+    display: block;
+    padding: 17px 55px 4px 0;    
+}
+
+.travarea .area-list strong a {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.travarea .area-list ul li a {
+    display: block;
+    position: relative;
+}
+
+.travarea .area-list .loc_info span {
+    float: left;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333;
+}
+
+.travarea .area-list .loc_info .km {
+    display: none;
+}
+
+.travarea .area-list .loc_info span + span:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    margin: 0 12px;
+    background: #333;
+    vertical-align: -2px;
+}
+
+.travarea .area-list .loc_tag {
+    display: none;
+}
+
+.travarea .area-list a.bookmark {
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    right: 35px;
+    top: 215px;
+    height: 18px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_good02.png) no-repeat;
+    text-indent: -9999px;
+}
+
+.travarea .area-list a.map {
+    display: inline-block;
+    width: 23px;
+    position: absolute;
+    right: 0;
+    top: 215px;
+    height: 17px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_map1.png) no-repeat;
+    text-indent: -9999px;
+}
+
+.travarea .area-list ul:after {
+    content: '';
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+
+.travarea .area-list .btn_add {
+    padding: 28px 0 0;
+    text-align: center;
+}
+
+.travarea .area-list .btn_add a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.travarea .area-list .btn_add a:after {
+    content: '';
+    display: inline-block;
+    width: 11px;
+    height: 8px;
+    margin-left: 5px;
+    vertical-align: 2px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/btn_more01.png) no-repeat;    
+}
+
+.tbanner {
+    position: relative;
+    margin: 60px 0 88px;    
+}
+
+.tbanner .roadmain {
+    position: static;
+}
+
+.tbanner ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+fieldset, img {
+    border: 0 none;
+}
+
+img, label {
+    vertical-align: middle;
+}
+
+.mo {
+    display: none;
 }
