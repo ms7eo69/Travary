@@ -201,7 +201,9 @@
       <div class="row mt-4">
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
             <img src=" /images/best-theme/busan.jpg" class="card-img-top rounded" alt="..."/>
+            </div>
             <div class="card-body">
               <h5 class="card-title mb-0">부산</h5>
               <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;</p>
@@ -213,7 +215,9 @@
         </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
             <img src=" /images/best-theme/seoul.jpg" class="card-img-top rounded" alt="..."/>
+           	</div>
             <div class="card-body">
               <h5 class="card-title mb-0">서울</h5>
               <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;</p>
@@ -225,7 +229,9 @@
         </div>
         <div class="col-md-3">
             <div class="card mb-3 border-0 shadow ">
+            <div class="card-img-wrap">
               <img src=" /images/best-theme/suwon.jpg" class="card-img-top rounded" alt="..."/>
+              </div>
               <div class="card-body">
                 <h5 class="card-title mb-0">수원</h5>
                 <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
@@ -237,7 +243,9 @@
           </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
             <img src=" /images/best-theme/jeju3.jpg" class="card-img-top rounded" alt="..."/>
+            </div>
             <div class="card-body">
               <h5 class="card-title mb-0">제주</h5>
               <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
@@ -255,7 +263,9 @@
     <div class="row mt-4">
       <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
             <img src="/images/best-theme/midnightseoul.jpg" class="card-img-top rounded" alt="..."/>
+            </div>
             <div class="card-body">
               <h5 class="card-title mb-0">미드나잇 IN 한강</h5>
               <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
@@ -265,7 +275,9 @@
         </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
             <img src=" /images/best-theme/yangyang.jpg" class="card-img-top rounded" alt="..."/>
+           </div>
             <div class="card-body">
               <h5 class="card-title mb-0">서핑 IN 양양</h5>
               <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;
@@ -276,7 +288,9 @@
         </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
               <img src=" /images/best-theme/yeosu.jpg" class="card-img-top rounded" alt="..."/>
+             </div>
               <div class="card-body">
                 <h5 class="card-title mb-0">여수 밤바다</h5>
                 <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
@@ -288,7 +302,9 @@
           </div>
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
+          <div class="card-img-wrap">
             <img src=" /images/best-theme/terarosa.jpg" class="card-img-top rounded" alt="..."/>
+            </div>
             <div class="card-body">
               <h5 class="card-title mb-0">강릉 커피 여행</h5>
               <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
