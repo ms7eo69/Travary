@@ -40,9 +40,9 @@
   </head>
   <body>  
   <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
-    <div class="container-fluid" style="height: 100vh">
-     <nav class="main-menu position-fixed ">
-        <div class="outerDiv">
+    <div class="container-fluid " style="height: 100vh">
+     <nav class="main-menu position-fixed shadow ">
+        <div class="outerDiv ">
             <div class="innerDiv">
                 <div id="nav-header">
                     <div class="logo">
@@ -202,7 +202,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
           <div class="card-img-wrap">
-            <img src=" /images/best-theme/busan.jpg" class="card-img-top rounded" alt="..."/>
+            <img src=" /images/best-theme/busan.jpg" class="card-img-top rounded rc-card" alt="..."/>
             </div>
             <div class="card-body">
               <h5 class="card-title mb-0">부산</h5>
@@ -216,7 +216,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
           <div class="card-img-wrap">
-            <img src=" /images/best-theme/seoul.jpg" class="card-img-top rounded" alt="..."/>
+            <img src=" /images/best-theme/seoul.jpg" class="card-img-top rounded rc-card" alt="..."/>
            	</div>
             <div class="card-body">
               <h5 class="card-title mb-0">서울</h5>
@@ -227,10 +227,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class=" col-md-3">
             <div class="card mb-3 border-0 shadow ">
             <div class="card-img-wrap">
-              <img src=" /images/best-theme/suwon.jpg" class="card-img-top rounded" alt="..."/>
+              <img src=" /images/best-theme/suwon.jpg" class="card-img-top rounded rc-card" alt="..."/>
               </div>
               <div class="card-body">
                 <h5 class="card-title mb-0">수원</h5>
@@ -244,7 +244,7 @@
         <div class="col-md-3">
           <div class="card mb-3 border-0 shadow ">
           <div class="card-img-wrap">
-            <img src=" /images/best-theme/jeju3.jpg" class="card-img-top rounded" alt="..."/>
+            <img src=" /images/best-theme/jeju3.jpg" class="card-img-top rounded rc-card" alt="..."/>
             </div>
             <div class="card-body">
               <h5 class="card-title mb-0">제주</h5>
@@ -331,7 +331,7 @@
 		            	<p class="card-text posting-content">#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
 	                    <div class="d-flex align-items-center">
 	                   		<img src=" /images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
-	                        <div class="userId">Yunakim</div>
+	                        <div class="userId">Yuna</div>
 	                    </div>
 		            </div>
 		        </div>
@@ -345,7 +345,7 @@
 		            	<h5 class="card-title mb-2 posting-title">인생사진 남기러 서귀포 가자!<h5>
 		            	<p class="card-text posting-content">#올레길 5코스에 해당하는 산책로를 따라 걷다보면 자연이 만들어낸 한반도 모양의 포토스팟 발견! 여기서 팁하나 드리자면 사진 찍으실 때 밝기 조절을 해서 한반도 안에 서귀포 바다와 하늘이 만나는 수평선이 보이게 찍으면 인생샷 완.성.</p>
 	                    <div class="d-flex align-items-center">
-	                   		<img src=" /images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+	                   		<img src=" /images/profile/p1.jpg" class="profileImageSm ml-0 mr-2 ">
 	                        <div class="userId">Damee</div>
 	                    </div>
 		            </div>
@@ -360,7 +360,7 @@
 		            	<h5 class="card-title mb-2 posting-title">축제가 넘쳐나는 곳, 광안리 해수욕장<h5>
 		            	<p class="card-text posting-content">부산의 1등 핫플을 고르라면?! 한 치의 망설임 없이 광안리라고 외치겠습니다. 365일 축제로 넘쳐나는 그 곳! 분기별로 색다른 행사들로 가득차고, 매주 토요일은 드론쇼 공연이 펼쳐진답니다! 계절별과 날씨별로 드론쇼 일정이 상이할 수 있으니, 방문전 검색은 필수!</p>
 	                    <div class="d-flex align-items-center">
-	                   		<img src=" /images/profile/yunakim.jpg" class="profileImageSm ml-0 mr-2 ">
+	                   		<img src=" /images/profile/p2.jpg" class="profileImageSm ml-0 mr-2 ">
 	                        <div class="userId">Jinsoo</div>
 	                    </div>
 		            </div>
@@ -450,7 +450,7 @@
 		    		<div class="card-img-wrap">
 	           			 <img src=" /images/sns.body/seoulsup.png" class="card-img-top rounded snsCard"/>
 	          		 </div>
-	           		 <div class="card-body">
+	           		 <div class="card-body pb-1">
 	             		<h5 class="card-title mb-2 posting-title">계절마다 다른 느낌의 도심 속 숲, 서울숲🌳<h5>
 		          		<p class="card-text posting-content">#도시여행 여기는 서울숲이에요! 사계절 내내 피어있는 꽃이 다르고 개인 스냅, 웨딩 스냅을 찍는 분들도 계셨어요💍 주변에 음식점과 디저트 카페가 많았어요 저는 '백돈'이라는 곳에 다녀왔는데 진짜 맛있더라구요ㅠ🥺 언제 다녀와도 좋은 곳이에요🌳🔥</p>
 		         		<div class="d-flex align-items-center">
@@ -546,7 +546,7 @@
       
       function loadData(){
           $.ajax({
-            url:'<c:url value=" 경로 넣어주세요! "',
+            url:'<c:url value=" 경로 넣어주세요! "/>',
             // method:'post',
             dataType:'json',
             // data:{'page':page}
