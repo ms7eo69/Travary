@@ -19,7 +19,7 @@
 				}).done((data)=>{
 					console.log('서버로부터 받은 데이터:',data);
 					 var polylinePath = []; 
-					 data.route.traoptimal[0].path.forEach(function(item,index){
+					 data.result.route.traoptimal[0].path.forEach(function(item,index){
 						polylinePath.push({y:item[1],x:item[0]})
 					 })
 					//위의 배열을 이용해 라인 그리기
@@ -35,11 +35,11 @@
 					});
 					// 배열 마지막 위치를 마크로 표시함
 					var markerPositions =[];
-					data.route.traoptimal[0].summary.waypoints.forEach(function(item,index){
+					data.result.route.traoptimal[0].summary.waypoints.forEach(function(item,index){
 						markerPositions.push({y:item.location[1],x:item.location[0]})
 					 })
-					 var startPosition = data.route.traoptimal[0].summary.start;
-					 var goalPosition = data.route.traoptimal[0].summary.goal;
+					 var startPosition = data.result.route.traoptimal[0].summary.start;
+					 var goalPosition = data.result.route.traoptimal[0].summary.goal;
 					 markerPositions.push({y:startPosition.location[1],x:startPosition.location[0]});
 					 markerPositions.push({y:goalPosition.location[1],x:goalPosition.location[0]})
 					 markerPositions.forEach(function (item) {

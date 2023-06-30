@@ -116,7 +116,8 @@ public class PlanService {
 			String waypoints = "&waypoints="+map.get("waypoints");
 			String goal = "&goal="+map.get("start");
 			url = url+start+goal+waypoints;
-		return new RestTemplate().exchange(url, HttpMethod.GET,new HttpEntity<>(setNaverHeaders()),Map.class).getBody();
+			map.put("result",new RestTemplate().exchange(url, HttpMethod.GET,new HttpEntity<>(setNaverHeaders()),Map.class).getBody());
+		return map; 
 	}
 
 	private Map getCoords(String region) {
@@ -126,11 +127,14 @@ public class PlanService {
 		
 		//경유지 설정 (관광지)
 		List<Map> list = tour.selectTop5ByRegion(region);
-		System.out.println(list);
+		List<String> placeNames = new ArrayList<>();
 		String waypoints= "";
 		int count =1;
 		for (Map map : list) {
-			String coord = map.get("LNT").toString()+","+map.get("LAT").toString();
+			String coord = 
+					map.get("LNT").toString()+","+map.get("LAT").toString()+",name="+map.get("NAME");
+			System.out.println(coord);
+			placeNames.add(map.get("NAME").toString());
 			if(count<list.size()) {
 				coord +="|";
 				waypoints +=coord;
@@ -149,14 +153,16 @@ public class PlanService {
 				resultMap.put("goal",coord);
 			}*/
 		}
-		System.out.println(waypoints);
 		resultMap.put("waypoints",waypoints);
 		
 		//시작 출발지 설정 (숙소 혹은 집)
 		Map acmd =  tour.selectAcmd(region);
-		String coord = acmd.get("LNT").toString()+","+acmd.get("LAT").toString();
+		String coord = acmd.get("LNT").toString()+","+
+		acmd.get("LAT").toString()+",name="+acmd.get("NAME");
+		placeNames.add(acmd.get("NAME").toString());
+		System.out.println(coord);
 		resultMap.put("start",coord);
-		
+		resultMap.put("placeNames",placeNames);
 		return resultMap;
 	}
 	public Map geolocation(String addr) {
