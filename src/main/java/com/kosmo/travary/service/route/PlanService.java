@@ -51,13 +51,14 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 1; m++) {
+			for (int m = 0; m < 814; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
 				sqlmap = new HashMap<>();
 				sqlmap.put("no", lastNum);
 				List<String> names = tour.selectfour(sqlmap);
+				System.out.println(names);
 				names.add("에버랜드");
 				for (String name : names) {
 					group = new JSONObject();
@@ -70,7 +71,6 @@ public class PlanService {
 				// 모든 추가된 키워드그룹들 요청바디에 추가
 				requestBody.put("keywordGroups", keywordGroups);
 				// 요청 바디와 헤더를 포함한 HttpEntity 객체 생성
-				System.out.println(requestBody);
 				ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.POST, new HttpEntity(requestBody.toString(), headers), Map.class);
 				dataMap = response.getBody();
 				System.out.println(dataMap);
@@ -96,7 +96,7 @@ public class PlanService {
 					}
 					sqlmap.put(month, data.get("ratio"));
 					}
-					sqlmap.put("no",tour.selectRno(lastNum++));
+					sqlmap.put("no",lastNum++);
 					tour.insert(sqlmap);
 				}
 			}

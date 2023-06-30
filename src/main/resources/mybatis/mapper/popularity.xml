@@ -22,7 +22,7 @@
 		ON s.no=p.no WHERE sregion=#{region} ORDER BY total desc)
 		WHERE rownum &lt;=5
 	</select>
-	<!-- <insert id="saveByNo" parameterType="map" >
+	<insert id="saveByNo" parameterType="map" >
 		INSERT INTO acmd_pop VALUES( #{no} ,
 		<choose>
 			<when test="JAN != null"> #{JAN} </when>
@@ -72,8 +72,8 @@
 			<when test="DEC != null">#{DEC}</when>
 			<otherwise>DEFAULT</otherwise>
 		</choose>)
-	</insert> -->
-	<update id="saveByNo" parameterType="map" >
+	</insert>
+	<!-- <update id="saveByNo" parameterType="map" >
 		UPDATE tourist_spot_popularity
 		<set>
 			<if test="JAN != null"> JAN = #{JAN},</if>
@@ -91,19 +91,19 @@
 			dum = 0
 		</set>
 		WHERE no=#{no}
-	</update>
+	</update> -->
 	<select id="selectRno" parameterType="int" resultType="int">
 		SELECT rno from temp where sno=#{no}
 	</select>
 	<select id="findFourByNo" resultType="String" parameterType="map" >
-	SELECT NAME FROM temp WHERE sno IN (#{no},#{no}+1,#{no}+2,#{no}+3)
-	<!-- SELECT NAME FROM acmd WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
+	<!-- SELECT NAME FROM temp WHERE sno IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
+	SELECT NAME FROM acmd WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3)
 	</select>
 	<select id="find" resultType="int" >
-		SELECT no FROM LASTNUM
+		SELECT no FROM LASTNUM_acmd
 	</select>
 	<update id="updateLastNum" parameterType="map">
-		UPDATE lastnum SET no=#{no} WHERE no > 0
+		UPDATE lastnum_acmd SET no=#{no} WHERE no > 0
 	</update>
 	<select id="selectSregion" resultType="String">
 		SELECT distinct sregion from tourist_spot ORDER BY sregion
