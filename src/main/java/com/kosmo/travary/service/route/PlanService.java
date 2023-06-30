@@ -97,7 +97,6 @@ public class PlanService {
 					sqlmap.put(month, data.get("ratio"));
 					}
 					sqlmap.put("no",tour.selectRno(lastNum++));
-					System.out.println(sqlmap.get("no"));
 					tour.insert(sqlmap);
 				}
 			}

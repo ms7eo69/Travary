@@ -88,6 +88,7 @@
 			<if test="OCT != null"> OCT = #{OCT},</if>
 			<if test="NOV != null"> NOV = #{NOV},</if>
 			<if test="DEC != null"> DEC = #{DEC},</if>
+			dum = 0
 		</set>
 		WHERE no=#{no}
 	</update>
