@@ -51,7 +51,7 @@ public class PlanService {
 		Map dataMap = null;
 		// 가변설정 (반복시 초기화)
 		try {
-			for (int m = 0; m < 1000; m++) {
+			for (int m = 0; m < 1; m++) {
 				JSONArray keywordGroups = new JSONArray();
 				JSONObject group = null;
 				JSONArray keyword = null;
@@ -96,9 +96,9 @@ public class PlanService {
 					}
 					sqlmap.put(month, data.get("ratio"));
 					}
-					sqlmap.put("no",lastNum++);
+					sqlmap.put("no",tour.selectRno(lastNum++));
+					System.out.println(sqlmap.get("no"));
 					tour.insert(sqlmap);
-					break;
 				}
 			}
 		}
