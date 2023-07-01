@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang='ko'>
   <head>
@@ -99,6 +100,12 @@
                                 <a href="#">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">프로필</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="/Route.do"/>">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">경로</span>
                                 </a>
                             </li>
                         </ul>

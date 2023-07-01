@@ -10,38 +10,17 @@ hgroup, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
+	border: 0;	
 	font: inherit;
 	vertical-align: baseline;
-}
-
-article, aside, details, figcaption
-figure, footer, header, main, menu, nav, section {
-	display: block;
-}
-
-article, aside, details, figcaption,
-figure, footer, header, main, menu, nav, section,
-summary {
-	display: block;
-}
-
-body {
-	line-height: 1;
 }
 
 body {
 	font-size: 15px;
 	line-height: 1.5;
-	margin: 0;
 	color: #000 !important;
 	background-color: #fff !important;	
 	user-select: none;
-}
-
-body {
-	margin: 0;	
 }
 
 html, body {
@@ -53,19 +32,9 @@ body {
 	margin: 0;
 }
 
-nav {
-	color: #fff;
-	background-color: #cc6c73;
-	width: 100%;
-	height: 56px;
-	line-height: 56px;
-}
-
-@media only screen and (min-width: 601px) {
-	nav, .nWrap i, nav a.snt, nav a.snt i {
-		height: 64px;
-		line-height: 64px;
-	}
+article, aside, footer, header, nav,
+section {
+	display: block;
 }
 
 .topNav {
@@ -83,4 +52,85 @@ nav {
 	line-height: 80px;
 	box-shadow: none;
 	letter-spacing: 2px;
+}
+
+.nWidth {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav .nWrap {
+	position: relative;
+	height: 100%;
+}
+
+a {
+	color: inherit;
+}
+
+a {
+	background-color: transparent;
+}
+
+a {
+	color: #039bc5;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a {
+	text-decoration: none;
+}
+
+.ukLink, a {
+	color:  #1c87f0;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+nav a {
+	color: inherit;
+}
+
+#nltxt {
+	color: black;
+	font-family: 'Montserrat' !important;
+	height: 80px;
+}
+
+#routeNav a {
+	text-decoration: none !important;
+}
+
+b, strong {
+	font-weight: bolder;
+}
+
+#routeNav b {
+	font-size: 30px;
+}
+
+h6 {
+	font-size: 13px;
+}
+
+@media (max-width: 1600px) and (min-width: 600px) {
+	#travContent {
+		font-size: 11px !important;
+	}
+}
+
+ol, ul {
+	list-style: none;
+}
+
+.nbc {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s;
 }
