@@ -6,8 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
+<script>
+	var map = new naver.maps.Map('map', {
+	 	  center: new naver.maps.LatLng(37.3595704, 127.105399),
+	 	  zoom: 10
+	});
+</script>
 </head>
-<body>	
+<body>
+	<div id="map" style="width:200px;height:200px;"></div>	
 	<div id="routeHeader">
 		<nav id="routeNav" class="topNav" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">
 			<div class="nWrap nWidth">
