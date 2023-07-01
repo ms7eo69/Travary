@@ -2,18 +2,32 @@
     pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
+<style>
+	.iw_inner {
+    padding: 10px;
+	}
+	.iw_inner h3 {
+		font-size: 16px;	
+		font-weight: bold;
+		padding-bottom: 5px;
+		margin: 10px 0;
+	}
+	.iw_inner p {
+		font-size: 12px;
+		color: #333;
+	}
+</style>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <script>
 	$(function(){
-		var map = new naver.maps.Map('map', {
+		var map = new N.Map('map', {
 			zoom: 10,
-			center: new naver.maps.LatLng(37.3614483, 127.1114883)
+			center: new N.LatLng(37.3614483, 127.1114883)
 		});
 		$(':button').click(function(){
 			var region = $('#sel').val()
-			console.log(region);
 			 $.ajax({
-				 	url: "/plan/GetRoute.do",
+				 	url: '<c:url value="/plan/GetRoute.do"/>',
 					dataType:'json',
 					data:'region='+region
 				}).done((data)=>{
@@ -23,7 +37,7 @@
 						polylinePath.push({y:item[1],x:item[0]})
 					 })
 					//위의 배열을 이용해 라인 그리기
-					var polyline = new naver.maps.Polyline({
+					var polyline = new N.Polyline({
 						path: polylinePath,      //선 위치 변수배열
 						strokeColor: 'blue', //선 색 빨강 #빨강,초록,파랑
 						strokeOpacity: 0.8, //선 투명도 0 ~ 1
@@ -40,38 +54,43 @@
 					 })
 					 var startPosition = data.result.route.traoptimal[0].summary.start;
 					 var goalPosition = data.result.route.traoptimal[0].summary.goal;
-					 markerPositions.push({y:startPosition.location[1],x:startPosition.location[0]});
+					 markerPositions.push({y:startPosition.location[1],x:startPosition.location[0],title:data.start.NAME});
 					 markerPositions.push({y:goalPosition.location[1],x:goalPosition.location[0]})
 
-					 console.log(window.HOME_PATH);
-
-					 markerPositions.forEach(function (item) {
-						var marker = new naver.maps.Marker({
+					  markerPositions.forEach(function (item,index) {
+						var marker = new N.Marker({
 							position: item, //마크 표시할 위치 배열의 마지막 위치
 							title: item.title,
 							map: map,
-							/* icon: {
-										content: [
-											'<div class="cs_mapbridge">',
-											'<div class="map_group _map_group crs">',
-											'<div class="map_marker _marker num1 num1_big"> ',
-											'<span class="ico _icon"></span>',
-											'<span class="shd"></span>',
-											'</div>',
-											'</div>',
-											'</div>'
-										].join(''),
-										size: new naver.maps.Size(38, 58),
-										anchor: new naver.maps.Point(19, 58),
-									},
-							draggable: true */
+							icon: {
+								url:  '<c:url value="/img/example/sp_pins_spot_v3_over.png"/>',
+								size: new naver.maps.Size(24, 37),
+								anchor: new naver.maps.Point(12, 37),
+								origin: new naver.maps.Point(29*index, 150)
+							}
+						});	
+						var infowindow = new naver.maps.InfoWindow({
+							content: [
+								'<div class="iw_inner">',
+								'   <h3>'+item.title+'</h3>',
+								'   <p> 관광지 설명입니다',
+								'   </p>',
+								'</div>'
+								].join('')
 						});
-						/* marker.setIcon(MarkerIcons.BLACK);
-						marker.setIconTintColor(Color.RED); */
-					 })
+						naver.maps.Event.addListener(marker, "click", function(e) {
+							if (infowindow.getMap()) {
+								infowindow.close();
+							} else {
+								infowindow.open(map, marker);
+							}
+						});
+						infowindow.open(map, marker);	
+					 })	
+
 					 var xs = [];
 					 var ys = [];
-					 markerPositions.forEach(function (item) {
+					 polylinePath.forEach(function (item) {
 						xs.push(item.x)
 						ys.push(item.y)
 					 })
@@ -79,12 +98,12 @@
 					 var miny = Math.min(...ys)
 					 var maxx = Math.max(...xs);
 					 var maxy = Math.max(...ys)
-					 var minposition = {y: miny,x:minx}
-					 var maxposition = {y:maxy,x:maxx}
+					 var minposition = {y: miny-0.001,x:minx-0.001}
+					 var maxposition = {y:maxy+0.001,x:maxx+0.001}
 					map.panToBounds( 
-							new naver.maps.LatLngBounds(
-								new naver.maps.LatLng(minposition),
-								new naver.maps.LatLng(maxposition)
+							new N.LatLngBounds(
+								minposition,
+								maxposition
 							)
 			       )
 				}).fail((error)=>{
