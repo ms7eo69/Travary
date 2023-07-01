@@ -6,7 +6,7 @@
 	namespace="com.kosmo.travary.service.impl.touristspot.PopularityMapper">
 	<select id="selectAcmd" resultType="map" parameterType="String">
 		SELECT * FROM 
-		(SELECT name,sregion,lat,lnt
+		(SELECT name,lat,lnt
 		FROM acmd s JOIN 
 		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
 		as total,no FROM acmd_pop GROUP BY NO) p
@@ -15,7 +15,7 @@
 	</select>
 	<select id="selectTop5ByRegion" resultType="map" parameterType="map">
 		SELECT * FROM 
-		(SELECT name,sregion,lat,lnt
+		(SELECT name,lat,lnt
 		FROM tourist_spot s JOIN 
 		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
 		as total,no FROM tourist_spot_popularity GROUP BY NO) p
