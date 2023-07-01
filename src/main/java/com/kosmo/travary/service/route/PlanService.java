@@ -128,31 +128,22 @@ public class PlanService {
 		Map resultMap = new HashMap<>();
 		
 		//경유지 설정 (관광지)
-		List<Map> list = tour.selectTop5ByRegion(region);
-		String waypoints= "";
+		List<Map> wayPoints = tour.selectTop5ByRegion(region);
+		String wayQuery= "";
 		int count =1;
-		for (Map map : list) {
-			String coord = map.get("LNT").toString()+","+map.get("LAT").toString();
-			if(count<list.size()) {
+		for (Map wayPoint : wayPoints) {
+			String coord = wayPoint.get("LNT").toString()+","+wayPoint.get("LAT").toString();
+			if(count<wayPoints.size()) {
 				coord +="|";
-				waypoints +=coord;
+				wayQuery +=coord;
 			}
 			else {
-				waypoints +=coord;
+				wayQuery +=coord;
 			}
 			count++;
-			/*else if(count == list.size()-2) {
-				waypoints +=coord;
-			}
-			else if (count==list.size()-1) {
-				resultMap.put("start",coord);
-			}
-			else {
-				resultMap.put("goal",coord);
-			}*/
 		}
-		System.out.println(waypoints);
-		resultMap.put("waypoints",waypoints);
+		System.out.println(wayQuery);
+		resultMap.put("wayPoints",wayPoints);
 		
 		//시작 출발지 설정 (숙소 혹은 집)
 		Map acmd =  tour.selectAcmd(region);
