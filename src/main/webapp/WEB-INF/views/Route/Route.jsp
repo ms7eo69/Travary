@@ -5,23 +5,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../../../../resources/css/Route.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
 <script>
-	var map = new naver.maps.Map('map', {
-	 	  center: new naver.maps.LatLng(37.3595704, 127.105399),
-	 	  zoom: 10
-	});
+	window.addEventListener('DOMContentLoaded',function(){
+		var map = new naver.maps.Map('map', {
+		 	  center: new naver.maps.LatLng(37.3595704, 127.105399),
+		 	  zoom: 10
+		});
+	})
 </script>
 </head>
-<body>
-	<div id="map" style="width:200px;height:200px;"></div>	
+<body>		
 	<div id="routeHeader">
 		<nav id="routeNav" class="topNav" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">
 			<div class="nWrap nWidth">
 				<a href="/" id="nltxt">
 					<b>Travary</b>
-					<h6 id="travContent">&nbsp;</h6>
+					<h7 id="travContent">&nbsp;</h7>
 				</a>
 				<ul id="nBtn1" class="nbc">
 					<li id="nloginout">
@@ -34,6 +36,38 @@
 				</ul>
 			</div>
 		</nav>
+	</div>
+	<div class="body2">
+		<div class="feedWrap">
+			<a onclick="">
+				<i class="icons" style="font-size: 20px; cursor: pointer;">close</i>
+			</a>
+			<div id="feedBtn" class="chip we wl black blink2" onclick="">
+				<i class="icons" style="font-size: 20px; color: #ffffff; vertical-align: -4px;">
+					voiceCall
+				</i>
+			</div>
+		</div>
+		<a id="RecSelBtnH" class="tfb tooltip" data-position="left" data-attrnum="0"
+		data-tooltip="" onclick="">
+			<h8 data-langnum="3">추천호텔</h8>
+		</a>
+		<a id="RecSelBtnL" class="tfb tool">
+
+		</a>
+		<div class="multiBtn">
+			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="2"></a>
+			<a ></a>
+			<a ></a>
+			<a ></a>
+			<a ></a>
+			<a ></a>
+			<a ></a>
+			<a ></a>
+		</div>
+		<div>
+			<div id="map" style="width:1000px;height:1000px;"></div>
+		</div>
 	</div>
 	<div>		
 		<div class="">

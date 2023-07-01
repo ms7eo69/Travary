@@ -11,6 +11,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;	
+	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -37,6 +38,22 @@ section {
 	display: block;
 }
 
+nav {
+	color: #fff;
+	background-color: #cc6c73;
+	width: 100%;
+	height: 56px;
+	line-height: 56px;
+}
+
+@media only screen and (min-width: 601px) {
+	nav, nav .nWrap i, nav
+	a.st, nav a.st i {
+		height: 64px;
+		line-height: 64px;
+	}
+}
+
 .topNav {
 	transition: background-color 500ms linear;
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05),
@@ -49,9 +66,10 @@ section {
 	position: fixed;
 	z-index: 9999;
 	height: 80px;
-	line-height: 80px;
-	box-shadow: none;
+	line-height: 80px;	
 	letter-spacing: 2px;
+	letter-spacing: 2px;
+	width: 100vw;
 }
 
 .nWidth {
@@ -68,31 +86,23 @@ nav .nWrap {
 }
 
 a {
-	color: inherit;
-}
-
-a {
 	background-color: transparent;
-}
-
-a {
-	color: #039bc5;
-	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
 }
 
-a {
-	text-decoration: none;
-}
-
 .ukLink, a {
-	color:  #1c87f0;
+	color: #1c87f0;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-nav a {
+nav ul a {
+	transition: background-color 0.3s;
+	font-size: 1rem;
 	color: inherit;
+	display: block;
+	padding: 0 15px;
+	cursor: pointer;
 }
 
 #nltxt {
@@ -113,7 +123,7 @@ b, strong {
 	font-size: 30px;
 }
 
-h6 {
+h7 {
 	font-size: 13px;
 }
 
@@ -134,3 +144,22 @@ ol, ul {
 	align-items: center;
 	transition: background-color 0.3s;
 }
+
+nav ul li {
+	transition: background-color 0.3s;	
+	padding: 0;
+	float: none !important;
+}
+
+.npbc {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80px;
+	margin-left: 16px;
+}
+
+#routeNav a {
+	text-decoration: none !important;
+}
+
