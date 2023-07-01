@@ -1,58 +1,15 @@
-div {
-    display: block;
-}
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;    
-}
-
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    font-weight: bold;
-}
-
-h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    font-weight: bold;
-}
-
-em {
-    font-style: italic;
-}
-
-img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
-}
-
-a, abbr, acronym, address, applet, article, aside,
-audio, b, blockquote, big, body, center, canvas, caption, cite, code, command,
-datalist, dd, del, details, dfn, dl, div, dt, em, embed, fieldset, figcaption,
-figure, font, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i,
-iframe, img, ins, input, select, textarea, button, kbd, keygen, label, legend,
-li, meter, nav, menu, object, ol, output, ol, output, p, pre, progress, q, s, samp,
-section, small, span, source, strike, strong, sub, sup, table, tbody, tfoot,
-thead, th, tr, colgroup, col, tdvideo, tt, u, ul, var {
+a, abbr, acronym, address,
+applet, article, aside, audio, b, blockquote, big,
+body, center, canvas, caption, cite, code, command,
+datalist, dd, del, details, dfn, dl, div, dt, em,
+embed, fieldset, figcaption, figure, font, footer,
+form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i,
+iframe, img, ins, input, select, textarea, button,
+kbd, keygen, label, legend, li, meter, nav, menu,
+object, ol, output, p, pre, progress, q, s, samp,
+section, small, span, source, strike, strong, sub,
+sup, table, tbody, tfoot, thead, th, tr, colgroup,
+col, tdvideo, tt, u, ul, var {
     margin: 0;
     padding: 0;
 }
@@ -96,13 +53,210 @@ a:link, a:visited, a:hover, a:focus, a:active {
     text-decoration: none;
 }
 
+/*roadgnb*/
+.travgnb.gnb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    left: 50%;
+    margin-left: -600px;
+}
+
+.travgnb .outdeco {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.travgnb .logo1 {
+    display: block;
+    height: 65px;
+    position: relative;
+}
+
+.travgnb .logo1 a {
+    display: inline-block;
+    width: 233px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url() 50% 0 no-repeat;
+    text-indent: -9999px;
+}
+
+.travgnb .share {
+    position: absolute;
+    right: -8px;
+    top: 23px;
+    z-index: 110;
+}
+
+.travgnb .share ul li {
+    float: left;
+    margin: 0 18px;
+    height: 18px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 18px;
+}
+
+.travgnb .share ul
+li.icon1:before {
+    content: '';
+    float: left;
+    width: 24px;
+    height: 18px;
+    margin-right: 8px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_share.png) no-repeat;
+}
+
+.travgnb .share ul li em {
+    position: absolute;
+    text-indent: -9999px;
+    font-size: 0;
+}
+
+.travgnb .share ul
+li:after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 15px;
+    background: #fff;
+    position: absolute;
+    right: -18px;
+    top: 3px;
+}
+
+.travgnb .share ul li a {
+    display: inline-block;
+    height: 18px;
+    color: #fff;
+}
+
+.travgnb .share ul li
+a:before {
+    content: '';
+    float: left;
+    width: 24px;
+    height: 18px;
+    margin-right: 8px;
+    background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_share.png) no-repeat;
+}
+
+.travgnb .share ul
+li.icon2 a:before {
+    width: 21px;
+    background-position: 0 -18px;
+}
+
+.travgnb .share ul
+li.icon3 a:before {
+    width: 17px;
+    background-position: 0 -54px;
+}
+
+article, aside, canvas,
+dialog, details, eventsource, figcaption, figure,
+footer, header, hgroup, menu, meter, nav, output,
+progress, section, time, video {
+    display: block;
+}
+
+.travgnb header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 70px;
+    transition: top .3s ease-in-out;
+    height: 75px;
+    background: #fff;
+    box-shadow:  0 3px 7px 0 rgba(118, 118, 118, 0.15) ;
+    border-radius: 5px;    
+}
+
+.travgnb header > div {
+    height: 100%;
+    position: relative;
+}
+
+.travgnb header h1 {
+    height: 100%;
+    width: 424px;
+    background: url() 50% 0 no-repeat;
+    text-indent: -9999px;
+}
+
+.travgnb header h1 a {
+    display: block;
+    height: 100%;
+}
+
+.travgnb .tMenu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+}
+
+.travgnb .tMenu li {
+    padding-right: 50px;
+}
+
+.travgnb .tMenu a {
+    position: relative;
+    height: 75px;
+    display: block;
+    position: relative;
+    text-indent: -9999px;
+}
+
+.travgnb .tMenu .on a {
+    background-position: 0 -75px !important;
+}
+
+.travgnb .tMenu .tm1 a {
+    width: 82px;
+    background: url() no-repeat;
+}
+
+.travgnb .tMenu .on a:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #3e6ae5;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.travgnb .tMenu .tm2 a {
+    width: 127px;
+    background: url() no-repeat;
+}
+
+.travgnb .tMenu .tm3 a {
+    width: 62px;
+    background: url() no-repeat;
+}
+
+.tWrap {
+    position: relative;
+}
+
+/*roadmain*/
 .roadmain {    
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     list-style: none;
     padding: 0;
-    z-index: 1;    
+    z-index: 1;
 }
 
 .roadout {
@@ -124,8 +278,8 @@ a:link, a:visited, a:hover, a:focus, a:active {
 }
 
 .rmroid .rslide .roadout {
-    -webkit-transform: translate3d();
-    transform: translate3d();
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 
 .roadin {      
@@ -143,19 +297,19 @@ a:link, a:visited, a:hover, a:focus, a:active {
 }
 
 /*top*/
-.roadtop.pagetop {    
+.travgnb.pagetop {    
     height: 695px;
     border-bottom: 1px solid #fff;
     position: relative;
 }
 
-.roadtop .outdeco {
+.travgnb .outdeco {
     position: relative;
     width: 1200px;
     margin: 0 auto;
 }
 
-.roadtop.pagetop .outdeco {
+.travgnb.pagetop .outdeco {
     position: absolute;    
     left: 50%;
     top: 0;
@@ -163,13 +317,14 @@ a:link, a:visited, a:hover, a:focus, a:active {
     z-index: 100;    
 }
 
-.roadtop.pagetop .indeco {
+.travgnb.pagetop .indeco {
     padding: 285px 0 0;
     color: #fff;
     text-align: center;
 }
 
-.roadtop.pagetop .indeco strong {
+.travgnb.pagetop
+.indeco strong {
     display: block;
     font-weight: 700;
     font-size: 40px;
@@ -177,7 +332,8 @@ a:link, a:visited, a:hover, a:focus, a:active {
     line-height: 46px;
 }
 
-.roadtop.pagetop .indeco p {
+.travgnb.pagetop
+.indeco p {
     padding: 12px 0 45px;
     font-size: 22px;
     font-weight: 300;
@@ -185,11 +341,12 @@ a:link, a:visited, a:hover, a:focus, a:active {
     line-height: 30px;
 }
 
-.outdeco2 {
+.tWrap {
     position: relative;
 }
 
-.roadtop.pagetop .outdeco2 {
+.travgnb.pagetop
+.tWrap {
     position: relative;
     height: 695px;    
     background-size: cover;
@@ -197,7 +354,8 @@ a:link, a:visited, a:hover, a:focus, a:active {
     background-repeat: no-repeat;
 }
 
-.roadtop.pagetop .outdeco2:after {
+.travgnb.pagetop
+.tWrap:after {
     content: '';
     display: block;
     height: 100%;
@@ -208,7 +366,8 @@ a:link, a:visited, a:hover, a:focus, a:active {
     background: rgba(0, 0, 0, .4);
 }
 
-.roadtop.pagetop .imglink {
+.travgnb.pagetop
+.imglink {
     padding-left: 30px;
     position: absolute;
     right: 32px;
@@ -218,7 +377,8 @@ a:link, a:visited, a:hover, a:focus, a:active {
     letter-spacing: -0.8px;
 }
 
-.roadtop.pagetop .imglink:before {
+.travgnb.pagetop
+.imglink:before {
     content: '';
     position: absolute;
     left: 0;
@@ -229,14 +389,16 @@ a:link, a:visited, a:hover, a:focus, a:active {
     background: url(https://korean.visitkorea.or.kr/resources/images/curation/icon_wallpaper_link1.png) no-repeat;
 }
 
-.roadtop.pagetop .imglink span {
+.travgnb.pagetop
+.imglink span {
     display: block;
     font-weight: 300;
     font-size: 14px;
     letter-spacing: 0;
 }
 
-.roadtop.pagetop .imglink span:after {
+.travgnb.pagetop
+.imglink span:after {
     content: '';
     display: inline-block;
     width: 17px;
@@ -245,7 +407,7 @@ a:link, a:visited, a:hover, a:focus, a:active {
     margin-left: 8px;
 }
 
-.roadtop.pagetop:after {
+.travgnb.pagetop:after {
     content: '';
 }
 
@@ -300,7 +462,7 @@ dl, ul, ol, menu, li {
     color: #fff;
     background: #567ff2;
     box-shadow: 6px 9px 16px 0px rgba(96, 107, 243, 0.35);
-    border-radius: 50px;    
+    border-radius: 50px;
 }
 
 .fav-tab ul li a:before {
