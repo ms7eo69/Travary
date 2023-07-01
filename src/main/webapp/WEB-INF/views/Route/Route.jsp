@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 					<li id="nloginout">
 						<div class="npbc">
 							<span id="loginout">
-								<a onclick="">로그인</a>
+								<a onclick=""></a>
 							</span>
 						</div>
 					</li>
@@ -32,7 +32,7 @@
 				<div class="" id="">
 					<div class="">
 						<input id="" type="text" class="center" data-attrnum="10"
-						data-attrtype="placeholder" placeholder="검색어를 입력하세요." autocomplete="off">
+						data-attrtype="placeholder" placeholder="" autocomplete="off">
 					</div>
 					<button class="" id="" onclick="">
 						<i class="">search</i>
@@ -43,7 +43,7 @@
 					value="">
 					<label class="" for="" style="width: 100%">
 						<i class="">hotel</i>
-						<span data-langnum="12">호텔</span>
+						<span data-langnum="12"></span>
 					</label>
 					<input id="" class="" type="radio">
 					<label>
