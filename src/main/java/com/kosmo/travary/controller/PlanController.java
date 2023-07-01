@@ -69,14 +69,13 @@ public class PlanController {
 	@GetMapping("/GetRoute.do")
 	@ResponseBody
 	public Map getRoute(@RequestParam Map map) {		
-          map = service.direction(map.get("region").toString());
+          map = service.direction(map);
 		return map;
 	}
 	
 	@GetMapping("/Direction.do")
 	public String direction(Model model) {
 		List<String> list = tour.selectSregion();
-		System.out.println(list);
 		model.addAttribute("sregionList", list);
 		return "plan/Direction";
 	}

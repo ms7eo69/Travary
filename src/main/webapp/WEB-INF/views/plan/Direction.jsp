@@ -35,18 +35,39 @@
 					});
 					// 배열 마지막 위치를 마크로 표시함
 					var markerPositions =[];
-					data.result.route.traoptimal[0].summary.waypoints.forEach(function(item,index){
-						markerPositions.push({y:item.location[1],x:item.location[0]})
+					data.wayPoints.forEach(function(item,index){
+						markerPositions.push({x:item.LNT,y:item.LAT,title:item.NAME});
 					 })
 					 var startPosition = data.result.route.traoptimal[0].summary.start;
 					 var goalPosition = data.result.route.traoptimal[0].summary.goal;
 					 markerPositions.push({y:startPosition.location[1],x:startPosition.location[0]});
 					 markerPositions.push({y:goalPosition.location[1],x:goalPosition.location[0]})
+
+					 console.log(window.HOME_PATH);
+
 					 markerPositions.forEach(function (item) {
 						var marker = new naver.maps.Marker({
 							position: item, //마크 표시할 위치 배열의 마지막 위치
-							map: map
+							title: item.title,
+							map: map,
+							/* icon: {
+										content: [
+											'<div class="cs_mapbridge">',
+											'<div class="map_group _map_group crs">',
+											'<div class="map_marker _marker num1 num1_big"> ',
+											'<span class="ico _icon"></span>',
+											'<span class="shd"></span>',
+											'</div>',
+											'</div>',
+											'</div>'
+										].join(''),
+										size: new naver.maps.Size(38, 58),
+										anchor: new naver.maps.Point(19, 58),
+									},
+							draggable: true */
 						});
+						/* marker.setIcon(MarkerIcons.BLACK);
+						marker.setIconTintColor(Color.RED); */
 					 })
 					 var xs = [];
 					 var ys = [];
@@ -58,21 +79,10 @@
 					 var miny = Math.min(...ys)
 					 var maxx = Math.max(...xs);
 					 var maxy = Math.max(...ys)
-					 console.log(markerPositions[0]);
 					 var minposition = {y: miny,x:minx}
 					 var maxposition = {y:maxy,x:maxx}
 					map.panToBounds( 
 							new naver.maps.LatLngBounds(
-								/* markerPositions.forEach(function (item) {
-									console.log(item);
-									new naver.maps.LatLng(item)
-								}) */
-								/* new naver.maps.LatLng(markerPositions[0]),
-								new naver.maps.LatLng(markerPositions[1]),
-								new naver.maps.LatLng(markerPositions[2]),
-								new naver.maps.LatLng(markerPositions[3]),
-								new naver.maps.LatLng(markerPositions[4]),
-								new naver.maps.LatLng(markerPositions[5]) */
 								new naver.maps.LatLng(minposition),
 								new naver.maps.LatLng(maxposition)
 							)
