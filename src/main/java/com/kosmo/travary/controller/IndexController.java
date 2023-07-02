@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-	@RequestMapping("/")
+	@RequestMapping("/travary")
 	public String contextRoot() {
-		return "forward:/kosmo/Index";
+		return "forward:/travary/Index";
 	}
 	
-	@RequestMapping("/kosmo/Index")
+	@RequestMapping("/travary/Index")
 	public String index() {
 		return "Index";
 	}
