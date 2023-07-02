@@ -1,13 +1,9 @@
 HELP.md
 target/
-properties/**
-resources/**
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.properties
 *.properties
-naverkey.properties
 
 ### STS ###
 .apt_generated
