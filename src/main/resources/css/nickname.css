@@ -1,0 +1,191 @@
+input, textarea {
+    font-family: inherit;
+}
+
+*, ::before, ::after {
+    box-sizing: inherit;
+    border-width: 0;
+    border-style: none;
+}
+
+img, svg, video, canvas, audio,
+iframe, embed, object {
+    vertical-align: middle;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+button, input, optgroup, select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+button, select {
+    text-transform: none;
+}
+
+body {
+    margin: 0;
+    line-height: inherit;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.subDiv {
+    display: flex;
+    flex-direction: column;
+    min-height: 927px;    
+}
+
+.topDiv {
+    transition: height 250ms ease 0s;
+    overflow: hidden;
+    top: 0;
+    height: 200px;
+}
+
+@media (min-width: 1142px) {
+    .topDiv {
+        height: 200px;
+    }
+}
+
+.nickForm {
+    max-width: 768px;
+    min-width: 315px;
+}
+
+@media (min-width: 768px) {
+    .nickForm {
+        margin: 0 auto;
+    }
+}
+
+.midDiv {
+    padding: 40px 30px 80px;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .midDiv {
+        padding: 40px 0 80px;
+        width: 768px;
+    }
+}
+
+.formInDiv {
+    box-sizing: border-box;
+    position: relative;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formHead {
+    width: 75px;
+    height: 75px;
+}
+
+.inputFormMain {
+    margin-bottom: 20px;
+}
+
+.inputFormDiv {
+    display: flex;
+    width: 100%;
+    border-width: 0px 0px 1px;
+    border-color: rgba(58, 58, 58, 0.1);
+    border-style: solid;
+    padding: 34px 0 17px;
+}
+
+.inputNick {
+    border: 0;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    margin-left: 35px;
+    outline: 0;    
+}
+
+.inputNick::placeholder {
+    color: rgb(209, 207, 207);
+}
+
+.inputNick:placeholder-shown {
+    text-align: left;
+    transform: translateX(calc(50% - 91px));
+    
+}
+
+.formClose {
+    width: 35px;
+    height: 100%;
+    margin-right: auto;
+    cursor: pointer;    
+    display: inline-block !important;
+}
+
+.errorMSG {
+    font-size: 13px;
+    color: rgba(58, 58, 58, 0.5);
+    height: 16px;
+    display: none;
+    margin: 6px 0 0;
+}
+
+button {
+    appearance: button;   
+    background-color: transparent;
+    background-image: none;    
+}
+
+button, [role="button"] {
+    cursor: pointer;
+}
+
+:disabled {
+    cursor: default;
+}
+
+.nickBtn {
+    color: rgb(58, 58, 58);
+    float: none;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.inputBtn {
+    float: none;
+    font-weight: bold;    
+    text-align: center;
+    width: 96.5%;
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 4px;
+    padding: 14px 12px;
+    border: 1px solid rgb(54, 143, 255);
+    background-color: rgb(54, 143, 255);
+    color: white;
+}
+
+.nickBtn:disabled {
+    opacity: 0.3;
+}
+
+.inputBtn {
+    opacity: 0.3;
+}
