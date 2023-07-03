@@ -6,10 +6,115 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!--Font & Icon-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
+<script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
+ 
+<!-- Bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link rel="stylesheet" href="<c:url value="css/navigationbar.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/main.css"/>"/>
 </head>
 <body>
- <div class="container-fluid container py-3 mt-4">
+<!---------------------------------------------네비게이션바 시작------------------------------------------- -->
+    <div class="container-fluid " style="height: 100vh">
+     <nav class="main-menu position-fixed shadow ">
+        <div class="outerDiv ">
+            <div class="innerDiv">
+                <div id="nav-header">
+                    <div class="logo">
+                        <a href="#"><img src=" /images/logo/logo.png" class="nav-logo"></a>
+                    </div>         
+                    <div class="settings"></div>       
+                </div>
+                <div id="nav-body">
+                    <div class="menu-style">
+                        <ul class="navfont">                                
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-house-chimney-window"></i>
+                                    <span class="nav-text">홈</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-magnifying-glass"></i>
+                                    <span class="nav-text">검색</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-regular fa-compass"></i>
+                                    <span class="nav-text">탐색</span>                        
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-solid fa-circle-play"></i>
+                                    <span class="nav-text">릴스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-solid fa-paper-plane"></i>
+                                    <span class="nav-text">메시지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-sharp fa-regular fa-heart"></i>
+                                    <span class="nav-text">알림</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-regular fa-square-plus"></i>
+                                    <span class="nav-text">만들기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">프로필</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="/Route.do"/>">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">경로</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="community.do"/>">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">커뮤니티</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="settings2"></div>
+                <div id="nav-footer">
+                    <div class="dropup">
+                        <a href="" class="dropdown-toggle dropdown-toggle-no-caret" data-toggle="dropdown">
+                            <i class="fa fa-solid fa-bars" ></i>더 보기
+                        </a> 
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#">로그인</a>
+                            <a class="dropdown-item" href="../member/regist/regi.html">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>  
+     <!---------------------------------------------네비게이션바 끝------------------------------------------- --> 
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
+   <div class="container-fluid container py-3 mt-4">
       <h2 class="h3 mb-4">Travary와 함께한 경험을 공유해보세요</h2>
 	  <div class="row scroll_add"><!-------------------------- 무한 스크롤 적용버전----------------------------------- -->  
 	    <div class="row"><!-------------------------- row start----------------------------------- -->
@@ -58,8 +163,6 @@
 		            </div>
 		        </div>
 		    </div>
-	    </div><!-------------------------- row end----------------------------------- -->
-	       <div class="row"><!-------------------------- row start----------------------------------- -->
 			<div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
@@ -75,7 +178,9 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+	    </div><!-------------------------- row end----------------------------------- -->
+	       <div class="row"><!-------------------------- row start----------------------------------- -->
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/ganghwa.jpg" class="card-img-top rounded snsCard"/>
@@ -90,7 +195,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/songdo.png" class="card-img-top rounded snsCard"/>
@@ -105,9 +210,7 @@
 		            </div>
 		        </div>
 		    </div>
-	    </div><!-------------------------- row end----------------------------------- -->
-	    <div class="row"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/sungsan.png" class="card-img-top rounded snsCard"/>
@@ -122,7 +225,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/suwon1.png" class="card-img-top rounded snsCard"/>
@@ -137,7 +240,9 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+	    </div><!-------------------------- row end----------------------------------- -->
+	    <div class="row"><!-------------------------- row start----------------------------------- -->
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
 	           			 <img src=" /images/sns.body/seoulsup.png" class="card-img-top rounded snsCard"/>
@@ -152,9 +257,7 @@
 		            </div>
 		        </div>
 		    </div>
-	    </div><!-------------------------- row end----------------------------------- -->
-	    <div class="row"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-4">
+			<div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
 	           			 <img src=" /images/sns.body/paju.png" class="card-img-top rounded snsCard"/>
@@ -169,7 +272,7 @@
 		             </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
 	            		<img src=" /images/sns.body/tongyoung.png" class="card-img-top rounded snsCard" alt="..."/>
@@ -185,7 +288,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
            	 			<img src=" /images/sns.body/ulsan.png" class="card-img-top rounded snsCard" alt="..."/>
@@ -202,5 +305,31 @@
 		    </div>
 	    </div><!-------------------------- row end----------------------------------- -->
 	  </div><!-- 무한스크롤 적용부분 -->
+<script>
+<!-- 무한스크롤 -->
+var page=1;
+var index=0;
+var content = $('.scroll_add').clone();
+$(window).scroll(function() {
+  // console.log($(window).scrollTop(),$(document).height() - $(window).height());
+  if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
+    console.log('간닷!');
+
+    // loadData()//ajax 함수 호출!
+    
+    // var src = '../images/'+(index++)+'.jpg';
+   	// for(var i=0;i<content.find('img').length;i++)
+    // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
+    // content.find('img:eq(1)').prop('src','../images/2.jpg');
+    // content.find('img:eq(2)').prop('src','../images/3.jpg');
+    // content.find('img:eq(3)').prop('src','../images/4.jpg');
+    $(".scroll_add").append(content.html());
+    page++;
+    index++;
+    console.log(index);
+  }
+});
+<!-- 무한스크롤 -->
+</script>
 </body>
 </html>
