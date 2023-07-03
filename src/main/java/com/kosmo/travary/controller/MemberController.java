@@ -73,18 +73,8 @@ public class MemberController {
 	}
 	
 	@PostMapping("Register.do")
-	public String registerProcess(
-									@RequestParam String id, @RequestParam String pwd, @RequestParam String nickname, 
-									@RequestParam String gender, @RequestParam String age_group, 
-									@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3) {
-		String phone = phone1 + "-" + phone2 + "-" + phone3; //회원가입할때 전화번호 입력시 DB에 ,로 입력되는거 수정용
-		
-		Map<String, Object> map = new HashMap<>();
-		map.put("id", id);
-		map.put("pwd", pwd);
-		map.put("nickname", nickname);
-		map.put("gender", gender);
-		map.put("age_group", age_group);
+	public String registerProcess(@RequestParam Map map) {
+		String phone = map.get("phone1") + "-" + map.get("phone2")+ "-" + map.get("phone3"); //회원가입할때 전화번호 입력시 DB에 ,로 입력되는거 수정용
 		map.put("phone", phone);
 		int affected = memberService.insert(map);
 		return affected==1?"forward:/kosmo/member/Login.do":"member/Register";
