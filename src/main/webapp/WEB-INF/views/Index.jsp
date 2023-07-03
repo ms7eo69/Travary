@@ -648,7 +648,7 @@
                 </div>
             </div>
             <div class="modal-body2 mb-2">
-                <a href="" class="noneunderline">                    
+                <a href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code" class="noneunderline">                    
                     <img src="/images/login/kakaoicon.png" class="kakaoIcon">                    
                 </a>
                 <a href="" class="noneunderline">                    

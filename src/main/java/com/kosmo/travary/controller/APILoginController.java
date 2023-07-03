@@ -3,6 +3,9 @@ package com.kosmo.travary.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kosmo.travary.model.CookieInfo;
+import com.kosmo.travary.model.Cookies;
+import com.kosmo.travary.model.JWTokens;
 import com.kosmo.travary.service.impl.member.GoogleLoginService;
 import com.kosmo.travary.service.impl.member.IKakaoLoginService;
 import com.kosmo.travary.service.impl.member.KakaoLoginService;
@@ -29,10 +35,20 @@ public class APILoginController {
 	@Autowired
 	private MemberServiceImpl memberService;
 	
-
+	private String idName;
+	private String tokenName;
+	private String keyName;
+	
+	public APILoginController(CookieInfo cookieInfo) {
+		tokenName = cookieInfo.getTokenName();
+		keyName = cookieInfo.getKeyName();
+		idName = cookieInfo.getIdName();
+	}
+	
 	@GetMapping("/kakaoLogin")
-	public String kakaoLogin(@RequestParam(value = "code", required = false) String code) throws Throwable {
-
+	public String kakaoLogin(@RequestParam(value = "code", required = false) String code, HttpServletRequest req,
+	        HttpServletResponse resp) throws Throwable {
+		
 		String access_Token = kakaoLoginService.getAccessToken(code);
 
 		HashMap<String, Object> userInfo = kakaoLoginService.getUserInfo(access_Token);
@@ -41,10 +57,17 @@ public class APILoginController {
 		
 			String nickname = (String) userInfo.get("nickname");
 			String image = (String) userInfo.get("image");
-			String email = (String) userInfo.get("email");
+			String pwd = (String) userInfo.get("email");
 			String age = (String) userInfo.get("age");
 			String gender = (String) userInfo.get("gender");
 			String birthday = (String) userInfo.get("birthday");
+			
+			System.out.println(nickname);
+			System.out.println(image);
+			System.out.println(pwd);
+			System.out.println(age);
+			System.out.println(gender);
+			System.out.println(birthday);
 			
 			if (age.equals("10~19")) {
 				age = "10대";
@@ -75,15 +98,25 @@ public class APILoginController {
 			
 			apiLoginMap.put("nickname", nickname);
 			apiLoginMap.put("profile_link", image);
-			//kakaoMap.put("email", email);
+			apiLoginMap.put("pwd", pwd);
 			apiLoginMap.put("age_group", age);
 			apiLoginMap.put("gender", gender);
-			//kakaoMap.put("birthday", birthday);
+			apiLoginMap.put("birthday", birthday);
 			apiLoginMap.put("id", id);
-
-			int affected = memberService.insert(apiLoginMap);
+			apiLoginMap.put("keyName", keyName);
 			
-			return "member/MyPage";
+			int affected = memberService.GoogleInsert(apiLoginMap);
+			int expireMinute = 30;
+			String token = JWTokens.createToken(id, apiLoginMap, expireMinute);
+			//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
+			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
+			//Cookies.createCookie(idName, apiLoginMap.get("identifier").toString(), resp, req, expireMinute);
+			System.out.println(apiLoginMap.get("id"));
+			req.setAttribute("validate", apiLoginMap.get("id"));
+			
+			System.out.println(token);
+
+			return affected ==1?"forward:/":"member/MyPage";
 		
 	}
 	
