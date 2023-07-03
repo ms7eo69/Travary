@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-	@GetMapping("/")
+	@GetMapping("/travary")
 	public String contextRoot() {
-		return "forward:/kosmo/Index.msp";
+		return "forward:/travary/Index.msp";
 	}
 	
-	@GetMapping("/kosmo/Index.msp")
+	@GetMapping("/travary/Index.msp")
 	public String index() {
 		return "Index";
 	}
