@@ -109,7 +109,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/community/List.jsp">
+                                <a href="<c:url value="community.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">커뮤니티</span>
                                 </a>

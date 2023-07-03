@@ -6,8 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 	
-	@GetMapping("/")
+	@GetMapping("/travary")
 	public String index() {
 		return "Index";
+	}
+	@GetMapping("/community.do")
+	public String community() {
+		return "community/List";
 	}
 }
