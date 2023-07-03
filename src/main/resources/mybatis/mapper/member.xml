@@ -2,13 +2,31 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kosmo.travary.service.impl.member.MemberMapper">
-	<select id="findByIdAndPwd" parameterType="Map" resultType="boolean">
-		SELECT COUNT(*) FROM member WHERE id = #{id} AND pwd=#{pwd}
+<mapper
+	namespace="com.kosmo.travary.service.impl.member.MemberMapper">
+	<!-- <select id="ApiMemberConfirm" parameterType="map" resultType="boolean">
+		SELECT COUNT(*) FROM member WHERE id = #{id}
 	</select>
-	<update id="saveKey" parameterType="map">UPDATE member SET key=#{${keyName}} WHERE id = #{id}</update>
-	
+	<insert id="GoogleLoginsave" parameterType="Map">
+		INSERT INTO member(id, nickname, regdate, profile_link) VALUES(#{id}, #{nickname}, SYSDATE, #{profile_link})
+	</insert> -->
+	<select id="findByIdAndPwd" parameterType="map" resultType="boolean">
+		SELECT COUNT(*) FROM member WHERE id = #{id} AND pwd = #{pwd}
+	</select>
 	<insert id="save" parameterType="Map">
-		INSERT INTO member(id, pwd, nickname, gender, age_group, phone, regdate) VALUES(#{id}, #{pwd}, #{nickname}, #{gender}, #{age_group}, #{phone}, SYSDATE)
+		<selectKey keyProperty="identifier" resultType="int"  order="BEFORE">
+			SELECT seq_member_identifier.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO member VALUES(#{id},#{pwd}, #{nickname}, #{gender}, #{age_group}, #{phone},SYSDATE, #{profile_link},#{${keyName}},#{identifier})
 	</insert>
+	<update id="saveKey" parameterType="map" >
+	<selectKey keyProperty="identifier" resultType="int"  order="BEFORE">
+		SELECT seq_member_identifier.NEXTVAL FROM DUAL
+	</selectKey>
+	UPDATE member SET key=#{${keyName}},identifier=#{identifier} WHERE id = #{id}</update>
+	<select id="findById" parameterType="map" resultType="map">
+	SELECT * FROM member WHERE id = #{id}
+	</select>
+	<select id="findKeyByIdentifier" parameterType="String" resultType="String">
+		SELECT key FROM member WHERE identifier=#{value}</select>
 </mapper>

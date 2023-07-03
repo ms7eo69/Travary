@@ -1,5 +1,6 @@
 package com.kosmo.travary.service.impl.member;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,5 +17,8 @@ public interface MemberMapper {
 		int deleteByNo(Map map);
 		int updateByNo(Map map);
 		int count(Map map);
-		Map findById(Map map);
+		int GoogleLoginsave(Map map);
+		boolean ApiMemberConfirm(Map apiLoginMap);
+		String findKeyByIdentifier(String string);
+		
 }

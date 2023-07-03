@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.kosmo.travary.service.impl.touristspot.PopularityMapper">
+	<select id="selectAcmd" resultType="map" parameterType="String">
+		SELECT * FROM 
+		(SELECT name,sregion,lat,lnt
+		FROM acmd s JOIN 
+		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
+		as total,no FROM acmd_pop GROUP BY NO) p
+		ON s.no=p.no WHERE sregion=#{region} ORDER BY total desc)
+		WHERE rownum =1
+	</select>
+	<select id="selectTop5ByRegion" resultType="map" parameterType="String">
+		SELECT * FROM 
+		(SELECT name,sregion,lat,lnt
+		FROM tourist_spot s JOIN 
+		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
+		as total,no FROM tourist_spot_popularity GROUP BY NO) p
+		ON s.no=p.no WHERE sregion=#{region} ORDER BY total desc)
+		WHERE rownum &lt;=5
+	</select>
+	<insert id="saveByNo" parameterType="map" >
+		INSERT INTO acmd_pop VALUES( #{no} ,
+		<choose>
+			<when test="JAN != null"> #{JAN} </when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="FEB != null">#{FEB}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="MAR != null">#{MAR}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="APR != null">#{APR}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="MAY != null">#{MAY}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="JUN != null">#{JUN}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="JUL != null">#{JUL}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="AUG != null">#{AUG}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="SEP != null">#{SEP}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="OCT != null">#{OCT}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="NOV != null">#{NOV}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>,
+		<choose>
+			<when test="DEC != null">#{DEC}</when>
+			<otherwise>DEFAULT</otherwise>
+		</choose>)
+	</insert>
+	<select id="findFourByNo" resultType="String" parameterType="map" >
+	<!-- SELECT NAME FROM tourist_spot WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
+	SELECT NAME FROM acmd WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3)
+	</select>
+	<select id="find" resultType="int" >
+		SELECT * FROM LASTNUM_acmd
+	</select>
+	<update id="updateLastNum" parameterType="map">
+		UPDATE lastnum_acmd SET no=#{no} WHERE no > 0
+	</update>
+	<select id="selectSregion" resultType="String">
+		SELECT distinct sregion from tourist_spot ORDER BY sregion
+	</select>
+</mapper>

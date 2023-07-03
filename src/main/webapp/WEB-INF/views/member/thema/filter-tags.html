@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Gallery Filter Plugin Demo</title>
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/style.css" />
+<style>
+h1 { margin:150px auto 60px auto; text-align:center;}
+
+.thema {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+.overlay-test {
+  width: 280px;
+  height: 180px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+.overlay-test2 {
+  position: absolute;
+  /* top: 50%;
+  left: 50%; */
+  border-radius: 5px;
+  /* transform: translate(-50%, -50%); */
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+.overlay-test3 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.thema:hover .overlay,
+.thema:hover .overlay-test,
+.thema:hover .overlay-test2,
+.thema:hover .overlay-test3{
+  opacity: 1;
+}
+
+.imgText {
+  font-size: 18px;
+  
+}
+</style>
+
+</head>
+<body>
+<h1>Image Gallery Filter Plugin Demo</h1>
+
+    <div id="buttons"></div>
+
+    <div id="gallery">
+      <div class="thema">
+        <img src="img/01activity.jpg" data-tags="신나는" alt="Activity" />
+        <button class="overlay btnlay">
+          <span class="imgText">액티비티</span>
+        </button>
+      </div>
+      <div class="thema">
+        <img src="img/02park.jpg" data-tags="신나는, 아이들과" alt="ThemaPark" />
+        <div class="overlay-test">
+          <span class="imgText">테마파크</span>
+        </div>
+      </div>
+      <div class="thema">
+        <img src="https://picsum.photos/600/450?image=755" data-tags="조용한, 연인과" alt="Alt 3" />
+        <div class="overlay-test2">
+          <span class="imgText">힐링</span>
+        </div>
+      </div>
+      <div class="thema">
+        <img src="https://picsum.photos/600/450?image=778" data-tags="Blog,Health & Beauty" alt="Alt 4" />
+        <div class="overlay-test3">
+          <span class="imgText">4</span>
+        </div>
+      </div>
+      
+      <img src="https://picsum.photos/600/450?image=764" data-tags="Business" alt="Alt 5" />
+      <img src="https://picsum.photos/600/450?image=526" data-tags="Blog, Shop" alt="Alt 6" />
+      <img src="https://picsum.photos/600/450?image=668" data-tags="Blog, Megazine" alt="Alt 7" />
+      <img src="https://picsum.photos/600/450?image=660" data-tags="Blog" alt="Alt 8" />
+      <img src="https://picsum.photos/600/450?image=659" data-tags="반려동물과" alt="Alt 9" />
+      <img src="https://picsum.photos/600/450?image=513" data-tags="Business" alt="Alt 10" />
+      <img src="https://picsum.photos/600/450?image=535" data-tags="Shop" alt="Alt 11" />
+      <img src="https://picsum.photos/600/450?image=531" data-tags="Shop,Blog" alt="Alt 12" />
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+<script src="js/filter-tags.js"></script>
+</body>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  
+  // $('.overlay-test').width($('.overlay-test').siblings('img').width());
+  //   console.log($('.overlay-test').width());  
+  //   console.log($('.overlay-test').siblings('img').width());
+</script>
+</html>

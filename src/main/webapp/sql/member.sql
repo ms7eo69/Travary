@@ -1,5 +1,11 @@
 
 
+/* Create Sequences */
+
+CREATE SEQUENCE seq_member_identifier INCREMENT BY 19 START WITH 1;
+
+
+
 /* Create Tables */
 
 CREATE TABLE member
@@ -10,7 +16,10 @@ CREATE TABLE member
 	gender nvarchar2(10) NOT NULL,
 	birth nvarchar2(20) NOT NULL,
 	phone nvarchar2(20) NOT NULL,
-	regdate date DEFAULT SYSDATE,
+	regidate date DEFAULT SYSDATE,
+	profile_link nvarchar2(200),
+	key nvarchar2(50) NOT NULL,
+	identifier number DEFAULT 0 NOT NULL,
 	PRIMARY KEY (id)
 );
 
