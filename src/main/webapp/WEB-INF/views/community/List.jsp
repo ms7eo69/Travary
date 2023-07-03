@@ -1,46 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang='ko'>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!--Font & Icon-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
-	<script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
-	 
-    <!-- Bootstrap-->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
-    <!--date picker-->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
-    <!--page css-->
-    <link rel="stylesheet" href="css/navigationbar.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
-    <!-- Optional JavaScript -->
-    <script src="js/scrolling.js" defer></script>
-    <title>Travary</title>
-  <style>
-    .nav-text{
-      font-family: Verdana, Geneva, Tahoma, sans-serif !important;
-      font-weight: 500 !important;
-    }
-  </style>
-  </head>
-  <body>  
-  <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--Font & Icon-->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
+<script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
+ 
+<!-- Bootstrap-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link rel="stylesheet" href="<c:url value="css/navigationbar.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/main.css"/>"/>
+</head>
+<body>
+<!---------------------------------------------네비게이션바 시작------------------------------------------- -->
     <div class="container-fluid " style="height: 100vh">
      <nav class="main-menu position-fixed shadow ">
         <div class="outerDiv ">
@@ -132,209 +112,13 @@
             </div>
         </div>
     </nav>  
-     <!---------------------------------------------네비게이션바 끝------------------------------------------- -->  
-      
-	
-      <section class="section section-top section-full">
-        <!-- Cover -->
-        <div class="bg-cover"></div>
-
-        <!-- Overlay -->
-        <div class="bg-overlay"></div>
-
-        <!-- Triangles -->
-        <div class="bg-triangle bg-triangle-light bg-triangle-bottom bg-triangle-left"></div>
-        <div class="bg-triangle bg-triangle-light bg-triangle-bottom bg-triangle-right"></div>
-
-        <!-- Content -->
-	        <div class="container">
-	          <div class="row justify-content-center align-items-center">
-	            <div class="col-md-8 col-lg-7"></div>
-	          </div>
-	          <!-- / .row -->
-	        </div>
-        <!-- / .container -->
-      </section>
-      <!--------------------------------------------------------------검색창--------------------------------------------------------------->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 ">
-            <div class="card ">
-              <div class="card-body">
-                <h1 class="h3 mb-4">
-                  Travary와 함께 </br>특별한 여행을 만들어보세요
-                </h1>
-                <form>
-                  <div class="form-group">
-                    <div class="row px-3 ">
-                      <label class="mb-0" for="locationInput mb-0 mt-5">목적지</label>
-                      <input type="text" class="form-control w-100 br0" id="locationInput" aria-describedby="locationInputHelp" placeholder="Anywhere"/>
-                      <small id="locationInputHelp" class="form-text text-muted sr-only">떠나고 싶은 여행지를 검색해주세요!</small>
-                    </div>
-                  </div>
-                  <div class="row px-3 ">
-                    <div class="col-sm-6 px-0">
-                      여행 가는날 <input class="br0" id="startDate" />
-                    </div>
-                    <div class="col-sm-6 px-0 br0">
-                      돌아오는 날 <input class="br0" id="endDate" />
-                    </div>
-                  </div>
-                  <div class="row px-3">
-                    <div class="col-sm px-0 br0">
-                      <div class="form-group">
-                        <label class="mb-0 mt-3" for="exampleFormControlSelect1">몇 명이서 함께하나요?</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option selected>함께할 인원을 선택해주세요</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
-                          <option>10</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="#" class="btn btn-danger btn-block btn-lg">AI 여행 계획 생성</a>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-<!----------------------------------------------------------------여행지 추천 섹션------------------------------------------------------------------>
-    <div class="container-fluid container py-3 mt-5">
-      <h2 class="h3">많이 찾는 여행지를 추천해드릴게요</h2>
-      <div class="row mt-4">
-        <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-            <img src=" /images/best-theme/busan.jpg" class="card-img-top rounded rc-card" alt="..."/>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">부산</h5>
-              <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;</p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-            <img src=" /images/best-theme/seoul.jpg" class="card-img-top rounded rc-card" alt="..."/>
-           	</div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">서울</h5>
-              <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;</p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class=" col-md-3">
-            <div class="card mb-3 border-0 shadow ">
-            <div class="card-img-wrap">
-              <img src=" /images/best-theme/suwon.jpg" class="card-img-top rounded rc-card" alt="..."/>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title mb-0">수원</h5>
-                <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-            <img src=" /images/best-theme/jeju3.jpg" class="card-img-top rounded rc-card" alt="..."/>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">제주</h5>
-              <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!----------------------------------------------------------------테마 추천 섹션------------------------------------------------------------------>
-    <div class="container-fluid container py-3 mt-5 mb-5">
-    <h2 class="h3">특별한 주제로 여행을 선택해보세요</h2>
-    <div class="row mt-4">
-      <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-            <img src="/images/best-theme/midnightseoul.jpg" class="card-img-top rounded" alt="..."/>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">미드나잇 IN 한강</h5>
-              <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-            <img src=" /images/best-theme/yangyang.jpg" class="card-img-top rounded" alt="..."/>
-           </div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">서핑 IN 양양</h5>
-              <p class="card-text text-info"> &#9733; &#9733; &#9733; &#9733; &#9733;
-              </p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-              <img src=" /images/best-theme/yeosu.jpg" class="card-img-top rounded" alt="..."/>
-             </div>
-              <div class="card-body">
-                <h5 class="card-title mb-0">여수 밤바다</h5>
-                <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        <div class="col-md-3">
-          <div class="card mb-3 border-0 shadow ">
-          <div class="card-img-wrap">
-            <img src=" /images/best-theme/terarosa.jpg" class="card-img-top rounded" alt="..."/>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title mb-0">강릉 커피 여행</h5>
-              <p class="card-text text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid container py-3 mt-4">
+     <!---------------------------------------------네비게이션바 끝------------------------------------------- --> 
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
+   <div class="container-fluid container py-3 mt-4">
       <h2 class="h3 mb-4">Travary와 함께한 경험을 공유해보세요</h2>
 	  <div class="row scroll_add"><!-------------------------- 무한 스크롤 적용버전----------------------------------- -->  
 	    <div class="row"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-4 ">
+			<div class="col-md-3 ">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
@@ -349,7 +133,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/sgp.jpg" class="card-img-top rounded snsCard"/>
@@ -364,7 +148,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/busan.png" class="card-img-top rounded snsCard"/>
@@ -379,9 +163,7 @@
 		            </div>
 		        </div>
 		    </div>
-	    </div><!-------------------------- row end----------------------------------- -->
-	       <div class="row"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-4">
+			<div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/incheon.jpg" class="card-img-top rounded snsCard"/>
@@ -396,7 +178,9 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+	    </div><!-------------------------- row end----------------------------------- -->
+	       <div class="row"><!-------------------------- row start----------------------------------- -->
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/ganghwa.jpg" class="card-img-top rounded snsCard"/>
@@ -411,7 +195,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/songdo.png" class="card-img-top rounded snsCard"/>
@@ -426,9 +210,7 @@
 		            </div>
 		        </div>
 		    </div>
-	    </div><!-------------------------- row end----------------------------------- -->
-	    <div class="row"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/sungsan.png" class="card-img-top rounded snsCard"/>
@@ -443,7 +225,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/suwon1.png" class="card-img-top rounded snsCard"/>
@@ -458,7 +240,9 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+	    </div><!-------------------------- row end----------------------------------- -->
+	    <div class="row"><!-------------------------- row start----------------------------------- -->
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
 	           			 <img src=" /images/sns.body/seoulsup.png" class="card-img-top rounded snsCard"/>
@@ -473,9 +257,7 @@
 		            </div>
 		        </div>
 		    </div>
-	    </div><!-------------------------- row end----------------------------------- -->
-	    <div class="row"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-4">
+			<div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
 	           			 <img src=" /images/sns.body/paju.png" class="card-img-top rounded snsCard"/>
@@ -490,7 +272,7 @@
 		             </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
 	            		<img src=" /images/sns.body/tongyoung.png" class="card-img-top rounded snsCard" alt="..."/>
@@ -506,7 +288,7 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="col-md-4">
+		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    		<div class="card-img-wrap">
            	 			<img src=" /images/sns.body/ulsan.png" class="card-img-top rounded snsCard" alt="..."/>
@@ -523,106 +305,31 @@
 		    </div>
 	    </div><!-------------------------- row end----------------------------------- -->
 	  </div><!-- 무한스크롤 적용부분 -->
-<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <!--date picker from Gijgo-->
-    <script>
-      var today = new Date(
-        new Date().getFullYear(),
-        new Date().getMonth(),
-        new Date().getDate()
-      );
-      $("#startDate").datepicker({
-        uiLibrary: "bootstrap4",
-        iconsLibrary: "fontawesome",
-        minDate: today,
-        maxDate: function () {
-          return $("#endDate").val();
-        },
-      });
-      $("#endDate").datepicker({
-        uiLibrary: "bootstrap4",
-        iconsLibrary: "fontawesome",
-        minDate: function () {
-          return $("#startDate").val();
-        },
-      });
-      
-      function loadData(){
-          $.ajax({
-            url:'<c:url value=" 경로 넣어주세요! "/>',
-            // method:'post',
-            dataType:'json',
-            // data:{'page':page}
-          }).done(function(data){
-            
-          })
-        }
-        var page=1;
-        var index=0;
-        var content = $('.scroll_add').clone();
-        $(window).scroll(function() {
-          // console.log($(window).scrollTop(),$(document).height() - $(window).height());
-          if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
-            console.log('간닷!');
+<script>
+<!-- 무한스크롤 -->
+var page=1;
+var index=0;
+var content = $('.scroll_add').clone();
+$(window).scroll(function() {
+  // console.log($(window).scrollTop(),$(document).height() - $(window).height());
+  if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
+    console.log('간닷!');
 
-            // loadData()//ajax 함수 호출!
-            
-            // var src = '../images/'+(index++)+'.jpg';
-           	// for(var i=0;i<content.find('img').length;i++)
-            // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
-            // content.find('img:eq(1)').prop('src','../images/2.jpg');
-            // content.find('img:eq(2)').prop('src','../images/3.jpg');
-            // content.find('img:eq(3)').prop('src','../images/4.jpg');
-            $(".scroll_add").append(content.html());
-            page++;
-            index++;
-            console.log(index);
-          }
-        });
-    </script>
-  </body>
+    // loadData()//ajax 함수 호출!
+    
+    // var src = '../images/'+(index++)+'.jpg';
+   	// for(var i=0;i<content.find('img').length;i++)
+    // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
+    // content.find('img:eq(1)').prop('src','../images/2.jpg');
+    // content.find('img:eq(2)').prop('src','../images/3.jpg');
+    // content.find('img:eq(3)').prop('src','../images/4.jpg');
+    $(".scroll_add").append(content.html());
+    page++;
+    index++;
+    console.log(index);
+  }
+});
+<!-- 무한스크롤 -->
+</script>
+</body>
 </html>
-<div class="modal fade" id="loginModal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <div class="modal-body1">
-                <img src=" /images/logo/logo.png" class="modal-logo">
-                <input type="text" placeholder="아이디" class="inlilneToBlock">
-                <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
-                <button class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
-                <div class="horizonAndOrWrap">
-                    <hr class="leftHr">
-                    <div class="or">또는</div>
-                    <hr class="rightHr">
-                </div>
-            </div>
-            <div class="modal-body2 mb-2">
-                <a href="" class="noneunderline">                    
-                    <img src=" /images/login/kakaoicon.png" class="kakaoIcon">                    
-                </a>
-                <a href="" class="noneunderline">                    
-                    <img src=" /images/login/googleicon.png" class="googleIcon">
-                </a>
-                <a href="" class="noneunderline">                    
-                    <img src=" /images/login/navericon.png" class="naverIcon">
-                </a>
-            </div>
-            <div class="modal-body3">
-                <p>계정이 없으신가요?
-                    <a href="../member/regist/regi.html" class="noneunderline">가입하기</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
