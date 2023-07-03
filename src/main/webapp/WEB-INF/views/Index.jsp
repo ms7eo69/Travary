@@ -584,7 +584,7 @@
                 </div>
             </div>
             <div class="modal-body2 mb-2">
-                <a href="" class="noneunderline">                    
+                <a href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code" class="noneunderline">                    
                     <img src="<c:url value="/images/login/kakaoicon.png"/>" class="kakaoIcon">                    
                 </a>
                 <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:7070/member/GoogleMyPage.do&access_type=offline&prompt=consent" class="noneunderline">                    
