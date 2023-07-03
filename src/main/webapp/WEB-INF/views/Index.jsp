@@ -108,6 +108,12 @@
                                     <span class="nav-text">경로</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="/community/List.jsp">
+                                    <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
+                                    <span class="nav-text">커뮤니티</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>   
                 </div>
