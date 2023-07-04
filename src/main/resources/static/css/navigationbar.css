@@ -10,8 +10,13 @@ nav {
 }
 
 .logo {
-    padding: 20px;
-    margin-left: 42px;
+	font-family: 'Lexend Peta', sans-serif;
+	font-size : 36px;
+    padding: 30px;
+    
+}
+.logo-font{
+	color:#4294F5;
 }
 
 .nav-logo {

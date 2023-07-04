@@ -10,14 +10,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Caprasimo&family=Lexend+Peta:wght@700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@700&family=Noto+Serif+Makasar&family=Signika+Negative:wght@600&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
  
 <!-- Bootstrap-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="<c:url value="css/navigationbar.css"/>"/>
-<link rel="stylesheet" href="<c:url value="css/main.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/community.css"/>"/>
 </head>
 <body>
 <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
@@ -27,7 +29,7 @@
             <div class="innerDiv">
                 <div id="nav-header">
                     <div class="logo">
-                        <a href="#"><img src=" /images/logo/logo.png" class="nav-logo"></a>
+                        <a href="#" class="logo-font">TRAVARY</a>
                     </div>         
                     <div class="settings"></div>       
                 </div>
@@ -113,11 +115,53 @@
         </div>
     </nav>  
      <!---------------------------------------------네비게이션바 끝------------------------------------------- --> 
+   <!-- 포스팅 버튼 -->
+    <div class="d-flex ">
+   		<button type="button" class="btn btn-primary PublishButton justify-content-right">
+   			<i class="fa-regular fa-pen-to-square mr-2" style="color: #ffffff;"></i><span>포스팅</span>
+   		</button>
+    </div>
+ 
+  <div class="view-container">
+  <h2>Modal Example</h2>
+  <!-- Button to Open the Modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
-   <div class="container-fluid container py-3 mt-4">
-      <h2 class="h3 mb-4">Travary와 함께한 경험을 공유해보세요</h2>
+
+   <div class="container-fluid container  mt-4">
+   	<div class="pl-0 py-5">
+      <h2>Travary와 함께한 경험을 공유해보세요</h2>
+   	</div>
 	  <div class="row scroll_add"><!-------------------------- 무한 스크롤 적용버전----------------------------------- -->  
-	    <div class="row"><!-------------------------- row start----------------------------------- -->
+	    <div class="row mb-2"><!-------------------------- row start----------------------------------- -->
 			<div class="col-md-3 ">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
@@ -179,7 +223,7 @@
 		        </div>
 		    </div>
 	    </div><!-------------------------- row end----------------------------------- -->
-	       <div class="row"><!-------------------------- row start----------------------------------- -->
+	       <div class="row mb-2"><!-------------------------- row start----------------------------------- -->
 		    <div class="col-md-3">
 		    	<div class="card shadow mb-3">
 		    	<div class="card-img-wrap">
@@ -247,7 +291,7 @@
 		    		<div class="card-img-wrap">
 	           			 <img src=" /images/sns.body/seoulsup.png" class="card-img-top rounded snsCard"/>
 	          		 </div>
-	           		 <div class="card-body pb-1">
+	           		 <div class="card-body">
 	             		<h5 class="card-title mb-2 posting-title">계절마다 다른 느낌의 도심 속 숲, 서울숲🌳<h5>
 		          		<p class="card-text posting-content">#도시여행 여기는 서울숲이에요! 사계절 내내 피어있는 꽃이 다르고 개인 스냅, 웨딩 스냅을 찍는 분들도 계셨어요💍 주변에 음식점과 디저트 카페가 많았어요 저는 '백돈'이라는 곳에 다녀왔는데 진짜 맛있더라구요ㅠ🥺 언제 다녀와도 좋은 곳이에요🌳🔥</p>
 		         		<div class="d-flex align-items-center">
@@ -305,6 +349,8 @@
 		    </div>
 	    </div><!-------------------------- row end----------------------------------- -->
 	  </div><!-- 무한스크롤 적용부분 -->
+	 
+
 <script>
 <!-- 무한스크롤 -->
 var page=1;
