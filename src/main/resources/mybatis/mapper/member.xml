@@ -13,6 +13,10 @@
 	<select id="findByIdAndPwd" parameterType="map" resultType="boolean">
 		SELECT COUNT(*) FROM member WHERE id = #{id} AND pwd = #{pwd}
 	</select>
+	<select id="findAll" parameterType="map" resultType="map">
+		SELECT * FROM MEMBER
+	</select>
+	
 	<insert id="save" parameterType="Map">
 		<selectKey keyProperty="identifier" resultType="int"  order="BEFORE">
 			SELECT seq_member_identifier.NEXTVAL FROM DUAL

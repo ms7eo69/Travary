@@ -43,7 +43,7 @@ public class MemberServiceImpl implements DaoService {
 
 	@Override
 	public List<Map> selectList(Map map) {
-		return null;
+		return mapper.findAll(map);
 	}
 
 	@Override
