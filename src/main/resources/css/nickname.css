@@ -57,42 +57,31 @@ body {
 }
 
 .nickForm {
-    max-width: 768px;
+    max-width: 900px;
     min-width: 315px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     .nickForm {
         margin: 0 auto;
     }
 }
 
-.midDiv {
-    padding: 40px 30px 80px;
+.midDiv {        
     text-align: left;
 }
 
 @media (min-width: 768px) {
-    .midDiv {
-        padding: 40px 0 80px;
+    .midDiv {        
         width: 768px;
     }
 }
 
-.formInDiv {
-    box-sizing: border-box;
-    position: relative;
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
+.row {
+    overflow: hidden;
 }
 
-.formHead {
-    width: 75px;
-    height: 75px;
-}
-
-.inputFormMain {
+.inputFormMain1 {    
     margin-bottom: 20px;
 }
 
@@ -112,7 +101,7 @@ body {
     text-align: center;
     padding: 0;
     width: 100%;
-    margin-left: 35px;
+    margin: 0 auto;
     outline: 0;    
 }
 
@@ -171,12 +160,13 @@ button, [role="button"] {
     float: none;
     font-weight: bold;    
     text-align: center;
-    width: 96.5%;
+    width: 97%;
     display: block;
     font-size: 14px;
     line-height: 17px;
     border-radius: 4px;
     padding: 14px 12px;
+    margin-top: 20px;
     border: 1px solid rgb(54, 143, 255);
     background-color: rgb(54, 143, 255);
     color: white;
@@ -188,4 +178,20 @@ button, [role="button"] {
 
 .inputBtn {
     opacity: 0.3;
+}
+
+.inputFormMain2 {    
+    left: 45vw;
+    bottom: 380px;
+    margin-bottom: 20px;
+}
+
+.inputFormMain3 {
+    left: 45vw;
+    bottom: 880px;
+    margin-bottom: 20px;
+}
+
+.slide {
+    transition: transform 0.5s ease;    
 }
