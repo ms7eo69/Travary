@@ -22,7 +22,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kosmo.travary.model.CookieInfo;
 import com.kosmo.travary.model.Cookies;
 import com.kosmo.travary.model.JWTokens;
-import com.kosmo.travary.service.impl.member.KakaoLoginService;
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
 
 import lombok.RequiredArgsConstructor;

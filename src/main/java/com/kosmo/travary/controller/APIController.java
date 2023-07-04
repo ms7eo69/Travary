@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +19,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kosmo.travary.model.CookieInfo;
 import com.kosmo.travary.model.Cookies;
 import com.kosmo.travary.model.JWTokens;
-import com.kosmo.travary.service.impl.member.CertifiedPhoneNumber;
-import com.kosmo.travary.service.impl.member.GoogleLoginService;
-import com.kosmo.travary.service.impl.member.IKakaoLoginService;
-import com.kosmo.travary.service.impl.member.KakaoLoginService;
+import com.kosmo.travary.service.impl.api.CertifiedPhoneNumber;
+import com.kosmo.travary.service.impl.api.GoogleLoginService;
+import com.kosmo.travary.service.impl.api.KakaoLoginService;
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
-import com.kosmo.travary.service.impl.member.NaverLoginService;
+import com.kosmo.travary.service.impl.api.NaverLoginService;
 
 @Controller
 @RequestMapping("member")
@@ -37,6 +37,8 @@ public class APIController {
 	private GoogleLoginService googleLoginService;
 	@Autowired
 	private MemberServiceImpl memberService;
+	@Autowired
+	private CertifiedPhoneNumber certifiedPhoneNumber;
 	
 	private String idName;
 	private String tokenName;
@@ -225,7 +227,7 @@ public class APIController {
 	}
 	
 	@RequestMapping("/sendSMS1.do")
-	@ResponseBody    
+	@ResponseBody
     public String sendSMS(String phoneNumber) {
  
         Random rand  = new Random();
@@ -234,10 +236,9 @@ public class APIController {
             String ran = Integer.toString(rand.nextInt(10));
             numStr+=ran;
         }
-        
-        
-          CertifiedPhoneNumber.certifiedPhoneNumber(phoneNumber, numStr);
+               
+        certifiedPhoneNumber.certifiedPhoneNumber(phoneNumber, numStr);
          
-          return numStr;
+        return numStr;
     }
 }
