@@ -13,7 +13,15 @@
     align-items: center;
     cursor: pointer;
     border-radius: 100%;
+    background-color:#4294F5;
+    border : none;
 }
+	.view-container{
+		position: fixed;
+		z-index: 300;
+		display: flex;
+	}
+	
 	.container{
 	   max-width: 1250px;
 	}

@@ -13,7 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;800&display=swap" rel="stylesheet"/>
 	<script src="https://kit.fontawesome.com/79655749c6.js" crossorigin="anonymous"></script> 
-	 
+	<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Caprasimo&family=Lexend+Peta:wght@700&family=Montserrat:wght@700&family=Noto+Sans+KR:wght@700&family=Noto+Serif+Makasar&family=Signika+Negative:wght@600&display=swap" rel="stylesheet">
     <!-- Bootstrap-->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
@@ -45,13 +46,13 @@
      <nav class="main-menu position-fixed shadow ">
         <div class="outerDiv ">
             <div class="innerDiv">
-                <div id="nav-header">
+               <div id="nav-header">
                     <div class="logo">
-                        <a href="#"><img src=" /images/logo/logo.png" class="nav-logo"></a>
+                        <a href="#" class="logo-font">TRAVARY</a>
                     </div>         
                     <div class="settings"></div>       
                 </div>
-                <div id="nav-body">
+                <div id="nav-body ">
                     <div class="menu-style">
                         <ul class="navfont">                                
                             <li>
