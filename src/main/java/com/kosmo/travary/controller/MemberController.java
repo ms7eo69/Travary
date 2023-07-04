@@ -1,5 +1,6 @@
 package com.kosmo.travary.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,6 +48,12 @@ public class MemberController {
 
 	@PostMapping("/LoginProcess")
 	public String loginProcess(@RequestParam Map map, Model model, HttpServletRequest req, HttpServletResponse resp) {
+		List<Map> a = memberService.selectList(map);
+		for(Map b : a) {
+			String c = b.get("ID").toString();
+			System.out.println(c);
+		}
+		
 		String id = map.get("id").toString();
 	boolean isMember= memberService.isMember(map);
 		if(isMember) {
@@ -74,7 +81,7 @@ public class MemberController {
 	}
 	
 
-	@PostMapping("Register")
+	@PostMapping("/Register")
 	public String registerProcess(
 			@RequestParam Map map,
 			HttpServletRequest req,
