@@ -58,7 +58,7 @@ public class PlanController {
 //		return service. geolocation(addr);
 //	}
 	
-	@GetMapping("/GetRoute.do")
+	@GetMapping("/getRoute.do")
 	@ResponseBody
 	public Map getRoute(@RequestParam Map map) {		
           map = service.direction(map);

@@ -12,7 +12,7 @@
 	<category_index>0</category_index>
 	<zoom>1.0</zoom>
 	<x>396</x>
-	<y>58</y>
+	<y>0</y>
 	<default_color>
 		<r>128</r>
 		<g>128</g>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2023-06-14 18:00:25</creation_date>
-			<updated_date>2023-07-05 18:48:28</updated_date>
+			<updated_date>2023-07-05 20:32:31</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -1243,7 +1243,7 @@
 			</color>
 			<connections>
 			</connections>
-			<physical_name>R_HOLIDAYLIST</physical_name>
+			<physical_name>HOLIDAY_LIST</physical_name>
 			<logical_name>새 테이블</logical_name>
 			<description></description>
 			<constraint></constraint>
