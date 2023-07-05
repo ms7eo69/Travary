@@ -37,13 +37,13 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.subDiv {
+.sub {
     display: flex;
     flex-direction: column;
     min-height: 927px;    
 }
 
-.topDiv {
+.top {
     transition: height 250ms ease 0s;
     overflow: hidden;
     top: 0;
@@ -51,33 +51,32 @@ body {
 }
 
 @media (min-width: 1142px) {
-    .topDiv {
+    .top {
         height: 200px;
     }
 }
 
-.nickForm {
+.regi {
     max-width: 900px;
     min-width: 315px;
 }
 
 @media (min-width: 900px) {
-    .nickForm {
+    .regi {
         margin: 0 auto;
     }
 }
 
-.midDiv {        
+.mid {        
     text-align: left;
 }
-
 
 .row {    
     width: 800px;
     overflow: hidden;
 }
 
-.inputFormMain1 {    
+.form1 {    
     margin-bottom: 20px;
 }
 
@@ -90,8 +89,51 @@ body {
     padding: 34px 0 17px;
 }
 
+.inputFormDiv button {
+    margin-right: 25px;
+}
+
 .inputFormDiv2 #male {
     margin: 10px;
+}
+
+.insId {
+    border: 0;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    width: 100%;    
+    outline: 0;    
+}
+
+.insId::placeholder {
+    color: rgb(209, 207, 207);
+}
+
+.insId:placeholder-shown {
+    text-align: left;
+    transform: translateX(calc(33%));
+}
+
+.inputPass {
+    border: 0;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    outline: 0;    
+}
+
+.inputPass::placeholder {
+    color: rgb(209, 207, 207);
+}
+
+.inputPass:placeholder-shown {
+    text-align: left;
+    transform: translateX(calc(50% - 91px));    
 }
 
 .inputNick {
@@ -111,14 +153,13 @@ body {
 
 .inputNick:placeholder-shown {
     text-align: left;
-    transform: translateX(calc(50% - 91px));
-    
+    transform: translateX(calc(50% - 91px));    
 }
 
 .formClose {
     width: 35px;
     height: 100%;
-    margin-right: auto;
+    margin-right: 10px;
     cursor: pointer;    
     display: inline-block !important;
 }
@@ -182,7 +223,7 @@ button, [role="button"] {
     line-height: 17px;
     border-radius: 4px;
     padding: 14px 12px;
-    margin-top: 120px;
+    margin-top: 40px;
     border: 1px solid rgb(54, 143, 255);
     background-color: rgb(54, 143, 255);
     color: white;
@@ -209,15 +250,15 @@ button, [role="button"] {
     opacity: 0.3;
 }
 
-.inputFormMain2 {    
+.form2 {    
     left: 300vw;
-    bottom: 580px;
+    bottom: 500px;
     margin-bottom: 20px;
 }
 
-.inputFormMain3 {
+.form3 {
     left: 300vw;
-    bottom: 950px;
+    bottom: 870px;
     margin-bottom: 20px;
 }
 

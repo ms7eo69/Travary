@@ -9,28 +9,29 @@
     <title>nickname.jsp</title>
 </head>
 <body>
-    <div class="mainDiv">        
-        <div class="subDiv">
-            <div class="topDiv"></div>
-            <form action="" method="post" class="nickForm midDiv">
+    <div class="main">
+        <div class="sub">
+            <div class="top"></div>
+            <form action="" method="post" class="regi mid">
                 <div class="row">
-                    <div class="inputFormMain1 slide col-12">
+                    <div class="form1 slide col-12">
                         <div class="inputFormDiv">
-                            <input placeholder="아이디를 입력하세요" maxlength="20" class="inputNick" value>
+                            <button>중복체크</button>
+                            <input placeholder="아이디를 입력하세요" maxlength="20" class="insId" value>
+                            <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">                           
+                        </div>                        
+                        <div class="inputFormDiv">
+                            <input placeholder="비밀번호를 입력하세요" maxlength="20" class="inputPass" value>
                             <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">
                         </div>
                         <div class="inputFormDiv">
-                            <input placeholder="비밀번호를 입력하세요" maxlength="20" class="inputNick" value>
-                            <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">
-                        </div>
-                        <div class="inputFormDiv">
-                            <input placeholder="비밀번호 확인을 입력하세요" maxlength="20" class="inputNick" value>
+                            <input placeholder="비밀번호 확인을 입력하세요" maxlength="20" class="inputPass" value>
                             <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">                            
                         </div>                        
                         <label class="errorMSG">기호는 사용할 수 없습니다. 다른 닉네임을 입력하세요.</label>
                         <button type="button" class="inputBtn nickBtn next">확인</button>
                     </div>                                    
-                    <div class="inputFormMain2 slide _2_ col-12">                        
+                    <div class="form2 slide _2_ col-12">                        
                         <div class="inputFormDiv">
                             <input placeholder="성별을 선택하세요" maxlength="20" class="inputNick" value>                            
                         </div>
@@ -78,12 +79,13 @@
                         </button>
                         <button type="button" class="inputBtn2 nickBtn next">확인</button>
                     </div>                
-                    <div class="inputFormMain3 slide _3_ col-12">
+                    <div class="form3 slide _3_ col-12">
                         <div class="inputFormDiv">
                             <input placeholder="생년월일을 입력하세요" maxlength="20" class="inputNick" value>
                             <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">
                         </div>
                         <div class="inputFormDiv">
+                            <button>중복체크</button>
                             <input placeholder="닉네임을 입력하세요" maxlength="20" class="inputNick" value>
                             <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">
                         </div>
@@ -101,11 +103,11 @@
     $('.next').on('click', function() {
         if(index < 3){
             if(index == 1)
-                $('.inputFormMain'+index).css('transform', 'translate(-600vw)');
+                $('.form'+index).css('transform', 'translate(-600vw)');
             else
-                $('.inputFormMain'+index).css('transform', 'translate(-600vw)');
+                $('.form'+index).css('transform', 'translate(-600vw)');
             index++;
-            $('.inputFormMain'+index).css('transform', 'translate(-300vw)');
+            $('.form'+index).css('transform', 'translate(-300vw)');
         }
-    });    
+    });
 </script>
