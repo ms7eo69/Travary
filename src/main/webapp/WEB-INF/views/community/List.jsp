@@ -18,8 +18,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="<c:url value="css/navigationbar.css"/>"/>
-<link rel="stylesheet" href="<c:url value="css/community.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/index/navigationbar.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/community/community.css"/>"/>
 </head>
 <body>
 <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
