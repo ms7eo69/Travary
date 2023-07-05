@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/main/java/com/kosmo/travary/service/impl/api/NaverLoginService.java
-package com.kosmo.travary.service.impl.api;
-========
 package com.kosmo.travary.service.impl.apilogin;
->>>>>>>> feature/api:src/main/java/com/kosmo/travary/service/impl/apilogin/NaverLoginService.java
+
 import java.util.HashMap;
 import java.io.BufferedReader;
 import java.io.IOException;

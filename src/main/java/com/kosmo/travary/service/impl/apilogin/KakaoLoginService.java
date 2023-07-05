@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/com/kosmo/travary/service/impl/api/KakaoLoginService.java
-package com.kosmo.travary.service.impl.api;
-========
 package com.kosmo.travary.service.impl.apilogin;
->>>>>>>> feature/api:src/main/java/com/kosmo/travary/service/impl/apilogin/KakaoLoginService.java
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
