@@ -106,6 +106,6 @@
 		UPDATE lastnum_acmd SET no=#{no} WHERE no > 0
 	</update>
 	<select id="selectSregion" resultType="String">
-		SELECT distinct sregion from tourist_spot ORDER BY sregion
+		SELECT distinct sregion from place_loc ORDER BY sregion
 	</select>
 </mapper>
