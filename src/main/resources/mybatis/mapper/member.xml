@@ -19,15 +19,15 @@
 		SELECT COUNT(*) FROM member_auth WHERE id = #{id} AND pwd = #{pwd}
 	</select>
 
-	<insert id="save" parameterType="Map">
-		INSERT INTO member VALUES(#{nickname}, #{id}, #{gender}, #{age_group}, #{phone},SYSDATE, #{profile_link})
-	</insert>
 	<insert id="saveAuth" parameterType="Map">
 		<selectKey keyProperty="identifier" resultType="int" order="BEFORE">
 			SELECT seq_member_identifier.NEXTVAL FROM DUAL
 		</selectKey>
 		INSERT INTO member_auth VALUES(#{id}, #{pwd}, #{${keyName}},#{identifier})
 	</insert>
+	<insert id="save" parameterType="Map">
+		INSERT INTO member VALUES(#{nickname}, #{id}, #{gender}, #{age_group}, #{phone},SYSDATE, #{profile_link})
+	</insert>	
 	
 	<update id="saveKey" parameterType="map" >
 		<selectKey keyProperty="identifier" resultType="int" order="BEFORE">

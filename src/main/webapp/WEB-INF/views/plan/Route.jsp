@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="../../../../resources/css/Route.css">
+<link rel="stylesheet" href="../../../../resources/static/css/route/Route.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
 <script>
