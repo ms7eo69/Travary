@@ -73,6 +73,7 @@ body {
 
 
 .row {    
+    width: 800px;
     overflow: hidden;
 }
 
@@ -159,13 +160,46 @@ button, [role="button"] {
     float: none;
     font-weight: bold;    
     text-align: center;
-    width: 95.6%;
+    width: 95%;
     display: block;
     font-size: 14px;
     line-height: 17px;
     border-radius: 4px;
     padding: 14px 12px;
-    margin-top: 20px;
+    margin-top: 150px;
+    border: 1px solid rgb(54, 143, 255);
+    background-color: rgb(54, 143, 255);
+    color: white;
+}
+
+.inputBtn2 {
+    float: none;
+    font-weight: bold;    
+    text-align: center;
+    width: 95%;
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 4px;
+    padding: 14px 12px;
+    margin-top: 120px;
+    border: 1px solid rgb(54, 143, 255);
+    background-color: rgb(54, 143, 255);
+    color: white;
+}
+
+.inputBtn3 {
+    float: none;
+    font-weight: bold;    
+    text-align: center;
+    width: 95%;
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    border-radius: 4px;
+    padding: 14px 12px;
+    margin-top: 1px;
+    margin-top: 130px;
     border: 1px solid rgb(54, 143, 255);
     background-color: rgb(54, 143, 255);
     color: white;
@@ -175,19 +209,15 @@ button, [role="button"] {
     opacity: 0.3;
 }
 
-.inputBtn {
-    opacity: 0.3;
-}
-
 .inputFormMain2 {    
     left: 300vw;
-    bottom: 380px;
+    bottom: 580px;
     margin-bottom: 20px;
 }
 
 .inputFormMain3 {
     left: 300vw;
-    bottom: 860px;
+    bottom: 950px;
     margin-bottom: 20px;
 }
 
