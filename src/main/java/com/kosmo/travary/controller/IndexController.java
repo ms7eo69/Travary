@@ -15,4 +15,6 @@ public class IndexController {
 	public String index() {
 		return "Index";
 	}
+	@GetMapping("/Plan.do")
+	public String plan() {return "plan/Route";}
 }

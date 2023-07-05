@@ -171,7 +171,13 @@
                   <div class="form-group">
                     <div class="row px-3 ">
                       <label class="mb-0" for="locationInput mb-0 mt-5">목적지</label>
-                      <input type="text" class="form-control w-100 br0" id="locationInput" aria-describedby="locationInputHelp" placeholder="Anywhere"/>
+                      <!-- <input type="text" class="form-control w-100 br0" id="locationInput" aria-describedby="locationInputHelp" placeholder="Anywhere"/> -->
+                      <select class="form-control" id="sel">
+						<option>지역을 선택하세요</option>
+							<c:forEach items="${sregionList }" var="sregion">
+								<option>${sregion}</option>
+							</c:forEach>
+					</select>
                       <small id="locationInputHelp" class="form-text text-muted sr-only">떠나고 싶은 여행지를 검색해주세요!</small>
                     </div>
                   </div>
@@ -203,7 +209,7 @@
                       </div>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-danger btn-block btn-lg">AI 여행 계획 생성</a>
+                  <a href='<c:url value="/Plan.do"/>' class="btn btn-danger btn-block btn-lg">AI 여행 계획 생성</a>
                 </form>
               </div>
             </div>
