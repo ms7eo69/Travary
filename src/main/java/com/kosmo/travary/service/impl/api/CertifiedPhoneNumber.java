@@ -3,6 +3,7 @@ package com.kosmo.travary.service.impl.api;
 import java.util.HashMap;
 
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import net.nurigo.java_sdk.api.Message;
@@ -10,12 +11,17 @@ import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
 @Service
 public class CertifiedPhoneNumber implements ICertifiedPhoneNumber{
-
+	
+	@Value("${SMS-ID}")
+	private String smsId;
+	@Value("${SMS-KEY}")
+	private String smsKey;
+	
 	@Override
 	public void certifiedPhoneNumber(String phoneNumber, String numStr) {
 	  String api_key = "";
 	  String api_secret = "";
-	  Message coolsms = new Message(api_key, api_secret);
+	  Message coolsms = new Message(smsId, smsKey);
 	
 	
 	  HashMap<String, String> params = new HashMap<String, String>();

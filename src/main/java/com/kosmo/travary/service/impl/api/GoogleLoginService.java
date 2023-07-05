@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -18,6 +19,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class GoogleLoginService implements IGoogleLoginService {
+
+	@Value("${GOOGLE-LOGIN-ID}")
+	private String googleId;
+	@Value("${GOOGLE-LOGIN-KEY}")
+	private String gooleKey;
+	@Value("${GOOGLE-LOGIN-URI}")
+	private String gooleUri;
 	
 	@Override
 	public String getAccessToken(String authorize_code) throws Exception {
@@ -31,9 +39,9 @@ public class GoogleLoginService implements IGoogleLoginService {
 			conn.setDoOutput(true);
 			OutputStreamWriter os = new OutputStreamWriter(conn.getOutputStream());
 			os.write("grant_type=authorization_code");
-			os.write("&client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com");
-			os.write("&client_secret=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");
-			os.write("&redirect_uri=http://localhost:7070/member/GoogleMyPage.do");
+			os.write("&client_id="+googleId);
+			os.write("&client_secret="+gooleKey);
+			os.write("&redirect_uri="+gooleUri);
 			os.write("&code=" + java.net.URLDecoder.decode(authorize_code, "UTF-8"));
 			os.flush();
 			int responseCode = conn.getResponseCode();
