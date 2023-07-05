@@ -28,8 +28,8 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
     <!--page css-->
-    <link rel="stylesheet" href="<c:url value="/css/navigationbar.css"/>"/>
-    <link rel="stylesheet" href="<c:url value="/css/main.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/css/index/navigationbar.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/css/index/main.css"/>"/>
    
     <!-- Optional JavaScript -->
     <script src="<c:url value="js/scrolling.js"/>" defer></script>
@@ -49,7 +49,7 @@
             <div class="innerDiv">
                <div id="nav-header">
                     <div class="logo">
-                        <a href="#" class="logo-font">TRAVARY</a>
+                        <a href="<c:url value='/'/>" class="logo-font">TRAVARY</a>
                     </div>         
                     <div class="settings"></div>       
                 </div>
@@ -57,49 +57,49 @@
                     <div class="menu-style">
                         <ul class="navfont">                                
                             <li>
-                                <a href="<c:url value="#"/>">
+                                <a href="<c:url value="/"/>">
                                     <i class="fa fa-sharp fa-solid fa-house-chimney-window"></i>
                                     <span class="nav-text">홈</span>
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-sharp fa-solid fa-magnifying-glass"></i>
                                     <span class="nav-text">검색</span>
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-sharp fa-regular fa-compass"></i>
                                     <span class="nav-text">탐색</span>                        
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-solid fa-circle-play"></i>
                                     <span class="nav-text">릴스</span>
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-sharp fa-solid fa-paper-plane"></i>
                                     <span class="nav-text">메시지</span>
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-sharp fa-regular fa-heart"></i>
                                     <span class="nav-text">알림</span>
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-regular fa-square-plus"></i>
                                     <span class="nav-text">만들기</span>
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="#"/>">
+                                 <a href="<c:url value="/"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">프로필</span>
                                 </a>
@@ -111,7 +111,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<c:url value="community.do"/>">
+                                <a href="<c:url value="/Community.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">커뮤니티</span>
                                 </a>
