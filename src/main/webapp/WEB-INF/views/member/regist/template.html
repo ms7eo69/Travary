@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cont_">
+            <span class="cont_text">회원가입</span>
+            <span class="message">!!</span>
+        </div>
+        <div class="slide _1_">
+            <div class="input_usrs flex-col">
+                <input type="text" name="id" placeholder="아이디">
+                <input type="password" name="pwd" placeholder="비밀번호">
+                <input type="password" placeholder="비밀번호확인">
+                <div>
+                    <button class="next">다음</button>
+                </div>
+            </div>
+        </div>
+        <div class="slide _2_">
+            <div class="input_usrs flex-col">
+                <input type="text" name="bir" placeholder="생일 6자" id="bir" maxlength="6" minlength="6">
+                <div style="display: flex; flex-direction: column;">
+                    <div>
+                        <label for="M">남자</label>
+                        <input type="radio" name="gender" id="M">
+                        <label for="W">여자</label>
+                        <input type="radio" name="gender" id="W">
+                    </div>
+                </div>
+                <div>
+                    <button class="prev">이전</button>
+                    <button class="next">다음</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="slide _3_">
+            <div class="input_usrs flex-col">
+                <input type="text" name="nick" placeholder="닉네임">
+                <div>
+                    <button class="prev">이전</button>
+                    <button type="submit" class="nextPage">다음</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action='<c:url value="">' method="post" hidden>
+        <button type="submit" id="sub_"></button>
+    </form>
+</body>
+<style>
+    body{
+        margin: 0;
+    }
+    .input_usrs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    ._1_ input, #bir {
+        margin-bottom: 10px;
+        padding-left: 15px;
+        width: 300px;
+        height: 35px;
+        font-size: 16px;
+    }
+    #bir{
+        
+    }
+    .container {
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        height: auto;
+    }
+    .cont_{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
+        /* transform: translate(35%, 0); */
+        z-index: 6;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-bottom-right-radius: max(50vw, 50vh);
+        min-height: 100vh;
+        background-color: #57B894;
+    }
+    .cont_text{
+        font-size: 50px;
+        color: white;
+    }
+    .message{
+        
+        font-size: 20px;
+        color:red
+    }
+    .slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left:55vw;
+        top:10%;
+        padding: 20px;
+        transition: transform 1s ease;
+        border-radius: 15px;
+        border: 1px black solid;
+    }
+    .slide input{
+        border: 0;
+        border-bottom: 1px black solid;
+    }
+    ._2_,
+    ._3_ {
+        position: absolute;
+        left: 100vw;
+        transition: transform 1s ease;
+    }
+    button{
+        background-color: rgb(81, 151, 216);
+        width: 80px;
+        height: 30px;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    button:hover{
+        border: 2px solid black;
+    }
+</style>
+<script>
+    index=1;
+    $('.next').on('click', function() {
+        if(index<3){
+            if(index==1)
+                $('._'+index+'_').css('transform', 'translate(-55vw)');
+            else
+                $('._'+index+'_').css('transform', 'translate(-100vw');
+            index++;
+            $('._'+index+'_').css('transform', 'translate(-45vw)');
+        }
+    });
+    $('.prev').on('click', function() {
+        if(index==2){
+            $('._'+index+'_').css('transform', 'translate(55vw)');
+            index--;
+            $('._'+index+'_').css('transform', 'translate(0)');
+        }else{
+            $('._'+index+'_').css('transform', 'translate(55vw)');
+            index--;
+            $('._'+index+'_').css('transform', 'translate(-45vw)');
+        }
+    });
+
+    var formattedDate = year + '-' + month + '-' + day;
+    $('#bir').prop('placeholder', '생일 ex) '+formattedDate);
+
+
+    $('#input[name=id]').click(function(){
+		$.ajax({
+			url:'<c:url value=""/>',
+			data:$('#input[name=id]').serialize(),
+			dataType:'json',
+			method:'post'
+		}).done(function(data){
+			$('.message').text(data.message);
+		});
+	});
+
+    $('.nextPage').click(function(){
+        $('.sub_').trigger('click');
+    });
+</script>
+</html>
