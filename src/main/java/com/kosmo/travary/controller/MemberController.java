@@ -86,8 +86,8 @@ public class MemberController {
 		int expireMinute = 30;
 		String token = JWTokens.createToken(keyName, map, expireMinute);
 		//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
-		int affected = memberService.insert(map);	
-	    memberService.insertAuth(map);
+		int affected = memberService.insertAuth(map);
+		memberService.insert(map);
 		Cookies.createCookie(tokenName, token, resp, req, expireMinute);
 		Cookies.createCookie(idName, map.get("identifier").toString(), resp, req, expireMinute);
 		System.out.println(map.get("id"));
