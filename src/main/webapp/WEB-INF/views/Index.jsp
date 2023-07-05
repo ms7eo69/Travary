@@ -111,7 +111,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<c:url value="community.do"/>">
+                                <a href="<c:url value="/Community.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">커뮤니티</span>
                                 </a>

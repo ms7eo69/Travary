@@ -19,4 +19,7 @@ public class IndexController {
 	}
 	@GetMapping("/Plan.do")
 	public String plan() {return "plan/Route";}
+	
+	@GetMapping("/Community.do")
+	public String communitu() {return "community/List";}
 }
