@@ -46,17 +46,17 @@ public class PlanController {
 		return "plan/AddrToGeo";
 	}
 	
-	@PostMapping("/GetSearchTrend.do")
-	@ResponseBody
-	public Map searchTrend() {			
-		return service.searchTrend();
-	}
-	
-	@PostMapping("/GetgeoLocation.do")
-	@ResponseBody
-	public Map geolocation(@RequestParam String addr) {			
-		return service. geolocation(addr);
-	}
+//	@PostMapping("/GetSearchTrend.do")
+//	@ResponseBody
+//	public Map searchTrend() {			
+//		return service.searchTrend();
+//	}
+//	
+//	@PostMapping("/GetgeoLocation.do")
+//	@ResponseBody
+//	public Map geolocation(@RequestParam String addr) {			
+//		return service. geolocation(addr);
+//	}
 	
 	@GetMapping("/GetRoute.do")
 	@ResponseBody
