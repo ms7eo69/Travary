@@ -625,16 +625,7 @@
                     <img src="<c:url value="/images/login/googleicon.png"/>" class="googleIcon">
                 </a>
                 <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=GsYVpg82aBYC9e00ww1B&redirect_uri=http://localhost:7070/member/NaverMyPage.do" class="noneunderline">                    
-                    <img src="<c:url value="/images/login/navericon.png"/>" class="naverIcon">
-                <a href="" class="noneunderline">                    
-                    <img src="<c:url value="/images/login/kakaoicon.png"/> " class="kakaoIcon">                    
-                </a>
-                <a href="" class="noneunderline">                    
-                    <img src="<c:url value="/images/login/googleicon.png"/> " class="googleIcon">
-                </a>
-                <a href="" class="noneunderline">                    
-                    <img src="<c:url value="/images/login/navericon.png"/> " class="naverIcon">
-                </a>
+                    <img src="<c:url value="/images/login/navericon.png"/>" class="naverIcon"></a>
             </div>
             <div class="modal-body3">
                 <p>계정이 없으신가요?
