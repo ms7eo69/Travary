@@ -1,33 +1,37 @@
-package com.kosmo.travary.service.impl.api;
-import java.util.HashMap;
+package com.kosmo.travary.service.impl.apilogin;
+
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Service
-public class NaverLoginService implements INaverLoginService {
-	
-	@Value("${NAVER-LOGIN-ID}")
-	private String naverId;
-	@Value("${NAVER-LOGIN-KEY}")
-	private String naverKey;
-	@Value("${NAVER-LOGIN-URI}")
-	private String naverUri;
+public class GoogleLoginService implements IGoogleLoginService {
+
+	@Value("${GOOGLE-LOGIN-ID}")
+	private String googleId;
+	@Value("${GOOGLE-LOGIN-KEY}")
+	private String gooleKey;
+	@Value("${GOOGLE-LOGIN-URI}")
+	private String gooleUri;
 	
 	@Override
 	public String getAccessToken(String authorize_code) throws Exception {
 		String access_Token = "";
 		String refresh_Token = "";
-		String reqURL = "https://nid.naver.com/oauth2.0/token";
+		String reqURL = "https://oauth2.googleapis.com/token";
 		try {
 			URL url = new URL(reqURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -35,14 +39,13 @@ public class NaverLoginService implements INaverLoginService {
 			conn.setDoOutput(true);
 			OutputStreamWriter os = new OutputStreamWriter(conn.getOutputStream());
 			os.write("grant_type=authorization_code");
-			os.write("&client_id="+naverId);
-			os.write("&client_secret="+naverKey);
-			os.write("&redirect_uri="+naverUri);
-			os.write("&code=" + authorize_code);
+			os.write("&client_id="+googleId);
+			os.write("&client_secret="+gooleKey);
+			os.write("&redirect_uri="+gooleUri);
+			os.write("&code=" + java.net.URLDecoder.decode(authorize_code, "UTF-8"));
 			os.flush();
 			int responseCode = conn.getResponseCode();
 			System.out.println("responseCode : " + responseCode);
-			
 			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			String line = "";
 			String result = "";
@@ -55,8 +58,8 @@ public class NaverLoginService implements INaverLoginService {
 			// JSON String -> Map
 			Map<String, Object> jsonMap = objectMapper.readValue(result, new TypeReference<Map<String, Object>>() {
 			});
-			access_Token = jsonMap.get("access_token").toString();
-			refresh_Token = jsonMap.get("refresh_token").toString();
+				access_Token = jsonMap.get("access_token").toString();
+				refresh_Token = jsonMap.get("refresh_token").toString();
 			
 			System.out.println("access_token : " + access_Token);
 			System.out.println("refresh_token : " + refresh_Token);
@@ -71,7 +74,7 @@ public class NaverLoginService implements INaverLoginService {
 	@Override
 	public HashMap<String, Object> getUserInfo(String access_Token) throws Throwable {
 		HashMap<String, Object> userInfo = new HashMap<String, Object>();
-		String reqURL = "https://openapi.naver.com/v1/nid/me";
+		String reqURL = "https://www.googleapis.com/oauth2/v2/userinfo";
 		try {
 			URL url = new URL(reqURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -94,26 +97,20 @@ public class NaverLoginService implements INaverLoginService {
 			Map<String, Object> jsonMap = objectMapper.readValue(result, new TypeReference<Map<String, Object>>() {
 			});
 			
-			System.out.println(jsonMap.get("response"));
+			String id = jsonMap.get("id").toString();
+			String name = jsonMap.get("name").toString();
+			String image = jsonMap.get("picture").toString();
+			String email = jsonMap.get("email").toString();
 			
-			Map<String, Object> response = (Map<String, Object>) jsonMap.get("response");
-			String id = response.get("id").toString();
-			String nickname = response.get("nickname").toString();
-			String email = response.get("email").toString();
-			String age = response.get("age").toString();
-			String gender = response.get("gender").toString();
-			String birthday = response.get("birthday").toString();
-			String image = response.get("profile_image").toString();
 			userInfo.put("id", id);
-			userInfo.put("nickname", nickname);
-			userInfo.put("email", email);
-			userInfo.put("age", age);
-			userInfo.put("gender", gender);
-			userInfo.put("birthday", birthday);
+			userInfo.put("name", name);
 			userInfo.put("image", image);
+			userInfo.put("email", email);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return userInfo;
 	}
 }
+

@@ -20,10 +20,10 @@ import com.kosmo.travary.model.CookieInfo;
 import com.kosmo.travary.model.Cookies;
 import com.kosmo.travary.model.JWTokens;
 import com.kosmo.travary.service.impl.api.CertifiedPhoneNumber;
-import com.kosmo.travary.service.impl.api.GoogleLoginService;
-import com.kosmo.travary.service.impl.api.KakaoLoginService;
+import com.kosmo.travary.service.impl.apilogin.GoogleLoginService;
+import com.kosmo.travary.service.impl.apilogin.KakaoLoginService;
+import com.kosmo.travary.service.impl.apilogin.NaverLoginService;
 import com.kosmo.travary.service.impl.member.MemberServiceImpl;
-import com.kosmo.travary.service.impl.api.NaverLoginService;
 
 @Controller
 @RequestMapping("member")

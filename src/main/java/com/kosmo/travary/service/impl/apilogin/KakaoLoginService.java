@@ -1,4 +1,4 @@
-package com.kosmo.travary.service.impl.api;
+package com.kosmo.travary.service.impl.apilogin;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
