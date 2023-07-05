@@ -29,7 +29,7 @@
 					<li id="nloginout">
 						<div class="npbc">
 							<span id="loginout">
-								<a onclick=""></a>
+								<a onclick="">로그인</a>
 							</span>
 						</div>
 					</li>
@@ -47,16 +47,20 @@
 					voiceCall
 				</i>
 			</div>
+			<h8 id="feedTxt" style="color: #ffffff;" data-langnum="2">사용이 불편하신가요?</h8>
 		</div>
 		<a id="RecSelBtnH" class="tfb tooltip" data-position="left" data-attrnum="0"
 		data-tooltip="" onclick="">
 			<h8 data-langnum="3">추천호텔</h8>
 		</a>
-		<a id="RecSelBtnL" class="tfb tool">
-
+		<a id="RecSelBtnL" class="tfb tool" data-position="left" data-attrnum="1"
+		data-tooltip="" onclick="">
+			<h8 data-langnum="4">추천장소</h8>
 		</a>
 		<div class="multiBtn">
-			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="2"></a>
+			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="2">
+				
+			</a>
 			<a ></a>
 			<a ></a>
 			<a ></a>
