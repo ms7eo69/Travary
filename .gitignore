@@ -1,13 +1,9 @@
 HELP.md
 target/
-properties/**
-resources/**
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.properties
-*.properties
-naverkey.properties
 
 ### STS ###
 .apt_generated
@@ -36,7 +32,4 @@ build/
 
 ### VS Code ###
 .vscode/
-src/main/resources/properties/naverkey.properties
-*.properties
-*.properties
-src/main/resources/properties/naverkey.properties
+
