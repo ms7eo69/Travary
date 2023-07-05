@@ -1,4 +1,4 @@
-package com.kosmo.travary.service.impl.member;
+package com.kosmo.travary.service.impl.apilogin;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -19,6 +20,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Service
 public class KakaoLoginService implements IKakaoLoginService {
 	
+	@Value("${KAKAO-LOGIN-ID}")
+	private String kakaoId;
+	@Value("${KAKAO-LOGIN-URI}")
+	private String kakaoUri;
 	
 	@Override
 	public String getAccessToken(String authorize_code) throws Exception {
@@ -40,8 +45,8 @@ public class KakaoLoginService implements IKakaoLoginService {
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
 
-			sb.append("&client_id=ce24a312ecf7ce42435f8de5f549dd5b"); // REST_API키 본인이 발급받은 key 넣어주기
-			sb.append("&redirect_uri=http://localhost:7070/member/kakaoLogin"); // REDIRECT_URI 본인이 설정한 주소 넣어주기
+			sb.append("&client_id="+kakaoId); // REST_API키 본인이 발급받은 key 넣어주기
+			sb.append("&redirect_uri="+kakaoUri); // REDIRECT_URI 본인이 설정한 주소 넣어주기
 
 			sb.append("&code=" + authorize_code);
 			bw.write(sb.toString());

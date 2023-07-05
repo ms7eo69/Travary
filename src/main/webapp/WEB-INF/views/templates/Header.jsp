@@ -49,10 +49,10 @@
 						href="<c:url value= "/member/Logout.do"/>">로그아웃</a></li>
 				</c:if>
 				<li class="nav-item"><a class="nav-link" href="/member/MyPage.do">마이페이지</a></li>
-				<!-- <li class="nav-item"><a class="nav-link" href="/plan/Json.jsp">JSON</a></li> -->
-				<li class="nav-item"><a class="nav-link" href="/plan/Direction.do">길찾기</a></li>
+				<li class="nav-item"><a class="nav-link" href='<c:url value="/plan/MultipleMarker.do"/>'>MultipleMarker</a></li>
+				<li class="nav-item"><a class="nav-link" href='<c:url value="/plan/Direction.do"/>'>길찾기</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/Geo.do">Geocode</a></li>
-				<li class="nav-item"><a class="nav-link" href="/plan/Search.do">SearchTrend</a></li>
+				<li class="nav-item"><a class="nav-link" href='<c:url value="/plan/SearchTrend.do"/>'>SearchTrend</a></li>
 				<li class="nav-item"><a class="nav-link" href="/plan/PlanTemplate.jsp">플랜</a>
 				</li>
 				<li class="nav-item dropdown"><a

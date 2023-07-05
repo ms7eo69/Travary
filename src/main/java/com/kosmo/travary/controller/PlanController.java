@@ -1,19 +1,11 @@
 package com.kosmo.travary.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
@@ -54,31 +46,34 @@ public class PlanController {
 		return "plan/AddrToGeo";
 	}
 	
-	@PostMapping("/GetSearchTrend.do")
-	@ResponseBody
-	public Map searchTrend() {			
-		return service.searchTrend();
-	}
-	
-	@PostMapping("/GetgeoLocation.do")
-	@ResponseBody
-	public Map geolocation(@RequestParam String addr) {			
-		return service. geolocation(addr);
-	}
+//	@PostMapping("/GetSearchTrend.do")
+//	@ResponseBody
+//	public Map searchTrend() {			
+//		return service.searchTrend();
+//	}
+//	
+//	@PostMapping("/GetgeoLocation.do")
+//	@ResponseBody
+//	public Map geolocation(@RequestParam String addr) {			
+//		return service. geolocation(addr);
+//	}
 	
 	@GetMapping("/GetRoute.do")
 	@ResponseBody
 	public Map getRoute(@RequestParam Map map) {		
-          map = service.direction(map.get("region").toString());
+          map = service.direction(map);
 		return map;
 	}
 	
 	@GetMapping("/Direction.do")
 	public String direction(Model model) {
 		List<String> list = tour.selectSregion();
-		System.out.println(list);
 		model.addAttribute("sregionList", list);
 		return "plan/Direction";
+	}
+	@GetMapping("MultipleMarker.do")
+	public String multipleMarker(Model model) {
+		return "plan/MultipleMarker";
 	}
 	
 	@PostMapping("/SearchTrend.do")

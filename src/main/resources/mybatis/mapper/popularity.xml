@@ -6,7 +6,7 @@
 	namespace="com.kosmo.travary.service.impl.touristspot.PopularityMapper">
 	<select id="selectAcmd" resultType="map" parameterType="String">
 		SELECT * FROM 
-		(SELECT name,sregion,lat,lnt
+		(SELECT name,lat,lnt
 		FROM acmd s JOIN 
 		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
 		as total,no FROM acmd_pop GROUP BY NO) p
@@ -15,7 +15,7 @@
 	</select>
 	<select id="selectTop5ByRegion" resultType="map" parameterType="String">
 		SELECT * FROM 
-		(SELECT name,sregion,lat,lnt
+		(SELECT name,lat,lnt
 		FROM tourist_spot s JOIN 
 		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
 		as total,no FROM tourist_spot_popularity GROUP BY NO) p
@@ -73,12 +73,34 @@
 			<otherwise>DEFAULT</otherwise>
 		</choose>)
 	</insert>
+	<!-- <update id="saveByNo" parameterType="map" >
+		UPDATE tourist_spot_popularity
+		<set>
+			<if test="JAN != null"> JAN = #{JAN},</if>
+			<if test="FEB != null"> FEB = #{FEB},</if>
+			<if test="MAR != null"> MAR  = #{MAR},</if>
+			<if test="APR != null"> APR = #{APR},</if>
+			<if test="MAY != null"> MAY = #{MAY},</if>
+			<if test="JUN != null"> JUN = #{JUN},</if>
+			<if test="JUL != null"> JUL = #{JUL},</if>
+			<if test="AUG != null"> AUG = #{AUG},</if>
+			<if test="SEP != null"> SEP = #{SEP},</if>
+			<if test="OCT != null"> OCT = #{OCT},</if>
+			<if test="NOV != null"> NOV = #{NOV},</if>
+			<if test="DEC != null"> DEC = #{DEC},</if>
+			dum = 0
+		</set>
+		WHERE no=#{no}
+	</update> -->
+	<select id="selectRno" parameterType="int" resultType="int">
+		SELECT rno from temp where sno=#{no}
+	</select>
 	<select id="findFourByNo" resultType="String" parameterType="map" >
-	<!-- SELECT NAME FROM tourist_spot WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
+	<!-- SELECT NAME FROM temp WHERE sno IN (#{no},#{no}+1,#{no}+2,#{no}+3) -->
 	SELECT NAME FROM acmd WHERE no IN (#{no},#{no}+1,#{no}+2,#{no}+3)
 	</select>
 	<select id="find" resultType="int" >
-		SELECT * FROM LASTNUM_acmd
+		SELECT no FROM LASTNUM_acmd
 	</select>
 	<update id="updateLastNum" parameterType="map">
 		UPDATE lastnum_acmd SET no=#{no} WHERE no > 0
