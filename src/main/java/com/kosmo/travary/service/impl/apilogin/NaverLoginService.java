@@ -10,10 +10,20 @@ import java.net.URL;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 @Service
 public class NaverLoginService implements INaverLoginService {
+	
+	@Value("${NAVER-LOGIN-ID}")
+	private String naverId;
+	@Value("${NAVER-LOGIN-KEY}")
+	private String naverKey;
+	@Value("${NAVER-LOGIN-URI}")
+	private String naverUri;
+	
 	@Override
 	public String getAccessToken(String authorize_code) throws Exception {
 		String access_Token = "";
@@ -26,9 +36,9 @@ public class NaverLoginService implements INaverLoginService {
 			conn.setDoOutput(true);
 			OutputStreamWriter os = new OutputStreamWriter(conn.getOutputStream());
 			os.write("grant_type=authorization_code");
-			os.write("&client_id=GsYVpg82aBYC9e00ww1B");
-			os.write("&client_secret=MD3o8KGeb3");
-			os.write("&redirect_uri=http://localhost:7070/member/NaverMyPage.do");
+			os.write("&client_id="+naverId);
+			os.write("&client_secret="+naverKey);
+			os.write("&redirect_uri="+naverUri);
 			os.write("&code=" + authorize_code);
 			os.flush();
 			int responseCode = conn.getResponseCode();

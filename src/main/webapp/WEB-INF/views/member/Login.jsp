@@ -2,19 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
-
+<fmt:bundle basename="api.properties" var="bundle" />
 <script>
 	//카카오
 	function handleKakaoLogin() {
-		const Rest_api_key = "ce24a312ecf7ce42435f8de5f549dd5b"; // REST API KEY
-		const redirect_uri = "http://localhost:7070/member/kakaoLogin"; // Redirect URI
-		const kakaoURL = "https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code";
+		const Rest_api_key = ${bundle.KAKAO-LOGIN-ID}; // REST API KEY
+		const redirect_uri = ${bundle.KAKAO-LOGIN-URI}; // Redirect URI
+		const kakaoURL = "https://kauth.kakao.com/oauth/authorize?client_id="
+				+Rest_api_key
+				+"&redirect_uri="
+				+redirect_uri;
 		window.location.href = kakaoURL;
 	}
 	//네이버
 	function handleNaverLogin() {
-		const Rest_api_key = "GsYVpg82aBYC9e00ww1B"; // REST API KEY
-		const redirect_uri = "http://localhost:7070/member/NaverMyPage.do"; // Redirect URI
+		const Rest_api_key = ${bundle.NAVER-LOGIN-ID}; // REST API KEY
+		const redirect_uri = ${bundle.NAVER-LOGIN-URI}; // Redirect URI
 		const naverAuthUrl = 'https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id='
 				+ Rest_api_key
 				+ '&redirect_uri='
@@ -24,8 +27,8 @@
 
 	//구글
 	function handleGoogleLogin() {
-		const client_id = "971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com"; // Client ID
-		const redirect_uri = "http://localhost:7070/member/GoogleMyPage.do"; // Redirect URI
+		const client_id = ${bundle.GOOGLE-LOGIN-ID}; // Client ID
+		const redirect_uri = ${bundle.GOOGLE-LOGIN-ID}; // Redirect URI
 		const googleURL = "https://accounts.google.com/o/oauth2/v2/auth?client_id="
 				+ client_id
 				+ "&response_type=code&scope=openid%20email%20profile&redirect_uri="

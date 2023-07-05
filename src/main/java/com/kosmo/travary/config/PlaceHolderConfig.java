@@ -9,7 +9,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @PropertySource({
 	"classpath:properties/database.properties",
 	"classpath:properties/cookie.properties",
-	"classpath:properties/naverkey.properties"
+	"classpath:properties/naverkey.properties",
+	"classpath:properties/api.properties"
 })
 public class PlaceHolderConfig {
 
