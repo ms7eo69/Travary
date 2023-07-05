@@ -12,6 +12,7 @@ public interface MemberMapper {
 		boolean findByIdAndPwd(Map map);
 		List findAll(Map map);
 		int save(Map map);
+		int saveAuth(Map map);
 		int saveKey(Map map);
 		Map findByNo(Map map);
 		int deleteByNo(Map map);

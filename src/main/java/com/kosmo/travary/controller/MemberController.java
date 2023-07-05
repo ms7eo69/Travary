@@ -1,5 +1,7 @@
 package com.kosmo.travary.controller;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,8 +41,16 @@ public class MemberController {
 
 	@PostMapping("/LoginProcess")
 	public String loginProcess(@RequestParam Map map, Model model, HttpServletRequest req, HttpServletResponse resp) {
+		/*
+		List<Map> a = memberService.selectList(map);
+		for(Map b : a) {
+			String c = b.get("ID").toString();
+			System.out.println(c);
+		}
+		*/
+		
 		String id = map.get("id").toString();
-	boolean isMember= memberService.isMember(map);
+		boolean isMember= memberService.isMember(map);
 		if(isMember) {
 			//토큰 방식으로 인증처리 구현
 			map.put("keyName", keyName);
@@ -66,20 +76,18 @@ public class MemberController {
 	}
 	
 
-	@PostMapping("Register")
-	public String registerProcess(
-			@RequestParam Map map,
-			HttpServletRequest req,
-			HttpServletResponse resp) {
+	@PostMapping("/Register")
+	public String registerProcess(@RequestParam Map map, HttpServletRequest req, HttpServletResponse resp) {
 		String phone = map.get("phone1") + "-" + map.get("phone2")+ "-" + map.get("phone3"); //회원가입할때 전화번호 입력시 DB에 ,로 입력되는거 수정용
 		map.put("phone", phone);
-		map.put("profile_link","");
+		map.put("profile_link", "");	
 		map.put("keyName", keyName);
 		//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
 		int expireMinute = 30;
 		String token = JWTokens.createToken(keyName, map, expireMinute);
 		//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
-		int affected = memberService.insert(map);
+		int affected = memberService.insert(map);	
+	    memberService.insertAuth(map);
 		Cookies.createCookie(tokenName, token, resp, req, expireMinute);
 		Cookies.createCookie(idName, map.get("identifier").toString(), resp, req, expireMinute);
 		System.out.println(map.get("id"));

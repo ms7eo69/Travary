@@ -36,14 +36,18 @@ public class MemberServiceImpl implements DaoService {
 	public boolean isMember(Map map) {
 		return mapper.findByIdAndPwd(map); 
 	}
+	
 	@Override
 	public int insert(Map map) {
 		return mapper.save(map);
+	}	
+	public int insertAuth(Map map) {
+		return mapper.saveAuth(map);
 	}
 
 	@Override
 	public List<Map> selectList(Map map) {
-		return null;
+		return mapper.findAll(map);
 	}
 
 	@Override
