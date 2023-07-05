@@ -58,51 +58,76 @@
 			<h8 data-langnum="4">추천장소</h8>
 		</a>
 		<div class="multiBtn">
-			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="2">
-				
+			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="2"
+			data-tooltip="이용방법" onclick="">
+				<h7 data-langnum="5">이용방법</h7>
 			</a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
+			<a id="sBtn" class="tfb tooltip" data-position="right" data-attrnum="3"
+			data-tooltip="추천여행기" onclick="">
+				<h7>여행기</h7>
+			</a>
+			<a id="spBtn" class="tfb tooltip" data-position="right" data-attrnum="4"
+			data-tooltip="장소등록" onclick="">
+				<h7 data-langnum="6">장소등록</h7>
+			</a>
+			<a id="cBtn" class="tfb tooltip" data-position="right" data-attrnum="5"
+			data-tooltip="추천코스목록" onclick="">
+				<h7 data-langnum="7">추천일정</h7>
+			</a>
+			<a id="fBtn" class="tfb tooltip" data-position="right" data-attrnum="6"
+			data-tooltip="피드백 보내기" onclick="">
+				<h7 data-langnum="8">피드백</h7>
+			</a>
+			<a id="tBtn" class="tfb tooltip" data-position="right" data-attrnum="7"
+			data-tooltip="이동수단 : 대중교통">
+				<input id="transit" class="rb tpBtn" type="radio" name="tpMode" checked>
+				<i class="material-icons">directions_subway</i>
+			</a>
+			<a id="dBtn" class="tfb tooltip" data-position="right" data-attrnum="8"
+			data-tooltip="이동수단 : 자동차">
+				<input id="drive" class="rb tpBtn" type="radio" name="tpMode">
+				<i class="material-icons">directions_car</i>
+			</a>
+			<a class="tfb tooltip" data-position="right" data-attrnum="8"
+			data-tooltip="일정생성" onclick="">
+				<h7 class="makeRoute" data-langnum="9">일정생성</h7>
+			</a>
 		</div>
 		<div>
-			<div id="map" style="width:1000px;height:1000px;"></div>
+			<div id="naverMap" class="nmap-main" style="width:1000px;height:1000px;"></div>
 		</div>
 	</div>
 	<div>		
-		<div class="">
+		<div class="ssbar">
 			<div>
-				<div class="" id="">
-					<div class="">
-						<input id="" type="text" class="center" data-attrnum="10"
-						data-attrtype="placeholder" placeholder="" autocomplete="off">
+				<div class="msc" id="sshkw">
+					<div class="msic">
+						<input id="sshk" type="text" class="center" data-attrnum="10"
+						data-attrtype="placeholder" placeholder="검색어를 입력하세요." autocomplete="off">
 					</div>
-					<button class="" id="" onclick="">
-						<i class="">search</i>
-					</button>					
+					<button class="msBtn" id="sshb" onclick="">
+						<i class="material-icons msbi">search</i>
+					</button>
 				</div>
-				<div class="">
-					<input id="" class="" type="radio" name=""
-					value="">
-					<label class="" for="" style="width: 100%">
-						<i class="">hotel</i>
-						<span data-langnum="12"></span>
+				<div class="center sRadio">
+					<input id="selH" class="rii" type="radio" name="sshr"
+					value="sel_hotel">
+					<label class="ril" for="sel_hotel" style="width: 100%">
+						<i class="material-icons">hotel</i>
+						<span data-langnum="10">호텔</span>
 					</label>
-					<input id="" class="" type="radio">
-					<label>
-						<i></i>
-						<span></span>
+					<input id="selS" class="rii" type="radio" name="sshr"
+					value="sel_spot" checked="checked">
+					<label class="ril" for="sel_spot" style="width: 100%;">
+						<i class="material-icons">place</i>
+						<span data-langnum="11">장소</span>
 					</label>
 				</div>
 			</div>
 		</div>
 		<div>
-			<div></div>
-			<div>
+			<div class="psw"></div>
+			<div class="ps position-top animate-right card" id="">
 				<div>
 					<div>
 						<div>
