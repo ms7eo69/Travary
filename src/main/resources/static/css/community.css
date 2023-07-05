@@ -16,6 +16,9 @@
     background-color:#4294F5;
     border : none;
 }
+	.box{
+		cursor: pointer
+	}
 	.view-container{
 		position: fixed;
 		z-index: 300;

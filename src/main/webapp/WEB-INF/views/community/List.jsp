@@ -162,8 +162,8 @@
    	</div>
 	  <div class="row scroll_add"><!-------------------------- 무한 스크롤 적용버전----------------------------------- -->  
 	    <div class="row mb-2"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-3 ">
-		    	<div class="card shadow mb-3">
+			<div class="col-md-3 box ">
+		    	<div class="card shadow mb-3 ">
 		    	<div class="card-img-wrap">
 		        	<img src=" /images/sns.body/card_body1.jpg" class="card-img-top rounded snsCard"/>
 		            </div>
