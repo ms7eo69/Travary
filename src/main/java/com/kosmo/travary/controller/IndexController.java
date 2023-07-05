@@ -6,13 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
-	
-	@GetMapping("/travary")
-	public String index() {
-		return "Index";
+
+	@GetMapping("/")
+	public String contextRoot() {
+		System.out.println("진입1");
+		return "forward:/travary/Index.msp";
 	}
-	@GetMapping("/community.do")
-	public String community() {
-		return "community/List";
+	
+	@GetMapping("/travary/Index.msp")
+	public String index() {
+		System.out.println("진입2");
+		return "Index";
 	}
 }

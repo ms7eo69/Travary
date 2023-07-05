@@ -1,35 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="../../../../resources/css/Route.css">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
-<script>
-	window.addEventListener('DOMContentLoaded',function(){
-		var map = new naver.maps.Map('map', {
-		 	  center: new naver.maps.LatLng(37.3595704, 127.105399),
-		 	  zoom: 10
-		});
-	})
-</script>
 </head>
-<body>		
+<body>
 	<div id="routeHeader">
 		<nav id="routeNav" class="topNav" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">
 			<div class="nWrap nWidth">
 				<a href="/" id="nltxt">
 					<b>Travary</b>
-					<h7 id="travContent">&nbsp;</h7>
+					<h6 id="travContent">&nbsp;</h6>
 				</a>
 				<ul id="nBtn1" class="nbc">
 					<li id="nloginout">
 						<div class="npbc">
 							<span id="loginout">
-								<a onclick=""></a>
+								<a onclick="">·Î±×ÀÎ</a>
 							</span>
 						</div>
 					</li>
@@ -37,45 +26,13 @@
 			</div>
 		</nav>
 	</div>
-	<div class="body2">
-		<div class="feedWrap">
-			<a onclick="">
-				<i class="icons" style="font-size: 20px; cursor: pointer;">close</i>
-			</a>
-			<div id="feedBtn" class="chip we wl black blink2" onclick="">
-				<i class="icons" style="font-size: 20px; color: #ffffff; vertical-align: -4px;">
-					voiceCall
-				</i>
-			</div>
-		</div>
-		<a id="RecSelBtnH" class="tfb tooltip" data-position="left" data-attrnum="0"
-		data-tooltip="" onclick="">
-			<h8 data-langnum="3">ì¶”ì²œí˜¸í…”</h8>
-		</a>
-		<a id="RecSelBtnL" class="tfb tool">
-
-		</a>
-		<div class="multiBtn">
-			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="2"></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-			<a ></a>
-		</div>
-		<div>
-			<div id="map" style="width:1000px;height:1000px;"></div>
-		</div>
-	</div>
 	<div>		
 		<div class="">
 			<div>
 				<div class="" id="">
 					<div class="">
 						<input id="" type="text" class="center" data-attrnum="10"
-						data-attrtype="placeholder" placeholder="" autocomplete="off">
+						data-attrtype="placeholder" placeholder="°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä." autocomplete="off">
 					</div>
 					<button class="" id="" onclick="">
 						<i class="">search</i>
@@ -86,7 +43,7 @@
 					value="">
 					<label class="" for="" style="width: 100%">
 						<i class="">hotel</i>
-						<span data-langnum="12"></span>
+						<span data-langnum="12">È£ÅÚ</span>
 					</label>
 					<input id="" class="" type="radio">
 					<label>
