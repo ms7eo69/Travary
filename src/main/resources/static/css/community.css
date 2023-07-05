@@ -1,3 +1,30 @@
+@charset "UTF-8";
+
+.PublishButton{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    margin-left: 1800px;
+    top: 200px;
+    z-index: 200;
+    text-align: center;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color:#4294F5;
+    border : none;
+}
+	.view-container{
+		position: fixed;
+		z-index: 300;
+		display: flex;
+	}
+	
+	.container{
+	   max-width: 1250px;
+	}
   @media (min-width: 768px) {
         section {
           padding-top: 13.3125rem;
@@ -7,30 +34,10 @@
           padding-bottom: 7.5rem;
         }
       }
-	.bg-cover{
-		background-image: url('/images/landing/landing4.jpg');
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-repeat: no-repeat;
-        background-position: 100%;
-        background-size: cover;
-	}
-      .br0,
-      .gj-datepicker-bootstrap [role="right-icon"] button,
-      .form-control {
-        border-radius: 0 !important;
-      }
-      .rc-card{
-        width: 100%;
-  		height: 20vh;
-    	object-fit: cover;
-      }
+	
       .card-img-top {
           max-height:500px;
-          min-height:160px;
+          min-height:180px;
           object-fit: cover;
       }
     .profileImageSm{
