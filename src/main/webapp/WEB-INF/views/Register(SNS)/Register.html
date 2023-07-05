@@ -25,19 +25,18 @@
                         </div>
                         <div class="inputFormDiv">
                             <input placeholder="비밀번호 확인을 입력하세요" maxlength="20" class="inputNick" value>
-                            <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">
-                        </div>
-                        <label class="errorMSG">기호는 사용할 수 없습니다. 다른 닉네임을 입력하세요.</label>                    
+                            <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">                            
+                        </div>                        
+                        <label class="errorMSG">기호는 사용할 수 없습니다. 다른 닉네임을 입력하세요.</label>
                         <button type="button" class="inputBtn nickBtn next">확인</button>
-                    </div>                
+                    </div>                                    
                     <div class="inputFormMain2 slide _2_ col-12">
                         <div class="inputFormDiv">
                             <input placeholder="생년월일을 입력하세요" maxlength="20" class="inputNick" value>
                             <img src="https://assets.triple.guide/images/btn-search-close@3x.png" class="formClose">
                         </div>
-                        <div class="inputFormDiv2">
-                            <input type="radio" maxlength="20" class="inputNick" value>남자                            
-                            <input type="radio" maxlength="20" class="inputNick" value>여자                            
+                        <div class="inputFormDiv">
+                            <input placeholder="성별을 선택하세요" maxlength="20" class="inputNick" value>                            
                         </div>
                         <label class="errorMSG">기호는 사용할 수 없습니다. 다른 닉네임을 입력하세요.</label>
                         <div class="formInDiv3" style="margin-top: 40px;">
@@ -101,12 +100,12 @@
     index=1;
     $('.next').on('click', function() {
         if(index < 3){
-            if(index==1)
-                $('.inputFormMain'+index).css('transform', 'translate(-250vw)');
+            if(index == 1)
+                $('.inputFormMain'+index).css('transform', 'translate(-600vw)');
             else
-                $('.inputFormMain'+index).css('transform', 'translate(-250vw');
+                $('.inputFormMain'+index).css('transform', 'translate(-600vw)');
             index++;
-            $('.inputFormMain'+index).css('transform', 'translate(-45vw)');
+            $('.inputFormMain'+index).css('transform', 'translate(-300vw)');
         }
     });    
 </script>

@@ -71,13 +71,8 @@ body {
     text-align: left;
 }
 
-@media (min-width: 768px) {
-    .midDiv {        
-        width: 768px;
-    }
-}
 
-.row {
+.row {    
     overflow: hidden;
 }
 
@@ -92,6 +87,10 @@ body {
     border-color: rgba(58, 58, 58, 0.1);
     border-style: solid;
     padding: 34px 0 17px;
+}
+
+.inputFormDiv2 #male {
+    margin: 10px;
 }
 
 .inputNick {
@@ -160,7 +159,7 @@ button, [role="button"] {
     float: none;
     font-weight: bold;    
     text-align: center;
-    width: 97%;
+    width: 95.6%;
     display: block;
     font-size: 14px;
     line-height: 17px;
@@ -181,14 +180,14 @@ button, [role="button"] {
 }
 
 .inputFormMain2 {    
-    left: 45vw;
+    left: 300vw;
     bottom: 380px;
     margin-bottom: 20px;
 }
 
 .inputFormMain3 {
-    left: 45vw;
-    bottom: 880px;
+    left: 300vw;
+    bottom: 860px;
     margin-bottom: 20px;
 }
 
