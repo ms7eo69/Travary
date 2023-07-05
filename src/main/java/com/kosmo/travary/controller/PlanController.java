@@ -1,6 +1,5 @@
 package com.kosmo.travary.controller;
 
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,12 +64,6 @@ public class PlanController {
 		return map;
 	}
 	
-	@GetMapping("/Direction.do")
-	public String direction(Model model) {
-		List<String> list = tour.selectSregion();
-		model.addAttribute("sregionList", list);
-		return "plan/Direction";
-	}
 	@GetMapping("MultipleMarker.do")
 	public String multipleMarker(Model model) {
 		return "plan/MultipleMarker";

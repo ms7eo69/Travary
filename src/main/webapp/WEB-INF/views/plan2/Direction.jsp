@@ -115,14 +115,14 @@
 <div class="container  d-flex justify-content-between" style="margin-top:50px">
     <div class="d-flex align-items-center ml-5">
 		<div class="input-group mb-3">
-			<div class="input-group-prepend">
+			<!-- <div class="input-group-prepend">
 			  	<select class="form-control" id="sel">
 					<option>지역을 선택하세요</option>
 					<c:forEach items="${sregionList }" var="sregion">
 						<option>${sregion}</option>
 					</c:forEach>
 				</select>
-			</div>
+			</div> -->
 			<!-- <input type="text" class="form-control" placeholder="Search"> -->
 			<div class="input-group-append">
 			  <button class="btn btn-success" type="submit">Go</button>
