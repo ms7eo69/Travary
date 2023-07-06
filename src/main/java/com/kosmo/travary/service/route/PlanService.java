@@ -39,6 +39,9 @@ public class PlanService {
 	private String getCoords(Map map) {
 		
 		//경유지 설정 (관광지)
+		Map main = tour.selectMainPlace(map.get("sregion").toString());
+		System.out.println(main);
+		
 		List<Map> wayPoints = tour.selectByBoundary(map);
 		map.put("wayPoints",wayPoints);
 		System.out.println("처음 리스트"+wayPoints);

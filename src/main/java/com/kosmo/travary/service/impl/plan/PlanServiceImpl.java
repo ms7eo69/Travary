@@ -51,6 +51,10 @@ public class PlanServiceImpl implements DaoService{
 		return mapper.selectByBoundary(map);
 	}
 
+	public Map selectMainPlace(String sregion) {
+		return mapper.selectMainPlace(sregion);
+	}
+
 	// Search Trend
 //	public List<String> selectfour(Map map){
 //		return mapper.findFourByNo(map); 

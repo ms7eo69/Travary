@@ -1,12 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
+<jsp:include page="/WEB-INF/views/template/Header.jsp"></jsp:include>
 <link rel="stylesheet" href="../../../../resources/static/css/route/Route.css">
-<title>Insert title here</title>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
 <script>
 	window.addEventListener('DOMContentLoaded',function(){

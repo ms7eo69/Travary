@@ -26,5 +26,6 @@ public interface PlanMapper {
 		
 		//Plan
 		List<Map> selectByBoundary(Map map);
+		Map selectMainPlace(String sregion);
 		
 }

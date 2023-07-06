@@ -5,7 +5,9 @@
 <mapper
 	namespace="com.kosmo.travary.service.impl.plan.PlanMapper">
 	<select id="selectMainPlace" resultType ="map" parameterType="String">
-		SELECT 
+		SELECT p.no,name,lat,lnt,sum,detail FROM place p 
+		JOIN place_loc l ON p.no=l.no
+		JOIN place_pop o ON o.no=p.no where sregion=#{sregion} order by sum desc;
 	</select>
 	<select id="selectByBoundary" resultType="map" parameterType="map">
 		SELECT * FROM 
