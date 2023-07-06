@@ -610,7 +610,7 @@
                 <img src="<c:url value="/images/logo/logo.png"/> " class="modal-logo">
                 <input type="text" placeholder="아이디" class="inlilneToBlock">
                 <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
-                <button class="inlineToBlock ordinaryLogin unactivatedLoginColor">로그인</button>
+                <button class="inlineToBlock ordinaryLogin unactivatedLoginColor" type="submit">로그인</button>
                 <div class="horizonAndOrWrap">
                     <hr class="leftHr">
                     <div class="or">또는</div>
