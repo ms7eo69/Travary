@@ -17,12 +17,12 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import com.kosmo.travary.service.impl.touristspot.TourServiceImpl;
+import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 public class PlanETC {
 
 	@Autowired
-	TourServiceImpl tour;
+	PlanServiceImpl tour;
 
 	@Value("${NAVER-API-KEY-ID}")
 	private String naverApiKeyId;

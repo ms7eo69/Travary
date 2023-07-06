@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.kosmo.travary.service.impl.touristspot.TourServiceImpl;
+import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 import com.kosmo.travary.service.route.PlanService;
 
 @Controller
@@ -27,7 +27,7 @@ public class PlanController {
 	@Autowired
 	PlanService service;
 	@Autowired
-	TourServiceImpl tour;
+	PlanServiceImpl tour;
 
 	@GetMapping("Get.do")
 	public String get() {

@@ -1,4 +1,4 @@
-package com.kosmo.travary.service.impl.touristspot;
+package com.kosmo.travary.service.impl.plan;
 
 import java.util.List;
 import java.util.Map;
@@ -9,17 +9,14 @@ import org.springframework.stereotype.Service;
 import com.kosmo.travary.service.DaoService;
 
 @Service
-public class TourServiceImpl implements DaoService{
+public class PlanServiceImpl implements DaoService{
 
 	@Autowired
-	private PopularityMapper mapper;
+	private PlanMapper mapper;
 	
 	@Override
 	public List<Map> selectList(Map map) {
 		return null;
-	}
-	public List<String> selectfour(Map map){
-		return mapper.findFourByNo(map); 
 	}
 
 	@Override
@@ -50,14 +47,12 @@ public class TourServiceImpl implements DaoService{
 	public List<String> selectSregion() {
 		return mapper.selectSregion();
 	}
-	public Map selectAcmd(String region) {
-		return mapper.selectAcmd(region);
-	}
-	public List<Map> selectTop5ByRegion(String region) {
-		return mapper.selectTop5ByRegion(region);
-	}
-	public int selectRno(int lastNum) {
-		return mapper.selectRno(lastNum);
+	public List<Map> selectByBoundary(Map map) {
+		return mapper.selectByBoundary(map);
 	}
 
+	// Search Trend
+//	public List<String> selectfour(Map map){
+//		return mapper.findFourByNo(map); 
+//	}
 }

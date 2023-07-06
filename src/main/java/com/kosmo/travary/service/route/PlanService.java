@@ -11,13 +11,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.kosmo.travary.service.impl.touristspot.TourServiceImpl;
+import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 @Service
 public class PlanService {
 
 	@Autowired
-	TourServiceImpl tour;
+	PlanServiceImpl tour;
 
 	@Value("${NAVER-API-KEY-ID}")
 	private String naverApiKeyId;
@@ -39,7 +39,7 @@ public class PlanService {
 	private String getCoords(Map map) {
 		
 		//경유지 설정 (관광지)
-		List<Map> wayPoints = tour.selectTop5ByRegion(map.get("region").toString());
+		List<Map> wayPoints = tour.selectByBoundary(map);
 		map.put("wayPoints",wayPoints);
 		System.out.println("처음 리스트"+wayPoints);
 		String queryString= "";
@@ -76,26 +76,13 @@ public class PlanService {
 			queryString +=coord;
 		}
 		
-//		for (Map wayPoint : wayPoints) {
-//			System.out.println(wayPoint.get("NAME"));
-//			String coord = 
-//					wayPoint.get("LNT")+","+wayPoint.get("LAT");
-//			
-//			if(count<wayPoints.size()) {
-//				coord +="|";
-//				queryString +=coord;
-//			}
-//			else 
-//				queryString +=coord;
-//			count++;
-//		}	
 		//시작 출발지 설정 (숙소 혹은 집)
-		Map acmd =  tour.selectAcmd(map.get("region").toString());
-		queryString += "!"+acmd.get("LNT")+","+acmd.get("LAT");
-		map.put("start",acmd);
-		//도착지 설정
-		queryString += "!"+acmd.get("LNT")+","+acmd.get("LAT");
-		map.put("goal",acmd);
+//		Map acmd =  tour.selectAcmd(map.get("region").toString());
+//		queryString += "!"+acmd.get("LNT")+","+acmd.get("LAT");
+//		map.put("start",acmd);
+//		//도착지 설정
+//		queryString += "!"+acmd.get("LNT")+","+acmd.get("LAT");
+//		map.put("goal",acmd);
 		System.out.println(map.get("wayPoints"));
 		return queryString;
 	}	

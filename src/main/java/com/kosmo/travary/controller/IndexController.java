@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.kosmo.travary.service.impl.touristspot.TourServiceImpl;
+import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 @Controller
 public class IndexController {
 
 	
 	@Autowired
-	private TourServiceImpl tour;
+	private PlanServiceImpl tour;
 	@RequestMapping("/")
 	public String contextRoot() {
 		return "forward:/travary/Index.msp";

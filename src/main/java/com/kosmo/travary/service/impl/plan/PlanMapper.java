@@ -1,17 +1,15 @@
-package com.kosmo.travary.service.impl.touristspot;
+package com.kosmo.travary.service.impl.plan;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface PopularityMapper {
+public interface PlanMapper {
 
 		boolean findByIdAndPwd(Map map);
 		List findAll(Map map);
-		List<String> findFourByNo(Map map);
 		int save(Map map);
 		int saveKey(Map map);
 		int saveByNo(Map map);
@@ -22,7 +20,11 @@ public interface PopularityMapper {
 		int updateByNo(Map map);
 		int count(Map map);
 		List<String> selectSregion();
-		Map selectAcmd(String region);
-		List<Map> selectTop5ByRegion(String region);
-		int selectRno(int lastNum);
+		
+		//SearchTrend
+		List<String> findFourByNo(Map map);
+		
+		//Plan
+		List<Map> selectByBoundary(Map map);
+		
 }
