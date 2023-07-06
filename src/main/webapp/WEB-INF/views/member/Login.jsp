@@ -75,6 +75,48 @@
 	</div>
 </c:if>
 </div>
+  <div class="input_text">
+           <input  class="signin_pass" id="phoneNumber" type="text" name="phoneNumber" title="전화번호 입력" placeholder="전화번호 입력해주세요">
+            <input  class="signin_pass" type="button" value="입력" id="phoneChk"> // phoneChk 클릭시 함수 발동
+            <input  class="signin_pass" id="phone2" type="text" name="phone" title="전화번호 입력" placeholder="인증번호 입력해주세요">
+            <input  class="signin_pass" type="button" value="인증확인" id="phoneChk2"> // phoneChk 클릭시 함수 발동
+  </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+  $(function(){
+    // 휴대폰 번호 인증
+    var code2 = "";
+    $("#phoneChk").click(function(){
+        alert('인증번호가 전송 되었습니다.\n휴대폰에서 인증번호를 확인해주세요');
+        var phone = $("#phoneNumber").val();
+        console.log(phone);
+        $.ajax({
+            type: "POST",
+            url: "/travary/member/sendSMS1.do",
+            data: {phoneNumber: phone},
+            cache: false,
+            success: function(data){
+                if(data == "error"){
+                    alert("휴대폰 번호가 올바르지 않습니다.");
+                } else {
+                    alert("휴대폰 전송이 됨.");
+                    code2 = data;
+                }
+            }
+        });
+    });
+
+    // 인증번호 일치 여부
+    $("#phoneChk2").click(function(){
+        if($("#phone2").val() == code2){
+            alert('인증성공');
+            //인증 성공시 슬라이스 넘어가는 거 able로
+        } else {
+            alert('인증실패');
+        }
+    });
+  });
+</script>
 <script type="text/javascript"
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
 	charset="utf-8"></script>
