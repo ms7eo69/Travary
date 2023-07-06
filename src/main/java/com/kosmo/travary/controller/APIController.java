@@ -198,7 +198,6 @@ public class APIController {
 	@ResponseBody
     public String sendSMS(@RequestParam String phoneNumber) {
 		System.out.println(phoneNumber);
-		System.out.println("들어오니?");
         Random rand  = new Random();
         String numStr = "";
         for(int i=0; i<4; i++) {

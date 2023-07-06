@@ -74,17 +74,22 @@
 		<strong>Success!</strong> ${sessionScope.id}님 즐감하세요!
 	</div>
 </c:if>
+	<div class="input_text">
+	    <input  class="signin_pass" id="phoneNumber" type="text" name="phoneNumber" title="전화번호 입력" placeholder="전화번호 입력해주세요">
+	    <input  class="signin_pass" type="button" value="입력" id="phoneChk">
+	    <input  class="signin_pass" id="phone2" type="text" name="phone" title="전화번호 입력" placeholder="인증번호 입력해주세요">
+	    <input  class="signin_pass" type="button" value="인증확인" id="phoneChk2">
+  	</div>
+  	
+  	<a href="<c:url value="/travary/chat/createOpenChat.do"/>">
+  		<input class="open_chat" type="button" value="오픈 채팅방 개설" id="openchat"></input>
+  	</a>
 </div>
-  <div class="input_text">
-           <input  class="signin_pass" id="phoneNumber" type="text" name="phoneNumber" title="전화번호 입력" placeholder="전화번호 입력해주세요">
-            <input  class="signin_pass" type="button" value="입력" id="phoneChk"> // phoneChk 클릭시 함수 발동
-            <input  class="signin_pass" id="phone2" type="text" name="phone" title="전화번호 입력" placeholder="인증번호 입력해주세요">
-            <input  class="signin_pass" type="button" value="인증확인" id="phoneChk2"> // phoneChk 클릭시 함수 발동
-  </div>
+  
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
+//휴대폰 번호 인증
   $(function(){
-    // 휴대폰 번호 인증
     var code2 = "";
     $("#phoneChk").click(function(){
         alert('인증번호가 전송 되었습니다.\n휴대폰에서 인증번호를 확인해주세요');
@@ -117,11 +122,5 @@
     });
   });
 </script>
-<script type="text/javascript"
-	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-	charset="utf-8"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
 <!--container-->
 <jsp:include page="/WEB-INF/views/templates/Footer.jsp"></jsp:include>
