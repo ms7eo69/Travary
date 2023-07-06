@@ -89,6 +89,19 @@ body {
     padding: 34px 0 17px;
 }
 
+.duplicBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 45px;    
+    border-radius: 4px;    
+    font-weight: bold;
+    color: white;
+    background-color: #c9c9c9;
+    font-size: 18px;
+}
+
 .inputFormDiv button {
     margin-right: 25px;
 }
@@ -99,11 +112,10 @@ body {
 
 .insId {
     border: 0;
-    font-size: 21px;
-    font-weight: bold;
-    text-align: center;
+    font-size: 18px;
+    font-weight: bold;    
     padding: 0;
-    width: 100%;    
+    width: 100%;
     outline: 0;    
 }
 
@@ -113,12 +125,12 @@ body {
 
 .insId:placeholder-shown {
     text-align: left;
-    transform: translateX(calc(33%));
+    transform: translateX(calc(30%));
 }
 
-.inputPass {
+.insPwd {
     border: 0;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     padding: 0;
@@ -127,31 +139,110 @@ body {
     outline: 0;    
 }
 
-.inputPass::placeholder {
+.insPwd::placeholder {
     color: rgb(209, 207, 207);
 }
 
-.inputPass:placeholder-shown {
+.insPwd:placeholder-shown {
+    text-align: left;
+    transform: translateX(calc(40%));    
+}
+
+.insPwd2 {
+    border: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    outline: 0;    
+}
+
+.insPwd2::placeholder {
+    color: rgb(209, 207, 207);
+}
+
+.insPwd2:placeholder-shown {
+    text-align: left;
+    transform: translateX(calc(37%));    
+}
+
+.insGend {    
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px;    
+    margin: 0px 230px 0px 275px;
+    outline: 0px;    
+}
+
+.insGend::placeholder {
+    color: rgb(209, 207, 207);
+}
+
+.insGend:disabled {
+    background-color: #ffffff;
+}
+
+.dropdown-menu {
+    height: 108px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.male {
+    text-align: center;
+    line-height: 3;
+    margin: 0px;
+    padding: 0px;
+    font-size: large;
+}
+
+.female {
+    text-align: center;
+    line-height: 3;
+    margin: 0px;
+    padding: 0px;
+    font-size: large;
+}
+
+.insBir {
+    border: 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    margin: 0 50px 0 0;    
+    outline: 0;    
+}
+
+.insBir::placeholder {
+    color: rgb(209, 207, 207);
+}
+
+.insBir:placeholder-shown {
     text-align: left;
     transform: translateX(calc(50% - 91px));    
 }
 
-.inputNick {
+.insNick {
     border: 0;
-    font-size: 21px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     padding: 0;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 50px 0 0;
     outline: 0;    
 }
 
-.inputNick::placeholder {
+.insNick::placeholder {
     color: rgb(209, 207, 207);
 }
 
-.inputNick:placeholder-shown {
+.insNick:placeholder-shown {
     text-align: left;
     transform: translateX(calc(50% - 91px));    
 }
