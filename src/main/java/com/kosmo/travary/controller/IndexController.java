@@ -26,8 +26,8 @@ public class IndexController {
 	
 	@RequestMapping("/travary/Index.msp")
 	public String index(Model model) {
-		List<String> list = tour.selectLregion();
-		model.addAttribute("lregionList", list);
+//		List<String> list = tour.selectLregion();
+//		model.addAttribute("lregionList", list);
 		return "Index";
 	}
 	
