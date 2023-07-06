@@ -99,7 +99,7 @@
                 if(data == "error"){
                     alert("휴대폰 번호가 올바르지 않습니다.");
                 } else {
-                    alert("휴대폰 전송이 됨.");
+                    alert("휴대폰 전송 완료");
                     code2 = data;
                 }
             }
@@ -110,7 +110,7 @@
     $("#phoneChk2").click(function(){
         if($("#phone2").val() == code2){
             alert('인증성공');
-            //인증 성공시 슬라이스 넘어가는 거 able로
+            //인증 성공시 슬라이스 넘어가는 거 able로 그 전까진 disable
         } else {
             alert('인증실패');
         }
