@@ -19,7 +19,7 @@ public interface PlanMapper {
 		int deleteByNo(Map map);
 		int updateByNo(Map map);
 		int count(Map map);
-		List<String> selectSregion();
+		List<String> selectLregion();
 		
 		//SearchTrend
 		List<String> findFourByNo(Map map);
@@ -27,5 +27,9 @@ public interface PlanMapper {
 		//Plan
 		List<Map> selectByBoundary(Map map);
 		Map selectMainPlace(String sregion);
+		int selectCountByBoundary(Map main);
+		Map selectACMDByBoundary(Map main);
+		Map selectByNo(Map map);
+		List<Map> selectAnotherByBoundary(Map map);
 		
 }

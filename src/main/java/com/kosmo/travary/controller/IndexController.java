@@ -18,6 +18,7 @@ public class IndexController {
 	
 	@Autowired
 	private PlanServiceImpl tour;
+	
 	@RequestMapping("/")
 	public String contextRoot() {
 		return "forward:/travary/Index.msp";
@@ -25,14 +26,14 @@ public class IndexController {
 	
 	@RequestMapping("/travary/Index.msp")
 	public String index(Model model) {
-		List<String> list = tour.selectSregion();
-		model.addAttribute("sregionList", list);
+		List<String> list = tour.selectLregion();
+		model.addAttribute("lregionList", list);
 		return "Index";
 	}
 	
 	@GetMapping("/Plan.do")
-	public String plan(@RequestParam String sregion) {
-		System.out.println(sregion);
+	public String plan(@RequestParam String sregion,Model model) {
+		model.addAttribute("sregion", sregion);
 		return "plan/Route";
 	}
 	

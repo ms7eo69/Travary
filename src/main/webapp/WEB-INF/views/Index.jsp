@@ -175,8 +175,8 @@
                       <!-- <input type="text" class="form-control w-100 br0" id="locationInput" aria-describedby="locationInputHelp" placeholder="Anywhere"/> -->
                       <select class="form-control" id="sel" name="sregion">
                         <option>지역을 선택하세요</option>
-                          <c:forEach items="${sregionList }" var="sregion">
-                            <option>${sregion}</option>
+                          <c:forEach items="${lregionList }" var="lregion">
+                            <option>${lregion}</option>
                           </c:forEach>
                       </select>
                       <small id="locationInputHelp" class="form-text text-muted sr-only">떠나고 싶은 여행지를 검색해주세요!</small>

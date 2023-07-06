@@ -44,8 +44,8 @@ public class PlanServiceImpl implements DaoService{
 	public int delete(Map map) {
 		return 0;
 	}
-	public List<String> selectSregion() {
-		return mapper.selectSregion();
+	public List<String> selectLregion() {
+		return mapper.selectLregion();
 	}
 	public List<Map> selectByBoundary(Map map) {
 		return mapper.selectByBoundary(map);
@@ -53,6 +53,22 @@ public class PlanServiceImpl implements DaoService{
 
 	public Map selectMainPlace(String sregion) {
 		return mapper.selectMainPlace(sregion);
+	}
+
+	public int selectCountByBoundary(Map main) {
+		return mapper.selectCountByBoundary(main);
+	}
+
+	public Map selectACMDByBoundary(Map main) {
+		return mapper.selectACMDByBoundary(main);
+	}
+
+	public Map selectByNo(Map map) {
+		return mapper.selectByNo(map);
+	}
+
+	public List<Map> selectAnotherByBoundary(Map map) {
+		return mapper.selectAnotherByBoundary(map);
 	}
 
 	// Search Trend

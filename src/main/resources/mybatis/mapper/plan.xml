@@ -4,21 +4,66 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
 	namespace="com.kosmo.travary.service.impl.plan.PlanMapper">
+	<select id="selectByNo" resultType="map" parameterType="map">
+		SELECT * FROM place WHERE no=#{key.no}
+	</select>
 	<select id="selectMainPlace" resultType ="map" parameterType="String">
-		SELECT p.no,name,lat,lnt,sum,detail FROM place p 
+		SELECT * FROM
+		(SELECT p.no,name,lat,lnt,sum,detail,lregion FROM place p 
 		JOIN place_loc l ON p.no=l.no
-		JOIN place_pop o ON o.no=p.no where sregion=#{sregion} order by sum desc;
+		JOIN place_pop o ON o.no=p.no 
+		WHERE lregion= #{lregion} AND category != '숙박' 
+		order by sum desc)
+		WHERE rownum=1
 	</select>
 	<select id="selectByBoundary" resultType="map" parameterType="map">
-		SELECT * FROM 
-		(SELECT name,lat,lnt
-		FROM tourist_spot s JOIN 
-		(SELECT SUM(JAN+FEB+MAR+APR+MAY+JUN+JUL+AUG+SEP+OCT+NOV+DEC) 
-		as total,no FROM tourist_spot_popularity GROUP BY NO) p
-		ON s.no=p.no WHERE sregion=#{region} ORDER BY total desc)
-		WHERE rownum &lt;=5
+		SELECT * FROM
+		(SELECT p.no,name,lat,lnt,sum,detail,lregion FROM place p 
+		JOIN place_loc l ON p.no=l.no
+		JOIN place_pop o ON o.no=p.no 
+		where lregion= #{LREGION}
+		AND p.no!=#{NO}
+		AND category != '숙박'
+		AND lat between #{LAT}-0.05 AND #{LAT}+0.05  
+		AND lnt between #{LNT}-0.05 AND #{LNT}+0.05
+		order by sum desc)
+		WHERE rownum &lt;=(#{COUNT}-1)
 	</select>
-	<select id="selectSregion" resultType="String">
-		SELECT distinct sregion from place_loc ORDER BY sregion
+	<select id="selectAnotherByBoundary" resultType="map" parameterType="map">
+		SELECT * FROM
+		(SELECT p.no,name,lat,lnt,sum,detail,lregion FROM place p 
+		JOIN place_loc l ON p.no=l.no
+		JOIN place_pop o ON o.no=p.no 
+		AND category != '숙박'
+		AND lnt between #{minposition.x} AND #{maxposition.x}
+		AND lat between #{minposition.y} AND #{maxposition.y}
+		order by sum desc)
+		WHERE rownum &lt;=10
+	</select>
+	<select id="selectACMDByBoundary" resultType="map" parameterType="map">
+		SELECT * FROM
+		(SELECT p.no,name,lat,lnt,sum,detail,lregion FROM place p 
+		JOIN place_loc l ON p.no=l.no
+		JOIN place_pop o ON o.no=p.no 
+		where lregion= #{LREGION} 
+		AND category = '숙박'
+		AND lat between #{LAT}-0.05 AND #{LAT}+0.05
+		AND lnt between #{LNT}-0.05 AND #{LNT}+0.05
+		order by sum desc)
+		WHERE rownum =1
+	</select>
+	<select id="selectCountByBoundary" resultType="int" parameterType="map">
+		SELECT count(*) FROM
+		(SELECT p.no,name,lat,lnt,sum,detail,lregion FROM place p 
+		JOIN place_loc l ON p.no=l.no
+		JOIN place_pop o ON o.no=p.no 
+		where lregion= #{LREGION} and p.no!=#{NO}
+		AND lat between #{LAT}-0.05 AND #{LAT}+0.05   
+		AND lnt between #{LNT}-0.05 AND #{LNT}+0.05
+		order by sum desc)
+		WHERE rownum &lt;=20
+	</select>
+	<select id="selectLregion" resultType="String">
+		SELECT distinct lregion from place_loc ORDER BY lregion
 	</select>
 </mapper>
