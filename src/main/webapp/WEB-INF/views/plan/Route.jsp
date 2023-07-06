@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
-<jsp:include page="/WEB-INF/views/template/Header.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
 <link rel="stylesheet" href="../../../../resources/static/css/route/Route.css">
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
 <script>
