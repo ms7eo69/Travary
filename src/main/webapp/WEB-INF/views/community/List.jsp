@@ -159,18 +159,18 @@
 			  </button>
 			</div>
 	      </div>
-	      <div class="col-md-6 sns_details d-flex flex-column h-100">
-        	<div class="sns_id d-flex align-items-center flex-fill">
+	      <div class="col-md-6 sns_details d-flex flex-column h-100 p-3">
+        	<div class="sns_id d-flex align-items-center flex-fill mb-5">
                	 <img src=" /images/profile/yunakim.jpg" class="profileImageMd ml-0 mr-2 ">
                     <div class="viewUserId">Yuna</div>
             </div>
-	        <div class="sns_title flex-fill">
+	        <div class="sns_title flex-fill mb-5">
 	          <h3>영도 가볼만한 곳 여행 코스</h3>
 	        </div>
-	        <div class="sns_content flex-fill">
+	        <div class="sns_content flex-fill mb-5">
 	          <p>#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
 	        </div>
-	        <div class="sns_comments flex-fill">
+	        <div class="sns_comments flex-fill mb-5">
 	          <!-- 댓글 요소 -->
 	        </div>
 	        <div class="sns_location flex-fill">언급된 장소</div>
