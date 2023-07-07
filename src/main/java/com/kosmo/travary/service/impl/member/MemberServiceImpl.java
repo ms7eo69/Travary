@@ -75,9 +75,4 @@ public class MemberServiceImpl implements DaoService {
 		return mapper.saveKey(map);
 	}
 	
-
-	public int insertKey(Map map) {
-		return mapper.saveKey(map);
-	}
-	
 }
