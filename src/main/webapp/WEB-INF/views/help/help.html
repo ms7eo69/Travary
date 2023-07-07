@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.2.0/jquery.smooth-scroll.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=M+PLUS+1p&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Document</title>
+    
+    <style>
+body {
+	background-color: rgba(0, 128, 128, 0.1);
+	margin: 0;
+}
+
+ #landing{
+  height:100vh;
+  background:url(https://images.pexels.com/photos/1533483/pexels-photo-1533483.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) ;
+  background-size:cover;
+  -webkit-background-size:cover;
+  -o-background-size:cover;
+  -moz-background-size:cover;
+}
+/*------------------- 제목 -------------------------*/
+a:hover,a:focus{text-decoration:none;}
+.svg-wrapper {
+  position: relative;
+  top: 35%;
+  transform: translateY(-50%);
+	margin: 0 auto;
+  width: 320px;
+  max-height:60px;
+  cursor:default;
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #19f6e8;  
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-size: 50px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #000000;
+  top: -38px;
+  position: relative;
+  text-align:center;
+	font-family: "Cabin Sketch", cursive;
+	height: 100%;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
+/*------------------- 제목 -------------------------*/
+/*-----------------------------------*/
+.text-2 h2{
+  font-family: 'Josefin Slab', serif;
+  font-size: 20px;
+}
+button{
+  background:none;
+  border:none;
+  padding:0 20px;
+  
+}
+button:hover, button:focus{
+  background:rgba(0,0,0,0.4);
+  outline:none;
+}
+.content{
+  margin:50px;
+  margin-top:100px;
+  margin-bottom:0;
+}
+@media only screen and (max-width : 768px){
+  #text-changer-1{
+    margin-left:50px;
+  }
+}
+
+#text-changer-3 .social{
+  margin:35px;
+}
+#text-changer-3 .fa{
+  margin:5px;
+  color:#fff;
+}
+#text-changer-3 .fa:hover{
+  color:#2e8ece;
+}
+.project {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #fff;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff;
+}
+#text-changer-2{
+  text-align:center;
+  height:100%;
+}
+/*--------------------------------------------------*/
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.search input {
+  width: 60vw; /* 수정 */
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #EAF2FB;
+  border-radius: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/*---------------------------------------------------*/
+#img1,
+#img2,
+#img3,
+#img4 {
+  align-self: flex-start;
+}
+h2 {
+      font-family: "Cabin Sketch", cursive;
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+      font-family: "M PLUS 1p", sans-serif;
+    }
+    .thumbnail {
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      height: 600px;
+      width: 400px;
+      background-size: auto 600px;
+      overflow: hidden;
+    display: flex;
+    }
+    #img1 {
+      background-image: url(https://images.pexels.com/photos/4215100/pexels-photo-4215100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      margin-right: 25px;
+      background-position: right;
+      float: right;
+    }
+    #img2 {
+      background-image: url(https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      margin-left: 25px;
+      background-position: left;
+      float: left;
+    }
+    #img3 {
+      background-image: url(https://images.pexels.com/photos/1173777/pexels-photo-1173777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      margin-right: 25px;
+      background-position: right;
+      float: right;
+    }
+    #img4 {
+      background-image: url(https://images.pexels.com/photos/2385733/pexels-photo-2385733.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      margin-left: 25px;
+      background-position: left;
+      float: left;
+    }
+    .row {
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    #section1,
+    #section2,
+    #section3,
+    #section4 {
+      height: 600px;
+      width: 51%;
+      text-align: center;
+      padding: 25px;
+      overflow: auto;
+    }
+    #section1 {
+      float: left;
+      margin-left: 15%;
+    }
+    #section2 {
+      float: right;
+      margin-right: 55%;
+    }
+    #section3 {
+      float: left;
+      margin-bottom: 150px;
+      margin-left: 15%;
+    }
+    #section4 {
+      float: right;
+      margin-right: 50%;
+ 
+    }
+
+    </style>
+      <script>
+        $(document).ready(function() {
+          // smoothScroll 설정
+          $("a[data-scroll]").smoothScroll({
+            speed: 1000
+          });
+  
+          // content 변경 함수
+          function changeContent(target) {
+            $(".content").not("#" + target).hide();
+            $("#" + target).show("slow");
+          }
+  
+          var cw = $('.project').width();
+          $('.project').css({ 'height': cw + 'px' });
+  
+          $("#first").click(function() {
+            changeContent('text-changer-1');
+          });
+  
+          $("#second").click(function() {
+            changeContent('text-changer-2');
+          });
+  
+          $("#third").click(function() {
+            changeContent('text-changer-3');
+          });
+  
+          $("#first").click();
+        });
+      </script>
+</head>
+<body>
+  <div id="landing">
+    <div class="svg-wrapper">
+      <a id="jump" href="#contents" data-scroll><svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+        <rect class="shape" height="60" width="320" />
+        <div class="text" >TRAVARY</div> 
+       </svg></a>
+      
+
+      <div class="search">
+        
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+  </div>
+        <div id="contents">
+          <div class="text-2">
+            <button id="first" onclick="changeContent('text-changer-1')"><h2>About me</h2></button>
+            <button id="second" onclick="changeContent('text-changer-2')"><h2>Portfolio</h2></button>
+            <button id="third" onclick="changeContent('text-changer-3')"><h2>Contacts</h2></button>
+            <div id="text-changer-1" class="content">
+              <article>
+                <div class="row" id="row-1">
+                    <div id="section1">
+                        <h2>The journey of a thousand miles starts with a single step</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos laborum cumque incidunt, enim ipsa dicta? Porro illo doloribus, consectetur eum exercitationem sit ipsam, est nesciunt maxime, eius animi dolor? Harum.</p>
+                        <p>Illo numquam, sapiente neque repellendus facere amet doloribus asperiores quia eum? Sunt vero amet neque vel? Tempora, nulla voluptatum amet autem culpa magnam debitis! Dolores esse quam amet nobis ut.</p>
+                    </div>
+                    <div class="thumbnail" id="img1"></div>
+                </div>
+                <div class="row">
+                    <div id="section2">
+                        <h2>Expand Your Horizons</h2>
+                        <p>Illo numquam, sapiente neque repellendus facere amet doloribus asperiores quia eum? Sunt vero amet neque vel? Tempora, nulla voluptatum amet autem culpa magnam debitis! Dolores esse quam amet nobis ut.</p>
+                        <p>Sunt excepturi in nostrum, fugiat veritatis ab sit sequi nemo aperiam deserunt temporibus, dolorem ex adipisci autem. Quasi, iure fugiat! Nulla amet doloribus velit nam tempora, soluta consequatur doloremque omnis?</p>
+                    </div>
+                    <div class="thumbnail" id="img2"></div>
+                </div>
+                <div class="row">
+                    <div id="section3">
+                        <h2>Explore and Reflect</h2>
+                        <p> Aenean iaculis odio et eleifend elementum. Pellentesque porta lacus sit amet ligula tristique ornare. Ut euismod suscipit enim. Morbi eu molestie odio. Nullam pellentesque bibendum magna non aliquet. Praesent commodo metus ut dapibus sollicitudin. Etiam tristique arcu et risus venenatis egestas. Mauris quis feugiat leo. Mauris scelerisque eleifend risus a suscipit. Praesent commodo pharetra vehicula. Praesent imperdiet luctus ex eget consectetur. Sed facilisis lobortis dolor quis scelerisque. Pellentesque porta orci nec viverra semper.</p>
+                        <p>In nec ornare mauris. Ut bibendum libero sit amet leo finibus ornare. Donec vel ultrices velit, vel congue elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam blandit sem nisi, eget fringilla risus tristique sit amet..</p>
+                    </div>
+                    <div class="thumbnail" id="img3"></div>
+                </div>
+                <div class="row" id="row-4">
+                    <div id="section4">
+                        <h2>Change Your Perspective</h2>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque lobortis mattis turpis eu commodo. Donec diam massa, convallis at ex non, finibus lacinia ipsum. Vestibulum rutrum nunc mollis condimentum mollis. Nunc at nunc mauris. Proin magna nisl, imperdiet imperdiet malesuada a, gravida ac dolor. Vivamus ex ipsum, convallis vitae egestas in, dignissim eu augue. Nullam euismod orci lectus, ut tempor mauris malesuada sit amet.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos laborum cumque incidunt, enim ipsa dicta? Porro illo doloribus, consectetur eum exercitationem sit ipsam, est nesciunt maxime, eius animi dolor? Harum.</p>
+
+                    </div>
+                    <div class="thumbnail" id="img4"></div>
+                </div>
+            </article>
+            </div>
+            <div id="text-changer-2" class="content row">
+                <div class="col-sm-3 col-xs-6">
+                  <div class="project">Project 1</div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <div class="project">Project 2</div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <div class="project">Project 3</div>
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                  <div class="project">Project 4</div>
+                </div>
+              </div>
+            <div id="text-changer-3" class="content">
+              <p>Get in touch or follow me at:<br>
+                <div class="social">
+                  <a href="https://twitter.com/fragno92" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                  <a href="https://github.com/Kornil" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+                  <a href="https://codepen.io/Kornil" target="_blank"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
+                </div>
+              </p>
+            </div>
+          </div> 
+          </div>
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js" type="text/javascript"></script>
+
+</body>
+</html>

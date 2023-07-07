@@ -6,7 +6,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySource("classpath:config/database.properties")
+@PropertySource({
+	"classpath:properties/database.properties",
+	"classpath:properties/cookie.properties",
+	"classpath:properties/naverkey.properties",
+	"classpath:properties/api.properties"
+})
 public class PlaceHolderConfig {
 
 	@Bean

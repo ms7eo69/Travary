@@ -1,0 +1,53 @@
+package com.kosmo.travary.service.impl.board;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kosmo.travary.service.DaoService;
+
+@Service("boardService")
+public class BoardServiceImpl implements DaoService {
+
+	@Autowired
+	private BoardMapper mapper;
+	
+	/*
+	 * @Override public ListPagingData<BoardDTO> selectList(Map map,
+	 * HttpServletRequest req, int nowPage) {
+	 * 
+	 * List records = mapper.findAll(map);
+	 * 
+	 * ListPagingData<BoardDTO> listPagingData = ListPagingData.builder()
+	 * .records(records) .build(); return listPagingData; }
+	 */
+
+	@Override
+	public int insert(Map map) {
+		return 0;
+	}
+
+	@Override
+	public List<Map> selectList(Map map) {
+		return null;
+	}
+
+	@Override
+	public int update(Map map) {
+		return 0;
+	}
+
+	@Override
+	public int delete(Map map) {
+		return 0;
+	}
+
+	@Override
+	public Map selectOne(Map map) {
+		return null;
+	}
+
+}

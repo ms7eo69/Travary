@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 //@Mapper가 붙은 매퍼 인터페이스 스캔 
 //(value={매퍼인터페이스들의 패키지...},sqlSessionFactoryRef="SqlSessionFactory빈의 ID")
 @MapperScan(
-		value = {"com.kosmo.travary.board.service.impl"},
+		value = {"com.kosmo.travary.service.impl"},
 		sqlSessionFactoryRef = "sqlSessionFactory")
 public class MyBatisConfig {
 	
@@ -32,7 +32,7 @@ public class MyBatisConfig {
 			SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 			factoryBean.setDataSource(dataSource);
 			factoryBean.setTypeAliasesPackage("com.kosmo.travary");
-			factoryBean.setMapperLocations(applicationContext.getResources("classpath:mybatis/mapper/**/*.xml"));
+			factoryBean.setMapperLocations(applicationContext.getResources("classpath:mybatis/mapper/*.xml"));
 			factory = factoryBean.getObject();
 		} catch (Exception e) {
 			e.printStackTrace();

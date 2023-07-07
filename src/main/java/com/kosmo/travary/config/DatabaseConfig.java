@@ -21,8 +21,7 @@ public class DatabaseConfig {
 	@Value("${user}")
 	private String id;
 	@Value("${password}")
-	private String password;
-	
+	private String password; 
 	@Bean
 	DataSource dataSource() {
 		
