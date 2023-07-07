@@ -124,8 +124,8 @@
  <!-------------------------------------모달---------------------------------->
 	<div id="myModal" style="display: none;">
 	  <div class="view_sns">
-	    <div class="view_content row">
-	      <div class="col-md-6 sns_photos">
+	    <div class="view_content row ">
+	      <div class="col-md-7 sns_photos">
 	        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
 			    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -160,8 +160,8 @@
 			  </button>
 			</div>
 	      </div>
-	      <div class="col-md-6 sns_details d-flex flex-column h-100 p-3">
-        	<div class="sns_id d-flex align-items-center flex-fill mb-5">
+	      <div class="col-md-5 sns_details d-flex flex-column pl-0 pr-4">
+        	<div class="sns_id d-flex align-items-center my-3">
                	 <img src="<c:url value="/images/profile/yunakim.jpg"/> " class="profileImageMd ml-0 mr-2 ">
                     <div class="viewUserId">Yuna</div>
             </div>
@@ -171,24 +171,29 @@
 	        <div class="sns_content flex-fill mb-5">
 	          <p>#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
 	        </div>
-	        <div class="sns_comments flex-fill mb-5">
-	          <!-- 댓글 요소 -->
+	        <div class="sns_comments flex-fill mb-auto ">
+	          <input type="text" name=comment placeholder="comment">
 	        </div>
-	        <!-- 
-	        <div class="card mb-3 sns_course" style="max-width:">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="..." alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title course-title">여행 코스</h5>			        
-			        <p class="card-text course-conten">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>			        
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			 -->
+	        <div class="sns_location">
+	        	<div class="card mb-3 shadow" style="">
+				  <div class="row no-gutters">
+				    <div class="col-md-4">
+				      <img src="<c:url value="/images/best-theme/busan.jpg"/>" alt="...">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body p-3">
+				        <h6 class="card-title h4 text-black">여행 코스</h5>
+				        <div class="card-text h5"><i class="fa-solid fa-location-dot text-danger"><span class="ml-2">부산</span></i></div>
+				        <div class="card-text"><i class="fa-regular fa-calendar"><span class="ml-2">1박 2일</span></i></div>
+				      </div>
+				      <div class="sns-location-btn d-flex pr-4 ">
+				        <a href="#" class="btn btn-primary ml-auto">더 보기</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	        </div>
+	      </div>
 	    </div>
 	  </div>
 	</div>
