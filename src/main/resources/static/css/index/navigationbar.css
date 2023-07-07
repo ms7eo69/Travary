@@ -95,7 +95,7 @@ nav ul, nav li {
 
 #nav-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     height: 180px;
 }
 
