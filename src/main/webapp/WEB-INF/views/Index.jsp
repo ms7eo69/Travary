@@ -128,6 +128,7 @@
                             <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" 
                             >로그인</a>
                             <a class="dropdown-item" href='<c:url value="/member/Register"/>'>회원가입</a>
+                            <a class="dropdown-item" href='<c:url value="/regist/Register.do"/>'>회원가입</a>
                         </div>
                     </div>
                 </div>
