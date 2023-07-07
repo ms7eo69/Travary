@@ -1,5 +1,4 @@
 package com.kosmo.travary.component;
-
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -7,7 +6,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 @Component
-public class WebSocketHandler extends TextWebSocketHandler {
+public class CustomWebSocketHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
@@ -26,10 +25,5 @@ public class WebSocketHandler extends TextWebSocketHandler {
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
         // 웹소켓 연결이 닫힌 후 처리할 로직 작성
         System.out.println("WebSocket 연결 닫힘, 상태 코드: " + status.getCode() + ", 이유: " + status.getReason());
-    }
-
-    public void sendMessage(WebSocketSession session, String message) throws Exception {
-        // WebSocket 세션으로 메시지 전송
-        session.sendMessage(new TextMessage(message));
     }
 }

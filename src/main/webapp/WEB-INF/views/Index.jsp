@@ -110,6 +110,9 @@
                                 </a>
                             </li>
                             <li>
+                              	<a href="<c:url value="/travary/chat/createOpenChat.do"/>">
+							  		<input class="open_chat" type="button" value="오픈 채팅방 개설" id="openchat"></input>
+							  	</a>
                                 <a href="<c:url value="/Community.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">커뮤니티</span>
