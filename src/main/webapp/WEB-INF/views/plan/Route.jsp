@@ -11,6 +11,7 @@
 <script src="<c:url value="js/plan/route/direction.js"/>"></script>
 </head>
 <body>		
+	<!-- nav-header -->
 	<div id="routeHeader">
 		<nav id="routeNav" class="topNav" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">
 			<div class="nWrap nWidth">
@@ -30,6 +31,7 @@
 			</div>
 		</nav>
 	</div>
+	<!-- main-div -->
 	<div class="body2">
 		<div class="feedWrap">
 			<a onclick="">
@@ -90,6 +92,7 @@
 			<div id="map" class="nmap-main" style="width:1000px;height:1000px;"></div>
 		</div>
 	</div>
+	<!-- sidebar -->
 	<div>		
 		<div class="ssbar">
 			<div>
@@ -120,23 +123,55 @@
 		</div>
 		<div>
 			<div class="psw"></div>
-			<div class="ps position-top animate-right card" id="">
-				<div>
-					<div>
-						<div>
+			<div class="ps position-top animate-right card" id="psbar" style="display: block;">
+				<div class="psbarfirst">
+					<div class="center psbarfc">
+						<div class="sst">
 							<b>
-								<span></span>
-								<span></span>
+								<span id="soReco">추천장소</span>
+								<span id="srCnt"></span>
 							</b>							
-						</div>						
+						</div>		
+						<hs id="snlt" style="color: rgb(170,170,170); margin-top: 10px; display: none">
+							<i class="material-icons">error_outline</i>
+							<br>
+							<span data-langnum="14">장소명을 검색하세요.</span>
+							<br>
+							<span data-langnum="15">검색어는 두 글자 이상 입력해주세요.</span>
+						</hs>		
+						<hs id="snlt2" style="color: rgb(170,170,170); margin-top: 10px; display: none">
+							<i class="material-icons">add_location</i>
+							<br>
+							<span data-langnum="16">
+								검색 결과가 없습니다.
+								<br>
+								찾으시는 장소를 좌측 장소등록버튼으로 등록 해주세요.
+							</span>
+						</hs>		
 					</div>
-					<div>
-						<ul>
-							<li></li>
+					<div class="psbarSW">
+						<ul class="ul-style" id="spotlists">
+							<li class="spot-card" id="ad1">
+								<div>
+									<div>
+										<div class="centered">
+											<div class="spl">
+												<div class="ssc">
+													<h7 class="ssct">
+														<i class="material-icons">place</i>
+														"9,688"
+													</h7>
+												</div>
+											</div>
+											<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000" id="cartImg1">											
+										</div>
+									</div>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
-				<div>
+				<div class="psbarsecond">
 					<div>
 						<a>
 							<i></i>
