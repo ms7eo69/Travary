@@ -1,5 +1,5 @@
 HELP.md
-target/
+target/classes/**
 
 database.properties
 !.mvn/wrapper/maven-wrapper.jar
