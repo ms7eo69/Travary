@@ -8,14 +8,9 @@ import com.kosmo.travary.service.DaoService;
 
 import lombok.RequiredArgsConstructor;
 
-/*
- * ID 미 지정시 ID값은 소문자로 시작하는 클래스명
- * value속성으로 지정도 가능하다
- */
 @Service("memberService")
 @RequiredArgsConstructor
 public class MemberServiceImpl implements DaoService {
-	//매퍼 인터페이스 주입
 	@Autowired
 	private MemberMapper mapper;
 	

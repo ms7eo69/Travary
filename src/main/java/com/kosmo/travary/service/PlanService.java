@@ -1,4 +1,4 @@
-package com.kosmo.travary.service.route;
+package com.kosmo.travary.service;
 
 import java.util.List;
 import java.util.Map;

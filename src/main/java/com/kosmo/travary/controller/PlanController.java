@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
+import com.kosmo.travary.service.PlanService;
 import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
-import com.kosmo.travary.service.route.PlanService;
 
 @Controller
 @RequestMapping("/plan")

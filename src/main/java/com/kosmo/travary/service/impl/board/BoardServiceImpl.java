@@ -9,12 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.kosmo.travary.service.DaoService;
 
-import javax.servlet.http.HttpServletRequest;
-
-/*
- * ID 미 지정시 ID값은 소문자로 시작하는 클래스명
- * value속성으로 지정도 가능하다
- */
 @Service("boardService")
 public class BoardServiceImpl implements DaoService {
 
