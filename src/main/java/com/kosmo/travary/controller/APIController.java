@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -106,6 +107,7 @@ public class APIController {
 				req.setAttribute("validate", apiLoginMap.get("id"));
 				
 				System.out.println(token);
+				
 	
 				return affected ==1?"forward:/":"member/Register";
 			}
@@ -171,6 +173,7 @@ public class APIController {
 				req.setAttribute("validate", apiLoginMap.get("id"));
 				
 				System.out.println(token);
+				
 	
 				return affected ==1?"forward:/":"member/Register";
 			}
@@ -217,6 +220,7 @@ public class APIController {
 				req.setAttribute("validate", apiLoginMap.get("id"));
 				
 				System.out.println(token);
+				
 	
 				return affected ==1?"forward:/":"member/Register";
 			}
@@ -226,10 +230,10 @@ public class APIController {
 		}
 	}
 	
-	@RequestMapping("/sendSMS1.do")
+	@RequestMapping(value = "/sendSMS1.do", method = RequestMethod.POST)
 	@ResponseBody
-    public String sendSMS(String phoneNumber) {
- 
+    public String sendSMS(@RequestParam String phoneNumber) {
+		System.out.println(phoneNumber);
         Random rand  = new Random();
         String numStr = "";
         for(int i=0; i<4; i++) {

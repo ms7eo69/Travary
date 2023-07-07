@@ -1,8 +1,6 @@
 package com.kosmo.travary.service.impl.member;
-
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,18 +15,16 @@ import lombok.RequiredArgsConstructor;
 @Service("memberService")
 @RequiredArgsConstructor
 public class MemberServiceImpl implements DaoService {
-
 	//매퍼 인터페이스 주입
 	@Autowired
 	private MemberMapper mapper;
 	
-
 	/*
 	 * @Override public ListPagingData<BoardDTO> selectList(Map map,
 	 * HttpServletRequest req, int nowPage) {
-	 * 
+	 *
 	 * //글 전체 목록 얻기 List records = mapper.findAll(map);
-	 * 
+	 *
 	 * ListPagingData<BoardDTO> listPagingData = ListPagingData.builder()
 	 * .records(records) .build(); return listPagingData; }
 	 */
@@ -49,17 +45,14 @@ public class MemberServiceImpl implements DaoService {
 	public List<Map> selectList(Map map) {
 		return mapper.findAll(map);
 	}
-
 	@Override
 	public int update(Map map) {
 		return 0;
 	}
-
 	@Override
 	public int delete(Map map) {
 		return 0;
 	}
-
 	@Override
 	public Map selectOne(Map map) {
 		return null;
@@ -69,7 +62,6 @@ public class MemberServiceImpl implements DaoService {
 		
 		return mapper.GoogleLoginsave(map);
 	}
-
 	public boolean selectApiLoginOne(Map apiLoginMap) {
 		
 		return mapper.ApiMemberConfirm(apiLoginMap);
@@ -84,4 +76,8 @@ public class MemberServiceImpl implements DaoService {
 	}
 	
 
+	public int insertKey(Map map) {
+		return mapper.saveKey(map);
+	}
+	
 }

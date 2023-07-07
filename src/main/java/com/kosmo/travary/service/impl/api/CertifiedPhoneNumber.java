@@ -19,8 +19,6 @@ public class CertifiedPhoneNumber implements ICertifiedPhoneNumber{
 	
 	@Override
 	public void certifiedPhoneNumber(String phoneNumber, String numStr) {
-	  String api_key = "";
-	  String api_secret = "";
 	  Message coolsms = new Message(smsId, smsKey);
 	
 	
