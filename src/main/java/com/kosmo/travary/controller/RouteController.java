@@ -8,6 +8,6 @@ public class RouteController {
 	
 	@GetMapping("/Route.do")
 	public String Route() {
-		return "/Route/Route";
+		return "/plan/Route";
 	}
 }

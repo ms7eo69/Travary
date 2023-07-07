@@ -1,27 +1,7 @@
-*, ::before, ::after {
-    box-sizing: inherit;
-    border-width: 0px;
-    border-style: none;
-}
-
 body {
     margin: 0px;
     line-height: inherit;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-button, input, optgroup, select,
-textarea {
-    font-family: inherit;
-    font-size: 100%;
-    line-height: inherit;
-    color: inherit;
-    margin: 0px;
-    padding: 0px;
-}
-
-button, select {
-    text-decoration: none;
 }
 
 img, svg, video, canvas, audio, iframe, embed, object {
@@ -308,7 +288,7 @@ a {
     float: none;
     font-weight: bold;
     text-align: center;
-    width: 91.9%;
+    width: 89%;
     display: block;
     margin: 21px 0px 0px;
     font-size: 14px;
