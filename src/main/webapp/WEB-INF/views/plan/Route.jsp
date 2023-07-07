@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
-<link rel="stylesheet" href="../../../../resources/static/css/route/Route.css">
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ejh6wsswo6"></script>
+<link rel="stylesheet" href='<c:url value="css/route/Route.css"/>'/>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <style>
 	.iw_inner {
     padding: 10px;
@@ -45,7 +45,7 @@
 		$.ajax({
 			url: '<c:url value="/plan/getRoute.do"/>',
 			dataType:'json',
-			data:'sregion=${sregion}'	
+			data:'lregion=${lregion}'	
 		}).done((data)=>{
 			console.log('서버로부터 받은 데이터:',data);
 				var polylinePath = []; 
@@ -244,7 +244,7 @@
 			</a>
 		</div>
 		<div>
-			<div id="naverMap" class="nmap-main" style="width:1000px;height:1000px;"></div>
+			<div id="map" class="nmap-main" style="width:1000px;height:1000px;"></div>
 		</div>
 	</div>
 	<div>		

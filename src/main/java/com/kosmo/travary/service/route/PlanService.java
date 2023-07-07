@@ -45,7 +45,7 @@ public class PlanService {
 	private String getCoords(Map map) {
 		
 		//메인 관광지 조회
-		Map main = tour.selectMainPlace(map.get("sregion").toString());
+		Map main = tour.selectMainPlace(map.get("lregion").toString());
 		System.out.println(main);
 //		int countee = tour.selectCountByBoundary(main);
 //		System.out.println(countee);

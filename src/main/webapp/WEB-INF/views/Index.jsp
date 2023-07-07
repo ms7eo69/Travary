@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="<c:url value="css/nav/navigationbar.css"/>"/>
     <link rel="stylesheet" href="<c:url value="css/index/main.css"/>"/>
     <!-- Optional JavaScript -->
-    <script src="<c:url value="js/scrolling.js"/>" defer></script>
+    <script src="<c:url value="js/index/scrolling.js"/>" defer></script>
     <title>Travary</title>
   <style>
     .nav-text{
@@ -172,7 +172,7 @@
                     <div class="row px-3 ">
                       <label class="mb-0" for="locationInput mb-0 mt-5">목적지</label>
                       <!-- <input type="text" class="form-control w-100 br0" id="locationInput" aria-describedby="locationInputHelp" placeholder="Anywhere"/> -->
-                      <select class="form-control" id="sel" name="sregion">
+                      <select class="form-control" id="sel" name="lregion">
                         <option>지역을 선택하세요</option>
                           <c:forEach items="${lregionList }" var="lregion">
                             <option>${lregion}</option>

@@ -26,14 +26,14 @@ public class IndexController {
 	
 	@RequestMapping("/travary/Index.msp")
 	public String index(Model model) {
-//		List<String> list = tour.selectLregion();
-//		model.addAttribute("lregionList", list);
+		List<String> list = tour.selectLregion();
+		model.addAttribute("lregionList", list);
 		return "Index";
 	}
 	
 	@GetMapping("/Plan.do")
-	public String plan(@RequestParam String sregion,Model model) {
-		model.addAttribute("sregion", sregion);
+	public String plan(@RequestParam String lregion,Model model) {
+		model.addAttribute("lregion", lregion);
 		return "plan/Route";
 	}
 	
