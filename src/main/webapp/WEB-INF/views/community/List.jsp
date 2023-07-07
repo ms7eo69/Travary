@@ -121,7 +121,63 @@
    			<i class="fa-regular fa-pen-to-square mr-2" style="color: #ffffff;"></i><span>포스팅</span>
    		</button>
     </div>
- 
+ <!-------------------------------------모달---------------------------------->
+	<div id="myModal" style="display: none;">
+	  <div class="view_sns">
+	    <div class="view_content row">
+	      <div class="col-md-6 sns_photos">
+	        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+			  <ol class="carousel-indicators">
+			    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+			    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+			    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+			  </ol>
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img src="/images/sns.body/card_body1.jpg" class="d-block w-100 " alt="...">
+			      <div class="carousel-caption d-none d-md-block">
+			      </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="/images/sns.body/sgp.jpg" class="d-block w-100 " alt="...">
+			      <div class="carousel-caption d-none d-md-block">
+			      </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="/images/sns.body/busan.png" class="d-block w-100 " alt="...">
+			      <div class="carousel-caption d-none d-md-block">
+			      </div>
+			    </div>
+			  </div>
+			  <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only"></span>
+			  </button>
+			  <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only"></span>
+			  </button>
+			</div>
+	      </div>
+	      <div class="col-md-6 sns_details d-flex flex-column h-100 p-3">
+        	<div class="sns_id d-flex align-items-center flex-fill mb-5">
+               	 <img src=" /images/profile/yunakim.jpg" class="profileImageMd ml-0 mr-2 ">
+                    <div class="viewUserId">Yuna</div>
+            </div>
+	        <div class="sns_title flex-fill mb-5">
+	          <h3>영도 가볼만한 곳 여행 코스</h3>
+	        </div>
+	        <div class="sns_content flex-fill mb-5">
+	          <p>#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
+	        </div>
+	        <div class="sns_comments flex-fill mb-5">
+	          <!-- 댓글 요소 -->
+	        </div>
+	        <div class="sns_location flex-fill">언급된 장소</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
 
    <div class="container-fluid container  mt-4">
@@ -130,8 +186,8 @@
    	</div>
 	  <div class="row scroll_add"><!-------------------------- 무한 스크롤 적용버전----------------------------------- -->  
 	    <div class="row mb-2"><!-------------------------- row start----------------------------------- -->
-			<div class="col-md-3 ">
-		    	<div class="card shadow mb-3">
+			<div class="col-md-3 viewbox ">
+		    	<div class="card shadow mb-3 ">
 		    	<div class="card-img-wrap">
 		        	<img src="<c:url value="/images/sns.body/card_body1.jpg"/>" class="card-img-top rounded snsCard"/>
 		            </div>
@@ -344,6 +400,27 @@ $(window).scroll(function() {
   }
 });
 <!-- 무한스크롤 -->
+<!--------모달-------->
+function openModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "flex";
+}
+
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+}
+
+var div = document.querySelector(".viewbox");
+div.addEventListener("click", openModal);
+
+var modal = document.getElementById("myModal");
+modal.addEventListener("click", function(event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+<!------모달-------->
 </script>
 </body>
 </html>

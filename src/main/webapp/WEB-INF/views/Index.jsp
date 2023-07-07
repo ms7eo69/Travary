@@ -28,9 +28,8 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css"/>
     <!--page css-->
-    <link rel="stylesheet" href="<c:url value="/css/index/navigationbar.css"/>"/>
-    <link rel="stylesheet" href="<c:url value="/css/index/main.css"/>"/>
-   
+    <link rel="stylesheet" href="<c:url value="css/nav/navigationbar.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="css/index/main.css"/>"/>
     <!-- Optional JavaScript -->
     <script src="<c:url value="js/scrolling.js"/>" defer></script>
     <title>Travary</title>
