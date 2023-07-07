@@ -132,19 +132,20 @@
 			    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
 			    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
 			  </ol>
+			  
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img src="/images/sns.body/card_body1.jpg" class="d-block w-100 " alt="...">
+			      <img src="<c:url value="/images/sns.body/card_body1.jpg"/>" class="d-block w-100 " alt="...">
 			      <div class="carousel-caption d-none d-md-block">
 			      </div>
 			    </div>
 			    <div class="carousel-item">
-			      <img src="/images/sns.body/sgp.jpg" class="d-block w-100 " alt="...">
+			      <img src="<c:url value="/images/sns.body/sgp.jpg"/>" class="d-block w-100 " alt="...">
 			      <div class="carousel-caption d-none d-md-block">
 			      </div>
 			    </div>
 			    <div class="carousel-item">
-			      <img src="/images/sns.body/busan.png" class="d-block w-100 " alt="...">
+			      <img src="<c:url value="/images/sns.body/busan.png"/>" class="d-block w-100 " alt="...">
 			      <div class="carousel-caption d-none d-md-block">
 			      </div>
 			    </div>
@@ -161,7 +162,7 @@
 	      </div>
 	      <div class="col-md-6 sns_details d-flex flex-column h-100 p-3">
         	<div class="sns_id d-flex align-items-center flex-fill mb-5">
-               	 <img src=" /images/profile/yunakim.jpg" class="profileImageMd ml-0 mr-2 ">
+               	 <img src="<c:url value="/images/profile/yunakim.jpg"/> " class="profileImageMd ml-0 mr-2 ">
                     <div class="viewUserId">Yuna</div>
             </div>
 	        <div class="sns_title flex-fill mb-5">
@@ -173,8 +174,21 @@
 	        <div class="sns_comments flex-fill mb-5">
 	          <!-- 댓글 요소 -->
 	        </div>
-	        <div class="sns_location flex-fill">언급된 장소</div>
-	      </div>
+	        <!-- 
+	        <div class="card mb-3 sns_course" style="max-width:">
+			  <div class="row no-gutters">
+			    <div class="col-md-4">
+			      <img src="..." alt="...">
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			        <h5 class="card-title course-title">여행 코스</h5>			        
+			        <p class="card-text course-conten">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>			        
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			 -->
 	    </div>
 	  </div>
 	</div>
