@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
 <link rel="stylesheet" href='<c:url value="css/plan/route/Route.css"/>'/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <script>
 	var lregion = '${lregion}'
@@ -20,21 +19,33 @@
 					<b>Travary</b>
 					<h7 id="travContent">&nbsp;</h7>
 				</a>
-				<ul id="nBtn1" class="nbc">
+				<ul id="nBtn1" class="nBtnContain">
+					<li id="ntBtn1_1" style="display: none;">
+						<a onclick="">여행지</a>
+					</li>
+					<li id="ntBtn1_2" style="display: none;">
+						<a href="/about">마이로</a>
+					</li>
+					<li id="ntBtn1_3" style="display: none;">
+						<a href="/guide" id="guideBtn">이용방법</a>
+					</li>
+					<li id="ntBtn1_4" class="headerSBtn" style="display: none;">
+						<a href="/" id="guideBtn">마이로 시작하기</a>
+					</li>
 					<li id="nloginout">
 						<div class="npbc">
 							<span id="loginout">
-								<a onclick="">로그인</a>								
+								<a onclick="window.open('/login')">로그인</a>								
 							</span>
 						</div>
-					</li>
+					</li>					
 				</ul>
 			</div>
 		</nav>
 	</div>
 	<!-- main-div -->
 	<div class="body2">
-		<div class="feedWrap">
+		<div id="feedWrap">
 			<a onclick="">
 				<i class="icons" style="font-size: 20px; cursor: pointer;">close</i>
 			</a>
@@ -45,11 +56,11 @@
 				<h8 id="feedTxt" style="color: #ffffff;" data-langnum="1">사용이 불편하신가요?</h8>
 			</div>
 		</div>
-		<a id="RecSelBtnH" class="tfb tooltip" data-position="left" data-attrnum="1"
+		<a id="rsBtnH" class="tfb tooltip" data-position="left" data-attrnum="1"
 		data-tooltip="" onclick="">
 			<h8 data-langnum="2">추천호텔</h8>
 		</a>
-		<a id="RecSelBtnL" class="tfb tool" data-position="left" data-attrnum="2"
+		<a id="rsBtnP" class="tfb tooltip" data-position="left" data-attrnum="2"
 		data-tooltip="" onclick="">
 			<h8 data-langnum="3">추천장소</h8>
 		</a>
@@ -363,14 +374,14 @@
 								<h7 data-langnum="21">호텔전체삭제</h7>
 							</button>
 						</div>
-						<div id="cart3NoList" class="center">
+						<div id="cart1NoList" class="center">
 							<hs>
 								<span>숙소는 일정의 시작 지점과 종료 지점으로 설정됩니다.</span>
 								<br>
 								<span>마지막 날은 시작 지점으로만 설정됩니다.</span>
 							</hs>		
 						</div>
-						<ul class="ul-style" id="cart3">
+						<ul class="ul-style" id="cart1">
 							<div class="dayHdiv">
 								<input id="day0Hinput" class="rii" type="radio"
 								name="hotelDay" cheaked>
@@ -436,21 +447,21 @@
 						<div style="display: flex; justify-content: center;
 						align-items: center; width: 100%; padding: 8px 0px">
 							<button class="btn center border-radius-none">
-								<h6></h6>
+								<h7 data-langnum="25">장소전체삭제</h7>
 							</button>
 						</div>
-						<ul>
-							<li>
-								<h6>
-									<span></span>
+						<ul class="ul-style" id="cart2">
+							<li id="cart2NoList" class="center">
+								<hs>
+									<span data-langnum="26">가고 싶은 장소들을 검색하여 추가해주세요.</span>
 									<br>
-									<span></span>
+									<span data-langnum="27">설정하신 일자별 여행시간 내에서</span>
 									<br>
-									<span></span>
-								</h6>
+									<span data-langnum="28">하루 평균 최대 8개의 장소까지 선택 가능합니다.</span>
+								</hs>
 								<br>
 								<br>
-								<i></i>
+								<i style="cursor: pointer;" class="material-icons" onclick="">add</i>
 							</li>
 						</ul>
 					</div>				
