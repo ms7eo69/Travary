@@ -1,8 +1,11 @@
 HELP.md
+
+### travary ###
 target/classes/**
 target/**
-
+resources/wallet
 database.properties
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
