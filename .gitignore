@@ -4,6 +4,7 @@ HELP.md
 target/classes/**
 target/**
 resources/wallet/**
+resources/**
 database.properties
 
 !.mvn/wrapper/maven-wrapper.jar
