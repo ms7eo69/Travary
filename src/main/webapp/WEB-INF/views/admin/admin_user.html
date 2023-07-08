@@ -8,18 +8,19 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin_user.css">
     <title>Document</title>
 </head>
 <body> 
     <nav class="navbar bg-dark v_nav sticky-top">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">회원관련</a>
+            <a class="nav-link" href="admin_user.html">회원관련</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">여행지역</a>
+            <a class="nav-link" href="admin_loc.html">여행관련</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link 3</a>
@@ -30,31 +31,31 @@
       <div class="pageinfo">
         <span>회원 관리</span>
       </div>
-      <div class="info">
-        <div class="report_user">
-          <div class=""></div>
-        </div>
-      </div>
-      <div class="info info_users row row-cols-2">
-        <div class="chart">
+      <div class="info info_users row">
+        <div class="chart _pie">
           <div id="gender"></div>
         </div>
-        <div class="chart">
+        <div class="chart _line">
           <div id="regimon"></div>
         </div>
-        <div class="chart">
+        <div class="chart _bar">
           <div id="age"></div>
         </div>
-        <div class="chart">
+        <div class="chart _pie">
           <div id="mtheme"></div>
         </div>
-        <div class="chart">
+        <div class="chart _pie">
           <div id="stheme"></div>
         </div>
         <div class="chart col-12">
           <ul class="list-unstyled snsMV">
             <span>금일 가장 많이본 게시물</span>
-            <li><img src="images/1.jpg">1</li>
+            <li>
+              <img src="images/1.jpg">
+              <div class="box_name">Enma</div>
+              <div class="box_title">문뜩 생각나서 아무생각없이 논산에 놀러가서 하늘만 보고있었네요~</div>
+              <div class="box_vCount">조회수: 52</div>
+            </li>
             <li><img src="images/2.jpg">2</li>
             <li><img src="images/3.jpg">3</li>
             <li><img src="images/4.jpg">4</li>
@@ -62,18 +63,37 @@
           </ul>
         </div>
         <div class="chart report_sns col-12">
-          <ul class="list-unstyled snsRpt">
-            <span>신고당한 게시글</span>
+          <ul class="list-unstyled rpt">
+            <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 게시글</span>
+            <li>
+              <img src="images/8.jpg">
+              <div class="box1">Yuna</div>
+              <div class="box2">정치적 성향이 강한 게시물</div>
+              <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></i></button>
+              <button class="noport"><i class="fa-solid fa-x"></i></button>
+            </li>
             <li><img src="images/1.jpg">1</li>
             <li><img src="images/2.jpg">2</li>
             <li><img src="images/3.jpg">3</li>
             <li><img src="images/7.jpg">3</li>
             <li><img src="images/3.jpg">3</li>
-            <li class="row">
-              <img src="images/8.jpg">
-              <div class="box">Yuna</div>
-              <div class="box">정치적 성향이 강한 게시물</div>
+          </ul>
+        </div>
+        <div class="chart report_user">
+          <ul class="list-unstyled rpt">
+            <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 유저</span>
+            <li>
+              <img src="images/3.jpg">
+              <div class="box1">Hola</div>
+              <div class="box2">언어폭력</div>
+              <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></button>
+              <button class="noport"><i class="fa-solid fa-x"></i></button>
             </li>
+            <li><img src="images/1.jpg">1</li>
+            <li><img src="images/2.jpg">2</li>
+            <li><img src="images/3.jpg">3</li>
+            <li><img src="images/7.jpg">3</li>
+            <li><img src="images/3.jpg">3</li>
           </ul>
         </div>
       </div>
@@ -105,7 +125,7 @@
         ];
     Highcharts.chart('regimon', {
       chart: {
-        width: 400,
+        // width: 600 ,
         height: 300,
         type: 'line',
       },
@@ -139,7 +159,7 @@
         ];
     var ageoptions = {
       chart: {
-        width: 400,
+        // width: 400,
         height: 300,
         type: 'column'  // 그래프 유형: 파이 그래프
       },
@@ -206,6 +226,17 @@
     Highcharts.chart('stheme', sthemeoption);
 
 
-    
+
+    function delete_(){
+      $(this).parent().remove();
+    }
+    $('.delete_sns').click(delete_);
+    $('.noport').click(delete_);
+
+    $('.fa-x').hover(function(){
+      $('.fa-x').addClass('fa-lg');
+    },function(){
+      $(this).removeClass('fa-lg');
+    })
 </script>
 </html>
