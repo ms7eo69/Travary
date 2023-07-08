@@ -5,6 +5,7 @@ target/classes/**
 target/**
 resources/wallet/**
 resources/**
+*.ora
 database.properties
 
 !.mvn/wrapper/maven-wrapper.jar
