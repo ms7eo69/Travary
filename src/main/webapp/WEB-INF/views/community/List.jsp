@@ -20,6 +20,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="<c:url value="css/index/navigationbar.css"/>"/>
 <link rel="stylesheet" href="<c:url value="css/community/community.css"/>"/>
+
+<!--Interactive-->
+<script src="<c:url value="js/community/viewArticle.js"/>" defer></script>
+<script src="<c:url value="js/index/scrolling.js"/>" defer></script>
 </head>
 <body>
 <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
@@ -393,53 +397,9 @@
 	    </div><!-------------------------- row end----------------------------------- -->
 	  </div><!-- 무한스크롤 적용부분 -->
 	 
-
 <script>
-<!-- 무한스크롤 -->
-var page=1;
-var index=0;
-var content = $('.scroll_add').clone();
-$(window).scroll(function() {
-  // console.log($(window).scrollTop(),$(document).height() - $(window).height());
-  if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
-    console.log('간닷!');
 
-    // loadData()//ajax 함수 호출!
-    
-    // var src = '../images/'+(index++)+'.jpg';
-   	// for(var i=0;i<content.find('img').length;i++)
-    // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
-    // content.find('img:eq(1)').prop('src','../images/2.jpg');
-    // content.find('img:eq(2)').prop('src','../images/3.jpg');
-    // content.find('img:eq(3)').prop('src','../images/4.jpg');
-    $(".scroll_add").append(content.html());
-    page++;
-    index++;
-    console.log(index);
-  }
-});
-<!-- 무한스크롤 -->
-<!--------모달-------->
-function openModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "flex";
-}
 
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-
-var div = document.querySelector(".viewbox");
-div.addEventListener("click", openModal);
-
-var modal = document.getElementById("myModal");
-modal.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-<!------모달-------->
 </script>
 </body>
 </html>
