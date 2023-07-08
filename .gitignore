@@ -6,7 +6,8 @@ target/**
 resources/wallet/**
 resources/**
 *.ora
-database.properties
+*.sso
+*.properties
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
