@@ -20,10 +20,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="<c:url value="css/index/navigationbar.css"/>"/>
 <link rel="stylesheet" href="<c:url value="css/community/community.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/community/write.css"/>"/>
 
 <!--Interactive-->
-<script src="<c:url value="js/community/viewArticle.js"/>" defer></script>
 <script src="<c:url value="js/index/scrolling.js"/>" defer></script>
+<script src="<c:url value="js/community/viewArticle.js"/>" defer></script>
+<script src="<c:url value="js/community/write.js"/>" defer></script>
+
 </head>
 <body>
 <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
@@ -120,12 +123,46 @@
     </nav>  
      <!---------------------------------------------네비게이션바 끝------------------------------------------- --> 
    <!-------------------------------------------- 포스팅 버튼----------------------------------------------------->
-    <div class="d-flex ">
-   		<button type="button" class="btn btn-primary PublishButton justify-content-right">
-   			<i class="fa-regular fa-pen-to-square mr-2" style="color: #ffffff;"></i><span>포스팅</span>
-   		</button>
-    </div>
- <!-------------------------------------모달---------------------------------->
+	<div class="d-flex">
+	  <button type="button" class="btn btn-primary PublishButton justify-content-right">포스팅</button>
+	</div>
+	   <!-------------------------------------------- 글쓰기 모달----------------------------------------------------->
+	
+	<div class="bgOverlay">
+	  <div class="snsWrite">
+	    <div class="snsWriteContent">
+	      <div class="top-section h4 text-center">세 게시글 작성하기</div>
+	      <div class="d-flex row">
+	        <div class="left-section col-md-7" onclick="openFileUploader()">
+	          <h2>사진을 선택해주세요</h2>
+	          <input type="file" id="fileInput" accept="image/*" multiple style="display: none">
+	          <div id="imagePreview"></div>
+	        </div>
+	        <div class="right-section col-md-5">
+	          <h2>제목과 내용 작성</h2>
+	          <!-- 제목과 내용 작성 섹션 내용 -->
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<div class="alert-modal shadow text-center">
+	  <div class="alert-modal-title">
+	  	<h5>글쓰기를 취소하시겠습니까?</h5>
+	  	<h6 class="pt-1 text-secondary">지금 나가면 수정내용이 저장되지 않습니다.</h6>	  	
+	  </div>
+	  <div class="alert-modal-choose">
+		  <div class="btn-yes">
+		  	<button class="btn btn-block text-danger">삭제</button>
+		  </div>
+		  <div class="btn-no">
+		  	<button class="btn">취소</button>
+		  </div>
+	  </div>
+	</div>
+
+ <!----------------------------------게시글 상세보기 모달---------------------------------->
 	<div id="myModal" style="display: none;">
 	  <div class="view_sns">
 	    <div class="view_content row ">
@@ -201,6 +238,8 @@
 	    </div>
 	  </div>
 	</div>
+
+	
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
 
    <div class="container-fluid container  mt-4">
