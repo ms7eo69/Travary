@@ -31,7 +31,8 @@
       <div class="pageinfo">
         <span>여행 관련</span>
       </div>
-      <div class="info">
+      <div class="info row">
+        
         <div class="chart">
           <ul class="list-unstyled Mloc">
             <span>선택한 여행지역 순</span>
@@ -64,15 +65,24 @@
             </li>
           </ul>
         </div>
-        <div class="chart _line">
+        <div class="chart">
           <div id="travMon"></div>
+        </div>
+        <div class="chart">
+          <div id="with"></div>
+        </div>
+        <div class="chart">
+          <div id="mtheme"></div>
+        </div>
+        <div class="chart">
+          <div id="stheme"></div>
         </div>
       </div>
     </div>
 </body>
 <script>
     var regidata = [
-          {name:'5월', value:254},// ajax data 받아서 값 넣기
+          {name:'5월', value:254},
           {name:'6월', value:321},
           {name:'7월', value:432}
         ];
@@ -101,5 +111,66 @@
       }]
     });
 
+    var mthemeoption = {
+      chart: {
+        width: 400,
+        height: 300,
+        type: 'pie'  // 그래프 유형: 파이 그래프
+      },
+      title: {
+        text: '메인테마 선호도'  // 그래프 제목
+      },
+      series: [{
+        name: '테마',  // 시리즈 이름
+        data: [
+          ['선택안함', 60],
+          ['액티비티', 20],
+          ['힐링', 30],
+          ['테마파크', 50]
+        ]  // 그래프 데이터
+      }]
+    };
+    Highcharts.chart('mtheme', mthemeoption);
+
+    var sthemeoption = {
+          chart: {
+            width: 400,
+            height: 300,
+            type: 'pie'  // 그래프 유형: 파이 그래프
+          },
+          title: {
+            text: '소테마 선호도'  // 그래프 제목
+          },
+          series: [{
+            name: '소테마',  // 시리즈 이름
+            data: [
+              ['선택안함', 40],
+              ['계곡', 30],
+              ['강', 20]
+            ]  // 그래프 데이터
+          }]
+        }
+    Highcharts.chart('stheme', sthemeoption);
+
+    var sthemeoption = {
+          chart: {
+            width: 400,
+            height: 300,
+            type: 'pie'  // 그래프 유형: 파이 그래프
+          },
+          title: {
+            text: '반려동물 및 미성년자 동반 여부'  // 그래프 제목
+          },
+          series: [{
+            name: '동반자',  // 시리즈 이름
+            data: [
+              ['선택안함', 40],
+              ['미성년', 30],// ajax data 받아서 값 넣기
+              ['반려동물', 20],
+              ['둘 다 포함된 경우', 8]
+            ]  // 그래프 데이터
+          }]
+        }
+    Highcharts.chart('with', sthemeoption);
 </script>
 </html>

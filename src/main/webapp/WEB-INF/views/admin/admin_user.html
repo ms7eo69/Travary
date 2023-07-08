@@ -31,7 +31,7 @@
       <div class="pageinfo">
         <span>회원 관리</span>
       </div>
-      <div class="info info_users row">
+      <div class="info row">
         <div class="chart _pie">
           <div id="gender"></div>
         </div>
@@ -41,60 +41,102 @@
         <div class="chart _bar">
           <div id="age"></div>
         </div>
-        <div class="chart _pie">
-          <div id="mtheme"></div>
+        <div class="col-12">
+          <div class="sns_users ">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item ">
+                <a class="nav-link active" data-toggle="tab" href="#home">조회수</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#menu2">추천수</a>
+              </li>
+            </ul>
+          
+            <!-- Tab panes -->
+            <div class="tab-content chart">
+              <div id="home" class="tab-pane active _best">
+                <ul class="list-unstyled snsMV" >
+                  <span>금일 가장 많이본 게시물</span>
+                  <li>
+                    <img src="images/1.jpg">
+                    <div class="box_name">Enma</div>
+                    <div class="box_title">문뜩 생각나서 아무생각없이 논산에 놀러가서 하늘만 보고있었네요~</div>
+                    <div class="box_vCount">조회수: 52</div>
+                  </li>
+                  <li><img src="images/2.jpg">2</li>
+                  <li><img src="images/3.jpg">3</li>
+                  <li><img src="images/4.jpg">4</li>
+                  <li><img src="images/6.jpg">5</li>
+                </ul>
+              </div>
+              <div id="menu2" class="tab-pane fade _best">
+                <ul class="list-unstyled snsMV" >
+                  <span>금일 추천 게시물</span>
+                  <li>
+                    <img src="images/1.jpg">
+                    <div class="box_name">Enma</div>
+                    <div class="box_title">문뜩 생각나서 아무생각없이 논산에 놀러가서 하늘만 보고있었네요~</div>
+                    <div class="box_vCount">조회수: 52</div>
+                  </li>
+                  <li><img src="images/2.jpg">2</li>
+                  <li><img src="images/3.jpg">3</li>
+                  <li><img src="images/4.jpg">4</li>
+                  <li><img src="images/6.jpg">5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="chart _pie">
-          <div id="stheme"></div>
-        </div>
-        <div class="chart col-12">
-          <ul class="list-unstyled snsMV">
-            <span>금일 가장 많이본 게시물</span>
-            <li>
-              <img src="images/1.jpg">
-              <div class="box_name">Enma</div>
-              <div class="box_title">문뜩 생각나서 아무생각없이 논산에 놀러가서 하늘만 보고있었네요~</div>
-              <div class="box_vCount">조회수: 52</div>
-            </li>
-            <li><img src="images/2.jpg">2</li>
-            <li><img src="images/3.jpg">3</li>
-            <li><img src="images/4.jpg">4</li>
-            <li><img src="images/6.jpg">5</li>
-          </ul>
-        </div>
-        <div class="chart report_sns col-12">
-          <ul class="list-unstyled rpt">
-            <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 게시글</span>
-            <li>
-              <img src="images/8.jpg">
-              <div class="box1">Yuna</div>
-              <div class="box2">정치적 성향이 강한 게시물</div>
-              <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></i></button>
-              <button class="noport"><i class="fa-solid fa-x"></i></button>
-            </li>
-            <li><img src="images/1.jpg">1</li>
-            <li><img src="images/2.jpg">2</li>
-            <li><img src="images/3.jpg">3</li>
-            <li><img src="images/7.jpg">3</li>
-            <li><img src="images/3.jpg">3</li>
-          </ul>
-        </div>
-        <div class="chart report_user">
-          <ul class="list-unstyled rpt">
-            <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 유저</span>
-            <li>
-              <img src="images/3.jpg">
-              <div class="box1">Hola</div>
-              <div class="box2">언어폭력</div>
-              <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></button>
-              <button class="noport"><i class="fa-solid fa-x"></i></button>
-            </li>
-            <li><img src="images/1.jpg">1</li>
-            <li><img src="images/2.jpg">2</li>
-            <li><img src="images/3.jpg">3</li>
-            <li><img src="images/7.jpg">3</li>
-            <li><img src="images/3.jpg">3</li>
-          </ul>
+        <div class="col-12">
+          <div class="sns_users ">
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item ">
+                <a class="nav-link active" data-toggle="tab" href="#rpt1">신고된 게시물</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#rpt2">신고된 사용자</a>
+              </li>
+            </ul>
+          
+            <!-- Tab panes -->
+            <div class="tab-content chart">
+              <div id="rpt1" class="tab-pane active _best">
+                <ul class="list-unstyled rpt">
+                  <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 게시글</span>
+                  <li>
+                    <img src="images/8.jpg">
+                    <div class="box1">Yuna</div>
+                    <div class="box2">정치적 성향이 강한 게시물</div>
+                    <div class="box_title">문뜩 생각나서 아무생각없이 논산에 놀러가서 하늘만 보고있었네요~</div>
+                    <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></i></button>
+                    <button class="noport"><i class="fa-solid fa-x"></i></button>
+                  </li>
+                  <li><img src="images/1.jpg">1</li>
+                  <li><img src="images/2.jpg">2</li>
+                  <li><img src="images/3.jpg">3</li>
+                  <li><img src="images/7.jpg">3</li>
+                  <li><img src="images/3.jpg">3</li>
+                </ul>
+              </div>
+              <div id="rpt2" class="tab-pane fade _best">
+                <ul class="list-unstyled rpt">
+                  <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 유저</span>
+                  <li>
+                    <img src="images/3.jpg">
+                    <div class="box1">Hola</div>
+                    <div class="box2">언어폭력</div>
+                    <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="noport"><i class="fa-solid fa-x"></i></button>
+                  </li>
+                  <li><img src="images/1.jpg">1</li>
+                  <li><img src="images/2.jpg">2</li>
+                  <li><img src="images/3.jpg">3</li>
+                  <li><img src="images/7.jpg">3</li>
+                  <li><img src="images/3.jpg">3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -183,47 +225,6 @@
       }]
     };
     Highcharts.chart('age', ageoptions);
-
-    var mthemeoption = {
-      chart: {
-        width: 400,
-        height: 300,
-        type: 'pie'  // 그래프 유형: 파이 그래프
-      },
-      title: {
-        text: '메인테마 선호도'  // 그래프 제목
-      },
-      series: [{
-        name: '테마',  // 시리즈 이름
-        data: [
-          ['선택안함', 60],// ajax data 받아서 값 넣기
-          ['액티비티', 20],
-          ['힐링', 30],
-          ['테마파크', 50]
-        ]  // 그래프 데이터
-      }]
-    };
-    Highcharts.chart('mtheme', mthemeoption);
-
-    var sthemeoption = {
-          chart: {
-            width: 400,
-            height: 300,
-            type: 'pie'  // 그래프 유형: 파이 그래프
-          },
-          title: {
-            text: '소테마 선호도'  // 그래프 제목
-          },
-          series: [{
-            name: '소테마',  // 시리즈 이름
-            data: [
-              ['선택안함', 40],
-              ['계곡', 30],// ajax data 받아서 값 넣기
-              ['강', 20]
-            ]  // 그래프 데이터
-          }]
-        }
-    Highcharts.chart('stheme', sthemeoption);
 
 
 
