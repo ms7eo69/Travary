@@ -1,8 +1,14 @@
 HELP.md
+
+### travary ###
 target/classes/**
 target/**
+resources/wallet/**
+resources/**
+*.ora
+*.sso
+*.properties
 
-database.properties
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
