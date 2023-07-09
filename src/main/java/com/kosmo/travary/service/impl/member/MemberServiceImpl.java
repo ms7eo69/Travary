@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosmo.travary.service.DaoService;
 
-import lombok.RequiredArgsConstructor;
-
 @Service("memberService")
-@RequiredArgsConstructor
 public class MemberServiceImpl implements DaoService {
 	@Autowired
 	private MemberMapper mapper;
