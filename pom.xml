@@ -58,6 +58,9 @@
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
+			<version>21.10.0.0</version>
+			<scope>system</scope>
+  			 <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc8.jar</systemPath>
 		</dependency>
 		<!--<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
@@ -115,14 +118,18 @@
 		<dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_core</artifactId>
+			<!--<version>21.10.0.0</version>-->
 		</dependency>
 		<dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>oraclepki</artifactId>
+			<version>23.2.0.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_cert</artifactId>
+			<!--<version>21.10.0.0</version>-->
 		</dependency>
 		<!--<dependency>
 			<groupId>com.oracle.database.ha</groupId>
