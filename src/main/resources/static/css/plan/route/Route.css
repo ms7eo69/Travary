@@ -333,7 +333,7 @@ nav ul a {
 	transition: background-color 0.2s;	
 }
 
-@media (max-width: 1600px) and (min-widht: 600px) {
+@media (max-width: 1600px) and (min-width: 600px) {
 	#feedWrap a {
 		top: -6px;
 		right: -6px;
@@ -437,7 +437,7 @@ h8 {
 	background-color: rgba(255, 255, 255, 0.7);
 	color: #000 !important;
 	box-shadow: unset;
-	background: rgba(255, 255, 255, 0.25);
+	
 	box-shadow: 0px 8px 32px 0px rgb(31 38 135 / 20%) !important;
 	backdrop-filter: blur(4px);
 	-webkit-backdrop-filter: blur(4px) !important;
@@ -522,4 +522,63 @@ button, input, optgroup, select, textarea {
 	height: 56px !important;
 	cursor: pointer;
 }
+
+.tpBtnOn {
+	background-color: rgba(152, 221, 227, 0.7) !important;
+	color: #fff !important;
+}
+
+[type='checkbox'], [type='radio'] {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0px;
+}
+
+[type='radio']:not(:checked),
+[type='radio']:checked {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.multiBtn {
+	font-size: 2rem !important;	
+}
+
+@media (max-width: 1600px) and (min-width: 600px) {
+	.multiBtn a i {
+		font-size:1.5rem;
+	}
+}
+
+.nmap-main {
+	height: 100vh !important;
+	width: 100% !important;
+	min-height: 100% !important;
+	max-height: none ! important;
+}
+
+.nm-style {
+	font: 400 11px Roboto, Arial, sans-serif;
+	text-decoration: none;
+}
+
+.ssbar {
+	position: fixed !important;
+	top: 0px !important;
+	right: 0px !important;
+	z-index: 999;
+	background-color: #ffffff !important;
+	width: 300px;
+	margin: 0 !important;
+	padding: 0 !important;
+	padding-top: 80px !important;
+}
+
+@media (max-width: 1600px) and (min-width: 600px) {
+	.ssbar {
+		width: 230px;
+	}
+}
+
 

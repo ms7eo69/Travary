@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
 <link rel="stylesheet" href='<c:url value="css/plan/route/Route.css"/>'/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <script>
 	var lregion = '${lregion}'
@@ -47,61 +49,61 @@
 	<div class="body2">
 		<div id="feedWrap">
 			<a onclick="">
-				<i class="icons" style="font-size: 20px; cursor: pointer;">close</i>
+				<i class="material-icons" style="font-size: 20px; cursor: pointer;">close</i>
 			</a>
 			<div id="feedBtn" class="chip we wl black blink2" onclick="">
-				<i class="icons" style="font-size: 20px; color: #ffffff; vertical-align: -4px;">
-					voiceCall
+				<i class="material-icons" style="font-size: 20px; color: #ffffff; vertical-align: -4px;">
+					record_voice_over
 				</i>			
 				<h8 id="feedTxt" style="color: #ffffff;" data-langnum="1">사용이 불편하신가요?</h8>
 			</div>
 		</div>
-		<a id="rsBtnH" class="tfb tooltip" data-position="left" data-attrnum="1"
+		<a id="rsBtnH" class="tfb tooltipped" data-position="left" data-attrnum="1"
 		data-tooltip="" onclick="">
 			<h8 data-langnum="2">추천호텔</h8>
 		</a>
-		<a id="rsBtnP" class="tfb tooltip" data-position="left" data-attrnum="2"
+		<a id="rsBtnP" class="tfb tooltipped" data-position="left" data-attrnum="2"
 		data-tooltip="" onclick="">
 			<h8 data-langnum="3">추천장소</h8>
 		</a>
 		<div class="multiBtn">
-			<a id="gBtn" class="tfb tooltip" data-position="right" data-attrnum="3"
+			<a id="gBtn" class="tfb tooltipped" data-position="right" data-attrnum="3"
 			data-tooltip="이용방법" onclick="">
 				<h7 data-langnum="4">이용방법</h7>
 			</a>
-			<a id="sBtn" class="tfb tooltip" data-position="right" data-attrnum="4"
+			<a id="sBtn" class="tfb tooltipped" data-position="right" data-attrnum="4"
 			data-tooltip="추천여행기" onclick="">
 				<h7>여행기</h7>
 			</a>
-			<a id="spBtn" class="tfb tooltip" data-position="right" data-attrnum="5"
+			<a id="spBtn" class="tfb tooltipped" data-position="right" data-attrnum="5"
 			data-tooltip="장소등록" onclick="">
 				<h7 data-langnum="5">장소등록</h7>
 			</a>
-			<a id="cBtn" class="tfb tooltip" data-position="right" data-attrnum="6"
+			<a id="cBtn" class="tfb tooltipped" data-position="right" data-attrnum="6"
 			data-tooltip="추천코스목록" onclick="">
 				<h7 data-langnum="6">추천일정</h7>
 			</a>
-			<a id="fBtn" class="tfb tooltip" data-position="right" data-attrnum="7"
+			<a id="fBtn" class="tfb tooltipped" data-position="right" data-attrnum="7"
 			data-tooltip="피드백 보내기" onclick="">
 				<h7 data-langnum="7">피드백</h7>
 			</a>
-			<a id="tBtn" class="tfb tooltip" data-position="right" data-attrnum="8"
+			<a id="tBtn" class="tfb tooltipped" data-position="right" data-attrnum="8"
 			data-tooltip="이동수단 : 대중교통">
 				<input id="transit" class="rb tpBtn" type="radio" name="tpMode" checked>
 				<i class="material-icons">directions_subway</i>
 			</a>
-			<a id="dBtn" class="tfb tooltip" data-position="right" data-attrnum="9"
+			<a id="dBtn" class="tfb tooltipped" data-position="right" data-attrnum="9"
 			data-tooltip="이동수단 : 자동차">
 				<input id="drive" class="rb tpBtn" type="radio" name="tpMode">
 				<i class="material-icons">directions_car</i>
 			</a>
-			<a class="tfb tooltip" data-position="right" data-attrnum="10"
+			<a class="tfb tooltipped" data-position="right" data-attrnum="10"
 			data-tooltip="일정생성" onclick="">
 				<h7 class="makeRoute" data-langnum="8">일정생성</h7>
 			</a>
 		</div>
 		<div>
-			<div id="map" class="nmap-main" style="width:1000px;height:1000px;"></div>
+			<div id="map" class="nmap-main" style="position: relative; overflow: hidden;"></div>
 		</div>
 	</div>
 	<!-- sidebar -->
