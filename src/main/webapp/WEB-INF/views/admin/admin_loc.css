@@ -16,7 +16,6 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    background-color: #000000;
     width: 200px;
     height: 100vh;
     padding: 40px 20px;
@@ -36,6 +35,34 @@
     font-size: 17px ;
     color: white;
 }
+.tab {
+    position: relative;
+}
+
+.tab a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+  
+.tab ul {
+    background-color: #343a40;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    opacity: 0; /* 초기에는 투명도 0으로 설정하여 나타나지 않도록 합니다. */
+    transform: translateY(-10px); /* 애니메이션 효과를 위해 위로 10px 이동합니다. */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 투명도와 이동 효과에 애니메이션을 추가합니다. */
+}
+  
+.tab:hover > ul {
+    display: block;
+    opacity: 1; /* 마우스를 올릴 때 투명도를 1로 설정하여 나타나도록 합니다. */
+    transform: translateY(0); /* 마우스를 올릴 때 원래 위치로 이동하도록 합니다. */
+}
+  
 .v_nav a:hover{
     font-weight: bold;
     font-size: 20px;
