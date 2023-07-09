@@ -32,12 +32,6 @@ public class PlanController {
 	@Autowired
 	PlanServiceImpl tour;
 
-//	@PostMapping("/GetSearchTrend.do")
-//	@ResponseBody
-//	public Map searchTrend() {			
-//		return service.searchTrend();
-//	}
-	
 	@GetMapping("/getRoute.do")
 	@ResponseBody
 	public Map getRoute(@RequestParam Map map) {		
@@ -48,23 +42,12 @@ public class PlanController {
 	@ResponseBody
 	public List getAnotherPlace(@RequestBody Map map) {
 		List<Map> list = tour.selectAnotherByBoundary(map);
-		System.out.println(list);
 		return list;
 	}
 	
-	@GetMapping("MultipleMarker.do")
-	public String multipleMarker(Model model) {
-		return "plan/MultipleMarker";
-	}
-	
-	@PostMapping("/SearchTrend.do")
-	public @ResponseBody Map searchTrend(
-			@RequestBody Map body,
-			@RequestHeader MultiValueMap<String, String> header) {
-		String url = "https://naveropenapi.apigw.ntruss.com/datalab/v1/search";
-		RestTemplate template = new RestTemplate();
-		Map map = template.exchange(url, HttpMethod.POST, new HttpEntity(body, header),Map.class).getBody();
-		System.out.println(map);
-		return map;
+	@GetMapping("/getAllPlaceWithMarkers.do")
+	public @ResponseBody List getAllPlaceWithMarkers(@RequestParam Map map) {
+		List<Map> list = tour.selectList(map);
+		return list;
 	}
 }

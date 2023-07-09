@@ -10,7 +10,29 @@
 	var lregion = '${lregion}'
 	var contextRoot = '<c:url value="/"/>'
 </script>
-<script src="<c:url value="js/plan/route/direction.js"/>"></script>
+<!-- <script src="<c:url value="js/plan/route/direction.js"/>"></script> -->
+<script>
+	$(function(){
+		var map = new N.Map('map', {
+			zoom: 10,
+			center: new N.LatLng(37.3614483, 127.1114883)
+		});	
+		$.ajax({
+			url:'/travary/plan/getAllPlaceWithMarkers.do',
+			dataType:'json',
+			data:'lregion=${lregion}'
+		}).done(function(data){
+			data.forEach(function(item){
+				var marker = new N.Marker({
+					position: item,
+					map: map
+				});	
+			})
+		}).fail(function(error){
+			console.log(error);
+		})
+	})
+</script>
 </head>
 <body>		
 	<!-- nav-header -->
