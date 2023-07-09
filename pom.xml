@@ -58,14 +58,8 @@
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
-			<version>21.10.0.0</version>
-			<scope>system</scope>
-  			 <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc8.jar</systemPath>
+			<scope>runtime</scope>
 		</dependency>
-		<!--<dependency>
-			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ucp</artifactId>
-		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
@@ -105,6 +99,7 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
+		
 		<!-- sms인증 관련 -->
 
 		<!-- https://mvnrepository.com/artifact/net.nurigo/javaSDK -->
@@ -114,23 +109,23 @@
 			<version>2.2</version>
 		</dependency>
 
+
 		<!-- Oracle Wallet-->
 		<dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_core</artifactId>
-			<!--<version>21.10.0.0</version>-->
 		</dependency>
 		<dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>oraclepki</artifactId>
 			<version>23.2.0.0</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.oracle.database.security</groupId>
 			<artifactId>osdt_cert</artifactId>
-			<!--<version>21.10.0.0</version>-->
 		</dependency>
+		
+		<!-- Oracle Wallet 고가용성 설정-->
 		<!--<dependency>
 			<groupId>com.oracle.database.ha</groupId>
 			<artifactId>ons</artifactId>
@@ -138,6 +133,12 @@
 		<dependency>
 			<groupId>com.oracle.database.ha</groupId>
 			<artifactId>simplefan</artifactId>
+		</dependency>-->
+		
+		<!--ucp-->
+		<!--<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ucp</artifactId>
 		</dependency>-->
 	</dependencies>
 
