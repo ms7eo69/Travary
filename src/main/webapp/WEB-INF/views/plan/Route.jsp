@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>        
 <jsp:include page="/WEB-INF/views/templates/Header.jsp"></jsp:include>
-<link rel="stylesheet" href='<c:url value="css/plan/route/Route.css"/>'/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href='<c:url value="css/plan/route/Route.css"/>'/>
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <script>
 	var lregion = '${lregion}'
@@ -120,15 +120,15 @@
 					</button>
 				</div>
 				<div class="center sRadio">
-					<input id="selH" class="rii" type="radio" name="sshr"
+					<input id="selH" class="riInput" type="radio" name="sshr"
 					value="sel_hotel">
-					<label class="ril" for="sel_hotel" style="width: 100%">
+					<label class="riLabel" for="sel_hotel" style="width: 100%">
 						<i class="material-icons">hotel</i>
 						<span data-langnum="9">호텔</span>
 					</label>
-					<input id="selS" class="rii" type="radio" name="sshr"
+					<input id="selS" class="riInput" type="radio" name="sshr"
 					value="sel_spot" checked="checked">
-					<label class="ril" for="sel_spot" style="width: 100%;">
+					<label class="riLabel" for="sel_spot" style="width: 100%;">
 						<i class="material-icons">place</i>
 						<span data-langnum="10">장소</span>
 					</label>
@@ -165,25 +165,25 @@
 					</div>
 					<div class="psbarSW">
 						<ul class="ul-style" id="spotlists">
-							<li class="spot-card" id="ad1">
+							<li class="spot-card" style="padding: 0px;" id="ad1">
 								<div>
 									<div>
-										<div class="centered">
+										<div class="centered">																						
 											<div class="spl">
-												<div class="ssc">
-													<h7 class="ssct">
+												<div class="ssCnt">
+													<h7 class="ssCntTxt">
 														<i class="material-icons">place</i>
 														"9,688"
 													</h7>
 												</div>
 											</div>
 											<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000"
-											id="cartImg1" loading="lazy">											
+											id="cartImg1" loading="lazy">
 										</div>
 									</div>
 								</div>
 								<div class="placeBM" style="top:2px !important; background-color: undefined">
-									<i title="장소" class="material-icons">account_balance</i>
+									<i title="장소" class="material-icons placeBM_mi">account_balance</i>
 								</div>
 								<div class="placeLW">
 									<span class="spotList1" title="성산 일출봉(Seongsan Ilchulbong Peak)">
@@ -210,6 +210,7 @@
 								<div>
 									<div>
 										<div class="centered">
+											<div class="displayWS" id="displayW"></div>
 											<div class="spl">
 												<div class="ssc">
 													<h7 class="ssct">
