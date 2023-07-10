@@ -43,67 +43,77 @@
       <div class="info row">
         <div id="usa" class="col-12">
           <ul class="list-unstyled Mloc edit_">
-            <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+            <label for="loc_select">대분류 지역을 골라줘용</label>
+            <select id="loc_select">
+                <option value="">전체</option>
+                <!-- foreach돌려서 옵션생성 -->
+                <option value="제주">제주</option> 
+                <option value="전주">전주</option>
+                <option value="인천">인천</option>
+                <option value="서울">서울</option>
+            </select>
             <li>
               <img src="images/1.jpg">
               <div class="box_name">여행지 이름</div>
-              <div class="box_name">여행지 이름</div>
-              <div class="box_vCount">선택수: 230</div>
               <button class="edit_loc">수정</button>
             </li>
             <li>
               <img src="images/2.jpg">
               <div class="box_name">제주</div>
-              <div class="box_vCount">선택수: 152</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/3.jpg">
               <div class="box_name">전주</div>
-              <div class="box_vCount">선택수: 123</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/4.jpg">
               <div class="box_name">인천</div>
-              <div class="box_vCount">선택수: 98</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/6.jpg">
               <div class="box_name">서울</div>
-              <div class="box_vCount">선택수: 62</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/8.jpg">
               <div class="box_name">대구</div>
-              <div class="box_vCount">선택수: 51</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/9.jpg">
               <div class="box_name">충북</div>
-              <div class="box_vCount">선택수: 48</div>
               <button class="edit_loc">수정</button>
             </li>
           </ul>
-        </div>        
-        
+        </div>
       </div>
     </div>
 </body>
 <script src="admin_user.js"></script>
 <script>
-const searchInput = document.getElementById('searchInput');
-const listItems = document.querySelectorAll('#usa .list-unstyled.rpt li');
+  var selectElement = document.getElementById("loc_select");//선택된 샐렉터 가져오기
+  selectElement.addEventListener("change", function() {
+      var selectedValue = selectElement.value;
+      console.log("선택지역 : ", selectedValue);
+  });
+
+
+
+const searchInput = document.getElementById('loc_select');
+const listItems = document.querySelectorAll('#usa .list-unstyled.Mloc li');
 
     searchInput.addEventListener('input', function() {
       const searchText = searchInput.value.trim().toLowerCase();
 
       listItems.forEach(function(li) {
-        const box1Text = li.querySelector('.box1').textContent.toLowerCase();
-        const box2Text = li.querySelector('.box2').textContent.toLowerCase();
-        const shouldShow = box1Text.includes(searchText) || box2Text.includes(searchText);
+        const box1Text = li.querySelector('.box_name').textContent.toLowerCase();
+        // const box2Text = li.querySelector('.box_').textContent.toLowerCase();
+        const shouldShow = box1Text.includes(searchText)
 
         li.style.display = shouldShow ? 'flex' : 'none';
       });
     });
+
+
+
 
     $('.box_name').on('dblclick', function() {
   const divElement = $(this);

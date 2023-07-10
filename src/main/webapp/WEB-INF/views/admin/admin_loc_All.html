@@ -10,7 +10,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="admin_loc_All.css">
+    <link rel="stylesheet" href="admin_loc.css">
     <title>Document</title>
 </head>
 <body> 
@@ -20,7 +20,7 @@
         <a class="nav-link" href="admin_user.html">회원관련</a>
         <ul class="subtab">
           <li><a href="admin_user_All.html">회원정보 관리</a></li>
-          <li><a href="admin_loc_All.html">즐겨찾기 관리</a></li>
+          <li><a href="admin_user_All.html">즐겨찾기 관리</a></li>
         </ul>
       </li>
       <li class="nav-item tab">
@@ -125,12 +125,70 @@
             </div>
           </div>
         </div>
+        <div id="usa" class="col-12">
+          <ul class="list-unstyled Mloc edit_">
+            <span>인기 관광지</span>
+            <label for="loc_select">대분류 지역을 골라줘용</label>
+            <select id="loc_select">
+                <option value="">전체</option>
+                <!-- foreach돌려서 옵션생성 -->
+                <option value="제주">제주</option> 
+                <option value="전주">전주</option>
+                <option value="인천">인천</option>
+                <option value="서울">서울</option>
+            </select>
+            <li>
+              <img src="images/1.jpg">
+              <div class="box_name">여행지 이름</div>
+              <div class="box_name">여행지 이름</div>
+              <button class="edit_loc">수정</button>
+            </li>
+            <li>
+              <img src="images/2.jpg">
+              <div class="box_name">제주</div>
+              <button class="edit_loc">수정</button>
+            </li>
+            <li><img src="images/3.jpg">
+              <div class="box_name">전주</div>
+              <button class="edit_loc">수정</button>
+            </li>
+            <li><img src="images/4.jpg">
+              <div class="box_name">인천</div>
+              <button class="edit_loc">수정</button>
+            </li>
+            <li><img src="images/6.jpg">
+              <div class="box_name">서울</div>
+              <button class="edit_loc">수정</button>
+            </li>
+            <li><img src="images/8.jpg">
+              <div class="box_name">대구</div>
+              <button class="edit_loc">수정</button>
+            </li>
+            <li><img src="images/9.jpg">
+              <div class="box_name">충북</div>
+              <button class="edit_loc">수정</button>
+            </li>
+          </ul>
+        </div>
     </div>
   </div>
 </div>
 </body>
 <script>
+    const searchInput = document.getElementById('loc_select');
+    const listItems = document.querySelectorAll('#usa .list-unstyled.Mloc li');
 
+    searchInput.addEventListener('input', function() {
+      const searchText = searchInput.value.trim().toLowerCase();
+
+      listItems.forEach(function(li) {
+        const box1Text = li.querySelector('.box_name').textContent.toLowerCase();
+        // const box2Text = li.querySelector('.box_').textContent.toLowerCase();
+        const shouldShow = box1Text.includes(searchText)
+
+        li.style.display = shouldShow ? 'flex' : 'none';
+      });
+    });
 
     
 </script>
