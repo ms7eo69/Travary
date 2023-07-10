@@ -213,22 +213,22 @@
 	          <p>#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
 	        </div>
 	        <div class="sns_comments flex-fill mb-auto ">
-	          <input type="text" name=comment placeholder="comment">
+	          <input type="text" name=comment class="form-control" placeholder="comment">
 	        </div>
 	        <div class="sns_location">
 	        	<div class="card mb-3 shadow" style="">
 				  <div class="row no-gutters">
-				    <div class="col-md-4">
-				      <img src="<c:url value="/images/best-theme/busan.jpg"/>" alt="...">
+				    <div class="col-md-4 ">
+				      <img src="<c:url value="/images/best-theme/busan.jpg"/>" class="courseImg" alt="...">
 				    </div>
 				    <div class="col-md-8">
-				      <div class="card-body p-3">
-				        <h6 class="card-title h4 text-black">여행 코스</h5>
-				        <div class="card-text h5"><i class="fa-solid fa-location-dot text-danger"><span class="ml-2">부산</span></i></div>
+				      <div class="card-body p-2">
+				        <h6 class="card-title h5 text-black">여행 코스</h5>
+				        <div class="card-text h6"><i class="fa-solid fa-location-dot text-danger"><span class="ml-2">부산</span></i></div>
 				        <div class="card-text"><i class="fa-regular fa-calendar"><span class="ml-2">1박 2일</span></i></div>
-				      </div>
-				      <div class="sns-location-btn d-flex pr-4 ">
-				        <a href="#" class="btn btn-primary ml-auto">더 보기</a>
+					      <div class="sns-location-btn d-flex pr-1 ">
+					        <a href="#" class="btn btn-primary ml-auto">더 보기</a>
+					      </div>
 				      </div>
 				    </div>
 				  </div>
