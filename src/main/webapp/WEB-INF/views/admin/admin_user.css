@@ -159,12 +159,16 @@
 .resport_sns{
     overflow-y: auto;
 }
-.box1, .box_name{
+.box1, .box_name, .nickname{
     display: flex;
     justify-content: start;
     width:100px;
     margin-left: 10px;
     border-right: 1px solid black;
+}
+.nickname{
+    width: auto;
+    padding-right: 10px;
 }
 .box2{
     padding-right: 10px;
@@ -222,7 +226,7 @@
 #usa > .rpt{
     height: 1000px;
 }
-.id_{
+/* .id_{
     cursor: pointer;
-}
+} */
 
