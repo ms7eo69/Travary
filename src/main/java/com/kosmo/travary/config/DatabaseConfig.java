@@ -28,6 +28,10 @@ public class DatabaseConfig {
 		//HikariConfig객체 생성후 데이터베이스 연결 및 커넥션 풀 정보 설정
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName(driver);
+		
+		String projectDir = System.getProperty("user.dir");
+        System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
+        
 		hikariConfig.setJdbcUrl(url);
 		hikariConfig.setUsername(id);
 		hikariConfig.setPassword(password);
