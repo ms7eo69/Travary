@@ -1,13 +1,13 @@
 HELP.md
 target/classes/**
-
+*.ora
+*.sso
+*.properties
 database.properties
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-*.ora
-*.sso
-*.properties
+
 
 ### STS ###
 .apt_generated
