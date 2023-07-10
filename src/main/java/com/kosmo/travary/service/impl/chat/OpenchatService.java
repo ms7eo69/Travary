@@ -5,25 +5,26 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 
-import com.kosmo.travary.component.CustomWebSocketHandler;
+import com.kosmo.travary.component.WebSocketServer;
 
 @Service
 public class OpenchatService implements IOpenchatService {
 
-    private final CustomWebSocketHandler customWebSocketHandler;
+    private final WebSocketServer webSocketServer;
 
     @Autowired
-    public OpenchatService(CustomWebSocketHandler customWebSocketHandler) {
-        this.customWebSocketHandler = customWebSocketHandler;
+    public OpenchatService(WebSocketServer webSocketServer) {
+        this.webSocketServer = webSocketServer;
     }
 
     @Override
     public void createWebSocketServer(WebSocketSession session) {
-        // WebSocket 핸들러에 메시지 전송 예시
         try {
-            customWebSocketHandler.handleTextMessage(session, new TextMessage("Hello, WebSocket!"));
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
 }
+

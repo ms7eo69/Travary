@@ -1,4 +1,5 @@
 package com.kosmo.travary.component;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,25 +9,24 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
+//웹소켓 서버
 @Component
-public class CustomWebSocketHandler extends TextWebSocketHandler {
-
+public class WebSocketServer extends TextWebSocketHandler {
+	//접속한 클라이언트를 저장하기 위한 속성(멤버변수)]
+	//키는 웹소켓 세션 아이디
 	private Map<String, WebSocketSession> clients = new HashMap<>();
 
 	//클라이언트와 연결이 되었을때 호출되는 콜백 메소드]
 	@Override
-    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        clients.put(session.getId(), session);
-        System.out.println(session.getId() + " 연결되었습니다.");
-
-        // 연결 성공 메시지 등을 전송할 수 있습니다.
-        session.sendMessage(new TextMessage("WebSocket 연결이 성공적으로 이루어졌습니다."));
-    }
-	
+	public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+		//-컬렉션에 연결된 클라이언트 추가
+		clients.put(session.getId(), session);
+		System.out.println(session.getId()+"연결 되었습니다");
+	}
 	//클라이언트로 부터 메시지를 받았을때 자동 호출되는 콜백 메소드]
 	//여기서 클라이언트로 메시지도 보냄(푸쉬)
 	@Override
-	public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		System.out.println(session.getId()+"로부터 받은 메시지:"+message.getPayload());
 		//접속한 모든 클라이언트에게 session.getId()가 보낸 메시지 뿌려주기]
 		for(WebSocketSession client:clients.values()) {
@@ -50,4 +50,6 @@ public class CustomWebSocketHandler extends TextWebSocketHandler {
 		System.out.println(session.getId()+"연결이 끊어졌어요");
 	}
 	
+	
 }
+	
