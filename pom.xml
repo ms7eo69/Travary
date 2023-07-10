@@ -125,21 +125,20 @@
 			<artifactId>osdt_cert</artifactId>
 		</dependency>
 		
-		<!-- Oracle Wallet 고가용성 설정-->
-		<!--<dependency>
-			<groupId>com.oracle.database.ha</groupId>
-			<artifactId>ons</artifactId>
+		<!-- Oracle Wallet 의존성-->
+		<dependency>
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>osdt_core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.oracle.database.ha</groupId>
-			<artifactId>simplefan</artifactId>
-		</dependency>-->
-		
-		<!--ucp-->
-		<!--<dependency>
-			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ucp</artifactId>
-		</dependency>-->
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>oraclepki</artifactId>
+			<version>23.2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>osdt_cert</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

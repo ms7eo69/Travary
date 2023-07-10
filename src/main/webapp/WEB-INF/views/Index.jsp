@@ -605,10 +605,10 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <form class="modal-body1" action="/travary/Index.msp" method="post">
+            <form class="modal-body1" action="/travary/member/Login" method="post">
                 <img src="<c:url value="/images/logo/logo.png"/> " class="modal-logo">
-                <input type="text" placeholder="아이디" class="inlilneToBlock">
-                <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
+                <input type="text" name="id" placeholder="아이디" class="inlilneToBlock">
+                <input type="password" name="pwd" placeholder="비밀번호" class="inlilneToBlock">                    
                 <button class="inlineToBlock ordinaryLogin unactivatedLoginColor" type="submit">로그인</button>
                 <div class="horizonAndOrWrap">
                     <hr class="leftHr">

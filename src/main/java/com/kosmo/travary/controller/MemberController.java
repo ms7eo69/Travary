@@ -39,7 +39,7 @@ public class MemberController {
 		idName = cookieInfo.getIdName();
 	}
 
-	@PostMapping("/LoginProcess")
+	@PostMapping("/Login")
 	public String loginProcess(@RequestParam Map map, Model model, HttpServletRequest req, HttpServletResponse resp) {
 		/*
 		List<Map> a = memberService.selectList(map);
