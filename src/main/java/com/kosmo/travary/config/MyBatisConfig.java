@@ -10,10 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//어노테이션이 아닌 xml방식으로 쿼리 실행시
 @Configuration
-//@Mapper가 붙은 매퍼 인터페이스 스캔 
-//(value={매퍼인터페이스들의 패키지...},sqlSessionFactoryRef="SqlSessionFactory빈의 ID")
 @MapperScan(
 		value = {"com.kosmo.travary.service.impl"},
 		sqlSessionFactoryRef = "sqlSessionFactory")
