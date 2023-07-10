@@ -82,6 +82,7 @@
 			</nav>
 		</div>
 		<div class="col-7">
+			<div id="map" class="nmap-main" style="position: relative; overflow: hidden;"></div>
 		</div>
 		<div class="col-3">
 		</div>
