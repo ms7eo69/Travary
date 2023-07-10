@@ -1,5 +1,6 @@
 HELP.md
 target/classes/**
+
 *.ora
 *.sso
 *.properties
