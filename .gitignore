@@ -1,4 +1,8 @@
 HELP.md
+target/classes/**
+*.ora
+*.sso
+*.properties
 
 ### travary ###
 target/classes/**
