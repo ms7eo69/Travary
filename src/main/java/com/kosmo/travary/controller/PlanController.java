@@ -50,4 +50,9 @@ public class PlanController {
 		List<Map> list = tour.selectList(map);
 		return list;
 	}
+	
+	@GetMapping("/Route.do")
+	public String route() {
+		return "plan/Route";
+	}
 }
