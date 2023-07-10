@@ -80,7 +80,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="posting">
                                     <i class="fa fa-regular fa-square-plus"></i>
                                     <span class="nav-text">만들기</span>
                                 </a>
@@ -126,22 +126,52 @@
 	<div class="d-flex">
 	  <button type="button" class="btn btn-primary PublishButton justify-content-right">포스팅</button>
 	</div>
-	   <!-------------------------------------------- 글쓰기 모달----------------------------------------------------->
+	   <!-------------------------------------------- 글쓰기 모달(nomal)----------------------------------------------------->
 	
 	<div class="bgOverlay">
 	  <div class="snsWrite">
 	    <div class="snsWriteContent">
 	      <div class="top-section h4 text-center">세 게시글 작성하기</div>
-	      <div class="d-flex row">
-	        <div class="left-section col-md-7" onclick="openFileUploader()">
-	          <h2>사진을 선택해주세요</h2>
-	          <input type="file" id="fileInput" accept="image/*" multiple style="display: none">
-	          <div id="imagePreview"></div>
-	        </div>
-	        <div class="right-section col-md-5">
-	          <h2>제목과 내용 작성</h2>
-	          <!-- 제목과 내용 작성 섹션 내용 -->
-	        </div>
+	      <div class="row justify-content-center align-items-center flex-column"> 
+	        <div class="my-1">
+		        <h2>포스팅할 여행을 선택해주세요</h2>	        
+	        </div>      
+	        <div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
+			  <div class="card text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/busan.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">부산</h5>
+			      <p class="card-text">2023-07-10 ~ 07-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
+			  <div class="card text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/seoul.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">서울</h5>
+			      <p class="card-text">2023-06-10 ~ 06-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
+			  <div class="card text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/jeju.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">제주</h5>
+			      <p class="card-text">2023-05-10 ~ 05-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
+			  <div class="card text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/terarosa.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">강릉</h5>
+			      <p class="card-text">2023-04-10 ~ 04-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
 	      </div>
 	    </div>
 	  </div>

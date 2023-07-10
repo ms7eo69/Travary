@@ -21,6 +21,35 @@
   background-color: #fff;
   border-radius: 10px;
 }
+
+ .coursImg{
+ 	height: 100px !important;
+ 	object-fit: cover !important;
+ }
+.pickCourse {
+  border: none;
+  border-radius: 30px;
+}
+.card-img-overlay {
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+    color: white;
+    padding: 1rem;
+  }
+  
+ .card {
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover .coursImg {
+  cursor: pointer;
+  transform: scale(1.15);
+  -o-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  transition: 1s;
+}
+
 .top-section{
 	padding: 10px;
 	border-bottom: 1px solid #ccc;
