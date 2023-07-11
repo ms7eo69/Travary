@@ -19,6 +19,8 @@
 			zoom: 10,
 			center: new N.LatLng(37.3614483, 127.1114883)
 		});	
+		var flag='00'
+		var markers=[]
 		map.addListener('dragend', function() {
 			console.log(map.getCenter());
 			console.log(map.getBounds());
@@ -89,7 +91,7 @@
 					/* styleOptions.fillOpacity = 0.6;
 					styleOptions.fillColor = '#0f0';
 					styleOptions.strokeColor = '#0f0'; */
-					styleOptions.strokeWeight = 6;
+					styleOptions.strokeWeight = 4;
 					styleOptions.strokeOpacity = 1;
 				}
 
@@ -100,15 +102,22 @@
 				map.data.addGeoJson(geojson);
 			});
 
+			
 			map.data.addListener('click', function(e) {
 				var feature = e.feature;
-				console.log(e);
+				console.log('flag:'+flag);
+				if (flag !== '00'){
+					a = flag.startsWith('0')?flag.substring(1,2):flag;
+					map.data._features[parseInt(a-1)].property_focus=false
+					markers.forEach(function(marker){
+						marker.setMap(null)
+					})
+				}
 				map.panToBounds( 
-						new N.LatLngBounds(
-							feature.bounds._max,
-							feature.bounds._min
-						)
-					
+					new N.LatLngBounds(
+						feature.bounds._max,
+						feature.bounds._min
+					)
 				)
 				if (feature.getProperty('focus') !== true) {
 					feature.setProperty('focus', true);
@@ -126,6 +135,7 @@
 							position: item,
 							map: map
 						});	
+						markers.push(marker)
 						if (item.CATEGORY==='숙박') 
 							marker.setIcon({url:contextRoot+'images/route/pin_default.png'})
 						var infowindow = new naver.maps.InfoWindow({
@@ -144,6 +154,7 @@
 							/* } */
 						});
 					})
+					flag=e.feature.property_navercode
 				}).fail(function(error){
 					console.log(error);
 				})
@@ -187,7 +198,7 @@
     </div>
     <div class="row">        
 		<div class="col-2" style="background-color: red;height: inherit">         
-			<%-- <jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/> --%>
+			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
 		<div class="col-7">
 			<div>
