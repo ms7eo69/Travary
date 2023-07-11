@@ -1,4 +1,4 @@
-package com.kosmo.travary.service;
+package com.kosmo.travary.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +16,11 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
@@ -24,7 +28,7 @@ import org.springframework.web.client.RestTemplate;
 import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 @Controller
-public class PlanETC {
+public class SearchTrend {
 
 	@Autowired
 	PlanServiceImpl tour;
@@ -34,6 +38,16 @@ public class PlanETC {
 	@Value("${NAVER-API-KEY}")
 	private String naverApiKey;
 	
+
+	@PostMapping("/SearchTrend.do")
+	public @ResponseBody Map searchTrend(
+			@RequestBody Map body,
+			@RequestHeader MultiValueMap<String, String> header) {
+		String url = "https://naveropenapi.apigw.ntruss.com/datalab/v1/search";
+		RestTemplate template = new RestTemplate();
+		Map map = template.exchange(url, HttpMethod.POST, new HttpEntity(body, header),Map.class).getBody();
+		return map;
+	}
 	private HttpHeaders setNaverHeaders() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("X-NCP-APIGW-API-KEY-ID", naverApiKeyId);

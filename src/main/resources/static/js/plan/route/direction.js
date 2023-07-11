@@ -41,7 +41,7 @@ $(function(){
 					title: item.title,
 					map: map,
 					icon: {
-						url:  contextRoot+'img/example/sp_pins_spot_v3_over.png',
+						url:  contextRoot+'images/route/sp_pins_spot_v3_over.png',
 						size: new naver.maps.Size(24, 37),
 						anchor: new naver.maps.Point(12, 37),
 						origin: new naver.maps.Point(29*index, 150)

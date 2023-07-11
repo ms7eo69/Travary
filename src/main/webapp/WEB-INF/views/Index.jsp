@@ -104,7 +104,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<c:url value="/Route.do"/>">
+                                <a href="<c:url value="/plan/Route.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">경로</span>
                                 </a>

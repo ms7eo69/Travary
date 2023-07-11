@@ -31,5 +31,6 @@ public interface PlanMapper {
 		Map selectACMDByBoundary(Map main);
 		Map selectByNo(Map map);
 		List<Map> selectAnotherByBoundary(Map map);
+		List<Map> selectList(Map map);
 		
 }
