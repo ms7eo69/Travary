@@ -34,15 +34,53 @@
 	})
 </script>
 </head>
-<body>		
-	<div class="row">
-		<div class="col-2">
+<body>
+	<!-- 상단 바 -->
+	<div id="route_header" class="route_top">
+        
+    </div>
+    <div class="row">        
+		<div class="col-2" style="background-color: red;height: inherit;">            
 			<nav class="navbar">
-			</nav>
+                <div>
+                        a
+                </div>
+                <ul>
+                    <li>
+                        a
+                    </li>
+                    <li>
+                        a
+                    </li>
+                    <li>
+                        a
+                    </li>
+                    <li>
+                        a
+                    </li>
+                    <li>
+                        a
+                    </li>
+                    <li>
+                        a
+                    </li>
+                </ul>
+            </nav>
 		</div>
 		<div class="col-7">
+			<div>
+				<div id="map" class="nmap-main" style="width: 300px;height: 300px"></div>
+			</div>
 		</div>
-		<div class="col-3">
+		<div class="col-3" style="background-color: blue;">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
 		</div>
 	</div>
 </body>
