@@ -50,7 +50,7 @@
                     <div class="logo">
                         <a href="<c:url value='/'/>" class="logo-font">TRAVARY</a>
                     </div>         
-                    <div class="settings"></div>       
+                    <div class="settings"></div>
                 </div>
                 <div id="nav-body ">
                     <div class="menu-style">
@@ -116,7 +116,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<c:url value="/Admin.do"/>">
+                                <a href="<c:url value="/Admin_user.do"/>">
                                     <span class="nav-text">관리자 페이지</span>
                                 </a>
                             </li>
