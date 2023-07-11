@@ -39,4 +39,7 @@ public class IndexController {
 	
 	@GetMapping("/Community.do")
 	public String communitu() {return "community/List";}
+	
+	@GetMapping("/Admin.do")
+	public String admin() {return "forward:/travary/admin/admin_user.html";}
 }

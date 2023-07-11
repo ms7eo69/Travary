@@ -115,6 +115,11 @@
                                     <span class="nav-text">커뮤니티</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="<c:url value="/Admin.do"/>">
+                                    <span class="nav-text">관리자 페이지</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>   
                 </div>
