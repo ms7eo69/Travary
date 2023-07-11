@@ -4,8 +4,9 @@ document.querySelector('.PublishButton').addEventListener('click', function() {
 });
 
 function openWriteModal() {
-  document.querySelector('.snsWrite').style.display = 'flex';
-  document.querySelector('.bgOverlay').style.display = 'block';
+  document.querySelector('.sw1').style.display = 'flex';
+  document.querySelector('.bo1').style.display = 'block';
+  document.querySelector('.bo2').style.display = 'none';
 
   // snsWrite 외부 클릭 이벤트 리스너 추가
   document.querySelector('.bgOverlay').addEventListener('click', function() {
@@ -19,6 +20,9 @@ function openWriteModal() {
 }
 
 function closeWriteModal() {
+  document.querySelectorAll('.sw2 input').forEach(function(){
+	  this.textContent=""
+  })	
   document.querySelector('.snsWrite').style.display = 'none';
   document.querySelector('.bgOverlay').style.display = 'none';
 }
@@ -34,7 +38,7 @@ function closeAlertModal() {
 function cancelPost() {
   closeAlertModal();
   closeWriteModal();
-  // 게시글 작성 취소 로직 추가
+  document.querySelector('.bo2').style.display = 'none'; // bo2 모달 숨김
 }
 
 document.querySelector('.btn-yes').addEventListener('click', function() {
@@ -48,27 +52,4 @@ document.querySelector('.btn-no').addEventListener('click', function() {
 });
 
 
-//사진 선택하기 
-function openFileUploader() {
-  document.querySelector('#fileInput').click();
-}
 
-document.querySelector('#fileInput').addEventListener('change', function() {
-  var imagePreview = document.querySelector('#imagePreview');
-  imagePreview.innerHTML = ''; // 이미지 미리보기 초기화
-
-  var files = this.files;
-  for (var i = 0; i < files.length; i++) {
-    var file = files[i];
-    var reader = new FileReader();
-
-    reader.onload = function(e) {
-      var img = document.createElement('img');
-      img.src = e.target.result;
-      img.classList.add('preview-image');
-      imagePreview.appendChild(img);
-    }
-
-    reader.readAsDataURL(file);
-  }
-});

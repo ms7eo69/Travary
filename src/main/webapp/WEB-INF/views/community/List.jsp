@@ -126,10 +126,11 @@
 	<div class="d-flex">
 	  <button type="button" class="btn btn-primary PublishButton justify-content-right">포스팅</button>
 	</div>
+	
 	   <!-------------------------------------------- 글쓰기 모달(nomal)----------------------------------------------------->
 	
-	<div class="bgOverlay">
-	  <div class="snsWrite">
+	<div class="bgOverlay bo1">
+	  <div class="snsWrite sw1">
 	    <div class="snsWriteContent">
 	      <div class="top-section h4 text-center">세 게시글 작성하기</div>
 	      <div class="row justify-content-center align-items-center flex-column"> 
@@ -176,7 +177,7 @@
 	    </div>
 	  </div>
 	</div>
-	
+<!---------------------------글쓰기 취소-------------------- -->
 	<div class="alert-modal shadow text-center">
 	  <div class="alert-modal-title">
 	  	<h5>글쓰기를 취소하시겠습니까?</h5>
@@ -191,6 +192,27 @@
 		  </div>
 	  </div>
 	</div>
+
+<!------------------글쓰기 상세 작성 모달----------------------------->
+<div class="bgOverlay bo2 writeForm">
+  <div class="snsWrite sw2">
+    <div class="snsWriteContent">
+      <div class="top-section h4 text-center">세 게시글 작성하기</div>
+      <div class="row justify-content-center align-items-center flex-column">
+        <h2>포스팅할 여행을 선택해주세요</h2>
+        <div class="post-form">
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title">
+          
+          <label for="content">내용</label>
+          <textarea id="content" name="content"></textarea>
+          
+          <button type="submit">게시글 작성</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
  <!----------------------------------게시글 상세보기 모달---------------------------------->
 	<div id="myModal" style="display: none;">
@@ -467,7 +489,6 @@
 	  </div><!-- 무한스크롤 적용부분 -->
 	 
 <script>
-
 
 </script>
 </body>

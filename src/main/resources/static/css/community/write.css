@@ -39,10 +39,11 @@
  .card {
   overflow: hidden;
   position: relative;
+   cursor: pointer;
 }
 
 .card:hover .coursImg {
-  cursor: pointer;
+ 
   transform: scale(1.15);
   -o-transform: scale(1.15);
   -moz-transform: scale(1.15);
