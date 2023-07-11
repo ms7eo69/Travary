@@ -78,7 +78,7 @@
 <body>
 	<!-- 상단 바 -->
 	<div id="route_header" class="route_top">
-        
+        <label>LOGO</label>        
     </div>
     <div class="row">        
 		<div class="col-2" style="background-color: red;height: inherit;">            
@@ -110,7 +110,7 @@
 		</div>
 		<div class="col-7">
 			<div>
-				<div id="map" class="nmap-main" style="width: 300px;height: 300px"></div>
+				<div id="map" class="nmap-main"></div>
 			</div>
 		</div>
 		<div class="col-3" style="background-color: blue;">

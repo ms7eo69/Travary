@@ -77,9 +77,21 @@ html, body {
 /*body*/
 body {
 	font-size: 15px;
-	line-height: 1.5;
-	margin: 0px;
-	color: black
+	line-height: 1.5;	
+	color: black !important;
+	background-color: white !important;
+	user-select: none;
 }
 
+/*route_top*/
+.route_top {
+	position: relative;
+	height: 65px;
+}
 
+.nmap-main {
+	height: 100vh !important;
+	width: 100% !important;
+	min-height: 100% !important;
+	max-height: none !important;
+}
