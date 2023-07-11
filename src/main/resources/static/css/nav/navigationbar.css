@@ -23,6 +23,16 @@ nav {
     width: 160px;
 }
 
+.outerDiv {
+    width: 300px;    
+}
+
+.innerDiv {
+    width: 280px;
+    height: 100%;    
+    margin: auto;    
+}
+
 .main-menu ul {
     margin-bottom: 0;
 }

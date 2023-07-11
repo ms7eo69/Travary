@@ -87,7 +87,7 @@
         </div>      
     </div>
     <div class="row">        
-		<div class="col-2" style="background-color: red;height: inherit">         
+		<div class="col-2">         
 			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
 		<div class="col-7">
