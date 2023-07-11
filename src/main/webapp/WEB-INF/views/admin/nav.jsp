@@ -15,6 +15,7 @@
          <li><a href="<c:url value='/Admin_loc.do'/>">간이 통계</a></li>
          <li><a href="<c:url value='/Admin_loc_All.do'/>">여행지 통계</a></li>
          <li><a href="<c:url value='/Admin_loc_edit.do'/>">관광지</a></li>
+         <li><a href="<c:url value='/Admin_loc_boundary.do'/>">바운더리 설정</a></li>
        </ul>
      </li>
    </ul>
