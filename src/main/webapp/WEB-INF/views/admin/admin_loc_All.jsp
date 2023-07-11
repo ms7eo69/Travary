@@ -1,42 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="admin_loc.css">
-    <title>Document</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<link rel="stylesheet" href="<c:url value='css/admin/admin_loc.css'/>">
+<title>Insert title here</title>
 </head>
-<body> 
-  <nav class="navbar bg-dark v_nav sticky-top">
-    <ul class="navbar-nav">
-      <li class="nav-item tab">
-        <a class="nav-link" href="admin_user.html">회원관련</a>
-        <ul class="subtab">
-          <li><a href="admin_user_All.html">회원정보 관리</a></li>
-          <li><a href="admin_user_All.html">즐겨찾기 관리</a></li>
-        </ul>
-      </li>
-      <li class="nav-item tab">
-        <a class="nav-link" href="#">여행관련</a>
-        <ul class="subtab">
-          <li><a href="admin_loc.html">간이 통계</a></li>
-          <li><a href="admin_loc_All.html">여행지 통계</a></li>
-          <li><a href="admin_loc_edit.html">관광지</a></li>
-        </ul>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
-  </nav>
-    <div class="cont">
+<body>
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
+<div class="cont">
       <div class="pageinfo">
         <span>여행 관련</span>
       </div>
@@ -189,7 +170,5 @@
         li.style.display = shouldShow ? 'flex' : 'none';
       });
     });
-
-    
 </script>
 </html>
