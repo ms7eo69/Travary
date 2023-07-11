@@ -30,15 +30,15 @@
 
 			<c:if test="${empty records }" var="isEmpty">
 				<tr>
-					<td colspan="6">등록된 채팅방이 없습니다.</td>
+					<td colspan="6">등록된 채팅방이 없습니다.${roomId}</td>
 				</tr>
 			</c:if>
 			<c:if test="${not isEmpty }">
 				<c:forEach var="record" items="${records}" varStatus="loop">
 					<tr>
 						<td>${record.no}</td>
-						<td class="text-left"><a
-							href="<c:url value='/list/View.kosmo?no=${record.no}&nowPage='/><c:out value='${param.nowPage}' default='1'/>">${record.title}</a></td>
+						<td class="text-left">
+						<a href="/chat/enterChatRoom?roomId=${record.roomId}"><c:out value='${param.nowPage}' default='1'/>">${record.title}</a></td>
 						<td>${record.id}</td>
 						<td class="text-left"></td>
 						<td id="down-count${loop.count}">${record.hitcount}</td>

@@ -1,6 +1,10 @@
 HELP.md
 target/
 
+*.ora
+*.sso
+*.properties
+
 database.properties
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
