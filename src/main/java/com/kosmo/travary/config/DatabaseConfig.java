@@ -25,8 +25,6 @@ public class DatabaseConfig {
 	@Bean
 	DataSource dataSource() {
 		
-		String projectDir = System.getProperty("user.dir");
-        System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
 		//HikariConfig객체 생성후 데이터베이스 연결 및 커넥션 풀 정보 설정
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName(driver);
