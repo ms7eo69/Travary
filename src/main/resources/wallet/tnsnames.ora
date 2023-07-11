@@ -1,8 +1,8 @@
-temp_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gc1d89240adc293_temp_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+travary_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gc1d89240adc293_travary_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
 
-temp_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gc1d89240adc293_temp_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+travary_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gc1d89240adc293_travary_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
 
-temp_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gc1d89240adc293_temp_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+travary_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-chuncheon-1.oraclecloud.com))(connect_data=(service_name=gc1d89240adc293_travary_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
 
 
 
