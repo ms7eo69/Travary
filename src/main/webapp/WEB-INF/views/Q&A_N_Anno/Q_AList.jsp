@@ -4,7 +4,7 @@
 <div class="container" style="margin-top: 50px">
 	<div class="jumbotron bg-info">
 		<h1>
-			QnA <small>문의 게시판 - 사용자가 볼 게시판으로 자신이 쓴 문의글을 볼 수 있는 게시판입니다.</small>
+			QnA <small>문의 게시판</small>
 		</h1>
 	</div>
 	<!--jumbotron-->
