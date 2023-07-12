@@ -16,8 +16,8 @@
 	$(function(){
 		//기본 지도 설정
 		var map = new N.Map('map', {
-			zoom: 10,
-			center: new N.LatLng(37.3614483, 127.1114883)
+			zoom: 8,
+			center: new N.LatLng(36.5, 127.7)
 		});	
 		var flag='00'
 		var markers=[]
@@ -61,9 +61,7 @@
 					success: function(idx) {
 						return function(geojson) {
 							regionGeoJson[idx] = geojson;
-
 							loadCount++;
-
 							if (loadCount === 17) {
 									startDataLayer();
 							}
@@ -74,7 +72,6 @@
 		});
 
 		var tooltip = $('<div style="position:absolute;z-index:1000;padding:5px 10px;background-color:#fff;border:solid 2px #000;font-size:14px;pointer-events:none;display:none;"></div>');
-
 		tooltip.appendTo(map.getPanes().floatPane);
 
 		function startDataLayer() {
@@ -112,6 +109,7 @@
 					markers.forEach(function(marker){
 						marker.setMap(null)
 					})
+					markers=[]
 				}
 				map.panToBounds( 
 					new N.LatLngBounds(
@@ -197,23 +195,13 @@
         </div>      
     </div>
     <div class="row">        
-		<div class="col-2" style="background-color: red;height: inherit">         
+		<div class="col-3" style="background-color: rgba(217, 255, 0, 0.171);height: inherit">         
 			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
-		<div class="col-7">
+		<div class="col">
 			<div>
 				<div id="map" class="nmap-main"></div>
 			</div>
-		</div>
-		<div class="col-3" style="background-color: blue;">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
 		</div>
 	</div>
 </body>
