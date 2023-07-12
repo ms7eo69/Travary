@@ -32,7 +32,8 @@ public class DatabaseConfig {
 		//TNS_ADMIN 변수 설정
 		String projectDir = System.getProperty("user.dir");
         System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
-		
+        
+        hikariConfig.setMaximumPoolSize(20);	
 		hikariConfig.setJdbcUrl(url);
 		hikariConfig.setUsername(id);
 		hikariConfig.setPassword(password);

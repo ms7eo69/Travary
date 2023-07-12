@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.type.JdbcType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -77,22 +78,25 @@ public class MemberController {
 	
 
 	@PostMapping("/Register")
-	public String registerProcess(@RequestParam Map map, HttpServletRequest req, HttpServletResponse resp) {
+	public String registerProcess(@RequestParam(value = "profile_link", required = false) String profile_link, @RequestParam Map map, HttpServletRequest req, HttpServletResponse resp) {
 		String phone = map.get("phone1") + "-" + map.get("phone2")+ "-" + map.get("phone3"); //회원가입할때 전화번호 입력시 DB에 ,로 입력되는거 수정용
-		map.put("phone", phone);
-		map.put("profile_link", "");	
-		map.put("keyName", keyName);
-		//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
-		int expireMinute = 30;
-		String token = JWTokens.createToken(keyName, map, expireMinute);
-		//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
-		int affected = memberService.insertAuth(map);
-		memberService.insert(map);
-		Cookies.createCookie(tokenName, token, resp, req, expireMinute);
-		Cookies.createCookie(idName, map.get("identifier").toString(), resp, req, expireMinute);
-		System.out.println(map.get("id"));
-		req.setAttribute("validate", map.get("id"));
-		return affected==1?"forward:/":"member/Register";
+			map.put("phone", phone);
+			map.put("keyName", keyName);
+			if (profile_link != null) {
+			    map.put("profile_link", String.valueOf(profile_link));
+			}
+			//만료시간을 30분으로 하고, 자동생성된 비밀키를 secretKey로 하는 토큰 생성
+			int expireMinute = 30;
+			String token = JWTokens.createToken(keyName, map, expireMinute);
+			//자동생성된 secretKey를 로그인한 유저의 key값으로 저장
+			int affected = memberService.insertAuth(map);
+			System.out.println(map);
+			memberService.insert(map);
+			Cookies.createCookie(tokenName, token, resp, req, expireMinute);
+			Cookies.createCookie(idName, map.get("identifier").toString(), resp, req, expireMinute);
+			System.out.println(map.get("id"));
+			req.setAttribute("validate", map.get("id"));
+			return affected==1?"forward:/":"member/Register";
 	}
 	
 	@ExceptionHandler({Exception.class})
