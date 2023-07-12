@@ -17,5 +17,8 @@
          <li><a href="<c:url value='/Admin_loc_edit.do'/>">관광지</a></li>
        </ul>
      </li>
+     <li class="nav-item tab">
+     	<a class="nav-link" href="<c:url value='/Admin_anno_List.do'/>">공지사항</a>
+     </li>
    </ul>
  </nav>
