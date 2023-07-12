@@ -127,18 +127,20 @@
 	  <button type="button" class="btn btn-primary PublishButton justify-content-right">포스팅</button>
 	</div>
 	
-	   <!-------------------------------------------- 글쓰기 모달(nomal)----------------------------------------------------->
+	   <!-------------------------------------------- 여행 선택----------------------------------------------------->
 	
-	<div class="bgOverlay bo1">
-	  <div class="snsWrite sw1">
+	<div class="bgOverlay pickCourse ">
+	  <div class="snsWrite ">
 	    <div class="snsWriteContent">
-	      <div class="top-section h4 text-center">세 게시글 작성하기</div>
+	      <div class="top-section justify-content-center font-weight-bold">
+	      	<span>세 게시글 만들기</span>
+	      </div>
 	      <div class="row justify-content-center align-items-center flex-column"> 
-	        <div class="my-1">
-		        <h2>포스팅할 여행을 선택해주세요</h2>	        
+	        <div class="my-3 h5">
+		        <span>공유할 여행을 선택해주세요</span>	        
 	        </div>      
-	        <div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
-			  <div class="card text-white shadow" >
+	        <div class="col-6 m-3 courses" >
+			  <div class="card card-list text-white shadow " >
 			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/busan.jpg"/>" >
 			    <div class="card-img-overlay">
 			      <h5 class="card-title text-white text-bold">부산</h5>
@@ -146,8 +148,8 @@
 			    </div>
 			  </div>
 			</div>
-			<div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
-			  <div class="card text-white shadow" >
+			<div class="col-6 m-3 courses" > 
+			  <div class="card card-list text-white shadow" >
 			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/seoul.jpg"/>" >
 			    <div class="card-img-overlay">
 			      <h5 class="card-title text-white text-bold">서울</h5>
@@ -155,8 +157,8 @@
 			    </div>
 			  </div>
 			</div>
-			<div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
-			  <div class="card text-white shadow" >
+			<div class="col-6 m-3 courses" >
+			  <div class="card card-list text-white shadow" >
 			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/jeju.jpg"/>" >
 			    <div class="card-img-overlay">
 			      <h5 class="card-title text-white text-bold">제주</h5>
@@ -164,8 +166,8 @@
 			    </div>
 			  </div>
 			</div>
-			<div class="col-6 m-3 pickCourse" > <!-- 수정된 부분 -->
-			  <div class="card text-white shadow" >
+			<div class="col-6 m-3 courses" >
+			  <div class="card card-list text-white shadow" >
 			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/terarosa.jpg"/>" >
 			    <div class="card-img-overlay">
 			      <h5 class="card-title text-white text-bold">강릉</h5>
@@ -178,41 +180,103 @@
 	  </div>
 	</div>
 <!---------------------------글쓰기 취소-------------------- -->
-	<div class="alert-modal shadow text-center">
+	<div class="alert-modal shadow text-center" style="display: none;">
 	  <div class="alert-modal-title">
-	  	<h5>글쓰기를 취소하시겠습니까?</h5>
-	  	<h6 class="pt-1 text-secondary">지금 나가면 수정내용이 저장되지 않습니다.</h6>	  	
+	    <h5>글쓰기를 취소하시겠습니까?</h5>
+	    <h6 class="pt-1 text-secondary">지금 나가면 수정내용이 저장되지 않습니다.</h6>
 	  </div>
 	  <div class="alert-modal-choose">
-		  <div class="btn-yes">
-		  	<button class="btn btn-block text-danger">삭제</button>
-		  </div>
-		  <div class="btn-no">
-		  	<button class="btn">취소</button>
-		  </div>
+	    <div class="btn-yes">
+	      <button class="btn btn-block text-danger" onclick="cancelPost(); closeWriteModal();">삭제</button>
+	    </div>
+	    <div class="btn-no">
+	      <button class="btn" onclick="closeAlertModal()">취소</button>
+	    </div>
 	  </div>
 	</div>
 
 <!------------------글쓰기 상세 작성 모달----------------------------->
-<div class="bgOverlay bo2 writeForm">
-  <div class="snsWrite sw2">
-    <div class="snsWriteContent">
-      <div class="top-section h4 text-center">세 게시글 작성하기</div>
-      <div class="row justify-content-center align-items-center flex-column">
-        <h2>포스팅할 여행을 선택해주세요</h2>
-        <div class="post-form">
-          <label for="title">제목</label>
-          <input type="text" id="title" name="title">
-          
-          <label for="content">내용</label>
-          <textarea id="content" name="content"></textarea>
-          
-          <button type="submit">게시글 작성</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+	
+	  <div class="snsWrite writeForms" style="display: none;">
+	    <div class="snsWriteContent">   
+	      <div class="row justify-content-center align-items-center flex-column">
+	        <div class="write-form snsWrite" onclick="stopPropagation(event)">
+	          <div class="snsWriteContent">
+	            <div class="top-section justify-content-between px-4">
+				    <i class="fas fa-arrow-left fa-lg text-secondary"></i>
+				    <span class="text-black font-weight-bold">세 게시글 만들기</span>
+				    <span class="text-info font-weight-bold">공유</span>
+				 </div>
+				 <div class="d-flex row">
+				 	<div class="col-md-2">
+					    <button type="button" class="collapsible" onclick="collapse(this);">
+					    	<span>1일차</span>
+						</button>					    
+					    <div class="content">
+					        <ul>
+					    		<li>해운대</li>
+					    		<li>서면</li>
+					    		<li>남포동</li>
+					    		<li>개선문</li>
+					    		<li>에펠탑</li>
+					    	</ul>
+					    </div>
+					    <button type="button" class="collapsible" onclick="collapse(this);">
+					    	<span>2일차</span>
+						</button>					    
+					    <div class="content">
+					        <ul>
+					    		<li>해운대</li>
+					    		<li>서면</li>
+					    		<li>남포동</li>
+					    		<li>개선문</li>
+					    		<li>에펠탑</li>
+					    	</ul>
+					    </div>
+					    <button type="button" class="collapsible" onclick="collapse(this);">
+					    	<span>3일차</span>
+						</button>					    
+					    <div class="content">
+					        <ul>
+					    		<li>해운대</li>
+					    		<li>서면</li>
+					    		<li>남포동</li>
+					    		<li>개선문</li>
+					    		<li>에펠탑</li>
+					    	</ul>
+					    </div>
+					 </div>
+					<div class="col-md-6 uploadPic left-section d-flex align-items-center justify-content-center">
+					  <div class="imageUpload flex-column justify-content-center">
+					    <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)" style="display: none;">
+					    <div id="imagePreview"></div>
+					    <div class="text-center">
+					      <img src="<c:url value='/images/community/imggallery.png'/>" alt="이미지 선택" onclick="openFileUpload();" style="cursor: pointer;">
+					      <div>사진을 선택해주세요!</div>
+					    </div>
+					  </div>
+					</div>
+					 <div class="col-md-4 right-section shadow">
+			            <div class=" align-items-center flex-column">
+			            	<div class="d-flex align-items-center mb-4">
+			          			<img src="<c:url value='/images/profile/yunakim.jpg'/>" class="profileImageSm ml-0 mr-2 ">
+			           		 	<div class="userId">Yujin</div>
+			          		</div>
+			          		<div>
+				              <input type="text" id="postingtitle" name="title" class="inputbox mb-4" placeholder="제목 입력...">
+			          		</div>
+			          		<div>
+				              <textarea id="textbox" name="content" class="inputbox textbox"placeholder="내용 입력..."></textarea>
+			          		</div>
+			            </div>				 
+					 </div>
+				</div>	 
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	
 
  <!----------------------------------게시글 상세보기 모달---------------------------------->
 	<div id="myModal" style="display: none;">
@@ -487,9 +551,20 @@
 		    </div>
 	    </div><!-------------------------- row end----------------------------------- -->
 	  </div><!-- 무한스크롤 적용부분 -->
+
+
 	 
 <script>
-
+$('#imagePreview').change(function(){
+  var img = $(#imagePreview > img);
+  if (img.widht() > img.height()){
+    img.width = 100%;
+    img.css('height','auto')
+  }else{
+    img.height = 100%;
+    img.css('width','auto')
+  }
+})
 </script>
 </body>
 </html>

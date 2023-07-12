@@ -4,12 +4,11 @@ document.querySelector('.PublishButton').addEventListener('click', function() {
 });
 
 function openWriteModal() {
-  document.querySelector('.sw1').style.display = 'flex';
-  document.querySelector('.bo1').style.display = 'block';
-  document.querySelector('.bo2').style.display = 'none';
+  document.querySelector('.snsWrite').style.display = 'flex';
+  document.querySelector('.pickCourse').style.display = 'block';
 
   // snsWrite 외부 클릭 이벤트 리스너 추가
-  document.querySelector('.bgOverlay').addEventListener('click', function() {
+  document.querySelector('.pickCourse').addEventListener('click', function() {
     openAlertModal();
   });
 
@@ -19,37 +18,67 @@ function openWriteModal() {
   });
 }
 
-function closeWriteModal() {
-  document.querySelectorAll('.sw2 input').forEach(function(){
-	  this.textContent=""
-  })	
-  document.querySelector('.snsWrite').style.display = 'none';
-  document.querySelector('.bgOverlay').style.display = 'none';
-}
+//close 모달
+  function closeWriteModal() {
+	document.querySelector('.writeForms').style.display = 'none';
+    document.querySelector('.pickCourse').style.display = 'none';
+  }
 
-function openAlertModal() {
-  document.querySelector('.alert-modal').style.display = 'block';
-}
+  function openAlertModal() {
+    document.querySelector('.alert-modal').style.display = 'block';
+  }
 
-function closeAlertModal() {
-  document.querySelector('.alert-modal').style.display = 'none';
-}
+  function closeAlertModal() {
+    document.querySelector('.alert-modal').style.display = 'none';
+  }
 
-function cancelPost() {
-  closeAlertModal();
-  closeWriteModal();
-  document.querySelector('.bo2').style.display = 'none'; // bo2 모달 숨김
-}
+  function cancelPost() {
+    closeAlertModal();
+  }
 
-document.querySelector('.btn-yes').addEventListener('click', function() {
-  closeAlertModal();
-  closeWriteModal();
-  // 게시글 작성 취소 로직 추가
-});
-
-document.querySelector('.btn-no').addEventListener('click', function() {
-  closeAlertModal();
+  function stopPropagation(event) {
+    event.stopPropagation();
+  }
+  
+document.querySelectorAll('.courses').forEach(function(course) {
+  course.addEventListener('click', function() {
+    document.querySelector('.writeForms').style.display = 'block';
+  });
 });
 
 
+// 파일 선택 시 미리보기 함수
+function previewImage(event) {
+  var reader = new FileReader();
+  reader.onload = function () {
+    var imagePreview = document.getElementById('imagePreview');
+    imagePreview.innerHTML = '<img src="' + reader.result + '" alt="미리보기">';
+  }
+  reader.readAsDataURL(event.target.files[0]);
+}
 
+// uploadPic div를 클릭했을 때 파일 선택 input을 트리거하는 함수
+function openFileUpload() {
+  document.getElementById('imageUpload').click();
+}
+
+// uploadPic div 클릭 시 파일 선택 input 트리거
+document.querySelector('.uploadPic').addEventListener('click', openFileUpload);
+
+
+
+function collapse(element) {
+            var before = document.getElementsByClassName("active")[0]               // 기존에 활성화된 버튼
+            if (before && document.getElementsByClassName("active")[0] != element) {  // 자신 이외에 이미 활성화된 버튼이 있으면
+                before.nextElementSibling.style.maxHeight = null;   // 기존에 펼쳐진 내용 접고
+                before.classList.remove("active");                  // 버튼 비활성화
+            }
+            element.classList.toggle("active");         // 활성화 여부 toggle
+
+            var content = element.nextElementSibling;
+            if (content.style.maxHeight != 0) {         // 버튼 다음 요소가 펼쳐져 있으면
+                content.style.maxHeight = null;         // 접기
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";  // 접혀있는 경우 펼치기
+            }
+        }
