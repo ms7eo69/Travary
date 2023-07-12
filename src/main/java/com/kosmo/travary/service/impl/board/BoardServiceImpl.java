@@ -27,7 +27,7 @@ public class BoardServiceImpl implements DaoService {
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return mapper.save(map);
 	}
 
 	@Override

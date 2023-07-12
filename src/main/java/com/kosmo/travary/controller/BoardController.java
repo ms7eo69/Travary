@@ -50,11 +50,10 @@ public class BoardController {
 		return "board/List";
 	}
 	
-	@GetMapping("{path}/Write.msp")
-	public String write(@PathVariable String path,
-			Map map) {
-		//boardService.insert(map);
-		map.put("path",path);
+	@PostMapping("/Admin/anno/Write")
+	public String write(@RequestParam Map map) {
+		boardService.insert(map);
+		System.out.println("ddddddddd");
 		return "board/Write";
 	}
 	
