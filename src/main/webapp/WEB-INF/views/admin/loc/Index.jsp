@@ -12,7 +12,7 @@
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<link rel="stylesheet" href="<c:url value='css/admin/admin_loc.css'/>">
+<link rel="stylesheet" href="<c:url value='/css/admin/admin_loc.css'/>">
 <title>Insert title here</title>
 </head>
 <body>

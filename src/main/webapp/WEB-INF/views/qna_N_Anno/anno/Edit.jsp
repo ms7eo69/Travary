@@ -1,7 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://kit.fontawesome.com/0b4621b427.js"
+	crossorigin="anonymous"></script>
+
+<title></title>
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
 <div class="container" style="margin-top: 50px">
 	<div class="jumbotron bg-info">
 		<h1>
@@ -16,7 +38,7 @@
 		</div>
 	</c:if>
 	
-	<form method="post" action="<c:url value="/onememo/bbs/Edit.do"/>">
+	<form method="post" action="<c:url value="/Admin/anno/Edit.do"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<input type="hidden" name="no" value="${empty record.no ? param.no :record.no}" />
 		<div class="form-group">

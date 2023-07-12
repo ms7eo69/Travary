@@ -23,6 +23,7 @@
 	crossorigin="anonymous"></script>
 
 <title></title>
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
 <div class="container" style="margin-top: 50px">
 	<div class="jumbotron bg-info">
 		<h1>
@@ -37,7 +38,7 @@
 		</div>
 	</c:if>
 	
-	<form method="post" action="<c:url value="/onememo/bbs/Write.do"/>">
+	<form method="post" action="<c:url value="/Admin/qna/Write.do"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<div class="form-group">
 			<label><kbd class="lead">제목</kbd></label> <input type="text"

@@ -1,13 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://kit.fontawesome.com/0b4621b427.js"
+	crossorigin="anonymous"></script>
+
+<title></title>
 </head>
 <body>
-    <form class="container">
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
+    <form class="container" method="post" action="<c:url value="/Admin/qna/Write.do"/>">
         <h2>어떤 문제를 겪고 계신가요?</h2>
         <!-- <select>
             <option></option>
@@ -38,7 +57,6 @@
     </form>
 </body>
 <script>
-
     function imageUpload(){//이미지 업로드해서 서버에넣고 파일 이름만 받아오기
         $.ajax({
             url: '<c:url value=""/>', // 컨트롤러 URL
@@ -59,12 +77,9 @@
         $('input[type=file]').trigger('click');
     });
 
-    $('#images').change(function(){
-        console.log('1')
-        console.log($('#images').val())
+    $('input[type=file]').change(function(){
         imageUpload();
     });
-
 </script>
 <style>
     textarea{
