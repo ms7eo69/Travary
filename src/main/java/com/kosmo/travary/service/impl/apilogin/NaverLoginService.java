@@ -29,6 +29,7 @@ public class NaverLoginService implements INaverLoginService {
 		String access_Token = "";
 		String refresh_Token = "";
 		String reqURL = "https://nid.naver.com/oauth2.0/token";
+		System.out.println(naverId);
 		try {
 			URL url = new URL(reqURL);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();

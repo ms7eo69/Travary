@@ -47,7 +47,7 @@ public class MemberServiceImpl implements DaoService {
 	}
 	@Override
 	public Map selectOne(Map map) {
-		return null;
+		return mapper.selectOne(map);
 	}
 	
 	public int GoogleInsert(Map map) {

@@ -617,13 +617,13 @@
                 </div>
             </form>
             <div class="modal-body2 mb-2">
-                <a href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code" class="noneunderline">                    
+                <a href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/travary/member/kakaoLogin&response_type=code" class="noneunderline">                    
                     <img src="<c:url value="/images/login/kakaoicon.png"/>" class="kakaoIcon">                    
                 </a>
-                <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:7070/member/GoogleMyPage.do&access_type=offline&prompt=consent" class="noneunderline">                    
+                <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:7070/travary/member/GoogleMyPage.do&access_type=offline&prompt=consent" class="noneunderline">                    
                     <img src="<c:url value="/images/login/googleicon.png"/>" class="googleIcon">
                 </a>
-                <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=GsYVpg82aBYC9e00ww1B&redirect_uri=http://localhost:7070/member/NaverMyPage.do" class="noneunderline">                    
+                <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=GsYVpg82aBYC9e00ww1B&redirect_uri=http://localhost:7070/travary/member/NaverMyPage.do" class="noneunderline">                    
                     <img src="<c:url value="/images/login/navericon.png"/>" class="naverIcon"></a>
             </div>
             <div class="modal-body3">

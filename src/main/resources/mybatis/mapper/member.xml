@@ -26,8 +26,11 @@
 		INSERT INTO member_auth VALUES(#{id}, #{pwd}, #{${keyName}},#{identifier})
 	</insert>
 	<insert id="save" parameterType="Map">
-		INSERT INTO member VALUES(#{nickname}, #{id}, #{gender}, #{age_group}, #{phone},SYSDATE, #{profile_link})
+		INSERT INTO member VALUES(#{nickname}, #{id}, #{gender}, #{age_group}, #{phone},SYSDATE, #{profile_link, jdbcType=NVARCHAR})
 	</insert>	
+	<select id="selectOne" resultType="map" parameterType="map">
+		SELECT * FROM member_auth WHERE id=#{id}
+	</select>
 	
 	<update id="saveKey" parameterType="map" >
 		<selectKey keyProperty="identifier" resultType="int" order="BEFORE">
