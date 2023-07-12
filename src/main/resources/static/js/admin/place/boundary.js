@@ -5,8 +5,16 @@ $(function(){
 			center: new N.LatLng(36.5, 127.7)
 		});	
 		var markers={}
-		map.addListener('dragend', function() {
-			console.log(map.getBounds());
+		map.addListener('dragend', function(e) {
+			$.ajax({
+				url:contextRoot+'place/getMarkers.do',
+				dataType:'json',
+				data:map.getBounds()
+			}).done(function(data){
+				console.log(data);
+			}).fail(function(error){
+				console.log(error);
+			})
 		});
 		map.addListener('zoom_changed', function() {
 			$('#zoom').text(map.getZoom())
