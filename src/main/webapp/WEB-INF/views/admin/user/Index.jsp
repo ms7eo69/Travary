@@ -13,6 +13,7 @@
 <script src="https://kit.fontawesome.com/c4d27926f7.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <link rel="stylesheet" href='<c:url value="/css/admin/admin_user.css" />'>
+<script src="<c:url value="/js/admin/user/Index.js"/>" defer></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -39,18 +40,18 @@
                 <ul class="list-unstyled rpt">
                   <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 게시글</span>
                   <li>
-                    <img src="images/8.jpg">
+                    <img src="<c:url value='/images/admin/8.jpg'/>">
                     <div class="box1">Yuna</div>
                     <div class="box2">정치적 성향이 강한 게시물</div>
-                    <div class="box_title">문뜩 생각나서 아무생각없이 논산에 놀러가서 하늘만 보고있었네요~</div>
+                    <div class="box_title">파란거보단 빨간색으로 칠한게 예로부터 더 좋다고했음ㅎㅎ</div>
                     <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></i></button>
                     <button class="noport"><i class="fa-solid fa-x"></i></button>
                   </li>
-                  <li><img src="<c:url value='images/admin/1.jpg'/>">1</li>
-                  <li><img src="<c:url value='images/admin/2.jpg'/>">2</li>
-                  <li><img src="<c:url value='images/admin/3.jpg'/>">3</li>
-                  <li><img src="images/7.jpg">3</li>
-                  <li><img src="images/3.jpg">3</li>
+                  <li><img src="<c:url value='/images/admin/1.jpg'/>">1</li>
+                  <li><img src="<c:url value='/images/admin/2.jpg'/>">2</li>
+                  <li><img src="<c:url value='/images/admin/3.jpg'/>">3</li>
+                  <li><img src="<c:url value='/images/admin/7.jpg'/>">3</li>
+                  <li><img src="<c:url value='/images/admin/3.jpg'/>">3</li>
                 </ul>
               </div>
               <div id="rpt2" class="tab-pane fade _best">
@@ -63,11 +64,11 @@
                     <button class="delete_sns"><i class="fa-solid fa-trash-can"></i></button>
                     <button class="noport"><i class="fa-solid fa-x"></i></button>
                   </li>
-                  <li><img src="images/1.jpg">1</li>
-                  <li><img src="images/2.jpg">2</li>
-                  <li><img src="images/3.jpg">3</li>
-                  <li><img src="images/7.jpg">3</li>
-                  <li><img src="images/3.jpg">3</li>
+                  <li><img src="<c:url value='/images/admin/1.jpg'/>">1</li>
+                  <li><img src="<c:url value='/images/admin/2.jpg'/>">2</li>
+                  <li><img src="<c:url value='/images/admin/3.jpg'/>">3</li>
+                  <li><img src="<c:url value='/images/admin/7.jpg'/>">3</li>
+                  <li><img src="<c:url value='/images/admin/3.jpg'/>">3</li>
                 </ul>
               </div>
             </div>
@@ -131,6 +132,7 @@
         
       </div>
     </div>
+    
 </body>
-<script src="<c:url value='js/admin/admin_user.js'/>"></script>
+
 </html>

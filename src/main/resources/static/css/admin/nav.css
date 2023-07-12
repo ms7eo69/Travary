@@ -1,14 +1,6 @@
 body{
     display: flex;
 }
-.cont{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}   
 .v_nav{
     display: flex;
     overflow: hidden;
@@ -64,4 +56,41 @@ body{
 .v_nav a:hover{
     font-weight: bold;
     font-size: 20px;
+}
+.cont{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.pageinfo{
+    display: flex;
+    background-color: rgb(116, 204, 192);
+    width: 90%;
+    height: 60px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: default;
+}
+.info{
+    display: flex;
+    margin: 20px 0 0 1vw;
+    width:95%;
+    min-width: 1000px;
+}
+.chart{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    min-width: 400px;
+    min-height: 300px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
