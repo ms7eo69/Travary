@@ -1,3 +1,14 @@
+body{
+    display: flex;
+}
+.cont{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}   
 .v_nav{
     display: flex;
     overflow: hidden;
