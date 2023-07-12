@@ -23,10 +23,11 @@
 	crossorigin="anonymous"></script>
 
 <title></title>
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
 <div class="container" style="margin-top: 50px">
 	<div class="jumbotron bg-info">
 		<h1>
-			공지사항 작성
+			수정 페이지
 		</h1>
 	</div>
 	<!--jumbotron-->
@@ -37,18 +38,19 @@
 		</div>
 	</c:if>
 	
-	<form method="post" action="<c:url value="/onememo/bbs/Write.do"/>">
+	<form method="post" action="<c:url value="/Admin/anno/Edit.do"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+		<input type="hidden" name="no" value="${empty record.no ? param.no :record.no}" />
 		<div class="form-group">
 			<label><kbd class="lead">제목</kbd></label> <input type="text"
-				value="${param.title}" class="form-control" placeholder="제목을 입력하세요"
+				value="${record.title}${param.title}" class="form-control" placeholder="제목을 입력하세요"
 				name="title">
 		</div>
 		<div class="form-group">
 			<label><kbd class="lead">내용</kbd></label>
-			<textarea class="form-control" rows="10" name="content">${param.content}</textarea>
+			<textarea class="form-control" rows="10" name="content">${record.content}${param.content}</textarea>
 		</div>
-		<button type="submit" class="btn btn-primary">등록</button>
+		<button type="submit" class="btn btn-primary">수정</button>
 	</form>
 
 

@@ -25,6 +25,7 @@
 	crossorigin="anonymous"></script>
 
 <title></title>
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
 <div class="container" style="margin-top: 50px">
 	<div class="jumbotron bg-info">
 		<h1>
@@ -68,12 +69,12 @@
 	<div class="text-center">
 
 		<c:if test="${sessionScope.id ==record.id }" var="isWriter">
-			<a href="<c:url value="/Admin_anno_Edit?no=${record.no}"/>"	class="btn btn-success">수정</a> 
+			<a href="<c:url value="/Admin/anno/Edit.do?no=${record.no}"/>"	class="btn btn-success">수정</a> 
 			<a href="javascript:isDelete()" class="btn btn-success">삭제</a>
 		</c:if>
 
 
-		<a href="<c:url value="/Admin_anno_List"/>"
+		<a href="<c:url value="/Admin/anno/List.do"/>"
 			class="btn btn-success">목록</a>
 	</div>
 	<!-- 한줄 코멘트 입력/수정 폼 -->

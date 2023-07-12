@@ -6,37 +6,51 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/Admin")
 public class AdminController {
 
 	
-	@RequestMapping("/Admin_user.do")
-	public String admin_user() {return "admin/admin_user";}
-	@RequestMapping("/Admin_user_All.do")
-	public String admin_user_All() {return "admin/admin_user_All";}
-	@RequestMapping("/Admin_loc.do")
-	public String admin_loc() {return "admin/admin_loc";}
-	@RequestMapping("/Admin_loc_All.do")
-	public String admin_loc_All() {return "admin/admin_loc_All";}
-	@RequestMapping("/Admin_loc_edit.do")
-	public String admin_loc_edit() {return "admin/admin_loc_edit";}
+	@RequestMapping("/user/Index.do")
+	public String admin_user() {return "admin/user/Index";}
+	@RequestMapping("/user/All.do")
+	public String admin_user_All() {return "admin/user/All";}
+	@RequestMapping("/loc/Index.do")
+	public String admin_loc() {return "admin/loc/Index";}
+	@RequestMapping("/loc/All.do")
+	public String admin_loc_All() {return "admin/loc/All";}
+	@RequestMapping("/loc/Edit.do")
+	public String admin_loc_edit() {return "admin/loc/Edit";}
+	@RequestMapping("/loc/Boundary.do")
+	public String admin_loc_boundary() {return "amdin/loc/Boundary";}
 	
-	@RequestMapping("/Admin_anno_List.do")
-	public String admin_anno() {return "QnA_N_Anno/List";}
 	
-	@RequestMapping("/Admin_anno_View.do")
-	public String admin_anno_view() {
-		return "QnA_N_Anno/View";
-		}
+	@RequestMapping("/anno/List.do")
+	public String admin_anno() {return "qna_N_Anno/anno/List";}
 	
-	@GetMapping("/Admin_anno_Write.do")
-	public String admin_anno_write() {return "QnA_N_Anno/Write";}
-	@PostMapping
-	public String admin_anno_writeok() {return "QnA_N_Anno/Write";}
+	@RequestMapping("/anno/View.do")
+	public String admin_anno_view() {return "qna_N_Anno/anno/View";}
+	@GetMapping("/anno/Write.do")
+	public String admin_anno_write() {return "qna_N_Anno/anno/Write";}
+	@PostMapping("/anno/Write.do")
+	public String admin_anno_writeok() {return "qna_N_Anno/anno/Write";}
 	
-	@GetMapping("/Admin_anno_edit.do")
-	public String admin_anno_edit() {return "QnA_N_Anno/Edit";}
-	@PostMapping("/Admin_anno_edit.do")
-	public String admin_anno_editok() {return "QnA_N_Anno/List";}
-	@RequestMapping("/Admin_loc_boundary.do")
-	public String admin_loc_boundary() {return "admin/admin_loc_boundary";}
+	@GetMapping("/anno/Edit.do")
+	public String admin_anno_edit() {return "qna_N_Anno/anno/Edit";}
+	@PostMapping("/anno/Edit.do")
+	public String admin_anno_editok() {return "qna_N_Anno/anno/List";}
+
+	
+	@RequestMapping("/qna/List.do")
+	public String admin_qna_list() {return "qna_N_Anno/qna/List";}
+	@RequestMapping("/qna/View.do")
+	public String admin_qna_view() {return "qna_N_Anno/qna/View";}
+	@GetMapping("/qna/Edit.do")
+	public String admin_qna_edit() {return "qna_N_Anno/qna/Edit";}
+	@PostMapping("/qna/Edit.do")
+	public String admin_qna_editok() {return "qna_N_Anno/qna/List";}
+	@GetMapping("/qna/Write.do")
+	public String admin_qna_write() {return "qna_N_Anno/qna/Write";}
+	@PostMapping("/qna/Write.do")
+	public String admin_qna_writeok() {return "qna_N_Anno/qna/List";}
+		
 }

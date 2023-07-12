@@ -23,6 +23,7 @@
 	crossorigin="anonymous"></script>
 
 <title></title>
+<jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
 <div class="container" style="margin-top: 50px">
 	<div class="jumbotron bg-info">
 		<h1>
@@ -31,7 +32,7 @@
 	</div>
 	<!--jumbotron-->
 	<div class="text-right mb-2">
-		<a href="<c:url value="/Admin_anno_Write.do"/>"
+		<a href="<c:url value="/Admin/anno/Write.do"/>"
 			class="btn btn-danger">글등록</a>
 	</div>
 	<table class="table table-dark table-hover text-center">
@@ -53,7 +54,7 @@
 				<c:forEach var="record" items="${listPagingData.records }">
 					<tr>
 						<td>${record.no }</td>
-						<td class="text-left"><a href="<c:url value="/Admin_anno_View?no=${record.no}"/>">${record.title}</a></td>
+						<td class="text-left"><a href="<c:url value="/Admin/anno/View.do?no=${record.no}"/>">${record.title}</a></td>
 						<td>${record.name }</td>
 						<td>${record.postDate }</td>
 					</tr>
