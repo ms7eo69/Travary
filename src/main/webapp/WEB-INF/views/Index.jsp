@@ -80,7 +80,7 @@
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="/"/>">
+                                 <a href="<c:url value="/chat/enterChatList"/>">
                                     <i class="fa fa-sharp fa-solid fa-paper-plane"></i>
                                     <span class="nav-text">메시지</span>
                                 </a>
