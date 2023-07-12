@@ -258,7 +258,7 @@
 					</div>
 					 <div class="col-md-4 right-section shadow">
 			            <div class=" align-items-center flex-column">
-			            	<div class="d-flex align-items-center mb-4">
+			            	<div class="d-flex align-items-center mb-4 ">
 			          			<img src="<c:url value='/images/profile/yunakim.jpg'/>" class="profileImageSm ml-0 mr-2 ">
 			           		 	<div class="userId">Yujin</div>
 			          		</div>
@@ -555,16 +555,7 @@
 
 	 
 <script>
-$('#imagePreview').change(function(){
-  var img = $(#imagePreview > img);
-  if (img.widht() > img.height()){
-    img.width = 100%;
-    img.css('height','auto')
-  }else{
-    img.height = 100%;
-    img.css('width','auto')
-  }
-})
+
 </script>
 </body>
 </html>
