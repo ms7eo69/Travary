@@ -5,13 +5,23 @@ $(function(){
 			center: new N.LatLng(36.5, 127.7)
 		});	
 		var markers={}
-		map.addListener('dragend', function(e) {
+		map.addListener('dragend', function() {
 			$.ajax({
-				url:contextRoot+'place/getMarkers.do',
+				url:contextRoot+'Admin/place/getMarkers.do',
+				method:'post',
 				dataType:'json',
-				data:map.getBounds()
+				contentType:'application/json',
+				data:JSON.stringify(map.getBounds())
 			}).done(function(data){
 				console.log(data);
+				$('tbody').empty()
+				var sum=0
+				data.forEach(function(item){
+					tr = '<tr><td>'+item.NAME+'</td><td>'+item.SUM+'</td></tr>'
+					$('tbody').append(tr)
+					sum+=item.SUM
+				})
+				$('#sum').text(sum)
 			}).fail(function(error){
 				console.log(error);
 			})

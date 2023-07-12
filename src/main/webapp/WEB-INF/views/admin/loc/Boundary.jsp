@@ -9,7 +9,6 @@
 <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ohzsg7u4i3"></script>
 <script>
 	var contextRoot = '<c:url value="/"/>'
-	console.log(contextRoot);
 </script>
 <script src="<c:url value='/js/admin/place/boundary.js'/>"></script>
 </head>
@@ -29,11 +28,21 @@
 		</div>
 		<div class="col-3 d-flex justify-content-around align-items-center flex-column">
 			<div>
-				<div>
-					123
-				</div>
+				<table class="table h-100 w-100">
+					<thead>
+						<tr>
+							<th>관광지</th>
+							<th>인기도</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
 				<div>
 					줌레벨:<span id="zoom">8</span>
+				</div>
+				<div>
+					인기도합계:<span id="sum">0</span>
 				</div>
 			</div>
 			<div>
