@@ -178,31 +178,166 @@
 <body>
 	<!-- 상단 바 -->
 	<div id="route_header" class="route_top">
-        <label class="main_logo">LOGO</label>  
-        <div class="header_menu">
-        	<button class="btn btn-danger">알림</button>
-        	<i>설정</i>
-        	<a>사용자 정보</a>
-        </div>      
+	    <label class="main_logo">LOGO</label>  
+	        <div class="header_menu">
+	       	<button class="btn btn-danger">알림</button>
+	       	<i>설정</i>
+	       	<a>사용자 정보</a>
+		</div>
     </div>
     <div class="row">        
-		<div class="col-2">         
+		<div class="col-2">
 			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
-		<div class="col-7">
+		<div class="col-8">
 			<div>
 				<div id="map" class="nmap-main"></div>
 			</div>
 		</div>
-		<div class="col-3" style="background-color: blue;">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+		<div class="col-2">			
+            <nav class="navbar spot_sidebar">
+            	<ul class="navbar-nav" id="spot_list">
+            		<li class="spot_card">
+            			<div>
+            				<div>
+            					<div class="centered">
+            						<div class="spot_state_div">
+            							<div class="loc_state">
+            								<i class="material-icons">place</i>            								
+            							</div>            							
+            						</div>
+            						<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000" id="card_img1">
+            					</div>            					
+            				</div>
+            			</div>
+            			<div class="spot_bookmark">
+            				<i title="장소" class="material-icons spot_bookmark_icon">account_balance</i>
+            			</div>
+            			<div class="spot_info">
+            				<span class="spot_list1">
+            					<h6>
+            						성산일출봉
+            						<br>
+            						<div class="spot_eng">
+	            						Seongsan
+	            						<div></div>
+	            						<div>
+		            						<div class="btn spot_btn_icon">
+		            							<i class="material-icons">info</i>
+		            						</div>
+		            					</div>    						
+            						</div>
+            					</h6>
+            				</span>
+            			</div>
+            		</li>            	
+            		<li class="spot_card">
+            			<div>
+            				<div>
+            					<div class="centered">
+            						<div class="spot_state_div">
+            							<div class="loc_state">
+            								<i class="material-icons">place</i>
+            								"9,688"
+            							</div>            							
+            						</div>
+            						<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000" id="card_img1">
+            					</div>            					
+            				</div>
+            			</div>
+            			<div class="spot_bookmark">
+            				<i title="장소" class="material-icons spot_bookmark_icon">account_balance</i>
+            			</div>
+            			<div class="spot_info">
+            				<span class="spot_list1">
+            					<h6>
+            						성산일출봉
+            						<br>
+            						<div class="spot_eng">
+	            						Seongsan
+	            						<div></div>
+	            						<div>
+		            						<div class="btn spot_btn_icon">
+		            							<i class="material-icons">info</i>
+		            						</div>
+		            					</div>    						
+            						</div>
+            					</h6>
+            				</span>
+            			</div>
+            		</li>     
+            		<li class="spot_card">
+            			<div>
+            				<div>
+            					<div class="centered">
+            						<div class="spot_state_div">
+            							<div class="loc_state">
+            								<i class="material-icons">place</i>
+            								"9,688"
+            							</div>            							
+            						</div>
+            						<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000" id="card_img1">
+            					</div>            					
+            				</div>
+            			</div>
+            			<div class="spot_bookmark">
+            				<i title="장소" class="material-icons spot_bookmark_icon">account_balance</i>
+            			</div>
+            			<div class="spot_info">
+            				<span class="spot_list1">
+            					<h6>
+            						성산일출봉
+            						<br>
+            						<div class="spot_eng">
+	            						Seongsan
+	            						<div></div>
+	            						<div>
+		            						<div class="btn spot_btn_icon">
+		            							<i class="material-icons">info</i>
+		            						</div>
+		            					</div>    						
+            						</div>
+            					</h6>
+            				</span>
+            			</div>
+            		</li>     
+            		<li class="spot_card">
+            			<div>
+            				<div>
+            					<div class="centered">
+            						<div class="spot_state_div">
+            							<div class="loc_state">
+            								<i class="material-icons">place</i>
+            								"9,688"
+            							</div>            							
+            						</div>
+            						<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000" id="card_img1">
+            					</div>            					
+            				</div>
+            			</div>
+            			<div class="spot_bookmark">
+            				<i title="장소" class="material-icons spot_bookmark_icon">account_balance</i>
+            			</div>
+            			<div class="spot_info">
+            				<span class="spot_list1">
+            					<h6>
+            						성산일출봉
+            						<br>
+            						<div class="spot_eng">
+	            						Seongsan
+	            						<div></div>
+	            						<div>
+		            						<div class="btn spot_btn_icon">
+		            							<i class="material-icons">info</i>
+		            						</div>
+		            					</div>    						
+            						</div>
+            					</h6>
+            				</span>
+            			</div>
+            		</li>     
+            	</ul>
+            </nav>
 		</div>
 	</div>
 </body>
