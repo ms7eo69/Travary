@@ -1,4 +1,5 @@
 HELP.md
+target/**
 
 ### travary ###
 target/classes/**
@@ -8,10 +9,6 @@ resources/**
 *.ora
 *.sso
 *.properties
-
-*.properties
-*.sso
-*.ora
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
