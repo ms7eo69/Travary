@@ -21,7 +21,7 @@ public class AdminController {
 	@RequestMapping("/loc/Edit.do")
 	public String admin_loc_edit() {return "admin/loc/Edit";}
 	@RequestMapping("/loc/Boundary.do")
-	public String admin_loc_boundary() {return "amdin/loc/Boundary";}
+	public String admin_loc_boundary() {return "admin/loc/Boundary";}
 	
 	
 	@RequestMapping("/anno/List.do")
