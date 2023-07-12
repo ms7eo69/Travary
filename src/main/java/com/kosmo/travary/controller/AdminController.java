@@ -37,4 +37,6 @@ public class AdminController {
 	public String admin_anno_edit() {return "QnA_N_Anno/Edit";}
 	@PostMapping("/Admin_anno_edit.do")
 	public String admin_anno_editok() {return "QnA_N_Anno/List";}
+	@RequestMapping("/Admin_loc_boundary.do")
+	public String admin_loc_boundary() {return "admin/admin_loc_boundary";}
 }

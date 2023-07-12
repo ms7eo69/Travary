@@ -29,6 +29,7 @@ public class DatabaseConfig {
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName(driver);
 		
+		
 		//TNS_ADMIN 변수 설정
 		String projectDir = System.getProperty("user.dir");
         System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
@@ -39,6 +40,7 @@ public class DatabaseConfig {
 		hikariConfig.setAutoCommit(true);
 		hikariConfig.setMaximumPoolSize(20);
 		hikariConfig.setConnectionTimeout(3000);
+		hikariConfig.setMaximumPoolSize(20);
 //		hikariConfig.setValidationTimeout(3000);
 //		hikariConfig.setMinimumIdle(5);
 //		hikariConfig.setIdleTimeout(200000);

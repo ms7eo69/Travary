@@ -16,9 +16,11 @@
 	$(function(){
 		//기본 지도 설정
 		var map = new N.Map('map', {
-			zoom: 10,
-			center: new N.LatLng(37.3614483, 127.1114883)
+			zoom: 8,
+			center: new N.LatLng(36.5, 127.7)
 		});	
+		var flag='00'
+		var markers=[]
 		map.addListener('dragend', function() {
 			console.log(map.getCenter());
 			console.log(map.getBounds());
@@ -59,9 +61,7 @@
 					success: function(idx) {
 						return function(geojson) {
 							regionGeoJson[idx] = geojson;
-
 							loadCount++;
-
 							if (loadCount === 17) {
 									startDataLayer();
 							}
@@ -72,7 +72,6 @@
 		});
 
 		var tooltip = $('<div style="position:absolute;z-index:1000;padding:5px 10px;background-color:#fff;border:solid 2px #000;font-size:14px;pointer-events:none;display:none;"></div>');
-
 		tooltip.appendTo(map.getPanes().floatPane);
 
 		function startDataLayer() {
@@ -89,7 +88,7 @@
 					/* styleOptions.fillOpacity = 0.6;
 					styleOptions.fillColor = '#0f0';
 					styleOptions.strokeColor = '#0f0'; */
-					styleOptions.strokeWeight = 6;
+					styleOptions.strokeWeight = 4;
 					styleOptions.strokeOpacity = 1;
 				}
 
@@ -100,15 +99,23 @@
 				map.data.addGeoJson(geojson);
 			});
 
+			
 			map.data.addListener('click', function(e) {
 				var feature = e.feature;
-				console.log(e);
+				console.log('flag:'+flag);
+				if (flag !== '00'){
+					a = flag.startsWith('0')?flag.substring(1,2):flag;
+					map.data._features[parseInt(a-1)].property_focus=false
+					markers.forEach(function(marker){
+						marker.setMap(null)
+					})
+					markers=[]
+				}
 				map.panToBounds( 
-						new N.LatLngBounds(
-							feature.bounds._max,
-							feature.bounds._min
-						)
-					
+					new N.LatLngBounds(
+						feature.bounds._max,
+						feature.bounds._min
+					)
 				)
 				if (feature.getProperty('focus') !== true) {
 					feature.setProperty('focus', true);
@@ -126,6 +133,7 @@
 							position: item,
 							map: map
 						});	
+						markers.push(marker)
 						if (item.CATEGORY==='숙박') 
 							marker.setIcon({url:contextRoot+'images/route/pin_default.png'})
 						var infowindow = new naver.maps.InfoWindow({
@@ -144,6 +152,7 @@
 							/* } */
 						});
 					})
+					flag=e.feature.property_navercode
 				}).fail(function(error){
 					console.log(error);
 				})
@@ -186,23 +195,13 @@
         </div>      
     </div>
     <div class="row">        
-		<div class="col-2">         
+		<div class="col-3" style="background-color: rgba(217, 255, 0, 0.171);height: inherit">         
 			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
-		<div class="col-7">
+		<div class="col">
 			<div>
 				<div id="map" class="nmap-main"></div>
 			</div>
-		</div>
-		<div class="col-3" style="background-color: blue;">
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
 		</div>
 	</div>
 </body>

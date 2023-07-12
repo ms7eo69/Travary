@@ -44,7 +44,7 @@
   <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
     <div class="container-fluid " style="height: 100vh">
      <nav class="main-menu position-fixed shadow ">
-        <div class="outerDiv ">
+        <div class="outerDiv">
             <div class="innerDiv">
                <div id="nav-header">
                     <div class="logo">
