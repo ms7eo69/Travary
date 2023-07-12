@@ -28,16 +28,18 @@
 		</div>
 		<div class="col-3 d-flex justify-content-around align-items-center flex-column">
 			<div>
-				<table class="table h-100 w-100">
-					<thead>
-						<tr>
-							<th>관광지</th>
-							<th>인기도</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+				<div  style="height: 300px; width: 200px;overflow-y: scroll;">
+					<table class="table w-100">
+						<thead>
+							<tr class="row">
+								<th class="col-8">관광지</th>
+								<th class="col">인기도</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
 				<div>
 					줌레벨:<span id="zoom">8</span>
 				</div>
