@@ -20,7 +20,7 @@
      <li class="nav-item tab">
      	<a class="nav-link" href="<c:url value='/Admin_anno_List.do'/>">공지사항</a>
      </li>
-     <li><a href="<c:url value='/Admin_loc_boundary.do'/>">바운더리 설정</a></li>
+     <li><a href="<c:url value='/admin/loc_boundary.do'/>">바운더리 설정</a></li>
       </ul>
     </li>
    </ul>

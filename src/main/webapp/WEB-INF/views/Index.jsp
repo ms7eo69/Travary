@@ -116,7 +116,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<c:url value="/Admin_user.do"/>">
+                                <a href="<c:url value="/admin/User.do"/>">
                                     <span class="nav-text">관리자 페이지</span>
                                 </a>
                             </li>
