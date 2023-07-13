@@ -125,12 +125,18 @@
   	});
   
     $('.edit_loc').click(function(event){
+    	var emptyBox = false;
     	$('.box').each(function() {
    		  	if ($(this).text().trim() === '') {
    		    	console.log('빈 문자열이 포함된 .box 요소가 있습니다.');
-   		    	return false
+   		    	emptyBox = true;
+   		    	return false;
    		  	}
    		});
+    	if(emptyBox){
+    		event.preventDefault();
+    		return false;
+    	}
     	console.log('왜?왜?왜?왜?왜?')
     });
 </script>
