@@ -47,10 +47,13 @@ public class PlanServiceImpl implements DaoService{
 	public List<String> selectLregion() {
 		return mapper.selectLregion();
 	}
+	public List<Map> selectMarkersByBoundary(Map map) {
+		return mapper.selectMarkersByBoundary(map);
+	}
+	
 	public List<Map> selectByBoundary(Map map) {
 		return mapper.selectByBoundary(map);
 	}
-
 	public Map selectMainPlace(String sregion) {
 		return mapper.selectMainPlace(sregion);
 	}

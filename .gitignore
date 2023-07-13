@@ -1,4 +1,9 @@
 HELP.md
+target/classes/**
+
+*.ora
+*.sso
+*.properties
 
 ### travary ###
 target/classes/**
@@ -44,3 +49,4 @@ build/
 
 ### VS Code ###
 .vscode/
+*.sso

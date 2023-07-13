@@ -1,0 +1,173 @@
+.cont, body{
+    display: flex;
+}
+.body{
+    background-color: rgb(238, 238, 238);
+}
+.cont{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.v_nav{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 200px;
+    height: 100vh;
+    padding: 40px 20px;
+    min-width: 200px;
+}
+.v_nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.v_nav li{
+    margin-bottom: 20px;
+}
+.v_nav a{
+    text-decoration: none;
+    font-size: 17px ;
+    color: white;
+}
+.tab {
+    position: relative;
+}
+
+.tab a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+  
+.tab ul {
+    background-color: #343a40;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    opacity: 0; /* 초기에는 투명도 0으로 설정하여 나타나지 않도록 합니다. */
+    transform: translateY(-10px); /* 애니메이션 효과를 위해 위로 10px 이동합니다. */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* 투명도와 이동 효과에 애니메이션을 추가합니다. */
+    z-index: 1;
+}
+  
+.tab:hover > ul {
+    display: block;
+    opacity: 1; /* 마우스를 올릴 때 투명도를 1로 설정하여 나타나도록 합니다. */
+    transform: translateY(0); /* 마우스를 올릴 때 원래 위치로 이동하도록 합니다. */
+}
+  
+.v_nav a:hover{
+    font-weight: bold;
+    font-size: 20px;
+}
+.pageinfo{
+    display: flex;
+    background-color: rgb(116, 204, 192);
+    width: 90%;
+    height: 60px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: default;
+}
+.info{
+    display: flex;
+    margin: 20px 0 0 1vw;
+    width:95%;
+    min-width: 1000px;
+}
+.chart{
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 80%;
+    min-height: 300px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.chart>*{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.Mloc{
+    display: flex;    
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px;
+}
+.Mloc{
+    height:300px;
+    overflow-y: auto;
+}
+.Mloc::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.Mloc::-webkit-scrollbar-track {
+    background-color: white;
+}
+  
+.Mloc::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+  
+.Mloc::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.Mloc > span{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: rgb(51,51,51);
+    fill: rgb(51,51,51);
+}
+.Mloc > li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+}
+.Mloc > li > img{
+    border-radius: 50%;
+    width: 45px; 
+    height: 45px
+}
+.Mloc > *{
+    margin-top: 5px;
+}
+.box1, .box_name{
+    display: flex;
+    justify-content: start;
+    width:100px;
+    margin-left: 10px;
+    /* border-right: 1px solid black; */
+}
+.box2, .box_title{
+    display: flex;
+    justify-content: start;
+    margin-left: 10px;
+}
+
+.box_title, .box_name, .box2, .box1{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+.box_vCount{
+    margin-left: auto;
+}
