@@ -135,7 +135,7 @@
 	      <div class="top-section justify-content-center font-weight-bold">
 	      	<span>세 게시글 만들기</span>
 	      </div>
-	      <div class="row justify-content-center align-items-center flex-column"> 
+	      <div class="row justify-content-center align-items-center flex-column mx-0"> 
 	        <div class="my-3 h5">
 		        <span>공유할 여행을 선택해주세요</span>	        
 	        </div>      
@@ -198,84 +198,85 @@
 <!------------------글쓰기 상세 작성 모달----------------------------->
 	
 	  <div class="snsWrite writeForms" style="display: none;">
-	    <div class="snsWriteContent">   
-	      <div class="row justify-content-center align-items-center flex-column">
-	        <div class="write-form snsWrite" onclick="stopPropagation(event)">
-	          <div class="snsWriteContent">
-	            <div class="top-section justify-content-between px-4">
-				    <i class="fas fa-arrow-left fa-lg text-secondary"></i>
-				    <span class="text-black font-weight-bold">세 게시글 만들기</span>
-				    <span class="text-info font-weight-bold">공유</span>
-				 </div>
-				 <div class="d-flex row">
-				 	<div class="col-md-2">
-					    <button type="button" class="collapsible" onclick="collapse(this);">
-					    	<span>1일차</span>
-						</button>					    
-					    <div class="content">
-					        <ul>
-					    		<li>해운대</li>
-					    		<li>서면</li>
-					    		<li>남포동</li>
-					    		<li>개선문</li>
-					    		<li>에펠탑</li>
-					    	</ul>
-					    </div>
-					    <button type="button" class="collapsible" onclick="collapse(this);">
-					    	<span>2일차</span>
-						</button>					    
-					    <div class="content">
-					        <ul>
-					    		<li>해운대</li>
-					    		<li>서면</li>
-					    		<li>남포동</li>
-					    		<li>개선문</li>
-					    		<li>에펠탑</li>
-					    	</ul>
-					    </div>
-					    <button type="button" class="collapsible" onclick="collapse(this);">
-					    	<span>3일차</span>
-						</button>					    
-					    <div class="content">
-					        <ul>
-					    		<li>해운대</li>
-					    		<li>서면</li>
-					    		<li>남포동</li>
-					    		<li>개선문</li>
-					    		<li>에펠탑</li>
-					    	</ul>
-					    </div>
-					 </div>
-					<div class="col-md-6 uploadPic left-section d-flex align-items-center justify-content-center">
-					  <div class="imageUpload flex-column justify-content-center">
-					    <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)" style="display: none;">
-					    <div id="imagePreview"></div>
-					    <div class="text-center">
-					      <img src="<c:url value='/images/community/imggallery.png'/>" alt="이미지 선택" onclick="openFileUpload();" style="cursor: pointer;">
-					      <div>사진을 선택해주세요!</div>
-					    </div>
-					  </div>
-					</div>
-					 <div class="col-md-4 right-section shadow">
-			            <div class=" align-items-center flex-column">
-			            	<div class="d-flex align-items-center mb-4 ">
-			          			<img src="<c:url value='/images/profile/yunakim.jpg'/>" class="profileImageSm ml-0 mr-2 ">
-			           		 	<div class="userId">Yujin</div>
-			          		</div>
-			          		<div>
-				              <input type="text" id="postingtitle" name="title" class="inputbox mb-4" placeholder="제목 입력...">
-			          		</div>
-			          		<div>
-				              <textarea id="textbox" name="content" class="inputbox textbox"placeholder="내용 입력..."></textarea>
-			          		</div>
-			            </div>				 
-					 </div>
-				</div>	 
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </div>
+		  <div class="snsWriteContent">
+		    <div class="row justify-content-center align-items-center flex-column">
+		      <div class="write-form snsWrite" onclick="stopPropagation(event)">
+		        <div class="snsWriteContent">
+		          <div class="top-section justify-content-between px-4">
+		            <i class="fas fa-arrow-left fa-lg text-secondary" ></i>
+		            <span class="text-black font-weight-bold">세 게시글 만들기</span>
+		            <span class="text-info font-weight-bold">공유</span>
+		          </div>
+		          <div class="d-flex row mx-0">
+		            <div class="col-md-2 p-0 days">
+		              <button type="button" class="collapsible" onclick="collapse(this);">
+		                <span>1일차</span>
+		              </button>
+		              <div class="content">
+		                <ul>
+		                  <li>해운대</li>
+		                  <li>서면</li>
+		                  <li>남포동</li>
+		                  <li>개선문</li>
+		                  <li>에펠탑</li>
+		                </ul>
+		              </div>
+		              <button type="button" class="collapsible" onclick="collapse(this);">
+		                <span>2일차</span>
+		              </button>
+		              <div class="content">
+		                <ul>
+		                  <li>해운대</li>
+		                  <li>서면</li>
+		                  <li>남포동</li>
+		                  <li>개선문</li>
+		                  <li>에펠탑</li>
+		                </ul>
+		              </div>
+		              <button type="button" class="collapsible" onclick="collapse(this);">
+		                <span>3일차</span>
+		              </button>
+		              <div class="content">
+		                <ul>
+		                  <li>해운대</li>
+		                  <li>서면</li>
+		                  <li>남포동</li>
+		                  <li>개선문</li>
+		                  <li>에펠탑</li>
+		                </ul>
+		              </div>
+		            </div>
+		            <div class="col-md-6 uploadPic left-section d-flex align-items-center justify-content-center">
+		              <div class="imageUpload flex-column justify-content-center">
+		                <input type="file" id="imageUpload" accept="image/*" onchange="previewImages(event)" style="display: none;" multiple>
+		                <div class="imagePreviews">
+		                </div>
+		                <div class="text-center">
+		                  <img src="<c:url value='/images/community/imggallery.png'/>" alt="이미지 선택" onclick="openFileUpload();" style="cursor: pointer;">
+		                  <div>사진을 선택해주세요!</div>
+		                </div>
+		              </div>
+		            </div>
+		            <div class="col-md-4 right-section shadow">
+		              <div class="align-items-center flex-column">
+		                <div class="d-flex align-items-center mb-4">
+		                  <img src="<c:url value='/images/profile/yunakim.jpg'/>" class="profileImageSm ml-0 mr-2 ">
+		                  <div class="userId">Yujin</div>
+		                </div>
+		                <div>
+		                  <input type="text" id="postingtitle" name="title" class="inputbox mb-4" placeholder="제목 입력...">
+		                </div>
+		                <div>
+		                  <textarea id="textbox" name="content" class="inputbox textbox" placeholder="내용 입력..."></textarea>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	
 
  <!----------------------------------게시글 상세보기 모달---------------------------------->

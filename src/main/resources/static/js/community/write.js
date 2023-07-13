@@ -48,13 +48,21 @@ document.querySelectorAll('.courses').forEach(function(course) {
 
 
 // 파일 선택 시 미리보기 함수
-function previewImage(event) {
-  var reader = new FileReader();
-  reader.onload = function () {
-    var imagePreview = document.getElementById('imagePreview');
-    imagePreview.innerHTML = '<img src="' + reader.result + '" alt="미리보기">';
+function previewImages(event) {
+  var imagePreviews = document.querySelector('.imagePreviews');
+  imagePreviews.innerHTML = '';
+
+  var files = event.target.files;
+  for (var i = 0; i < files.length; i++) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var imagePreview = document.createElement('div');
+      imagePreview.classList.add('imagePreview');
+      imagePreview.innerHTML = '<img src="' + e.target.result + '" alt="미리보기">';
+      imagePreviews.appendChild(imagePreview);
+    };
+    reader.readAsDataURL(files[i]);
   }
-  reader.readAsDataURL(event.target.files[0]);
 }
 
 // uploadPic div를 클릭했을 때 파일 선택 input을 트리거하는 함수
@@ -68,17 +76,19 @@ document.querySelector('.uploadPic').addEventListener('click', openFileUpload);
 
 
 function collapse(element) {
-            var before = document.getElementsByClassName("active")[0]               // 기존에 활성화된 버튼
-            if (before && document.getElementsByClassName("active")[0] != element) {  // 자신 이외에 이미 활성화된 버튼이 있으면
-                before.nextElementSibling.style.maxHeight = null;   // 기존에 펼쳐진 내용 접고
-                before.classList.remove("active");                  // 버튼 비활성화
-            }
-            element.classList.toggle("active");         // 활성화 여부 toggle
+    var before = document.getElementsByClassName("active")[0]               // 기존에 활성화된 버튼
+    if (before && document.getElementsByClassName("active")[0] != element) {  // 자신 이외에 이미 활성화된 버튼이 있으면
+        before.nextElementSibling.style.maxHeight = null;   // 기존에 펼쳐진 내용 접고
+        before.classList.remove("active");                  // 버튼 비활성화
+    }
+    element.classList.toggle("active");         // 활성화 여부 toggle
 
-            var content = element.nextElementSibling;
-            if (content.style.maxHeight != 0) {         // 버튼 다음 요소가 펼쳐져 있으면
-                content.style.maxHeight = null;         // 접기
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";  // 접혀있는 경우 펼치기
-            }
-        }
+    var content = element.nextElementSibling;
+    if (content.style.maxHeight != 0) {         // 버튼 다음 요소가 펼쳐져 있으면
+        content.style.maxHeight = null;         // 접기
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";  // 접혀있는 경우 펼치기
+    }
+}
+        
+        
