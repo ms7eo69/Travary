@@ -8,18 +8,21 @@
             <h1>회원가입</h1>            
         </div><!--jumbotron-->
         <form action='<c:url value="/member/Register"/>' method="post">
-        	<c:if test="${not empty apiLoginMap.gender}">
-	        	<input type="hidden" name="id" value="${apiLoginMap.id}">
-	        	<input type="hidden" name="pwd" value="${apiLoginMap.pwd}">
-	        	<input type="hidden" name="gender" value="${apiLoginMap.gender}">
-	        	<input type="hidden" name="age_group" value="${apiLoginMap.age_group}">
-	        	<input type="hidden" name="profile_link" value="${apiLoginMap.profile_link}">
-        	</c:if>
         	<c:if test="${not empty apiLoginMap.id}">
 	        	<input type="hidden" name="id" value="${apiLoginMap.id}">
+	        </c:if>
+	        <c:if test="${not empty apiLoginMap.pwd}">
 	        	<input type="hidden" name="pwd" value="${apiLoginMap.pwd}">
+	        </c:if>
+	        <c:if test="${not empty apiLoginMap.gender}">
+	        	<input type="hidden" name="gender" value="${apiLoginMap.gender}">
+	        </c:if>
+	        <c:if test="${not empty apiLoginMap.age_group}">
+	        	<input type="hidden" name="age_group" value="${apiLoginMap.age_group}">
+	        </c:if>
+			<c:if test="${not empty apiLoginMap.profile_link}">
 	        	<input type="hidden" name="profile_link" value="${apiLoginMap.profile_link}">
-        	</c:if>
+	        </c:if>
         	<c:if test="${empty apiLoginMap.id}">
 				<div class="form-group">
 					<label><kbd class="lead">아이디</kbd></label> 

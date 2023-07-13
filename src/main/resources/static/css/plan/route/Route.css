@@ -1,25 +1,26 @@
-/*all*/
-*, *:after, *:before {	
+*, *:after, *:before {
+	-webkit-box-sizing: inherit;
 	box-sizing: inherit;
 }
-
 html, body {
 	font-family: 'Noto Sans KR', sans-serif !important;
 	-webkit-overflow-scrolling: touch !important;
 	touch-action: manipulation;	
 }
-
-html, body, div, span, h1, h2, h3, h4, h5, h6,
-a, small, strike, strong, ul, li, fieldset, form,
-label, legend, table, tbody,tfoot, thead, tr, th,
-td, footer, header, nav {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+html, body, div, span, applet, object, iframe, h1, h2, h3,
+h4, h5, h6, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
 	font-size: 100%;
-	font: inherit;	 
+	font: inherit;
+	vertical-align: baseline;
 }
-
 .col, .col-1, .col-10, .col-11, .col-12, .col-2,
 .col-3, .col-4, .col-5, .col-6, .col-7, .col-8,
 .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10,
@@ -36,51 +37,49 @@ td, footer, header, nav {
 .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12,
 .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5,
 .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-	padding: 0px;
+	margin: 0;
+	padding: 0;
+	border: 0;	
 }
-
-/*html*/
 html {
 	overflow-x: hidden;
-	font-size: 16px;
-	font-weight: 400;
+	font-size: 15px;	
 	line-height: 1.5;
 	box-sizing: border-box;
 	font-family: sans-serif;
-	background: white;
-	color: #666;
+	-ms-text-size-abjust: 100%;
+	-webkit-text-size-abjust: 100%;	
 }
-
 @media only screen and (min-width: 0px) {
 	html{
 		font-size: 14px;
 	}
 }
-
 @media only screen and (min-width: 992px) {
 	html {
 		font-size: 14.5px;
 	}
 }
-
 @media only screen and (min-width: 1200px) {
 	html {
 		font-size: 15px;
 	}
 }
-
-html, body {
-	overscroll-behavior-y: contain !important;
-	overflow: hidden;
-}
-
-/*body*/
 body {
 	font-size: 15px;
 	line-height: 1.5;	
-	color: black !important;
-	background-color: white !important;
+	margin: 0;
+	color: #000 !important;
+	background-color: #fff !important;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
 	user-select: none;
+}
+html, body {
+	overscroll-behavior-y: contain !important;
+	overflow: hidden;
 }
 
 /*route_top*/
@@ -92,11 +91,38 @@ body {
 	position: relative;
 	padding: 0 30px;
 	height: 65px;
+	z-index: 1;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.35);		
 }
 
+.main_logo {
+	font-weight: 300;
+	font-style: italic;	
+}
+
+.route_top img {
+	width: 20px;
+	height: 20px;
+}
+
+/*route_center*/
 .nmap-main {
 	height: 100vh !important;
 	width: 100% !important;
 	min-height: 100% !important;
 	max-height: none !important;
 }
+
+
+/*route-right*/
+
+
+
+
+
+
+
+
+
+
+
