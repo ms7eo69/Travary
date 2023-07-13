@@ -29,8 +29,6 @@
                     <th>제목</th>
                     <th class="col-2">글쓴이</th>
                     <th class="col-2">작성일</th>
-                    <th>${records}</th>
-                    
                 </tr>
             </thead>
             <tbody class="table-sm down-file-body">
@@ -42,10 +40,10 @@
 			    <c:if test="${! result}">
 			        <c:forEach var="record" items="${records}">
 			            <tr>
-			                <td>${record.postno}</td>
-			                <td>${record.title}</td>
-			                <td>${record.nickname}</td>
-			                <td>${record.postdate}</td>
+			                <td>${record.POSTNO}</td>
+			                <td>${record.TITLE}</td>
+			                <td>${record.NICKNAME}</td>
+			                <td>${record.POSTDATE}</td>
 			            </tr>
 			        </c:forEach>
 			    </c:if>
