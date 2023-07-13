@@ -1,25 +1,26 @@
-/*all*/
-*, *:after, *:before {	
+*, *:after, *:before {
+	-webkit-box-sizing: inherit;
 	box-sizing: inherit;
 }
-
 html, body {
 	font-family: 'Noto Sans KR', sans-serif !important;
 	-webkit-overflow-scrolling: touch !important;
 	touch-action: manipulation;	
 }
-
-html, body, div, span, h1, h2, h3, h4, h5, h6,
-a, small, strike, strong, ul, li, fieldset, form,
-label, legend, table, tbody,tfoot, thead, tr, th,
-td, footer, header, nav {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+html, body, div, span, applet, object, iframe, h1, h2, h3,
+h4, h5, h6, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup,
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption, footer, header, hgroup, menu,
+nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
 	font-size: 100%;
-	font: inherit;	 
+	font: inherit;
+	vertical-align: baseline;
 }
-
 .col, .col-1, .col-10, .col-11, .col-12, .col-2,
 .col-3, .col-4, .col-5, .col-6, .col-7, .col-8,
 .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10,
@@ -36,51 +37,49 @@ td, footer, header, nav {
 .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12,
 .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5,
 .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
-	padding: 0px;
+	margin: 0;
+	padding: 0;
+	border: 0;	
 }
-
-/*html*/
 html {
 	overflow-x: hidden;
-	font-size: 16px;
-	font-weight: 400;
+	font-size: 15px;	
 	line-height: 1.5;
 	box-sizing: border-box;
 	font-family: sans-serif;
-	background: white;
-	color: #666;
+	-ms-text-size-abjust: 100%;
+	-webkit-text-size-abjust: 100%;	
 }
-
 @media only screen and (min-width: 0px) {
 	html{
 		font-size: 14px;
 	}
 }
-
 @media only screen and (min-width: 992px) {
 	html {
 		font-size: 14.5px;
 	}
 }
-
 @media only screen and (min-width: 1200px) {
 	html {
 		font-size: 15px;
 	}
 }
-
-html, body {
-	overscroll-behavior-y: contain !important;
-	overflow: hidden;
-}
-
-/*body*/
 body {
 	font-size: 15px;
 	line-height: 1.5;	
-	color: black !important;
-	background-color: white !important;
+	margin: 0;
+	color: #000 !important;
+	background-color: #fff !important;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
 	user-select: none;
+}
+html, body {
+	overscroll-behavior-y: contain !important;
+	overflow: hidden;
 }
 
 /*route_top*/
@@ -93,10 +92,20 @@ body {
 	padding: 0 30px;
 	height: 65px;
 	z-index: 1;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.35);
-		
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.35);		
 }
 
+.main_logo {
+	font-weight: 300;
+	font-style: italic;	
+}
+
+.route_top img {
+	width: 20px;
+	height: 20px;
+}
+
+/*route_center*/
 .nmap-main {
 	height: 100vh !important;
 	width: 100% !important;
@@ -104,128 +113,8 @@ body {
 	max-height: none !important;
 }
 
-.spot_sidebar {
-	background-color: white !important;		
-}
 
-#spot_list {	
-	list-style-type: none;
-	padding: 0;
-	margin: 0 auto;
-}
-
-.spot_card {	
-	box-shadow: rgba (31, 38, 135, 0.1) 0 8px 32px 0;
-	backdrop-filter: blur(4px);
-	background: rgba (255, 255, 255, 0.25);
-	border-radius: 4px;
-	border-width: initial !important;	
-	border-color: initial !important;
-	border-image: initial !important;
-	border: 1px solid black;
-	margin: 16px 8px !important;
-	display: flex;	
-	position: relative;
-}
-
-.spot_state_div {
-	position: absolute;
-	bottom: 0;
-	width: 80px;
-	height: 22px;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0),
-		rgba(0, 0, 0, 0.2));
-}
-
-@media (max-width: 1600px) and (min-width: 600px) {
-	.loc_state {
-		width: 65px !important;
-	}	
-}
-
-.loc_state {
-	position: absolute !important;
-	left: 2px !important;
-	bottom: 0 !important;
-	color: white !important;
-}
-
-.loc_state i {
-	font-size:12px !important;
-	color: #ffcb2b !important;
-	vertical-align: -3px;		
-}
-
-img {
-	border-style: none;
-}
-
-audio, canvas, iframe, img, svg, video {
-	vertical-align: middle;
-}
-
-canvas, img, video {
-	max-width: 100%;
-	height: auto;
-	box-sizing: border-box;
-}
-
-#spot_list img {
-	width: 80px !important;
-	height: 80px !important;
-	max-width: none !important;
-	object-fit: cover;
-}
-
-@media (max-width: 1600px) and (min-width: 600px) {
-	#spot_list img {
-		width:65px !important;
-		height:65px !important;
-	}
-}
-
-.spot_bookmark {
-	width: 14px;
-	height: 14px;
-	position: absolute;
-	left: 2px;
-	top: 1px;
-	background-color: #26dbe1;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.spot_bookmark_icon {
-	font-size: 10px !important;
-}
-
-.material-icons {
-	font-family: 'Material Icons';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 24px;
-	line-height: 1;
-	letter-spacing: normal;
-	text-transform: none;
-	display: inline-block;
-	white-space: nowrap;
-	word-wrap: normal;
-	direction: ltr;
-	-webkit-font-feature-settings: 'liga';
-	-webkit-font-smoothing: antialiased;
-}
-
-.material-icons {
-	text-rendering: opimizeLegibility;	
-	font-feature-setting: 'liga'
-}
-
-.spot_info {
-	position: relative;
-	padding: 8px !important;
-}
+/*route-right*/
 
 
 
