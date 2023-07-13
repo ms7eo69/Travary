@@ -9,7 +9,7 @@
         }
       }
 	.bg-cover{
-		/*background-image: url("<c:url value='../images/landing/landing4.jpg'/>");*/
+		/*background-image: url('contextRoot+images/landing/landing4.jpg');*/
         position: absolute;
         top: 0;
         bottom: 0;
