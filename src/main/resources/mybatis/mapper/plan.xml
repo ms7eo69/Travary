@@ -5,6 +5,7 @@
 <mapper
 	namespace="com.kosmo.travary.service.impl.plan.PlanMapper">
 	<select id="selectList" >
+		SELECT * FROM place ORDER BY no
 	</select>
 	
 	<!-- 핀포인트 설정 -->
