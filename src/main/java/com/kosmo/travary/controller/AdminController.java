@@ -1,19 +1,38 @@
 package com.kosmo.travary.controller;
 
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 @Controller
 @RequestMapping("/Admin")
 public class AdminController {
 
+	@Autowired
+	private PlanServiceImpl place;
+	
 	
 	@RequestMapping("/user/Index.do")
 	public String admin_user() {return "admin/user/Index";}
 	@RequestMapping("/user/All.do")
 	public String admin_user_All() {return "admin/user/All";}
+	
+	@PostMapping("/place/getMarkers.do")
+	public @ResponseBody List<Map> getMarkers(@RequestBody Map map) {
+		List<Map> list = place.selectMarkersByBoundary(map);
+		return list;
+	}
+	
 	@RequestMapping("/loc/Index.do")
 	public String admin_loc() {return "admin/loc/Index";}
 	@RequestMapping("/loc/All.do")

@@ -31,6 +31,10 @@
 		</h1>
 	</div>
 	<!--jumbotron-->
+	<div class="text-right mb-2">
+		<a href="<c:url value="/Admin/qna/Write.do"/>"
+			class="btn btn-danger">자주보는 문의 추가하기</a>
+	</div>
 	<table class="table table-dark table-hover text-center">
 		<thead>
 			<tr>
