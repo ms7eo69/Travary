@@ -17,10 +17,15 @@
 	<!-- 상단 바 -->
 	<div id="route_header" class="route_top">
 	    <label class="main_logo">TRAVARY</label>  
-	        <div class="header_menu">
-	       	<button class="btn btn-danger">알림<i class="material-icons">bell</i></button>
+	    <div class="header_menu">
+	       	<button class="btn btn-danger">알림</button>
 	       	<i class="material-icons">settings</i>
-	       	<img src="<c:url value="/images/route/profile.png"/>">
+	       	<img src="<c:url value="/images/route/profile.png"/>"
+	       	class="dropdown dropdown-toggle dropdown-toggle-no-caret"
+	       	id="profile_img" data-toggle="dropdown">
+	       	<div class="dropdown-menu">
+	       		<a class="dropdown-item" data-target="profile_img">로그인</a>	       		
+	       	</div>
 		</div>
     </div>
     <div class="row">        

@@ -62,16 +62,15 @@
                     <span class="nav-text">커뮤니티</span>
                 </a>
 			</li>
-			<li class="nav-item">
-			    <div class="dropright">
-			        <a href="" class="dropdown-toggle dropdown-toggle-no-caret" data-toggle="dropdown">
-			            <i class="fa fa-solid fa-bars" ></i>더 보기${validate}
-					</a>
-					<div class="dropdown-menu">
-				   		<a class="dropdown-item" data-toggle="modal" data-target="#loginModal">로그인</a>
-				   		<a class="dropdown-item" href='<c:url value="/member/Register"/>'>회원가입</a>
-				    </div>
-				</div>
+			<li class="nav-item">			    
+		        <a href="" class="dropdown dropdown-toggle dropdown-toggle-no-caret" data-toggle="dropdown">
+		            <i class="fa fa-solid fa-bars" ></i>더 보기${validate}
+				</a>
+				<div class="dropdown-menu">
+			   		<a class="dropdown-item" data-toggle="modal" data-target="#loginModal">로그인</a>
+			   		<a class="dropdown-item" href='<c:url value="/member/Register"/>'>회원가입</a>
+			    </div>
+				
 			</li>
 		</ul>
 	</nav>
