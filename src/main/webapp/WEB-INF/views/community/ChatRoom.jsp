@@ -74,8 +74,10 @@
     $(function(){
         // 입장버튼 클릭시 서버와 연결된 WebSocket 클라이언트 생성
         $('#enterBtn').one('click', function(){
+        	
+        	var roomId = "${roomId}";
             // 웹소켓 클라이언트 코드
-            wsocket = new WebSocket('ws://localhost:7070/travary/chat-ws');
+            wsocket = new WebSocket('ws://localhost:7070/travary/chat-ws?roomId=' + roomId);
 
             // 서버와 연결된 웹 소켓에 이벤트 등록
             wsocket.onopen = open;
