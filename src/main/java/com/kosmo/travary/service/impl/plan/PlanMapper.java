@@ -33,4 +33,7 @@ public interface PlanMapper {
 		List<Map> selectAnotherByBoundary(Map map);
 		List<Map> selectList(Map map);
 		
+		//Admin
+		List<Map> selectMarkersByBoundary(Map map);
+		
 }
