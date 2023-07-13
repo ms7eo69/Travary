@@ -32,6 +32,15 @@ public class AdminController {
 		List<Map> list = place.selectMarkersByBoundary(map);
 		return list;
 	}
+	@PostMapping("/place/setPinpoint.do")
+	public @ResponseBody void  setPinpoint(@RequestBody Map map) {
+		System.out.println(map);
+		String no = place.selectBoundaryPinpoint(map);
+		System.out.println("select 완료");
+		map.put("no",no);
+		int affected = place.insertBoundaryPinpoint(map);
+		System.out.println("insert완료");
+	}
 	
 	@RequestMapping("/loc/Index.do")
 	public String admin_loc() {return "admin/loc/Index";}

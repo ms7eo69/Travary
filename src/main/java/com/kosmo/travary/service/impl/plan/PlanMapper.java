@@ -35,5 +35,11 @@ public interface PlanMapper {
 		
 		//Admin
 		List<Map> selectMarkersByBoundary(Map map);
+		int insertBoundaryPinpoint(Map map);
+		String selectBoundaryPinpoint(Map map);
+		
+		// 관리자 바운드리 설정페이지에서 지역 클릭시 마커/핀포인트 조회
+		List<Map> selectBoundarysByLregion(Map map);
+		List<Map> selectMarkersByLregion(Map map);
 		
 }

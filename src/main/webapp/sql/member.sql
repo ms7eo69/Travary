@@ -1,0 +1,266 @@
+
+
+/* Create Sequences */
+
+CREATE SEQUENCE seq_member_identifier INCREMENT BY 19 START WITH 1;
+
+
+
+/* Create Tables */
+
+CREATE TABLE HOLIDAY_LIST
+(
+	HOLIDAY_NO number(2) NOT NULL,
+	HOLIDAY_DATE date,
+	HOLIDAY_NAME nvarchar2(10),
+	PRIMARY KEY (HOLIDAY_NO)
+);
+
+
+CREATE TABLE MEMBER
+(
+	NICKNAME nvarchar2(20) NOT NULL,
+	ID nvarchar2(20) NOT NULL,
+	GENDER nvarchar2(10) NOT NULL,
+	AGE nvarchar2(20) NOT NULL,
+	PHONE nvarchar2(20) NOT NULL,
+	REGIDATE date DEFAULT SYSDATE,
+	PROFILE_LINK nvarchar2(200),
+	PRIMARY KEY (NICKNAME)
+);
+
+
+CREATE TABLE MEMBER_AUTH
+(
+	ID nvarchar2(20) NOT NULL,
+	PWD nvarchar2(30) NOT NULL,
+	KEY nvarchar2(50) NOT NULL,
+	IDENTIFIER number DEFAULT 0 NOT NULL,
+	PRIMARY KEY (ID)
+);
+
+
+CREATE TABLE MEMBER_NOTIFY
+(
+	NO number(5) NOT NULL,
+	NICKNAME nvarchar2(20) NOT NULL,
+	TITLE nvarchar2(50),
+	CONTENT nvarchar2(500),
+	POSTDATE date DEFAULT SYSDATE,
+	PRIMARY KEY (NO)
+);
+
+
+CREATE TABLE PLACE
+(
+	NO number NOT NULL,
+	-- 관광지
+	-- 레포츠
+	-- 문화시설
+	-- 시장
+	-- 축제.공연
+	-- 숙박 (new!! 07.03)
+	CATEGORY nvarchar2(10),
+	NAME nvarchar2(50) NOT NULL,
+	FEE number(20),
+	DETAIL nvarchar2(2000),
+	PRIMARY KEY (NO)
+);
+
+
+CREATE TABLE PLACE_AVAIL
+(
+	NO number NOT NULL,
+	-- 1 - 일요일
+	-- 2 - 월요일
+	-- 3 - 화요일
+	-- 4 - 수요일
+	-- 5 - 목요일
+	-- 6 - 금요일
+	-- 7 - 토요일
+	-- 9 - 상시개방
+	-- 
+	DAYOFF number(6) DEFAULT 0 NOT NULL,
+	START_MONTH number(2),
+	END_MONTH number(2),
+	PRIMARY KEY (NO)
+);
+
+
+CREATE TABLE PLACE_BOUNDARY
+(
+	NO number NOT NULL,
+	MINX number(13,10),
+	MINY number(13,0),
+	MAXX number(13,10),
+	MAXY number(13,10),
+	PRIMARY KEY (NO)
+);
+
+
+CREATE TABLE PLACE_LOC
+(
+	NO number NOT NULL,
+	LREGION nvarchar2(10),
+	SREGION nvarchar2(10),
+	LAT number(13,10),
+	LNT number(13,10),
+	PRIMARY KEY (NO)
+);
+
+
+CREATE TABLE PLACE_REACTION
+(
+	NICKNAME nvarchar2(20) NOT NULL,
+	NO number NOT NULL,
+	-- LIKE/BOOKMARK (추천/즐겨찾기) 둘중 하나의 값을 가짐
+	REACTION nvarchar2(10) NOT NULL,
+	PRIMARY KEY (NICKNAME, NO, REACTION),
+	UNIQUE (NICKNAME, NO, REACTION)
+);
+
+
+CREATE TABLE PLACE_REQUEST
+(
+	REQ_NO number(5) NOT NULL,
+	NICKNAME nvarchar2(20) NOT NULL,
+	NO number NOT NULL,
+	TITLE nvarchar2(50),
+	CONTENT nvarchar2(1000),
+	POSTDATE date DEFAULT SYSDATE,
+	PRIMARY KEY (REQ_NO)
+);
+
+
+CREATE TABLE PLACE_TAG
+(
+	NO number NOT NULL,
+	TAGNAME nvarchar2(10) NOT NULL,
+	PRIMARY KEY (NO, TAGNAME),
+	UNIQUE (NO, TAGNAME)
+);
+
+
+CREATE TABLE PLACE_THEME
+(
+	NO number NOT NULL,
+	T_NAME nvarchar2(10) NOT NULL,
+	PRIMARY KEY (NO, T_NAME),
+	UNIQUE (NO, T_NAME)
+);
+
+
+CREATE TABLE PLAN_ROUTE
+(
+	PLAN_NO number NOT NULL,
+	-- 당일치기의 경우 0으로 기록한다
+	-- 이 경우 ACMD = NULL
+	NIGHT number(2) NOT NULL,
+	PLACE_TURN number(2) NOT NULL,
+	PLACE_NO number NOT NULL,
+	PRIMARY KEY (PLAN_NO, NIGHT, PLACE_TURN)
+);
+
+
+CREATE TABLE POST
+(
+	POST_NO number(5) NOT NULL,
+	PLAN_NO number NOT NULL,
+	NICKNAME nvarchar2(20) NOT NULL,
+	TITLE nvarchar2(50),
+	CONTENT nvarchar2(2000),
+	POSTDATE date DEFAULT SYSDATE,
+	IMG nvarchar2(100),
+	PRIMARY KEY (POST_NO)
+);
+
+
+CREATE TABLE POST_COMMENT
+(
+	COM_NO number(5) NOT NULL,
+	POST_NO number(5) NOT NULL,
+	NICKNAME nvarchar2(20) NOT NULL,
+	CONTENT nvarchar2(200),
+	POSTDATE date DEFAULT SYSDATE,
+	PRIMARY KEY (COM_NO)
+);
+
+
+CREATE TABLE POST_PLAN
+(
+	PLAN_NO number NOT NULL,
+	NICKNAME nvarchar2(20) NOT NULL,
+	START_DATE date,
+	END_DATE date,
+	LREGION nvarchar2(10),
+	SREGION nvarchar2(10),
+	PRIMARY KEY (PLAN_NO)
+);
+
+
+CREATE TABLE POST_REACTION
+(
+	NICKNAME nvarchar2(20) NOT NULL,
+	POST_NO number(5) NOT NULL,
+	-- LIKE/BOOKMARK (추천/즐겨찾기) 둘중 하나의 값을 가짐
+	REACTION nvarchar2(10) NOT NULL,
+	PRIMARY KEY (NICKNAME, POST_NO, REACTION),
+	UNIQUE (NICKNAME, POST_NO, REACTION)
+);
+
+
+CREATE TABLE POST_REPORT
+(
+	REP_NO number(5) NOT NULL,
+	POST_NO number(5) NOT NULL,
+	NICKNAME nvarchar2(20) NOT NULL,
+	CONTENT nvarchar2(200),
+	POSTDATE date DEFAULT SYSDATE,
+	PRIMARY KEY (REP_NO)
+);
+
+
+CREATE TABLE POST_TAG
+(
+	POST_NO number(5) NOT NULL,
+	POST_TAGNAME nvarchar2(10) NOT NULL,
+	PRIMARY KEY (POST_NO, POST_TAGNAME),
+	UNIQUE (POST_NO, POST_TAGNAME)
+);
+
+
+CREATE TABLE ROUTE_REACTION
+(
+	NICKNAME nvarchar2(20) NOT NULL,
+	PLAN_NO number NOT NULL,
+	-- LIKE/BOOKMARK (추천/즐겨찾기) 둘중 하나의 값을 가짐
+	REACTION nvarchar2(10) NOT NULL,
+	-- 당일치기의 경우 0으로 기록한다
+	-- 이 경우 ACMD = NULL
+	NIGHT number(2) NOT NULL,
+	PLACE_TURN number(2) NOT NULL,
+	PRIMARY KEY (NICKNAME, PLAN_NO, REACTION)
+);
+
+
+CREATE TABLE TRAVARY.PLACE_POP
+(
+	NO number NOT NULL,
+	JAN number(10,5),
+	FEB number(10,5),
+	MAR number(10,5),
+	APR number(10,5),
+	MAY number(10,5),
+	JUN number(10,5),
+	JUL number(10,5),
+	AUG number(10,5),
+	SEP number(10,5),
+	OCT number(10,5),
+	NOV number(10,5),
+	DEC number(10,5),
+	SUM number(10,5),
+	PRIMARY KEY (NO)
+);
+
+
+

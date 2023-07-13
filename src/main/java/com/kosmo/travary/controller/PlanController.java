@@ -45,10 +45,15 @@ public class PlanController {
 		return list;
 	}
 	
-	@GetMapping("/getAllPlaceWithMarkers.do")
-	public @ResponseBody List getAllPlaceWithMarkers(@RequestParam Map map) {
-		List<Map> list = tour.selectList(map);
-		return list;
+	@GetMapping("/getMarkersByLregion.do")
+	public @ResponseBody Map getAllPlaceWithMarkers(@RequestParam Map map) {
+		List<Map> markers = tour.selectMarkersByLregion(map);
+		System.out.println(map);
+		List<Map> boundarys = tour.selectBoundarysByLregion(map);
+		Map result = new HashMap<>();
+		result.put("markers",markers);
+		result.put("boundarys", boundarys);
+		return result;
 	}
 	
 	@GetMapping("/Route.do")
