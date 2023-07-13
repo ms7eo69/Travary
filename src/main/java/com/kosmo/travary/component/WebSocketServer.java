@@ -28,7 +28,6 @@ public class WebSocketServer extends TextWebSocketHandler {
         System.out.println("roomId:"+roomId);
         System.out.println("session:"+session);
         
-        // 해당 방(Room)에 세션 추가
         chatRooms.computeIfAbsent(roomId, key -> ConcurrentHashMap.newKeySet()).add(session);
 
         System.out.println(session.getId() + " 연결되었습니다.");
@@ -43,21 +42,18 @@ public class WebSocketServer extends TextWebSocketHandler {
 
         Set<WebSocketSession> roomSessions = chatRooms.get(roomId);
         if (roomSessions != null) {
-            // 해당 방(Room)에 있는 모든 세션에게 메시지 전송
             for (WebSocketSession s : roomSessions) {
                 if (s.isOpen()) {
                     s.sendMessage(message);
                 }
             }
         }
-        // DM 기능: 특정 사용자에게만 메시지 전송
         if (message.getPayload().startsWith("/dm ")) {
             String[] tokens = message.getPayload().split(" ");
             if (tokens.length >= 3) {
-                String receiverId = tokens[1]; // 수신자의 세션 ID 또는 식별자
+                String receiverId = tokens[1];
                 String dmContent = message.getPayload().substring(tokens[0].length() + tokens[1].length() + 2);
                 
-                // 수신자를 찾아 메시지 전송
                 for (WebSocketSession s : roomSessions) {
                     if (s.getId().equals(receiverId)) {
                         s.sendMessage(new TextMessage("DM from " + sessionId + ": " + dmContent));
@@ -79,12 +75,10 @@ public class WebSocketServer extends TextWebSocketHandler {
         String sessionId = session.getId();
         String roomId = getRoomId(session);
 
-        // 해당 세션을 방(Room)에서 제거
         Set<WebSocketSession> roomSessions = chatRooms.get(roomId);
         if (roomSessions != null) {
             roomSessions.remove(session);
             if (roomSessions.isEmpty()) {
-                // 방(Room)에 세션이 없으면 방(Room) 삭제
                 chatRooms.remove(roomId);
             }
         }

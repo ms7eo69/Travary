@@ -31,7 +31,6 @@ public class ChatController {
     @GetMapping("/enterChatList")
     public String openChat(HttpServletRequest request, Model model) {
         String roomId = openchatService.generateChatRoomId();
-        //System.out.println("controller roomId"+roomId);
         String chatRoomUrl = "/chat/enterChatRoom?roomId=" + roomId;
         model.addAttribute("chatRoomUrl", chatRoomUrl);
         return "community/ChatList";
@@ -44,7 +43,13 @@ public class ChatController {
         model.addAttribute("roomId", roomId);
         model.addAttribute("myIp", myIp);
         WebSocketServer webSocketServer = webSocketServerFactory.createWebSocketServer();
-        // TODO: 생성된 WebSocketServer 인스턴스를 사용하여 채팅방 관련 로직 구현
         return "community/ChatRoom";
+    }
+    @GetMapping("/DM")
+    public String DM(HttpServletRequest request, Model model) {
+    	String myIp = webSocketServe.getIp();
+    	model.addAttribute("myIp", myIp);
+    	WebSocketServer webSocketServer = webSocketServerFactory.createWebSocketServer();
+    	return "community/DM";
     }
 }

@@ -13,6 +13,9 @@
 	<div class="text-right mb-2">
 		<a href="<c:url value="${chatRoomUrl}"/>" class="btn btn-danger">오픈 채팅방 생성</a>
 	</div>
+	<div class="text-right mb-2">
+		<a href="<c:url value="/chat/DM"/>" class="btn btn-danger">DM</a>
+	</div>
 	<table class="table table-dark table-hover text-center">
 		<thead>
 			<tr>
