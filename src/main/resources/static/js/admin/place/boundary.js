@@ -5,23 +5,46 @@ $(function(){
 			center: new N.LatLng(36.5, 127.7)
 		});	
 		var markers={}
+		$('#pinpoint').click(function(){
+			var bounds = map.bounds
+			$.ajax({
+				url:contextRoot+'admin/place/setPinpoint.do',
+				method:'post',
+				contentType:'application/json',
+				data:JSON.stringify(bounds)
+			}).done(function(){
+				new naver.maps.Rectangle({
+					map: map,
+					bounds: new naver.maps.LatLngBounds(
+						new naver.maps.LatLng(bounds._min.y, bounds._min.x),
+						new naver.maps.LatLng(bounds._max.y, bounds._max.x)
+					),
+					strokeColor: 'crimson',
+					strokeOpacity: 1,
+					strokeWeight: 3,
+					fillColor: 'crimson',
+					fillOpacity: 0.6
+				});
+			})
+		})
+
 		map.addListener('dragend', function() {
 			$.ajax({
-				url:contextRoot+'Admin/place/getMarkers.do',
+				url:contextRoot+'admin/place/getMarkers.do',
 				method:'post',
 				dataType:'json',
 				contentType:'application/json',
-				data:JSON.stringify(map.getBounds())
+				data:JSON.stringify(map.bounds)
 			}).done(function(data){
 				console.log(data);
 				$('tbody').empty()
 				var sum=0
 				data.forEach(function(item){
-					tr = '<tr><td>'+item.NAME+'</td><td>'+item.SUM+'</td></tr>'
+					tr = '<tr class="row"><td class="col-8 text-center">'+item.NAME+'</td><td class="col text-center">'+item.SUM+'</td></tr>'
 					$('tbody').append(tr)
 					sum+=item.SUM
 				})
-				$('#sum').text(sum)
+				$('#sum').text(sum.toFixed(2))
 			}).fail(function(error){
 				console.log(error);
 			})
@@ -32,7 +55,6 @@ $(function(){
 		//  지도 클릭시 latlnt값 표시하는 infoWindow
 		map.addListener('click', function(e) {
 			var latlng = e.coord
-			console.log(latlng.toString());
 			var infoWindow = new naver.maps.InfoWindow({
 				content: [
 					'<div style="padding:10px;width:380px;font-size:14px;line-height:20px;">',
@@ -103,18 +125,44 @@ $(function(){
 					feature.setProperty('focus', true);
 					markers[feature.property_navercode] = []
 					$.ajax({
-						url:'/travary/plan/getAllPlaceWithMarkers.do',
+						url:'/travary/plan/getMarkersByLregion.do',
 						dataType:'json',
 						data:'lregion='+feature.property_area1
-					}).done(function(data){
-						data.forEach(function(item){
+					}).done(function(data){	
+						data.boundarys.forEach(function(item){
+							new naver.maps.Rectangle({
+								map: map,
+								bounds: new naver.maps.LatLngBounds(
+									new naver.maps.LatLng(item.MINY,item.MINX),
+									new naver.maps.LatLng(item.MAXY, item.MAXX)
+								),
+								strokeColor: 'crimson',
+								strokeOpacity: 1,
+								strokeWeight: 3,
+								fillColor: 'crimson',
+								fillOpacity: 0.6
+							});
+						})
+
+						data.markers.forEach(function(item,index){
+							icon=null
+							if(index<=20)
+								icon = {
+									url:  contextRoot+'images/route/ico_pin.jpg',
+									/* size: new naver.maps.Size(24, 37),
+									anchor: new naver.maps.Point(12, 37),
+									origin: new naver.maps.Point(29*index, 150) */
+								}
+							if (item.CATEGORY==='숙박') 
+								icon = {
+									url:  contextRoot+'images/route/pin_default.png',
+								}
 							var marker = new N.Marker({
 								position: item,
-								map: map
+								map: map,
+								icon: icon
 							});	
 							markers[feature.property_navercode].push(marker)
-							if (item.CATEGORY==='숙박') 
-								marker.setIcon({url:contextRoot+'images/route/pin_default.png'})
 							var infowindow = new naver.maps.InfoWindow({
 								content: [
 									'<div class="iw_inner">',

@@ -74,6 +74,22 @@ public class PlanServiceImpl implements DaoService{
 		return mapper.selectAnotherByBoundary(map);
 	}
 
+	public int insertBoundaryPinpoint(Map map) {
+		return mapper.insertBoundaryPinpoint(map);
+	}
+
+	public String selectBoundaryPinpoint(Map map) {
+		return mapper.selectBoundaryPinpoint(map);
+	}
+
+	public List<Map> selectBoundarysByLregion(Map map) {
+		return mapper.selectBoundarysByLregion(map);
+	}
+
+	public List<Map> selectMarkersByLregion(Map map) {
+		return mapper.selectMarkersByLregion(map);
+	}
+
 	// Search Trend
 //	public List<String> selectfour(Map map){
 //		return mapper.findFourByNo(map); 
