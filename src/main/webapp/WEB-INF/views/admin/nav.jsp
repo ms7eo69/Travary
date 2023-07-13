@@ -25,18 +25,6 @@
     </li>
     <li class="nav-item tab">
       <a class="nav-link" href="<c:url value='/admin/qna/List.do'/>">자주묻는질문</a>
-        <a class="nav-link" href="#">여행관련</a>
-        <ul class="subtab">
-          <li><a href="<c:url value='/Admin/loc/Index.do'/>">간이 통계</a></li>
-          <li><a href="<c:url value='/Admin/loc/All.do'/>">여행지 통계</a></li>
-          <li><a href="<c:url value='/Admin/loc/Edit.do'/>">관광지</a></li>
-        </ul>
-    </li>
-    <li class="nav-item tab">
-    	<a class="nav-link" href="<c:url value='/Admin/anno/List.do'/>">공지사항</a>
-    </li>
-    <li class="nav-item tab">
-    	<a class="nav-link" href="<c:url value='/Admin/qna/List.do'/>">자주묻는질문</a>
     </li>
     <li><a href="<c:url value='/admin/loc/Boundary.do'/>">바운더리 설정</a></li>
         </ul>

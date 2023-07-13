@@ -107,24 +107,29 @@
 	  	const divElement = $(this);
 	  	const originalText = divElement.text();
 	  	const inputElement = $('<input>', {
-	    	type: 'text',
+	  		style: 'background-color:#96a279; word-wrap: break-word;',
+	  		class: 'editInput',
+	    	type: 'textarea',
 	    	value: originalText
-    });
+    	});
 
-  	inputElement.on('blur', function() {
-    	const newText = $(this).val().trim();
-    	divElement.text(newText);
-  	});
+  		inputElement.on('blur', function() {
+    		const newText = $(this).val().trim();
+    		divElement.text(newText);
+  		});
 
-  	divElement.empty().append(inputElement);
-	  inputElement.focus();
+  		divElement.empty().append(inputElement);
+	  	inputElement.focus();
+  		divElement.css('overflow','none')
 	});
 
   	$('.box').change('change', function(){
     	$(this).siblings("button").css('display','block')
   	});
+  	
   
     $('.edit_loc').click(function(event){
+    	var this_ = $(this);
     	var emptyBox = false;
     	$('.box').each(function() {
    		  	if ($(this).text().trim() === '') {
@@ -138,6 +143,24 @@
     		event.stopPropagation();
     		return false;
     	}
+    	else{
+    		var parentLi = this_.closest('li');
+	  		var name = parentLi.find('.box._name').text();
+	  		var category = parentLi.find('.box._category').text();
+	  		var detail = parentLi.find('.box._detail').text();
+	  		$.ajax({
+	  			url: '',
+	  			method: 'POST',
+	  			data:{
+	  				name: name,
+	  				category: category,
+	  				detail: detail
+	  			}
+	  		}).done(function(){
+	  			this_.css('display','block');
+	  		})
+    	}
+  		
     });
 </script>
 </html>
