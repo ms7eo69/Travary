@@ -43,15 +43,16 @@ public class AdminController {
 	public String admin_loc_boundary() {return "admin/loc/Boundary";}
 	
 	
-	@RequestMapping("/anno/List.do")
-	public String admin_anno() {return "qna_N_Anno/anno/List";}
+	//@RequestMapping("/anno/List.do")
+	//public String admin_anno() {System.out.println("ddddddddddddd"); return "qna_N_Anno/anno/List";}
 	
 	@RequestMapping("/anno/View.do")
 	public String admin_anno_view() {return "qna_N_Anno/anno/View";}
+	/*
 	@GetMapping("/anno/Write.do")
 	public String admin_anno_write() {return "qna_N_Anno/anno/Write";}
 	@PostMapping("/anno/Write.do")
-	public String admin_anno_writeok() {return "qna_N_Anno/anno/Write";}
+	public String admin_anno_writeok() {return "qna_N_Anno/anno/Write";}*/
 	
 	@GetMapping("/anno/Edit.do")
 	public String admin_anno_edit() {return "qna_N_Anno/anno/Edit";}
