@@ -20,6 +20,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="<c:url value="css/index/navigationbar.css"/>"/>
 <link rel="stylesheet" href="<c:url value="css/community/community.css"/>"/>
+<link rel="stylesheet" href="<c:url value="css/community/write.css"/>"/>
+
+<!--Interactive-->
+<script src="<c:url value="js/index/scrolling.js"/>" defer></script>
+<script src="<c:url value="js/community/viewArticle.js"/>" defer></script>
+<script src="<c:url value="js/community/write.js"/>" defer></script>
+
 </head>
 <body>
 <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
@@ -73,7 +80,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="posting">
                                     <i class="fa fa-regular fa-square-plus"></i>
                                     <span class="nav-text">만들기</span>
                                 </a>
@@ -116,35 +123,187 @@
     </nav>  
      <!---------------------------------------------네비게이션바 끝------------------------------------------- --> 
    <!-------------------------------------------- 포스팅 버튼----------------------------------------------------->
-    <div class="d-flex ">
-   		<button type="button" class="btn btn-primary PublishButton justify-content-right">
-   			<i class="fa-regular fa-pen-to-square mr-2" style="color: #ffffff;"></i><span>포스팅</span>
-   		</button>
-    </div>
- <!-------------------------------------모달---------------------------------->
+	<div class="d-flex">
+	  <button type="button" class="btn btn-primary PublishButton justify-content-right">포스팅</button>
+	</div>
+	
+	   <!-------------------------------------------- 여행 선택----------------------------------------------------->
+	
+	<div class="bgOverlay pickCourse ">
+	  <div class="snsWrite ">
+	    <div class="snsWriteContent">
+	      <div class="top-section justify-content-center font-weight-bold">
+	      	<span>세 게시글 만들기</span>
+	      </div>
+	      <div class="row justify-content-center align-items-center flex-column mx-0"> 
+	        <div class="my-3 h5">
+		        <span>공유할 여행을 선택해주세요</span>	        
+	        </div>      
+	        <div class="col-6 m-3 courses" >
+			  <div class="card card-list text-white shadow " >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/busan.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">부산</h5>
+			      <p class="card-text">2023-07-10 ~ 07-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6 m-3 courses" > 
+			  <div class="card card-list text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/seoul.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">서울</h5>
+			      <p class="card-text">2023-06-10 ~ 06-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6 m-3 courses" >
+			  <div class="card card-list text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/jeju.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">제주</h5>
+			      <p class="card-text">2023-05-10 ~ 05-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+			<div class="col-6 m-3 courses" >
+			  <div class="card card-list text-white shadow" >
+			    <img class="card-img coursImg" src="<c:url value="/images/best-theme/terarosa.jpg"/>" >
+			    <div class="card-img-overlay">
+			      <h5 class="card-title text-white text-bold">강릉</h5>
+			      <p class="card-text">2023-04-10 ~ 04-11 (1박2일)</p>
+			    </div>
+			  </div>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<!---------------------------글쓰기 취소-------------------- -->
+	<div class="alert-modal shadow text-center" style="display: none;">
+	  <div class="alert-modal-title">
+	    <h5>글쓰기를 취소하시겠습니까?</h5>
+	    <h6 class="pt-1 text-secondary">지금 나가면 수정내용이 저장되지 않습니다.</h6>
+	  </div>
+	  <div class="alert-modal-choose">
+	    <div class="btn-yes">
+	      <button class="btn btn-block text-danger" onclick="cancelPost(); closeWriteModal();">삭제</button>
+	    </div>
+	    <div class="btn-no">
+	      <button class="btn" onclick="closeAlertModal()">취소</button>
+	    </div>
+	  </div>
+	</div>
+
+<!------------------글쓰기 상세 작성 모달----------------------------->
+	
+	  <div class="snsWrite writeForms" style="display: none;">
+		  <div class="snsWriteContent">
+		    <div class="row justify-content-center align-items-center flex-column">
+		      <div class="write-form snsWrite" onclick="stopPropagation(event)">
+		        <div class="snsWriteContent">
+		          <div class="top-section justify-content-between px-4">
+		            <i class="fas fa-arrow-left fa-lg text-secondary" ></i>
+		            <span class="text-black font-weight-bold">세 게시글 만들기</span>
+		            <span class="text-info font-weight-bold">공유</span>
+		          </div>
+		          <div class="d-flex row mx-0">
+		            <div class="col-md-2 p-0 days">
+		              <button type="button" class="collapsible" onclick="collapse(this);">
+		                <span>1일차</span>
+		              </button>
+		              <div class="content">
+		                <ul>
+		                  <li>해운대</li>
+		                  <li>서면</li>
+		                  <li>남포동</li>
+		                  <li>개선문</li>
+		                  <li>에펠탑</li>
+		                </ul>
+		              </div>
+		              <button type="button" class="collapsible" onclick="collapse(this);">
+		                <span>2일차</span>
+		              </button>
+		              <div class="content">
+		                <ul>
+		                  <li>해운대</li>
+		                  <li>서면</li>
+		                  <li>남포동</li>
+		                  <li>개선문</li>
+		                  <li>에펠탑</li>
+		                </ul>
+		              </div>
+		              <button type="button" class="collapsible" onclick="collapse(this);">
+		                <span>3일차</span>
+		              </button>
+		              <div class="content">
+		                <ul>
+		                  <li>해운대</li>
+		                  <li>서면</li>
+		                  <li>남포동</li>
+		                  <li>개선문</li>
+		                  <li>에펠탑</li>
+		                </ul>
+		              </div>
+		            </div>
+		            <div class="col-md-6 uploadPic left-section d-flex align-items-center justify-content-center">
+		              <div class="imageUpload flex-column justify-content-center">
+		                <input type="file" id="imageUpload" accept="image/*" onchange="previewImages(event)" style="display: none;" multiple>
+		                <div class="imagePreviews">
+		                </div>
+		                <div class="text-center">
+		                  <img src="<c:url value='/images/community/imggallery.png'/>" alt="이미지 선택" onclick="openFileUpload();" style="cursor: pointer;">
+		                  <div>사진을 선택해주세요!</div>
+		                </div>
+		              </div>
+		            </div>
+		            <div class="col-md-4 right-section shadow">
+		              <div class="align-items-center flex-column">
+		                <div class="d-flex align-items-center mb-4">
+		                  <img src="<c:url value='/images/profile/yunakim.jpg'/>" class="profileImageSm ml-0 mr-2 ">
+		                  <div class="userId">Yujin</div>
+		                </div>
+		                <div>
+		                  <input type="text" id="postingtitle" name="title" class="inputbox mb-4" placeholder="제목 입력...">
+		                </div>
+		                <div>
+		                  <textarea id="textbox" name="content" class="inputbox textbox" placeholder="내용 입력..."></textarea>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	
+
+ <!----------------------------------게시글 상세보기 모달---------------------------------->
 	<div id="myModal" style="display: none;">
 	  <div class="view_sns">
-	    <div class="view_content row">
-	      <div class="col-md-6 sns_photos">
+	    <div class="view_content row ">
+	      <div class="col-md-7 sns_photos">
 	        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
 			    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
 			    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
 			    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
 			  </ol>
+			  
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img src="/images/sns.body/card_body1.jpg" class="d-block w-100 " alt="...">
+			      <img src="<c:url value="/images/sns.body/card_body1.jpg"/>" class="d-block w-100 " alt="...">
 			      <div class="carousel-caption d-none d-md-block">
 			      </div>
 			    </div>
 			    <div class="carousel-item">
-			      <img src="/images/sns.body/sgp.jpg" class="d-block w-100 " alt="...">
+			      <img src="<c:url value="/images/sns.body/sgp.jpg"/>" class="d-block w-100 " alt="...">
 			      <div class="carousel-caption d-none d-md-block">
 			      </div>
 			    </div>
 			    <div class="carousel-item">
-			      <img src="/images/sns.body/busan.png" class="d-block w-100 " alt="...">
+			      <img src="<c:url value="/images/sns.body/busan.png"/>" class="d-block w-100 " alt="...">
 			      <div class="carousel-caption d-none d-md-block">
 			      </div>
 			    </div>
@@ -159,9 +318,9 @@
 			  </button>
 			</div>
 	      </div>
-	      <div class="col-md-6 sns_details d-flex flex-column h-100 p-3">
-        	<div class="sns_id d-flex align-items-center flex-fill mb-5">
-               	 <img src=" /images/profile/yunakim.jpg" class="profileImageMd ml-0 mr-2 ">
+	      <div class="col-md-5 sns_details d-flex flex-column pl-0 pr-4">
+        	<div class="sns_id d-flex align-items-center my-3">
+               	 <img src="<c:url value="/images/profile/yunakim.jpg"/> " class="profileImageMd ml-0 mr-2 ">
                     <div class="viewUserId">Yuna</div>
             </div>
 	        <div class="sns_title flex-fill mb-5">
@@ -170,14 +329,34 @@
 	        <div class="sns_content flex-fill mb-5">
 	          <p>#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
 	        </div>
-	        <div class="sns_comments flex-fill mb-5">
-	          <!-- 댓글 요소 -->
+	        <div class="sns_comments flex-fill mb-auto ">
+	          <input type="text" name=comment class="form-control" placeholder="comment">
 	        </div>
-	        <div class="sns_location flex-fill">언급된 장소</div>
+	        <div class="sns_location">
+	        	<div class="card mb-3 shadow" style="">
+				  <div class="row no-gutters">
+				    <div class="col-md-4 ">
+				      <img src="<c:url value="/images/best-theme/busan.jpg"/>" class="courseImg" alt="...">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body p-2">
+				        <h6 class="card-title h5 text-black">여행 코스</h5>
+				        <div class="card-text h6"><i class="fa-solid fa-location-dot text-danger"><span class="ml-2">부산</span></i></div>
+				        <div class="card-text"><i class="fa-regular fa-calendar"><span class="ml-2">1박 2일</span></i></div>
+					      <div class="sns-location-btn d-flex pr-1 ">
+					        <a href="#" class="btn btn-primary ml-auto">더 보기</a>
+					      </div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+	        </div>
 	      </div>
 	    </div>
 	  </div>
 	</div>
+
+	
     <!----------------------------------------------------------------SNS 섹션------------------------------------------------------------------>
 
    <div class="container-fluid container  mt-4">
@@ -373,54 +552,11 @@
 		    </div>
 	    </div><!-------------------------- row end----------------------------------- -->
 	  </div><!-- 무한스크롤 적용부분 -->
+
+
 	 
-
 <script>
-<!-- 무한스크롤 -->
-var page=1;
-var index=0;
-var content = $('.scroll_add').clone();
-$(window).scroll(function() {
-  // console.log($(window).scrollTop(),$(document).height() - $(window).height());
-  if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
-    console.log('간닷!');
 
-    // loadData()//ajax 함수 호출!
-    
-    // var src = '../images/'+(index++)+'.jpg';
-   	// for(var i=0;i<content.find('img').length;i++)
-    // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
-    // content.find('img:eq(1)').prop('src','../images/2.jpg');
-    // content.find('img:eq(2)').prop('src','../images/3.jpg');
-    // content.find('img:eq(3)').prop('src','../images/4.jpg');
-    $(".scroll_add").append(content.html());
-    page++;
-    index++;
-    console.log(index);
-  }
-});
-<!-- 무한스크롤 -->
-<!--------모달-------->
-function openModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "flex";
-}
-
-function closeModal() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
-
-var div = document.querySelector(".viewbox");
-div.addEventListener("click", openModal);
-
-var modal = document.getElementById("myModal");
-modal.addEventListener("click", function(event) {
-  if (event.target === modal) {
-    closeModal();
-  }
-});
-<!------모달-------->
 </script>
 </body>
 </html>

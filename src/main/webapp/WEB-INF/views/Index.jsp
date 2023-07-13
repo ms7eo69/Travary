@@ -135,7 +135,7 @@
         </div>
     </nav>  
      <!---------------------------------------------네비게이션바 끝------------------------------------------- -->  
-      
+      <!-------------------------------------------- 배경 이미지------------------------------------------- -->  
 	
       <section class="section section-top section-full">
         <!-- Cover -->
@@ -576,28 +576,7 @@
             
           })
         }
-        var page=1;
-        var index=0;
-        var content = $('.scroll_add').clone();
-        $(window).scroll(function() {
-          // console.log($(window).scrollTop(),$(document).height() - $(window).height());
-          if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
-            console.log('간닷!');
 
-            // loadData()//ajax 함수 호출!
-            
-            // var src = '../images/'+(index++)+'.jpg';
-           	// for(var i=0;i<content.find('img').length;i++)
-            // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
-            // content.find('img:eq(1)').prop('src','../images/2.jpg');
-            // content.find('img:eq(2)').prop('src','../images/3.jpg');
-            // content.find('img:eq(3)').prop('src','../images/4.jpg');
-            $(".scroll_add").append(content.html());
-            page++;
-            index++;
-            console.log(index);
-          }
-        });
     </script>
   </body>
 </html>

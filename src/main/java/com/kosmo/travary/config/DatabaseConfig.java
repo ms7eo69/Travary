@@ -25,15 +25,16 @@ public class DatabaseConfig {
 	@Bean
 	DataSource dataSource() {
 		
+		String projectDir = System.getProperty("user.dir");
+        System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
 		//HikariConfig객체 생성후 데이터베이스 연결 및 커넥션 풀 정보 설정
 		HikariConfig hikariConfig = new HikariConfig();
+		hikariConfig.setMaximumPoolSize(20);
 		hikariConfig.setDriverClassName(driver);
 		
 		
 		//TNS_ADMIN 변수 설정
-		String projectDir = System.getProperty("user.dir");
-        System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
-        
+	
         hikariConfig.setMaximumPoolSize(20);	
 		hikariConfig.setJdbcUrl(url);
 		hikariConfig.setUsername(id);
