@@ -76,8 +76,11 @@
         $('#enterBtn').one('click', function(){
         	
         	var roomId = "${roomId}";
+        	var myIp = "${myIp}";
+        	console.log(roomId);
+        	console.log(myIp);
             // 웹소켓 클라이언트 코드
-            wsocket = new WebSocket('ws://192.168.0.7:7070/travary/chat-ws?roomId=' + roomId);
+            wsocket = new WebSocket('ws://'+myIp+':7070/travary/chat-ws?roomId=' + roomId);
 
             // 서버와 연결된 웹 소켓에 이벤트 등록
             wsocket.onopen = open;

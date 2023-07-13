@@ -9,6 +9,8 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -102,6 +104,18 @@ public class WebSocketServer extends TextWebSocketHandler {
             return roomIds.get(0);
         }
         return null;
+    }
+    
+    public String getIp() {
+    	String ipAddress = "";
+        try {
+            InetAddress localHost = InetAddress.getLocalHost();
+            ipAddress = localHost.getHostAddress();
+            System.out.println("IP 주소: " + ipAddress);
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        return ipAddress; 
     }
 
 }
