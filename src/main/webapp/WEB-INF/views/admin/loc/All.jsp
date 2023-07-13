@@ -108,7 +108,7 @@
         </div>
         <div id="usa" class="col-12">
           <ul class="list-unstyled Mloc edit_">
-            <span>인기 관광지</span>
+            <span>지역별 관광지</span>
             <label for="loc_select">대분류 지역을 골라줘용</label>
             <select id="loc_select">
                 <option value="">전체</option>
@@ -118,6 +118,7 @@
                 <option value="인천">인천</option>
                 <option value="서울">서울</option>
             </select>
+            <input id="searchInput" type="text" placeholder="찾을 관광지">
             <li>
               <img src="images/1.jpg">
               <div class="box_name">여행지 이름</div>
@@ -156,7 +157,7 @@
 </div>
 </body>
 <script>
-    const searchInput = document.getElementById('loc_select');
+    const searchInput = document.getElementById('searchInput');
     const listItems = document.querySelectorAll('#usa .list-unstyled.Mloc li');
 
     searchInput.addEventListener('input', function() {
@@ -170,5 +171,15 @@
         li.style.display = shouldShow ? 'flex' : 'none';
       });
     });
+
+    $('#loc_select').change(function(){
+        var selectVal = $(this).val();
+        console.log("val : ",selectVal)
+        $.ajax({
+          url: '',
+          method: 'POST',
+          data: {val:selectVal}
+        });
+      });
 </script>
 </html>

@@ -38,7 +38,7 @@
 		</div>
 	</c:if>
 	
-	<form method="post" action="<c:url value="/Admin/qna/Write.do"/>">
+	<form method="post" action="<c:url value="/admin/qna/Write.do"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<div class="form-group">
 			<label><kbd class="lead">제목</kbd></label> <input type="text"

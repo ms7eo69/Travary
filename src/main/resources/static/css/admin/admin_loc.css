@@ -54,7 +54,7 @@
     margin-top: 5px;
 
 }
-.box1, .box_name{
+.box1,.box{
     display: flex;
     justify-content: start;
     width:100px;
@@ -67,11 +67,14 @@
     margin-left: 10px;
 }
 
-.box_title, .box_name, .box2, .box1{
+.box_title, .box, .box2, .box1{
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
     overflow: hidden;
+}
+._detail{
+	width: 500px;
 }
 .box_vCount{
     margin-left: auto;

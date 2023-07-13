@@ -38,7 +38,7 @@
 		</div>
 	</c:if>
 	
-	<form method="post" action="<c:url value="/Admin/anno/Edit.do"/>">
+	<form method="post" action="<c:url value="/admin/anno/Edit.do"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<input type="hidden" name="no" value="${empty record.no ? param.no :record.no}" />
 		<div class="form-group">

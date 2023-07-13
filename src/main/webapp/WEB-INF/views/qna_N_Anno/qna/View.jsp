@@ -69,12 +69,12 @@
 	<div class="text-center">
 
 		<c:if test="${sessionScope.id ==record.id }" var="isWriter">
-			<a href="<c:url value="/Admin/qna/Edit.do?no=${record.no}"/>"	class="btn btn-success">수정</a> 
+			<a href="<c:url value="/admin/qna/Edit.do?no=${record.no}"/>"	class="btn btn-success">수정</a> 
 			<a href="javascript:isDelete()" class="btn btn-success">삭제</a>
 		</c:if>
 
 
-		<a href="<c:url value="/Admin/qna/List.do"/>"
+		<a href="<c:url value="/admin/qna/List.do"/>"
 			class="btn btn-success">목록</a>
 	</div>
 	<!-- 한줄 코멘트 입력/수정 폼 -->

@@ -11,6 +11,19 @@ body{
     padding: 40px 20px;
     min-width: 200px;
 }
+.logo {
+	font-family: 'Lexend Peta', sans-serif;
+	font-size : 30px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.logo-font{
+    color:#4294F5;
+    text-decoration: none;
+}
 .v_nav ul{
     list-style: none;
     padding: 0;
@@ -20,11 +33,12 @@ body{
 .v_nav li{
     margin-bottom: 20px;
 }
-.v_nav a{
+.v_nav a:not(.logo-font){
     text-decoration: none;
     font-size: 17px ;
     color: white;
 }
+
 .tab {
     position: relative;
 }
@@ -38,7 +52,7 @@ body{
     display: none;
     margin-left: 30px;
 }
-.v_nav a:hover{
+.v_nav a:hover:not(.logo-font){
     font-weight: bold;
     font-size: 20px;
 }
@@ -79,3 +93,4 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+

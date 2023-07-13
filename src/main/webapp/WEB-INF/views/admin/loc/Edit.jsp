@@ -24,6 +24,7 @@
       <div class="info row">
         <div id="usa" class="col-12">
           <ul class="list-unstyled Mloc edit_">
+            <span>지역별 관광지</span>
             <label for="loc_select">대분류 지역을 골라줘용</label>
             <select id="loc_select">
                 <option value="">전체</option>
@@ -33,18 +34,25 @@
                 <option value="인천">인천</option>
                 <option value="서울">서울</option>
             </select>
+            <input id="searchInput" type="text" placeholder="찾을 관광지">
             <li>
               <img src="images/1.jpg">
-              <div class="box_name">여행지 이름</div>
+              <input name="no" value="314" hidden>
+              <div class="box _name" name="name">안데르센 동화마을</div>
+              <div class="box _name" name="category">관광지</div>
+              <div class="box _detail" name="detail">부산 기장군 장안읍에 있는 도예 관광 힐링촌에 들어선 안데르센 동화마을은 어린이뿐 아니라 어른들도 아우르는 힐링 체험 공간으로 수많은 동화를 집필해 전 세계 아동들에게 사랑받는 안데르센의 생애와 그의 작품 세계를 한눈에 알 수 있다. 18세기 바로크 양식으로 재현한 안데르센 정원, 아이들과 함께하는 다양한 놀이시설이 있다.</div>
               <button class="edit_loc">수정</button>
             </li>
             <li>
               <img src="images/2.jpg">
-              <div class="box_name">제주</div>
+              <input name="no" value="2745" hidden>
+              <div class="box _name" name="name">국립일제강제동원역사관</div>
+              <div class="box _name" name="category">문화시설</div>
+              <div class="box _detail" name="detail">국립일제강제동원역사관은 일제강점기 강제동원의 실상을 규명함으로써 성숙한 역사의식을 고취하고, 인권과 세계평화에 대한 국민 교육의 장을 제공하는 것을 목적으로 건립되었다. 총 7만 5465㎡의 부지에 지상3층 지하4층, 건물 연면적 1만 2062㎡ 규모로 정부에서 수집한 강제 동원 수기, 사진, 박물류 등을 전시하고 있다. 역사관은 유족을 위한 추도·기념시설로서는 물론, 일제 강제동원 역사교육 공간이자 지역 주민의 친환경적 휴식 공간의 역할을 수행하고자 한다. UN기념공원, UN평화기념관과 함께 UN평화문화특구로 지정되어 있어 평화와 인권의 역사를 기억하고 체험하는 역사 관광 명소로 거듭날 것이다.</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/3.jpg">
-              <div class="box_name">전주</div>
+              <div class="box _name">전주</div>
               <button class="edit_loc">수정</button>
             </li>
             <li><img src="images/4.jpg">
@@ -70,51 +78,60 @@
 </body>
 
 <script>
-  var selectElement = document.getElementById("loc_select");//선택된 샐렉터 가져오기
-  selectElement.addEventListener("change", function() {
-      var selectedValue = selectElement.value;
-      console.log("선택지역 : ", selectedValue);
-  });
-
-
-
-const searchInput = document.getElementById('loc_select');
-const listItems = document.querySelectorAll('#usa .list-unstyled.Mloc li');
+	const searchInput = document.getElementById('searchInput');
+	const listItems = document.querySelectorAll('#usa .list-unstyled.Mloc li');
 
     searchInput.addEventListener('input', function() {
-      const searchText = searchInput.value.trim().toLowerCase();
+      	const searchText = searchInput.value.trim().toLowerCase();
 
-      listItems.forEach(function(li) {
-        const box1Text = li.querySelector('.box_name').textContent.toLowerCase();
-        // const box2Text = li.querySelector('.box_').textContent.toLowerCase();
-        const shouldShow = box1Text.includes(searchText)
+      	listItems.forEach(function(li) {
+        	const box1Text = li.querySelector('.box_name').textContent.toLowerCase();
+        	// const box2Text = li.querySelector('.box_').textContent.toLowerCase();
+        	const shouldShow = box1Text.includes(searchText)
 
-        li.style.display = shouldShow ? 'flex' : 'none';
-      });
+        	li.style.display = shouldShow ? 'flex' : 'none';
+      	});
     });
 
+    $('#loc_select').change(function(){
+        var selectVal = $(this).val();
+        console.log(selectVal)
+        $.ajax({
+          	url: '',
+          	method: 'POST',
+          	data: {val:selectVal}
+        });
+    });
 
+    $('.box').on('dblclick', function() {
+	  	const divElement = $(this);
+	  	const originalText = divElement.text();
+	  	const inputElement = $('<input>', {
+	    	type: 'text',
+	    	value: originalText
+    });
 
+  	inputElement.on('blur', function() {
+    	const newText = $(this).val().trim();
+    	divElement.text(newText);
+  	});
 
-    $('.box_name').on('dblclick', function() {
-  const divElement = $(this);
-  const originalText = divElement.text();
-  const inputElement = $('<input>', {
-    type: 'text',
-    value: originalText
-  });
+  	divElement.empty().append(inputElement);
+	  inputElement.focus();
+	});
 
-  inputElement.on('blur', function() {
-    const newText = $(this).val().trim();
-    divElement.text(newText);
-  });
-
-  divElement.empty().append(inputElement);
-  inputElement.focus();
-});
-
-  $('.box_name').change('change', function(){
-    $(this).siblings("button").css('display','block')
-  })
+  	$('.box').change('change', function(){
+    	$(this).siblings("button").css('display','block')
+  	});
+  
+    $('.edit_loc').click(function(event){
+    	$('.box').each(function() {
+   		  	if ($(this).text().trim() === '') {
+   		    	console.log('빈 문자열이 포함된 .box 요소가 있습니다.');
+   		    	return false
+   		  	}
+   		});
+    	console.log('왜?왜?왜?왜?왜?')
+    });
 </script>
 </html>

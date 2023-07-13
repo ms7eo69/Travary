@@ -50,7 +50,7 @@ public class BoardController {
 		return "board/List";
 	}
 	
-	@PostMapping("/Admin/anno/Write")
+	@PostMapping("/admin/anno/Write")
 	public String write(@RequestParam Map map) {
 		boardService.insert(map);
 		System.out.println("ddddddddd");

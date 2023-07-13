@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 @Controller
-@RequestMapping("/Admin")
+@RequestMapping("/admin")
 public class AdminController {
 
 	@Autowired
@@ -63,10 +63,12 @@ public class AdminController {
 	public String admin_qna_list() {return "qna_N_Anno/qna/List";}
 	@RequestMapping("/qna/View.do")
 	public String admin_qna_view() {return "qna_N_Anno/qna/View";}
+	
 	@GetMapping("/qna/Edit.do")
 	public String admin_qna_edit() {return "qna_N_Anno/qna/Edit";}
 	@PostMapping("/qna/Edit.do")
 	public String admin_qna_editok() {return "qna_N_Anno/qna/List";}
+	
 	@GetMapping("/qna/Write.do")
 	public String admin_qna_write() {return "qna_N_Anno/qna/Write";}
 	@PostMapping("/qna/Write.do")
