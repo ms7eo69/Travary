@@ -40,6 +40,7 @@ public class DatabaseConfig {
 		hikariConfig.setUsername(id);
 		hikariConfig.setPassword(password);
 		hikariConfig.setAutoCommit(true);
+		hikariConfig.setMaximumPoolSize(20);
 		hikariConfig.setConnectionTimeout(3000);
 		hikariConfig.setMaximumPoolSize(20);
 //		hikariConfig.setValidationTimeout(3000);
