@@ -50,7 +50,7 @@
                     <div class="logo">
                         <a href="<c:url value='/'/>" class="logo-font">TRAVARY</a>
                     </div>         
-                    <div class="settings"></div>       
+                    <div class="settings"></div>
                 </div>
                 <div id="nav-body ">
                     <div class="menu-style">
@@ -113,6 +113,11 @@
                                 <a href="<c:url value="/Community.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">커뮤니티</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="/admin/user/Index.do"/>">
+                                    <span class="nav-text">관리자 페이지</span>
                                 </a>
                             </li>
                         </ul>
