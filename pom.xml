@@ -74,12 +74,6 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		<!--Lombok 라이브러리 -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
-		</dependency>
 		<!-- SPRING BOOT에서 JWToken 클래스 사용하기 -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -95,25 +89,45 @@
 			<artifactId>json</artifactId>
 			<version>20230227</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<!--웹 소켓 라이브러리-->
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-websocket</artifactId>					
+			<artifactId>spring-websocket</artifactId>
 		</dependency>
-		
 		<dependency>
-		    <groupId>com.google.code.gson</groupId>
-		    <artifactId>gson</artifactId>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
 		</dependency>
-		<!-- sms인증 관련 -->
 		
+		<!-- sms인증 관련 -->
+
 		<!-- https://mvnrepository.com/artifact/net.nurigo/javaSDK -->
 		<dependency>
-		    <groupId>net.nurigo</groupId>
-		    <artifactId>javaSDK</artifactId>
-		    <version>2.2</version>
+			<groupId>net.nurigo</groupId>
+			<artifactId>javaSDK</artifactId>
+			<version>2.2</version>
 		</dependency>
-		
+
+
+		<!-- Oracle Wallet-->
+		<dependency>
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>osdt_core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>oraclepki</artifactId>
+			<version>23.2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>osdt_cert</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

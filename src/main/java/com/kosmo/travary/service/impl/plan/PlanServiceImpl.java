@@ -16,7 +16,7 @@ public class PlanServiceImpl implements DaoService{
 	
 	@Override
 	public List<Map> selectList(Map map) {
-		return null;
+		return mapper.selectList(map);
 	}
 
 	@Override
@@ -47,10 +47,13 @@ public class PlanServiceImpl implements DaoService{
 	public List<String> selectLregion() {
 		return mapper.selectLregion();
 	}
+	public List<Map> selectMarkersByBoundary(Map map) {
+		return mapper.selectMarkersByBoundary(map);
+	}
+	
 	public List<Map> selectByBoundary(Map map) {
 		return mapper.selectByBoundary(map);
 	}
-
 	public Map selectMainPlace(String sregion) {
 		return mapper.selectMainPlace(sregion);
 	}
@@ -69,6 +72,22 @@ public class PlanServiceImpl implements DaoService{
 
 	public List<Map> selectAnotherByBoundary(Map map) {
 		return mapper.selectAnotherByBoundary(map);
+	}
+
+	public int insertBoundaryPinpoint(Map map) {
+		return mapper.insertBoundaryPinpoint(map);
+	}
+
+	public String selectBoundaryPinpoint(Map map) {
+		return mapper.selectBoundaryPinpoint(map);
+	}
+
+	public List<Map> selectBoundarysByLregion(Map map) {
+		return mapper.selectBoundarysByLregion(map);
+	}
+
+	public List<Map> selectMarkersByLregion(Map map) {
+		return mapper.selectMarkersByLregion(map);
 	}
 
 	// Search Trend

@@ -6,10 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.kosmo.travary.service.DaoService;
 
-import lombok.RequiredArgsConstructor;
-
 @Service("memberService")
-@RequiredArgsConstructor
 public class MemberServiceImpl implements DaoService {
 	@Autowired
 	private MemberMapper mapper;
@@ -50,7 +47,7 @@ public class MemberServiceImpl implements DaoService {
 	}
 	@Override
 	public Map selectOne(Map map) {
-		return null;
+		return mapper.selectOne(map);
 	}
 	
 	public int GoogleInsert(Map map) {

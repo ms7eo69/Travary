@@ -2,6 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper
-	namespace="com.kosmo.travary.service.impl.board.BoardMapper">
+<mapper namespace="com.kosmo.travary.service.impl.board.BoardMapper">
+
+	<insert id="save" parameterType="Map">
+		INSERT INTO admin_post VALUES(admin_post_seq.NEXTVAL, #{title}, #{content}, '관리자', sysdate)
+	</insert>
+	<select id="findAll" parameterType="Map" resultType="Map">
+		SELECT postno, title, nickname, postdate FROM admin_post
+	</select>
 </mapper>

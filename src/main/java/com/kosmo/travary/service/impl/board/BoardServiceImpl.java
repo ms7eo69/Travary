@@ -27,12 +27,12 @@ public class BoardServiceImpl implements DaoService {
 
 	@Override
 	public int insert(Map map) {
-		return 0;
+		return mapper.save(map);
 	}
 
 	@Override
 	public List<Map> selectList(Map map) {
-		return null;
+		return mapper.findAll(map);
 	}
 
 	@Override

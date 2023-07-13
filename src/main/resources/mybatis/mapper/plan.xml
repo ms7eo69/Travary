@@ -4,6 +4,45 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
 	namespace="com.kosmo.travary.service.impl.plan.PlanMapper">
+	<select id="selectList" >
+		SELECT * FROM place ORDER BY no
+	</select>
+	
+	<!-- 핀포인트 설정 -->
+	<resultMap type="map" id="lowerlntlat">
+		<result property="x" column="LNT"/>
+		<result property="y" column="LAT"/>
+	</resultMap>
+	<select id="selectMarkersByLregion" parameterType="map" resultMap="lowerlntlat">
+		SELECT lnt,lat,name,sum,category
+		FROM place_loc l 
+		JOIN place p ON l.no=p.no
+		JOIN place_pop o ON o.no=p.no
+		WHERE lregion=#{lregion}
+		ORDER BY sum DESC
+	</select>
+	<select id="selectBoundarysByLregion" parameterType="map" resultType="map">
+		SELECT *
+		FROM place_boundary b
+		JOIN place p ON p.no = b.no
+		JOIN place_loc l ON p.no = l.no 
+		WHERE lregion=#{lregion}
+	</select>
+	
+	<select id="selectBoundaryPinpoint" parameterType="map" resultType="String">
+		SELECT * FROM 
+		(SELECT p.no FROM place p 
+		JOIN place_loc l on p.no = l.no
+		JOIN place_pop o on o.no = p.no
+		WHERE lat between #{_min.y} AND #{_max.y} 
+		AND lnt between #{_min.x} AND #{_max.x}
+		ORDER BY sum DESC) 
+		WHERE rownum =1
+	</select>
+	<insert id="insertBoundaryPinpoint" parameterType="map">
+		INSERT INTO place_boundary VALUES(#{no},#{_min.x},#{_min.y},#{_max.x},#{_max.y})
+	</insert>
+	
 	<select id="selectByNo" resultType="map" parameterType="map">
 		SELECT * FROM place WHERE no=#{key.no}
 	</select>
@@ -29,6 +68,19 @@
 		order by sum desc)
 		WHERE rownum &lt;=(#{COUNT}-1)
 	</select>
+	
+	<select id="selectMarkersByBoundary" resultType="map" parameterType="map">
+		SELECT name,sum FROM place p 
+		JOIN place_pop o ON o.no=p.no 
+		JOIN place_loc l ON l.no=p.no
+		WHERE lnt BETWEEN #{_min.x} AND #{_max.x}
+		AND lat BETWEEN #{_min.y} AND #{_max.y}
+		ORDER BY sum DESC
+	</select>
+	
+	<!-- 관리자 페이지 바운더리 설정용 -->
+	<select id="selectBoundaryByLregion" resultType="map"></select>
+	
 	<select id="selectAnotherByBoundary" resultType="map" parameterType="map">
 		SELECT * FROM
 		(SELECT p.no,name,lat,lnt,sum,detail,lregion FROM place p 

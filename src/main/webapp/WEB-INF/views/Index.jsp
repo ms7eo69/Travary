@@ -44,13 +44,13 @@
   <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
     <div class="container-fluid " style="height: 100vh">
      <nav class="main-menu position-fixed shadow ">
-        <div class="outerDiv ">
+        <div class="outerDiv">
             <div class="innerDiv">
                <div id="nav-header">
                     <div class="logo">
                         <a href="<c:url value='/'/>" class="logo-font">TRAVARY</a>
                     </div>         
-                    <div class="settings"></div>       
+                    <div class="settings"></div>
                 </div>
                 <div id="nav-body ">
                     <div class="menu-style">
@@ -80,7 +80,7 @@
                                 </a>
                             </li>
                             <li>
-                                 <a href="<c:url value="/"/>">
+                                 <a href="<c:url value="/chat/enterChatList"/>">
                                     <i class="fa fa-sharp fa-solid fa-paper-plane"></i>
                                     <span class="nav-text">메시지</span>
                                 </a>
@@ -104,7 +104,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<c:url value="/Route.do"/>">
+                                <a href="<c:url value="/plan/Route.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">경로</span>
                                 </a>
@@ -113,6 +113,11 @@
                                 <a href="<c:url value="/Community.do"/>">
                                     <i class="fa fa-solid fa-circle-user"><img class="rounded-circle" src=""></i>
                                     <span class="nav-text">커뮤니티</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="<c:url value="/admin/user/Index.do"/>">
+                                    <span class="nav-text">관리자 페이지</span>
                                 </a>
                             </li>
                         </ul>
@@ -135,7 +140,7 @@
         </div>
     </nav>  
      <!---------------------------------------------네비게이션바 끝------------------------------------------- -->  
-      
+      <!-------------------------------------------- 배경 이미지------------------------------------------- -->  
 	
       <section class="section section-top section-full">
         <!-- Cover -->
@@ -576,28 +581,7 @@
             
           })
         }
-        var page=1;
-        var index=0;
-        var content = $('.scroll_add').clone();
-        $(window).scroll(function() {
-          // console.log($(window).scrollTop(),$(document).height() - $(window).height());
-          if ( 100 > $(document).height() - $(window).height() - $(window).scrollTop()) {
-            console.log('간닷!');
 
-            // loadData()//ajax 함수 호출!
-            
-            // var src = '../images/'+(index++)+'.jpg';
-           	// for(var i=0;i<content.find('img').length;i++)
-            // content.find('img:eq('+i+')').prop('src','../images/'+(index+i)+'.jpg');
-            // content.find('img:eq(1)').prop('src','../images/2.jpg');
-            // content.find('img:eq(2)').prop('src','../images/3.jpg');
-            // content.find('img:eq(3)').prop('src','../images/4.jpg');
-            $(".scroll_add").append(content.html());
-            page++;
-            index++;
-            console.log(index);
-          }
-        });
     </script>
   </body>
 </html>
@@ -605,10 +589,10 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <form class="modal-body1" action="/travary/Index.msp" method="post">
+            <form class="modal-body1" action="/travary/member/Login" method="post">
                 <img src="<c:url value="/images/logo/logo.png"/> " class="modal-logo">
-                <input type="text" placeholder="아이디" class="inlilneToBlock">
-                <input type="password" placeholder="비밀번호" class="inlilneToBlock">                    
+                <input type="text" name="id" placeholder="아이디" class="inlilneToBlock">
+                <input type="password" name="pwd" placeholder="비밀번호" class="inlilneToBlock">                    
                 <button class="inlineToBlock ordinaryLogin unactivatedLoginColor" type="submit">로그인</button>
                 <div class="horizonAndOrWrap">
                     <hr class="leftHr">
@@ -617,13 +601,13 @@
                 </div>
             </form>
             <div class="modal-body2 mb-2">
-                <a href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/member/kakaoLogin&response_type=code" class="noneunderline">                    
+                <a href="https://kauth.kakao.com/oauth/authorize?client_id=ce24a312ecf7ce42435f8de5f549dd5b&redirect_uri=http://localhost:7070/travary/member/kakaoLogin&response_type=code" class="noneunderline">                    
                     <img src="<c:url value="/images/login/kakaoicon.png"/>" class="kakaoIcon">                    
                 </a>
-                <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:7070/member/GoogleMyPage.do&access_type=offline&prompt=consent" class="noneunderline">                    
+                <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=971116911703-f7afs5url9crbvhm5lsc0l0fpn3toens.apps.googleusercontent.com&response_type=code&scope=openid%20email%20profile&redirect_uri=http://localhost:7070/travary/member/GoogleMyPage.do&access_type=offline&prompt=consent" class="noneunderline">                    
                     <img src="<c:url value="/images/login/googleicon.png"/>" class="googleIcon">
                 </a>
-                <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=GsYVpg82aBYC9e00ww1B&redirect_uri=http://localhost:7070/member/NaverMyPage.do" class="noneunderline">                    
+                <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=GsYVpg82aBYC9e00ww1B&redirect_uri=http://localhost:7070/travary/member/NaverMyPage.do" class="noneunderline">                    
                     <img src="<c:url value="/images/login/navericon.png"/>" class="naverIcon"></a>
             </div>
             <div class="modal-body3">

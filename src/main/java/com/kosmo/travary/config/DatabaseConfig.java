@@ -25,24 +25,28 @@ public class DatabaseConfig {
 	@Bean
 	DataSource dataSource() {
 		
+		String projectDir = System.getProperty("user.dir");
+        System.setProperty("TNS_ADMIN", projectDir + "/src/main/resources/wallet");
 		//HikariConfig객체 생성후 데이터베이스 연결 및 커넥션 풀 정보 설정
 		HikariConfig hikariConfig = new HikariConfig();
+		hikariConfig.setMaximumPoolSize(20);
 		hikariConfig.setDriverClassName(driver);
+		
+		
+		//TNS_ADMIN 변수 설정
+	
+        hikariConfig.setMaximumPoolSize(20);	
 		hikariConfig.setJdbcUrl(url);
 		hikariConfig.setUsername(id);
 		hikariConfig.setPassword(password);
-		//해커리 커넥션 풀 관련 설정 추가
-		//auto commit설정 기본값(true)
 		hikariConfig.setAutoCommit(true);
-		/*
-		 * 커넥션 풀에 최대 커넥션 수. (기본값: 10) 
-		 * IDLE상태에 있는 커넥션이 없을 때 
-		 * connection-timeout이 지날 때까지
-		 * getConnection() 호출은 블록킹된다
-		 */
-		hikariConfig.setConnectionTimeout(30000);
-	
-		//DataSource를 상속받은 HikariDataSource객체 반환
+		hikariConfig.setMaximumPoolSize(20);
+		hikariConfig.setConnectionTimeout(3000);
+		hikariConfig.setMaximumPoolSize(20);
+//		hikariConfig.setValidationTimeout(3000);
+//		hikariConfig.setMinimumIdle(5);
+//		hikariConfig.setIdleTimeout(200000);
+//		hikariConfig.setMaxLifetime(240000);
 		return new HikariDataSource(hikariConfig);
 	}
 	
