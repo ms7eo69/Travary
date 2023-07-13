@@ -48,6 +48,22 @@ public class WebSocketServer extends TextWebSocketHandler {
                 }
             }
         }
+        // DM 기능: 특정 사용자에게만 메시지 전송
+        if (message.getPayload().startsWith("/dm ")) {
+            String[] tokens = message.getPayload().split(" ");
+            if (tokens.length >= 3) {
+                String receiverId = tokens[1]; // 수신자의 세션 ID 또는 식별자
+                String dmContent = message.getPayload().substring(tokens[0].length() + tokens[1].length() + 2);
+                
+                // 수신자를 찾아 메시지 전송
+                for (WebSocketSession s : roomSessions) {
+                    if (s.getId().equals(receiverId)) {
+                        s.sendMessage(new TextMessage("DM from " + sessionId + ": " + dmContent));
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     @Override
