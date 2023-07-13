@@ -135,6 +135,7 @@
    		});
     	if(emptyBox){
     		event.preventDefault();
+    		event.stopPropagation();
     		return false;
     	}
     	console.log('왜?왜?왜?왜?왜?')
