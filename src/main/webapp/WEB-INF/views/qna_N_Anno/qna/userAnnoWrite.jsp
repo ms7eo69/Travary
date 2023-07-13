@@ -26,7 +26,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
-    <form class="container" method="post" action="<c:url value="/Admin/qna/Write.do"/>">
+    <form class="container" method="post" action="<c:url value="/admin/qna/Write.do"/>">
         <h2>어떤 문제를 겪고 계신가요?</h2>
         <!-- <select>
             <option></option>

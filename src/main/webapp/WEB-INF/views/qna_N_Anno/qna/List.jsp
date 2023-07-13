@@ -54,7 +54,7 @@
 				<c:forEach var="record" items="${listPagingData.records }">
 					<tr>
 						<td>${record.no }</td>
-						<td class="text-left"><a href="<c:url value="/Admin/qna/View.do?no=${record.no}"/>">${record.title}</a></td>
+						<td class="text-left"><a href="<c:url value="/admin/qna/View.do?no=${record.no}"/>">${record.title}</a></td>
 						<td>${record.name }</td>
 						<td>${record.postDate }</td>
 					</tr>
