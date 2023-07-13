@@ -23,7 +23,7 @@ import com.kosmo.travary.service.impl.board.BoardServiceImpl;
 
 @Controller
 //@RequestMapping("/board")
-@RequestMapping("/Admin")
+@RequestMapping("/admin")
 public class BoardController {
 
 	@Autowired
