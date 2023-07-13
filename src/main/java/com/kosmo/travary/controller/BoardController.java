@@ -56,16 +56,17 @@ public class BoardController {
 	}
 	
 	@PostMapping("/anno/Write")
-	public String write(@RequestParam Map map) {
+	public String write(@RequestParam Map map, Model model) {
 		int affected = boardService.insert(map);
 		System.out.println("ddddddddd");
+		model.addAttribute("records", map);
 		return affected == 1 ? "redirect:/Admin/anno/List.do" : "forward:/";
 	}
 	@GetMapping("/anno/Write.do")
 	public String writeOk() {
 		//int affected = boardService.insert(map);
 		//System.out.println("ddddddddd");
-		return "redirect:/Admin/anno/Write.do";
+		return "/qna_N_Anno/anno/Write";
 	}
 	
 	@PostMapping("/WriteProcess.msp")

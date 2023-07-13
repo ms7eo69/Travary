@@ -27,7 +27,7 @@
 		</div>
 	</c:if>
 	
-	<form method="post" action="<c:url value="/board/Admin/anno/Write"/>">
+	<form method="post" action="<c:url value="/Admin/anno/Write"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<div class="form-group">
 			<label><kbd class="lead">제목</kbd></label> 

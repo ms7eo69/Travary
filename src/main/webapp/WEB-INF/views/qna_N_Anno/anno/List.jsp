@@ -29,6 +29,8 @@
                     <th>제목</th>
                     <th class="col-2">글쓴이</th>
                     <th class="col-2">작성일</th>
+                    <th>${records}</th>
+                    
                 </tr>
             </thead>
             <tbody class="table-sm down-file-body">
