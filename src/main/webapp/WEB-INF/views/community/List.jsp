@@ -30,7 +30,7 @@
 </head>
 <body>
 <!---------------------------------------------네비게이션바 시작------------------------------------------- -->
-    <div class="container-fluid " style="height: 100vh">
+    <div class="container-fluid row" style="height: 100vh">
      <nav class="main-menu position-fixed shadow ">
         <div class="outerDiv ">
             <div class="innerDiv">
@@ -123,8 +123,8 @@
     </nav>  
      <!---------------------------------------------네비게이션바 끝------------------------------------------- --> 
    <!-------------------------------------------- 포스팅 버튼----------------------------------------------------->
-	<div class="d-flex">
-	  <button type="button" class="btn btn-primary PublishButton justify-content-right">포스팅</button>
+	<div>
+	  <button type="button" class="btn btn-primary PublishButton">+POSTING</button>
 	</div>
 	
 	   <!-------------------------------------------- 여행 선택----------------------------------------------------->
@@ -282,7 +282,7 @@
  <!----------------------------------게시글 상세보기 모달---------------------------------->
 	<div id="myModal" style="display: none;">
 	  <div class="view_sns">
-	    <div class="view_content row ">
+	    <div class="view_content row d-flex">
 	      <div class="col-md-7 sns_photos">
 	        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 			  <ol class="carousel-indicators">
@@ -318,20 +318,21 @@
 			  </button>
 			</div>
 	      </div>
-	      <div class="col-md-5 sns_details d-flex flex-column pl-0 pr-4">
-        	<div class="sns_id d-flex align-items-center my-3">
+	      <div class="col-md-5 sns_details">
+        	<div class="sns_id d-flex align-items-center">
                	 <img src="<c:url value="/images/profile/yunakim.jpg"/> " class="profileImageMd ml-0 mr-2 ">
                     <div class="viewUserId">Yuna</div>
             </div>
-	        <div class="sns_title flex-fill mb-5">
+	        <div class="sns_title">
 	          <h3>영도 가볼만한 곳 여행 코스</h3>
 	        </div>
-	        <div class="sns_content flex-fill mb-5">
+	        <div class="sns_content">
 	          <p>#핵심 포인트: 송도해수욕장 동쪽의 송림공원에서 서쪽 암남공원을 오가는 케이블카 입니다. 송도의 풍경 보기 위해서는 케이블카를 타는 것을 추천해요.</p>
 	        </div>
-	        <div class="sns_comments flex-fill mb-auto ">
+	        <div class="sns_comments">
 	          <input type="text" name=comment class="form-control" placeholder="comment">
 	        </div>
+	        
 	        <div class="sns_location">
 	        	<div class="card mb-3 shadow" style="">
 				  <div class="row no-gutters">

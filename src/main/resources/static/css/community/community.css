@@ -1,20 +1,21 @@
 @charset "UTF-8";
 
 .PublishButton{
-    width: 100px;
-    height: 100px;
     position: fixed;
-    margin-left: 1800px;
-    top: 200px;
     z-index: 200;
-    text-align: center;
+	margin:auto;
+    width: 6rem;
+    height: 6rem;
+    right: 10%;
+    top: 20%;
     display: flex;
-    -webkit-box-align: center;
+    justify-content:center;
     align-items: center;
     cursor: pointer;
     border-radius: 100%;
     background-color:#4294F5;
     border : none;
+    font-weight:bold;
 }
 	
 	.view-container{
@@ -118,11 +119,13 @@
 	}
 	.view_content{
 		justify-content:center;
-		align-items:center;
+		align-items:start;
 		color: gray;
+		margin:0;
 	}
 	.sns_photos {
 	  position: relative;
+	  padding:0;
 	}
 	.carousel-item img {
 	  width: 100%;
@@ -130,7 +133,13 @@
 	  object-fit: cover;
 	}
 	.sns_details{
-	  height: 80vh;
+		display:flex;
+		flex-direction:column;
+		width:100%;
+		height:80vh;
+	 	/*justify-content:start;*/
+	 	align-items:stretch; 
+	 	padding:1rem;	
 	}
 	.profileImageMd{
     	border-radius: 100%;
@@ -138,18 +147,41 @@
    		height:50px;
    		object-fit: cover;
 	}
+	.sns_id{
+		margin: 1rem 0;
+	}
 	.viewUserId{
 		font-weight:noraml; 
-		font-size: 20px;
+		font-size: 1rem;
+		color:#282828;
 	}
 	.sns_title{
-		top:0;
-		font-size: 25px;
+		font-size: 1.3rem;
+		margin-bottom:1rem;
+		
 	}
+	.sns_title h3{
+		font-size: 1.3rem;
+		color:#282828;
+		font-weight: bold;
+	}
+	.sns_content p{
+		font-size: 1rem;
+		color:#282828;
+		height:50%;
+	}
+	.sns_comments{
+		margin-top:auto;
+	}
+	.sns_location{
+		margin-top:1rem;
+	}
+	
 	.sns_location img {
 		width: 100%;
 		height: 15vh;
 	  	object-fit: cover;
+	  	
 	}
 	.card-title{
 	 color:black;
@@ -157,7 +189,8 @@
 	.courseImg{
 		object-fit:cover;
 		width: 100%;
-		height:100%
+		height:100%;
+		
 	}
 	.sns-location-btn a{
 		width:100px;
