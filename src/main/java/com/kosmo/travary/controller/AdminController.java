@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.kosmo.travary.service.impl.admin.AdminServiceImpl;
 import com.kosmo.travary.service.impl.plan.PlanServiceImpl;
 
 @Controller
@@ -20,10 +21,16 @@ public class AdminController {
 
 	@Autowired
 	private PlanServiceImpl place;
-	
+	@Autowired
+	private AdminServiceImpl admin;
 	
 	@RequestMapping("/user/Index.do")
-	public String admin_user() {return "admin/user/Index";}
+	public String admin_user() {
+		Map<String, Integer> gender = admin.getGender(); 
+		
+		
+		return "admin/user/Index";
+		}
 	//@RequestMapping("/user/All.do")
 	//public String admin_user_All() {return "admin/user/All";}
 	
