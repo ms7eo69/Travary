@@ -40,15 +40,15 @@
 	
 	<form method="post" action="<c:url value="/admin/anno/Edit.do"/>">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-		<input type="hidden" name="no" value="${empty record.no ? param.no :record.no}" />
+		<input type="hidden" name="postno" value="${empty record.POSTNO ? param.POSTNO :record.POSTNO}" />
 		<div class="form-group">
 			<label><kbd class="lead">제목</kbd></label> <input type="text"
-				value="${record.title}${param.title}" class="form-control" placeholder="제목을 입력하세요"
+				value="${record.TITLE}${param.TITLE}" class="form-control" placeholder="제목을 입력하세요"
 				name="title">
 		</div>
 		<div class="form-group">
 			<label><kbd class="lead">내용</kbd></label>
-			<textarea class="form-control" rows="10" name="content">${record.content}${param.content}</textarea>
+			<textarea class="form-control" rows="10" name="content">${record.CONTENT}${param.CONTENT}</textarea>
 		</div>
 		<button type="submit" class="btn btn-primary">수정</button>
 	</form>

@@ -34,20 +34,22 @@ public class BoardServiceImpl implements DaoService {
 	public List<Map> selectList(Map map) {
 		return mapper.findAll(map);
 	}
+	
+	@Override
+	public Map selectOne(Map map) {
+		return mapper.findByNo(map);
+	}
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return mapper.updateByNo(map);
 	}
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return mapper.deleteByNo(map);
 	}
 
-	@Override
-	public Map selectOne(Map map) {
-		return null;
-	}
+	
 
 }

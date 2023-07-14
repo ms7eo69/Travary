@@ -55,19 +55,20 @@ public class AdminController {
 	//@RequestMapping("/anno/List.do")
 	//public String admin_anno() {System.out.println("ddddddddddddd"); return "qna_N_Anno/anno/List";}
 	
-	@RequestMapping("/anno/View.do")
-	public String admin_anno_view() {return "qna_N_Anno/anno/View";}
+	//@RequestMapping("/anno/View.do")
+	//public String admin_anno_view() {return "qna_N_Anno/anno/View";}
 	/*
 	@GetMapping("/anno/Write.do")
 	public String admin_anno_write() {return "qna_N_Anno/anno/Write";}
 	@PostMapping("/anno/Write.do")
-	public String admin_anno_writeok() {return "qna_N_Anno/anno/Write";}*/
-	
+	public String admin_anno_writeok() {return "qna_N_Anno/anno/Write";}
+	*/
+	/*
 	@GetMapping("/anno/Edit.do")
 	public String admin_anno_edit() {return "qna_N_Anno/anno/Edit";}
 	@PostMapping("/anno/Edit.do")
 	public String admin_anno_editok() {return "qna_N_Anno/anno/List";}
-
+	*/
 	
 	@RequestMapping("/qna/List.do")
 	public String admin_qna_list() {return "qna_N_Anno/qna/List";}

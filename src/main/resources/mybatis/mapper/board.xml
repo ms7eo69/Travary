@@ -8,6 +8,15 @@
 		INSERT INTO admin_post VALUES(admin_post_seq.NEXTVAL, #{title}, #{content}, '관리자', sysdate)
 	</insert>
 	<select id="findAll" parameterType="Map" resultType="Map">
-		SELECT postno, title, nickname, postdate FROM admin_post
+		SELECT postno, title, nickname, TO_CHAR(postdate, 'YYYY-MM-DD') AS postdate FROM admin_post ORDER BY postno DESC
 	</select>
+	<select id="findByNo" parameterType="Map" resultType="Map">
+		SELECT postno, title, nickname, content, TO_CHAR(postdate, 'YYYY-MM-DD') AS postdate FROM admin_post WHERE POSTNO = #{POSTNO}
+	</select>
+	<delete id="deleteByNo" parameterType="Map">
+		DELETE admin_post WHERE POSTNO = #{POSTNO}
+	</delete>
+	<update id="updateByNo" parameterType="Map">
+		UPDATE admin_post SET title=#{title}, content=#{content} WHERE postno = #{postno}
+	</update>
 </mapper>

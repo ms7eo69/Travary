@@ -41,7 +41,7 @@
 			        <c:forEach var="record" items="${records}">
 			            <tr>
 			                <td>${record.POSTNO}</td>
-			                <td>${record.TITLE}</td>
+			                <td class="text-left"><a href="<c:url value="/admin/anno/View.do?POSTNO=${record.POSTNO}"/>">${record.TITLE}</a></td>
 			                <td>${record.NICKNAME}</td>
 			                <td>${record.POSTDATE}</td>
 			            </tr>
