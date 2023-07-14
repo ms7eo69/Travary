@@ -16,4 +16,7 @@
 	<delete id="deleteByNo" parameterType="Map">
 		DELETE admin_post WHERE POSTNO = #{POSTNO}
 	</delete>
+	<update id="updateByNo" parameterType="Map">
+		UPDATE admin_post SET title=#{title}, content=#{content} WHERE postno = #{postno}
+	</update>
 </mapper>

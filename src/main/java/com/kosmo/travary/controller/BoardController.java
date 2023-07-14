@@ -56,19 +56,18 @@ public class BoardController {
 	}
 	
 	//글작성
+	@GetMapping("/anno/Write.do")
+	public String write() {
+		return "/qna_N_Anno/anno/Write";
+	}
 	@PostMapping("/anno/Write")
-	public String write(@RequestParam Map map, Model model) {
+	public String writeOk(@RequestParam Map map, Model model) {
 		int affected = boardService.insert(map);
 		System.out.println("ddddddddd");
 		model.addAttribute("records", map);
 		return affected == 1 ? "redirect:/admin/anno/List.do" : "forward:/";
 	}
-	@GetMapping("/anno/Write.do")
-	public String writeOk() {
-		//int affected = boardService.insert(map);
-		//System.out.println("ddddddddd");
-		return "/qna_N_Anno/anno/Write";
-	}
+	
 	
 	//상세보기
 	@RequestMapping("/anno/View.do")
@@ -86,6 +85,23 @@ public class BoardController {
 		//System.out.println("ddddddddddddddd");
 		return "redirect:/admin/anno/List.do";
 	}
+	
+	//수정
+	@GetMapping("/anno/Edit.do")
+	public String edit(@RequestParam Map map, Model model) {
+		Map records = boardService.selectOne(map);
+		model.addAttribute("record", records);
+		System.out.println("eeeeeeeeeeeeeeeeee");		
+		return "qna_N_Anno/anno/Edit";
+	}
+	
+	@PostMapping("/anno/Edit.do")
+	public String editok(@RequestParam Map map, Model model) {
+		boardService.update(map);	
+		System.out.println("xxxxxxxxxxxxxxxxxxxxxx");
+		return "redirect:/admin/anno/List.do";
+	}
+	
 	
 	/*
 	@PostMapping("/WriteProcess.msp")

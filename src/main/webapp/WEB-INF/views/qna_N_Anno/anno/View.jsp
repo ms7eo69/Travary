@@ -69,7 +69,7 @@
 	<div class="text-center">
 
 		<c:if test="${sessionScope.id ==record.id }" var="isWriter">
-			<a href="<c:url value="/admin/anno/Edit.do?no=${record.no}"/>"	class="btn btn-success">수정</a> 
+			<a href="<c:url value="/admin/anno/Edit.do?POSTNO=${record.POSTNO}"/>"	class="btn btn-success">수정</a> 
 			<a href="javascript:isDelete()" class="btn btn-success">삭제</a>
 		</c:if>
 

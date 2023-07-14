@@ -42,7 +42,7 @@ public class BoardServiceImpl implements DaoService {
 
 	@Override
 	public int update(Map map) {
-		return 0;
+		return mapper.updateByNo(map);
 	}
 
 	@Override
