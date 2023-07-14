@@ -39,8 +39,12 @@
 		</div>
 		<div class="col-3">			
 			<div class="row" style="height: 65px;display: flex;text-align: center;">
-				<div class="col" style=";border-right: 1px solid black;height: inherit;">추천 장소</div>
-				<div class="col">추전 호텔</div>
+				<div class="col-6" style="padding-top:20px;border-right: 1px solid black;background: rgba(123,255,255);height: 65px;">
+					추천 장소
+				</div>
+				<div class="col-6" style="padding-top:20px;">
+					추천 호텔
+				</div>
 			</div>			
 			<hr>
             <nav class="navbar spot_sidebar">            	

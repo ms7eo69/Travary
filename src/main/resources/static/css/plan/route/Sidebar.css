@@ -36,6 +36,11 @@
 	display: flex;
 	justify-content: flex-start;	
 }
+
+.dropdown-toggle:after {
+	display: none !important;
+}
+
 /*로그인 모달 CSS*/
 .close {
     margin-left: 280px;
