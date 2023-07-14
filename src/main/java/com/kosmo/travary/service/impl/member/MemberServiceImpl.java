@@ -67,9 +67,4 @@ public class MemberServiceImpl implements DaoService {
 		return mapper.saveKey(map);
 	}
 	
-
-	public List<Map> alladmininfo(Map map) {
-		return mapper.findAll_Admin(map);
-	}
-	
 }
