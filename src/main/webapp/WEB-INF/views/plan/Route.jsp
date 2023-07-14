@@ -32,43 +32,81 @@
 		<div class="col-2">
 			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
-		<div class="col-8">
+		<div class="col-7">
 			<div>
 				<div id="map" class="nmap-main"></div>
 			</div>
 		</div>
-		<div class="col-2">			
-            <nav class="navbar spot_sidebar">
+		<div class="col-3">			
+			<div class="row" style="height: 65px;display: flex;text-align: center;">
+				<div class="col" style=";border-right: 1px solid black;height: inherit;">추천 장소</div>
+				<div class="col">추전 호텔</div>
+			</div>			
+			<hr>
+            <nav class="navbar spot_sidebar">            	
             	<ul class="navbar-nav" id="spot_list">
-            		<li class="spot_card">
-            			<div>
-           					<img alt="Image" src="https://www.myro.co.kr/getSpotImage/jeju?no=1000" id="card_img1">
-       						<div class="spot_state_div">
-       							<div class="loc_state">
-       								<i class="material-icons">place</i>            								
-       							</div>            							
-       						</div>
-            			</div>
-            			<div class="spot_info">
-            				<span class="spot_list1">
-            					<h6>
-            						성산일출봉
-            						<br>
-            						<div class="spot_eng">
-	            						Seongsan
-	            						<div></div>
-	            						<div>
-		            						<div class="btn spot_btn_icon">
-		            							<i class="material-icons">info</i>
-		            						</div>
-		            					</div>    						
-            						</div>
-            					</h6>
-            				</span>
-            			</div>
-            		</li>
+            		<div class="card mb-3">            		
+					  	<div class="row no-gutters">
+						    <div class="col-4">
+						    	<img src="<c:url value="/images/landing/landing1.jpg"/>" style="width: 100%;height: 110px; border-radius: 8px 0 0 8px;">
+						    </div>
+						    <div class="col-8">
+						    	<legend>title</legend>
+						    	<span>jsdklfjdslkfjdslk</span>
+						    </div>
+					    </div>			
+				    </div>		
+					<div class="card mb-3">            		
+					  	<div class="row no-gutters">
+						    <div class="col-4">
+						    	<img src="<c:url value="/images/landing/landing1.jpg"/>" style="width: 100%;height: 110px; border-radius: 8px 0 0 8px;">
+						    </div>
+						    <div class="col-8">
+						    	<legend>title</legend>
+						    	<span>jsdklfjdslkfjdslk</span>
+						    </div>
+					    </div>			
+				    </div>		
+					<div class="card mb-3">            		
+					  	<div class="row no-gutters">
+						    <div class="col-4">
+						    	<img src="<c:url value="/images/landing/landing1.jpg"/>" style="width: 100%;height: 110px; border-radius: 8px 0 0 8px;">
+						    </div>
+						    <div class="col-8">
+						    	<legend>title</legend>
+						    	<span>jsdklfjdslkfjdslk</span>
+						    </div>
+					    </div>			
+				    </div>
+				    <div class="card mb-3">            		
+					  	<div class="row no-gutters">
+						    <div class="col-4">
+						    	<img src="<c:url value="/images/landing/landing1.jpg"/>" style="width: 100%;height: 110px; border-radius: 8px 0 0 8px;">
+						    </div>
+						    <div class="col-8">
+						    	<legend>title</legend>
+						    	<span>jsdklfjdslkfjdslk</span>
+						    </div>
+					    </div>			
+				    </div>		
+				    <div class="card mb-3">            		
+					  	<div class="row no-gutters">
+						    <div class="col-4">
+						    	<img src="<c:url value="/images/landing/landing1.jpg"/>" style="width: 100%;height: 110px; border-radius: 8px 0 0 8px;">
+						    </div>
+						    <div class="col-8">
+						    	<legend>title</legend>
+						    	<span>jsdklfjdslkfjdslk</span>
+						    </div>
+					    </div>			
+				    </div>		
             	</ul>
             </nav>
+            <hr>
+            <div class="row" style="display: flex;align-items: center;text-align: center;z-index: 1;box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.35);">
+				<div class="col">&lt;</div>
+				<div class="col">&gt;</div>
+			</div>		
 		</div>
 	</div>
 </body>

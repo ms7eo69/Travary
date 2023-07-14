@@ -14,6 +14,24 @@
 	margin: 8px 0;
 }
 
+@media (max-height: 860px) {	
+	.nav-item {
+		font-size: 1.1rem;
+	}
+}
+
+@media (max-height: 760px) {
+	.nav-item {
+		font-size: 1.0rem;
+	}
+}
+
+@media (max-height: 660px) {
+	.nav-item {
+		font-size: 0.9rem;
+	}
+}
+
 .container {
 	display: flex;
 	justify-content: flex-start;	
