@@ -91,15 +91,18 @@ public class BoardController {
 	public String edit(@RequestParam Map map, Model model) {
 		Map records = boardService.selectOne(map);
 		model.addAttribute("record", records);
-		System.out.println("eeeeeeeeeeeeeeeeee");		
+		//System.out.println("eeeeeeeeeeeeeeeeee");		
 		return "qna_N_Anno/anno/Edit";
 	}
 	
 	@PostMapping("/anno/Edit.do")
 	public String editok(@RequestParam Map map, Model model) {
-		boardService.update(map);	
-		System.out.println("xxxxxxxxxxxxxxxxxxxxxx");
-		return "redirect:/admin/anno/List.do";
+		
+		int affected = boardService.update(map);
+		Object postno = map.get("postno");
+		System.out.println(postno);
+		//System.out.println("xxxxxxxxxxxxxxxxxxxxxx");
+		return "redirect:/admin/anno/View.do?POSTNO="+postno;		
 	}
 	
 	
