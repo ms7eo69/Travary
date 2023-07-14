@@ -47,7 +47,7 @@ public class BoardServiceImpl implements DaoService {
 
 	@Override
 	public int delete(Map map) {
-		return 0;
+		return mapper.deleteByNo(map);
 	}
 
 	

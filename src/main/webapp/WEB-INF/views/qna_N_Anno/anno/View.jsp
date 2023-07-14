@@ -79,5 +79,11 @@
 	</div>
 	<!-- 한줄 코멘트 입력/수정 폼 -->
 </div>
+<script>
+	function isDelete(){
+		if (confirm('정말?'))
+			location.replace("<c:url value='/admin/anno/Delete.do?POSTNO=${record.POSTNO}'/>");
+	}
+</script>
 <!--container-->
 

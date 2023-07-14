@@ -45,7 +45,7 @@ public class BoardController {
 		return eUrl;
 	}
 	
-	//목록 처리
+	//목록
 	@GetMapping("/anno/List.do")
 	public String list(@RequestParam Map map, Model model) {
 	    List<Map> records = boardService.selectList(map);
@@ -55,6 +55,7 @@ public class BoardController {
 	    return "qna_N_Anno/anno/List"; 
 	}
 	
+	//글작성
 	@PostMapping("/anno/Write")
 	public String write(@RequestParam Map map, Model model) {
 		int affected = boardService.insert(map);
@@ -69,12 +70,21 @@ public class BoardController {
 		return "/qna_N_Anno/anno/Write";
 	}
 	
+	//상세보기
 	@RequestMapping("/anno/View.do")
 	public String view(@RequestParam Map map, Model model) {
 		Map records = boardService.selectOne(map);
 		model.addAttribute("record", records);
 		//System.out.println("ssssssssssssssssss");
 		return "qna_N_Anno/anno/View";
+	}
+	
+	//삭제
+	@GetMapping("/anno/Delete.do")
+	public String Delete(@RequestParam Map map) {
+		boardService.delete(map);
+		//System.out.println("ddddddddddddddd");
+		return "redirect:/admin/anno/List.do";
 	}
 	
 	/*
