@@ -50,7 +50,7 @@ public class BoardController {
 	public String list(@RequestParam Map map, Model model) {
 	    List<Map> records = boardService.selectList(map);
 	    //map.put("records", records);
-	    System.out.println(records);
+	    //System.out.println(records);
 		model.addAttribute("records", records);
 	    return "qna_N_Anno/anno/List"; 
 	}
@@ -69,6 +69,15 @@ public class BoardController {
 		return "/qna_N_Anno/anno/Write";
 	}
 	
+	@RequestMapping("/anno/View.do")
+	public String view(@RequestParam Map map, Model model) {
+		Map records = boardService.selectOne(map);
+		model.addAttribute("record", records);
+		//System.out.println("ssssssssssssssssss");
+		return "qna_N_Anno/anno/View";
+	}
+	
+	/*
 	@PostMapping("/WriteProcess.msp")
 	public String writeProcess(
 			@RequestParam Map paramMap,
@@ -80,4 +89,5 @@ public class BoardController {
 		}
 		return "board/List";
 	}
+	*/
 }

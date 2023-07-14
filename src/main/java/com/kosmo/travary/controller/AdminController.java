@@ -55,8 +55,8 @@ public class AdminController {
 	//@RequestMapping("/anno/List.do")
 	//public String admin_anno() {System.out.println("ddddddddddddd"); return "qna_N_Anno/anno/List";}
 	
-	@RequestMapping("/anno/View.do")
-	public String admin_anno_view() {return "qna_N_Anno/anno/View";}
+	//@RequestMapping("/anno/View.do")
+	//public String admin_anno_view() {return "qna_N_Anno/anno/View";}
 	/*
 	@GetMapping("/anno/Write.do")
 	public String admin_anno_write() {return "qna_N_Anno/anno/Write";}

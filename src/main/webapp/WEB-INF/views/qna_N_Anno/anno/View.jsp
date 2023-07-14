@@ -43,25 +43,25 @@
 		<tbody class="table-sm">
 			<tr>
 				<th class="w-25 bg-dark text-white text-center">번호</th>
-				<td>${record.no}</td>
+				<td>${record.POSTNO}</td>
 			</tr>
 			<tr>
 				<th class="w-25 bg-dark text-white text-center">글쓴이</th>
-				<td>${record.name}</td>
+				<td>${record.NICKNAME}</td>
 			</tr>
 			<tr>
 				<th class="w-25 bg-dark text-white text-center">작성일</th>
-				<td>${record.postDate}</td>
+				<td>${record.POSTDATE}</td>
 			</tr>
 			<tr>
 				<th class="w-25 bg-dark text-white text-center">제목</th>
-				<td>${record.title}</td>
+				<td>${record.TITLE}</td>
 			</tr>
 			<tr>
 				<th class="bg-dark text-white text-center" colspan="2">내 용</th>
 			</tr>
 			<tr>
-				<td colspan="2">${record.content}</td>
+				<td colspan="2">${record.CONTENT}</td>
 			</tr>
 		</tbody>
 	</table>

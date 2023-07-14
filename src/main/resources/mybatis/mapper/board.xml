@@ -10,4 +10,7 @@
 	<select id="findAll" parameterType="Map" resultType="Map">
 		SELECT postno, title, nickname, TO_CHAR(postdate, 'YYYY-MM-DD') AS postdate FROM admin_post
 	</select>
+	<select id="findByNo" parameterType="Map" resultType="Map">
+		SELECT postno, title, nickname, content, TO_CHAR(postdate, 'YYYY-MM-DD') AS postdate FROM admin_post WHERE POSTNO = #{POSTNO}
+	</select>
 </mapper>
