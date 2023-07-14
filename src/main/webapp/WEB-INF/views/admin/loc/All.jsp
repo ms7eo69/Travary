@@ -40,32 +40,32 @@
                   <span>선택한 여행지역 순</span>
                   <li>
                     <img src="images/1.jpg">
-                    <div class="box_name">부산</div>
-                    <div class="box_vCount">선택수: 35</div>
-                    <div class="box_rvCount">좋았어요: 29</div>
+                    <div class="box _name">부산</div>
+                    <div class="box _vCount">선택수: 35</div>
+                    <div class="box _rvCount">좋았어요: 29</div>
                   </li>
                   <li>
                     <img src="images/2.jpg">
-                    <div class="box_name">제주</div>
-                    <div class="box_vCount">선택수: 27</div>
-                    <div class="box_rvCount">좋았어요: 18</div>
+                    <div class="box _name">제주</div>
+                    <div class="box _vCount">선택수: 27</div>
+                    <div class="box _rvCount">좋았어요: 18</div>
                   </li>
                   <li><img src="images/3.jpg">
-                    <div class="box_name">전주</div>
-                    <div class="box_vCount">선택수: 21</div></li>
+                    <div class="box _name">전주</div>
+                    <div class="box _vCount">선택수: 21</div></li>
                   <li><img src="images/4.jpg">
-                    <div class="box_name">인천</div>
-                    <div class="box_vCount">선택수: 15</div></li>
+                    <div class="box _name">인천</div>
+                    <div class="box _vCount">선택수: 15</div></li>
                   <li><img src="images/6.jpg">
-                    <div class="box_name">서울</div>
-                    <div class="box_vCount">선택수: 12</div></li>
+                    <div class="box _name">서울</div>
+                    <div class="box _vCount">선택수: 12</div></li>
                   <li><img src="images/8.jpg">
-                    <div class="box_name">대구</div>
-                    <div class="box_vCount">선택수: 9</div>
+                    <div class="box _name">대구</div>
+                    <div class="box _vCount">선택수: 9</div>
                   </li>
                   <li><img src="images/9.jpg">
-                    <div class="box_name">충북</div>
-                    <div class="box_vCount">선택수: 8</div>
+                    <div class="box _name">충북</div>
+                    <div class="box _vCount">선택수: 8</div>
                   </li>
                 </ul>
               </div>
@@ -74,32 +74,32 @@
                   <span>선택한 여행지역 순</span>
                   <li>
                     <img src="images/1.jpg">
-                    <div class="box_name">부산</div>
-                    <div class="box_vCount">선택수: 230</div>
-                    <div class="box_rvCount">좋았어요: 209</div>
+                    <div class="box _name">부산</div>
+                    <div class="box _vCount">선택수: 230</div>
+                    <div class="box _rvCount">좋았어요: 209</div>
                   </li>
                   <li>
                     <img src="images/2.jpg">
-                    <div class="box_name">제주</div>
-                    <div class="box_vCount">선택수: 152</div>
-                    <div class="box_rvCount">좋았어요: 123</div>
+                    <div class="box _name">제주</div>
+                    <div class="box _vCount">선택수: 152</div>
+                    <div class="box _rvCount">좋았어요: 123</div>
                   </li>
                   <li><img src="images/3.jpg">
-                    <div class="box_name">전주</div>
-                    <div class="box_vCount">선택수: 123</div></li>
+                    <div class="box _name">전주</div>
+                    <div class="box _vCount">선택수: 123</div></li>
                   <li><img src="images/4.jpg">
-                    <div class="box_name">인천</div>
-                    <div class="box_vCount">선택수: 98</div></li>
+                    <div class="box _name">인천</div>
+                    <div class="box _vCount">선택수: 98</div></li>
                   <li><img src="images/6.jpg">
-                    <div class="box_name">서울</div>
-                    <div class="box_vCount">선택수: 62</div></li>
+                    <div class="box _name">서울</div>
+                    <div class="box _vCount">선택수: 62</div></li>
                   <li><img src="images/8.jpg">
-                    <div class="box_name">대구</div>
-                    <div class="box_vCount">선택수: 51</div>
+                    <div class="box _name">대구</div>
+                    <div class="box _vCount">선택수: 51</div>
                   </li>
                   <li><img src="images/9.jpg">
-                    <div class="box_name">충북</div>
-                    <div class="box_vCount">선택수: 48</div>
+                    <div class="box _name">충북</div>
+                    <div class="box _vCount">선택수: 48</div>
                   </li>
                 </ul>
               </div>
@@ -107,7 +107,7 @@
           </div>
         </div>
         <div id="usa" class="col-12">
-          <ul class="list-unstyled Mloc edit_">
+          <ul class="list-unstyled Mloc all_">
             <span>지역별 관광지</span>
             <label for="loc_select">대분류 지역을 골라줘용</label>
             <select id="loc_select">
@@ -121,34 +121,29 @@
             <input id="searchInput" type="text" placeholder="찾을 관광지">
             <li>
               <img src="images/1.jpg">
-              <div class="box_name">여행지 이름</div>
-              <div class="box_name">여행지 이름</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">여행지 이름</div>
+              <div class="box _category">카테고리</div>
+              <div class="box _vCount">선택수: 35</div>
+              <div class="box _rvCount">좋았어요: 29</div>
             </li>
             <li>
               <img src="images/2.jpg">
-              <div class="box_name">제주</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">제주</div>
             </li>
             <li><img src="images/3.jpg">
-              <div class="box_name">전주</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">전주</div>
             </li>
             <li><img src="images/4.jpg">
-              <div class="box_name">인천</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">인천</div>
             </li>
             <li><img src="images/6.jpg">
-              <div class="box_name">서울</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">서울</div>
             </li>
             <li><img src="images/8.jpg">
-              <div class="box_name">대구</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">대구</div>
             </li>
             <li><img src="images/9.jpg">
-              <div class="box_name">충북</div>
-              <button class="edit_loc">수정</button>
+              <div class="box _name">충북</div>
             </li>
           </ul>
         </div>
@@ -164,7 +159,7 @@
       const searchText = searchInput.value.trim().toLowerCase();
 
       listItems.forEach(function(li) {
-        const box1Text = li.querySelector('.box_name').textContent.toLowerCase();
+        const box1Text = li.querySelector('._name').textContent.toLowerCase();
         // const box2Text = li.querySelector('.box_').textContent.toLowerCase();
         const shouldShow = box1Text.includes(searchText)
 

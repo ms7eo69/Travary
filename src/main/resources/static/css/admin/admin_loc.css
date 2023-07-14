@@ -15,21 +15,26 @@
     height:300px;
     overflow-y: auto;
 }
-.Mloc::-webkit-scrollbar {
+.Mloc::-webkit-scrollbar,
+.editInput::-webkit-scrollbar{
     width: 10px;
 }
   
-.Mloc::-webkit-scrollbar-track {
+.Mloc::-webkit-scrollbar-track,
+.editInput::-webkit-scrollbar-track{
     background-color: white;
 }
   
-.Mloc::-webkit-scrollbar-thumb {
+.Mloc::-webkit-scrollbar-thumb,
+.editInput::-webkit-scrollbar-thumb{
     background-color: #888;
     border-radius: 5px;
 }
   
-.Mloc::-webkit-scrollbar-thumb:hover {
+.Mloc::-webkit-scrollbar-thumb:hover,
+.editInput::-webkit-scrollbar-thumb:hover{
     background-color: #555;
+    cursor: pointer;
 }
 .Mloc > span{
     display: flex;
@@ -54,7 +59,7 @@
     margin-top: 5px;
 
 }
-.box1,.box{
+.box{
     display: flex;
     justify-content: start;
     width:100px;
@@ -62,13 +67,13 @@
     margin-left: 10px;
     /* border-right: 1px solid black; */
 }
-.box2, .box_title{
+._title{
     display: flex;
     justify-content: start;
     margin-left: 10px;
 }
 
-.box_title, .box, .box2, .box1{
+._title, .box{
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;  
@@ -77,17 +82,24 @@
 ._detail{
 	width: 500px;
 }
-.box_vCount{
+._vCount{
     margin-left: auto;
+}
+._rvCount{
+	width: 120px
 }
 #usa{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
 }
 .edit_{
-    height: 600px;
+    height: 1000px;
     overflow-y: auto;
     margin-bottom: 20px;
+}
+.all_{
+	height:600px;
+	overflow-y: auto;
+	margin-bottom: 20px;
 }
 #searchInput{
     margin-bottom: 20px;
@@ -104,8 +116,20 @@
 ._best{
     width: 100%;
 }
+._name{
+	width:20%;
+}
+._detail{
+	width:70%;
+}
 .editInput{
-	width: 500px;
+	/* width: 500px; */
+	width:60%;
 	height: 300px;
+	position: absolute;
 	z-index: 1;
+	overflow-y:auto;
+}
+.filter{
+	display:flex;
 }
