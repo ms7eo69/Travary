@@ -8,6 +8,6 @@
 		INSERT INTO admin_post VALUES(admin_post_seq.NEXTVAL, #{title}, #{content}, '관리자', sysdate)
 	</insert>
 	<select id="findAll" parameterType="Map" resultType="Map">
-		SELECT postno, title, nickname, postdate FROM admin_post
+		SELECT postno, title, nickname, TO_CHAR(postdate, 'YYYY-MM-DD') AS postdate FROM admin_post
 	</select>
 </mapper>
