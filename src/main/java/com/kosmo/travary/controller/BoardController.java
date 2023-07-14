@@ -60,7 +60,7 @@ public class BoardController {
 		int affected = boardService.insert(map);
 		System.out.println("ddddddddd");
 		model.addAttribute("records", map);
-		return affected == 1 ? "redirect:/Admin/anno/List.do" : "forward:/";
+		return affected == 1 ? "redirect:/admin/anno/List.do" : "forward:/";
 	}
 	@GetMapping("/anno/Write.do")
 	public String writeOk() {
