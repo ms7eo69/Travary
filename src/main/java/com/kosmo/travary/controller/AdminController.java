@@ -24,8 +24,8 @@ public class AdminController {
 	
 	@RequestMapping("/user/Index.do")
 	public String admin_user() {return "admin/user/Index";}
-	@RequestMapping("/user/All.do")
-	public String admin_user_All() {return "admin/user/All";}
+	//@RequestMapping("/user/All.do")
+	//public String admin_user_All() {return "admin/user/All";}
 	
 	@PostMapping("/place/getMarkers.do")
 	public @ResponseBody List<Map> getMarkers(@RequestBody Map map) {

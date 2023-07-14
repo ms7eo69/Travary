@@ -19,4 +19,7 @@
 	<update id="updateByNo" parameterType="Map">
 		UPDATE admin_post SET title=#{title}, content=#{content} WHERE postno = #{postno}
 	</update>
+	<select id="findAll_Admin" parameterType="Map" resultType="Map">
+		SELECT NICKNAME, ID, GENDER, AGE, PHONE, TO_CHAR(REGIDATE, 'YYYY-MM-DD') AS REGIDATE FROM member order by regidate desc
+	</select>
 </mapper>

@@ -105,6 +105,14 @@ public class BoardController {
 		return "redirect:/admin/anno/View.do?POSTNO="+postno;		
 	}
 	
+	@RequestMapping("/user/All.do")
+	public String admin_user_All(@RequestParam Map map, Model model) {
+		System.out.println("들어오니");
+		List<Map> records = boardService.alladmininfo(map);
+		model.addAttribute("records", records);
+		return "admin/user/All";
+	}
+	
 	
 	/*
 	@PostMapping("/WriteProcess.msp")

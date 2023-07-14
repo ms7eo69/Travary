@@ -21,5 +21,4 @@ public interface MemberMapper {
 		int GoogleLoginsave(Map map);
 		boolean ApiMemberConfirm(Map apiLoginMap);
 		String findKeyByIdentifier(String string);
-		
 }

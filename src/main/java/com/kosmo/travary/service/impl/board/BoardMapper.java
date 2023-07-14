@@ -22,4 +22,5 @@ public interface BoardMapper {
 	int updateByNo(Map map);
 	//전체 래코드 수 조회
 	int count(Map map);
+	List<Map> findAll_Admin(Map map);
 }

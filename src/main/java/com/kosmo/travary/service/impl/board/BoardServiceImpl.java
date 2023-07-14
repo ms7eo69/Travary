@@ -50,6 +50,10 @@ public class BoardServiceImpl implements DaoService {
 		return mapper.deleteByNo(map);
 	}
 
+	public List<Map> alladmininfo(Map map) {
+		return mapper.findAll_Admin(map);
+	}
+
 	
 
 }

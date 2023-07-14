@@ -19,49 +19,44 @@
 <jsp:include page="/WEB-INF/views/admin/nav.jsp"></jsp:include>
     <div class="cont">
       <div class="pageinfo">
-        <span>회원 관리</span>
+        <span>회원 정보</span>
       </div>
       <div class="info row">
         <div id="usa" class="col-12">
           <ul class="list-unstyled rpt">
             
             <!-- <span><i class="fa-solid fa-circle-exclamation"></i>신고당한 게시글</span> -->
-            <li>
-              <img src="images/8.jpg">
-              <div class="nickname">Yuna</div>
-              <div class="box2 id_">kosmo1234</div>
-              <div class="box2">가입일 : 2023-07-09</div>
-            </li>
-            <li>
-              <img src="images/1.jpg">
-              <div class="nickname">hena</div>
-              <div class="box2 id_">hanso24</div>
-              <div class="box2">가입일 : 2023-07-08</div>
-            </li>
-            <li>
-              <img src="images/2.jpg">
-              <div class="nickname">hoi</div>
-              <div class="box2 id_">roi5028</div>
-              <div class="box2">가입일 : 2023-07-06</div>
-            </li>
-            <li>
-              <img src="images/3.jpg">
-              <div class="nickname">good</div>
-              <div class="box2 id_">mosko9928</div>
-              <div class="box2">가입일 : 2023-07-05</div>
-            </li>
-            <li>
-              <img src="images/4.jpg">
-              <div class="nickname">call</div>
-              <div class="box2 id_">kosmo1234</div>
-              <div class="box2">가입일 : 2023-07-04</div>
-            </li>
-            <li>
-              <img src="images/7.jpg">
-              <div class="nickname">backhome</div>
-              <div class="box2 id_">kosmo1234</div>
-              <div class="box2">가입일 : 2023-07-04</div>
-            </li>
+            <table class="table table-dark table-hover text-center">
+            <thead>
+                <tr>
+                    <th class="col-2">닉네임</th>
+                    <th class="col-2">아이디</th>
+                    <th class="col-2">성별</th>
+                    <th class="col-2">나이</th>
+                    <th class="col-2">휴대폰번호</th>
+                    <th class="col-2">가입일</th>
+                </tr>
+            </thead>
+            <tbody class="table-sm down-file-body">
+			    <c:if test="${empty records}" var="result">
+			        <tr>
+			            <td colspan="8">회원 정보가 없습니다</td>
+			        </tr>
+			    </c:if>
+			    <c:if test="${! result}">
+			        <c:forEach var="record" items="${records}">
+			            <tr>
+			                <td>${record.NICKNAME}</td>
+			                <td>${record.ID}</td>
+			                <td>${record.GENDER}</td>
+			                <td>${record.AGE}</td>
+			                <td>${record.PHONE}</td>
+			                <td>${record.REGIDATE}</td>
+			            </tr>
+			        </c:forEach>
+			    </c:if>
+			</tbody>
+        </table>
             <li class="create_user">
               <img src="images/8.jpg">
               <input type="text" class="box2" placeholder="nickname" name="nickname"> 
