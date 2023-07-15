@@ -51,7 +51,10 @@ try :
                     f.write(res.content)
                 index += 1
         else:
-            cursor.execute("INSERT INTO has_picture VALUES(:no)",no=no)
+            try:
+                cursor.execute("INSERT INTO has_picture VALUES(:no)",no=no)
+            except Exception as e:
+                pass
 except Exception as e:
     print(e)
 finally:
