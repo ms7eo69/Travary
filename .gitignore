@@ -1,10 +1,9 @@
 HELP.md
 
 ### travary ###
-target/classes/**
-target/**
+spring/target/**
+spring/bin/**
 resources/wallet/**
-resources/**
 flask/image/place/**
 *.json
 *.ini
