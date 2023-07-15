@@ -15,7 +15,7 @@ for foaf in result['results']['bindings']:
     split = url.split('.')
     ext = split[len(split)-1]
     res = requests.get(url)
-    file_path = 'C:/Users/kosmo/Travary/images/'+'image'+str(index)+'.'+ext
+    file_path = 'D:/images/'+'image'+str(index)+'.'+ext
     with open(file_path, 'wb') as file:
         file.write(res.content)
     index+=1
