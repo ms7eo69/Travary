@@ -1,22 +1,16 @@
 HELP.md
-target/classes/**
-
-*.ora
-*.sso
-*.properties
 
 ### travary ###
-target/classes/**
-target/**
-resources/wallet/**
-resources/**
-*.ora
-*.sso
-*.properties
-
-*.properties
-*.sso
-*.ora
+spring/target/**
+spring/bin/**
+spring/src/main/resources/wallet/**
+spring/src/main/resources/properties/**
+spring/.mvn/**
+flask/image/place/**
+.mvn/**
+*.json
+*.ini
+*.pem
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
