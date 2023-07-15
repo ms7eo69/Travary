@@ -5,12 +5,8 @@ spring/target/**
 spring/bin/**
 spring/src/main/resources/wallet/**
 spring/src/main/resources/properties/**
-spring/.mvn/**
 flask/image/place/**
-.mvn/**
-*.json
-*.ini
-*.pem
+flask/config/**
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
