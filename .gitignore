@@ -5,7 +5,10 @@ target/classes/**
 target/**
 resources/wallet/**
 resources/**
-flask/image/**
+flask/image/place/**
+*.json
+*.ini
+*.pem
 *.ora
 *.sso
 *.properties
