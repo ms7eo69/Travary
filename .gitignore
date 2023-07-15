@@ -1,15 +1,11 @@
 HELP.md
-target/classes/**
-
-*.ora
-*.sso
-*.properties
 
 ### travary ###
 target/classes/**
 target/**
 resources/wallet/**
 resources/**
+flask/image/**
 *.ora
 *.sso
 *.properties
