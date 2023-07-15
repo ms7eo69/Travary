@@ -1,9 +1,4 @@
-/*Side Menu*/
-.navbar {		
-	justify-content: flex-start;
-	margin: 0;
-	padding: 0;
-}
+/*sidebar_css*/
 
 .navbar-nav {
 	margin: 0 auto;

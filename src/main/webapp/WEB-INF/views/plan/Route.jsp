@@ -12,6 +12,13 @@
 	var contextRoot = '<c:url value="/"/>'
 </script>
 <script src="<c:url value="js/plan/route/direction.js"/>"></script>
+<script>
+	$(function(){
+		if ($()) {
+			
+		}
+	});
+</script>
 </head>
 <body>
 	<!-- 상단 바 -->
@@ -29,15 +36,15 @@
 		</div>
     </div>
     <div class="row">        
-		<div class="col-2">
+		<div class="col-2" id="travary_sidebar">
 			<jsp:include page="/WEB-INF/views/templates/Sidebar.jsp"/>
 		</div>
-		<div class="col-7">
+		<div class="col-7" id="route_center">
 			<div>
 				<div id="map" class="nmap-main"></div>
 			</div>
 		</div>
-		<div class="col-3">			
+		<div class="col-3" id="route_right">			
 			<div class="row" style="height: 65px;display: flex;text-align: center;">
 				<div class="col-6" style="padding-top:20px;border-right: 1px solid black;background: rgba(123,255,255);height: 65px;">
 					추천 장소
@@ -47,7 +54,7 @@
 				</div>
 			</div>			
 			<hr>
-            <nav class="navbar spot_sidebar">            	
+            <nav class="navbar spot_sidebar" style="height: 700px">            	
             	<ul class="navbar-nav" id="spot_list">
             		<div class="card mb-3">            		
 					  	<div class="row no-gutters">
@@ -107,7 +114,7 @@
             	</ul>
             </nav>
             <hr>
-            <div class="row" style="display: flex;align-items: center;text-align: center;z-index: 1;box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.35);">
+            <div class="row" style="display: flex;align-items: flex-end;text-align: center;z-index: 1;box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.35);">
 				<div class="col">&lt;</div>
 				<div class="col">&gt;</div>
 			</div>		

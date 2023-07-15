@@ -104,12 +104,6 @@ nav ul, nav li {
     height: 700px;
 }
 
-#nav-footer {
-    display: flex;
-    align-items: flex-end;
-}
-
-
 /*로그인 모달 CSS*/
 .close {
     margin-left: 280px;
